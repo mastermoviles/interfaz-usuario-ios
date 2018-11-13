@@ -663,7 +663,7 @@ func crearPeliculas() {
 
 Añadimos una llamada a este método al final de `viewDidLoad`.
 
-<!--- También necesitarás añadir <a href="sentido.jpg">esta imagen</a> a los `Assets`. -->
+<!--- También necesitarás añadir <a href=".gitbook/assets/sentido.jpg">esta imagen</a> a los `Assets`. -->
 
 Cambiamos también las siguientes lineas en el método `cellForRowAt` para mostrar en las celdas el título de la película:
 
