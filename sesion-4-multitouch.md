@@ -15,7 +15,7 @@ Los dispositivos iOS también admiten varias pulsaciones al mismo tiempo, lo que
 
 ## Ejercicio 1 - Gestos
 
-Comenzamos creando un proyecto en XCode de tipo _Single View_ que guardaremos con el nombre `ejercicio_touch`. Creamos un objeto de tipo _UIImageView_, lo arrastramos a la vista colocándolo en la parte superior izquierda de la pantalla, y lo enlazamos a nuestro `ViewController` para crear la propiedad, a la que llamaremos _imageView_. Arrastra la imagen <a href="logo-master.png">logo-master.png</a> al proyecto y asígnala a la vista como se indica a continuación (aunque también se podría hacer por código):
+Comenzamos creando un proyecto en XCode de tipo _Single View_ que guardaremos con el nombre `ejercicio_touch`. Creamos un objeto de tipo _UIImageView_, lo arrastramos a la vista colocándolo en la parte superior izquierda de la pantalla, y lo enlazamos a nuestro `ViewController` para crear la propiedad, a la que llamaremos _imageView_. Arrastra la imagen <a href=".gitbook/assets/logo-master.png">logo-master.png</a> al proyecto y asígnala a la vista como se indica a continuación (aunque también se podría hacer por código):
 
 ![Asignar imagen](.gitbook/assets/multitouch_logo-master.png "Asignar imagen")
 
