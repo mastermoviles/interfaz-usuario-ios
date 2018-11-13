@@ -741,7 +741,7 @@ Cambia el siguiente método en `DetailViewController` para asignar los valores d
 
 Necesitarás descargar <a href=".gitbook/assets/sentido.jpg">esta imagen</a> y arrastrarla a los _Assets_.
 
-Por último, en las propiedades del `UIImageView` cambia el `ContentMode` a `Aspect Fit` para que la imagen no se deforme:
+Por último, en las propiedades del `UIImageView` cambia el `ContentMode` a `Aspect Fit` para que la imagen no se deforme: 
 
 ![Corregir imágenes](.gitbook/assets/movies_aspect_fit.png "Corregir imágenes")
 
