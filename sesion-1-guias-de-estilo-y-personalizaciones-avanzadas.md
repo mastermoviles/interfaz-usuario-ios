@@ -33,8 +33,8 @@ _Apple_ recomienda diseñar apps siguiendo estos principios:
 En general, lo principal que deben tener las aplicaciones es:
 
 * Integridad estética: debemos integrar adecuadamente el aspecto visual con su funcionalidad.
-* Consistencia: deben usarse elementos estándar a los que ya están habituados los usuarios de iOS, y un diseño uniforme.
-* Adaptabilidad: es recomendable que  el contenido de la pantalla cambie cuando se rota el dispositivo o se usan gestos. Las vistan deben adaptarse a cambios de orientación de dispositivo, modo oscuro (_dark mode_) y tipos dinámicos, dejando que los usuarios elijan las configuraciones que prefieran desde la configuración general del dispositivo. 
+* Consistencia: deben usarse elementos estándar a los que ya están habituados los usuarios de iOS y un diseño uniforme durante toda la app.
+* Adaptabilidad: es muy recomendable que el contenido de la pantalla cambie cuando se rota el dispositivo o se usan gestos. Las vistas deben adaptarse a cambios de orientación de dispositivo, modo oscuro (_dark mode_) y tipos dinámicos, dejando que los usuarios elijan las configuraciones que prefieran desde la configuración general del dispositivo. 
 * _Feedback_: se deben confirmar las acciones y mostrar resultados para informar al usuario de que ha interactuado con nuestra app.
 
 Antes de comenzar a diseñar una app también es muy importante conocer quiénes son los usuarios a los que nos dirigimos, es decir, el público objetivo, y en función de esto definir la interfaz gráfica, los controles, terminología, etc. No es lo mismo diseñar una app para niños que una de contabilidad, o una app para empresas.
@@ -333,7 +333,7 @@ Por último, para nuestra vista personalizada vamos a crear un nuevo fichero sub
 
 ### Diseñando la celda desde Interface Builder
 
-Una vez  hemos creado el proyecto y la clase controladora de la tabla y la celda ahora vamos a diseñar su vista. Para ello abrimos la tabla en el storyboard. Dentro de _Prototype cells_ podemos diseñar la vista de la celda. Pero antes tenemos que asignar la clase `TableViewCell` que hemos creado a las celdas de nuestra tabla.
+Una vez hemos creado el proyecto y la clase controladora de la tabla y la celda ahora vamos a diseñar su vista. Para ello abrimos la tabla en el storyboard. Dentro de _Prototype cells_ podemos diseñar la vista de la celda. Pero antes tenemos que asignar la clase `TableViewCell` que hemos creado a las celdas de nuestra tabla.
 
 ![Asignación de la celda personalizada](.gitbook/assets/cell_custom_class.png "Asignación de la celda personalizada")
 
@@ -398,7 +398,7 @@ Una vez hecho esto abrimos de nuevo la clase controladora de la tabla `TableView
  }
 ```
 
-Ahora descarga la imagen <a href=".gitbook/assets/logo-master.png">_logo\_master.png</a> y arrástrala dentro de XCode a los _Assets_ del proyecto. Ahora ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño), nos saldrán los elementos relativamente bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los _constraints_. De momento no te preocupes por esto, lo arreglaremos más adelante.
+Ahora descarga la imagen <a href=".gitbook/assets/logo-master.png">logo\_master.png</a> y arrástrala dentro de XCode a los _Assets_ del proyecto. En este momento ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño), nos saldrán los elementos relativamente bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los _constraints_ (de hecho se mostrará algún _warning_ por este motivo). De momento no te preocupes por esto, lo arreglaremos más adelante.
 
 <!---
 Como podrás ver, se solapa la barra de estado con el principio de la tabla. Esto podríamos resolverlo añadiendo la siguiente línea al método `ViewDidLoad`:
@@ -512,7 +512,7 @@ Puedes ver los _constraints_ añadidos para cada elemento en el _Size inspector_
 
 ![Label size inspector](.gitbook/assets/toolbar_size_inspector.png  "Label size inspector")
 
-### Acciones
+### Acciones
 
 Ahora vamos a implementar la acción del _Segmented Control_. Para ello declaramos el siguiente método dentro de la clase `ViewController`:
 
