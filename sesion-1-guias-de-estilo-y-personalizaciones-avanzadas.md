@@ -58,16 +58,7 @@ Existen distintas estrategias de diseño de aplicaciones. Apple nos recomienda r
 
 La aplicación que diseñes debe estar totalmente adaptada a un dispositivo iOS, no a otro tipo ni a web. El usuario lo agradecerá (y Apple, cuando lo revise, también). La inmensa mayoria de usuarios de iOS están acostumbrados al uso de botones, barras de navegación, _Tab Bars_, etc. Debemos, en la medida de lo posible, hacer uso de toda esta serie de componentes que son diseñados de forma específica para dispositivos iOS y con los que los usuarios están muy familiarizados.
 
-#### Componentes
-
-<!---
-Los elementos del interfaz de _UIKit_ se dividen en tres categorías principales:
-
-
-* [_Bars_](https://developer.apple.com/design/human-interface-guidelines/ios/bars/navigation-bars/): Indican a los usuarios dónde están en la app, proporcionan navegación y pueden contener botones u otros elementos para realizar acciones y comunicar información.
-* [_Views_](https://developer.apple.com/design/human-interface-guidelines/ios/views/action-sheets/): Son el contenido principal que los usuarios ven, como texto, animaciones y elementos interactivos. Las vistas pueden incluir _scroll_, inserción, borrado y relocalización.
-* [_Controls_](https://developer.apple.com/design/human-interface-guidelines/ios/controls/buttons/): Inician acciones y transmiten información. Son los botones, _switches_, campos de texto e indicadores de progreso, entre otros.
---->
+#### Componentes
 
 En <a href="https://developer.apple.com/design/human-interface-guidelines/components/all-components">este enlace</a> se pueden ver todos los componentes que podemos usar en nuestras apps. Se dividen en:
 
@@ -81,6 +72,16 @@ En <a href="https://developer.apple.com/design/human-interface-guidelines/compon
 * Experiencias del sistema. El usuario puede recibir notificaciones, puede ver la barra de estado de la app, usar _widgets_, etc.
 
 Todos los componentes pueden consultarse con más detalle en la referencia del <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html">catálogo de UIKit</a>. 
+
+<!---
+Los elementos del interfaz de _UIKit_ se dividen en tres categorías principales:
+
+
+* [_Bars_](https://developer.apple.com/design/human-interface-guidelines/ios/bars/navigation-bars/): Indican a los usuarios dónde están en la app, proporcionan navegación y pueden contener botones u otros elementos para realizar acciones y comunicar información.
+* [_Views_](https://developer.apple.com/design/human-interface-guidelines/ios/views/action-sheets/): Son el contenido principal que los usuarios ven, como texto, animaciones y elementos interactivos. Las vistas pueden incluir _scroll_, inserción, borrado y relocalización.
+* [_Controls_](https://developer.apple.com/design/human-interface-guidelines/ios/controls/buttons/): Inician acciones y transmiten información. Son los botones, _switches_, campos de texto e indicadores de progreso, entre otros.
+--->
+
 
 #### Recomendaciones generales
 
@@ -279,9 +280,9 @@ Existe un <a href="https://developer.apple.com/ios/human-interface-guidelines/ui
 El teclado virtual es totalmente modificable según nuestros requerimientos. Por ejemplo, si queremos utilizar un teclado numérico sólo deberemos indicarlo al cargar el teclado dentro del método adecuado. Desde iOS8, se permite añadir teclados personalizados además de los que vienen con el sistema.
 -->
 
-#### Extensiones (_app extensions_)
+#### Extensiones
 
-Con las extensiones, los usuarios pueden usar un componente desarrollado por nosotros desde una app externa. Por ejemplo, mientras un usuario ve una página web con Safari, podría usar nuestras extensiones para enviar una imagen o un artículo a nuestra red social. O podría también usar desde la aplicación de fotos de Apple una extensión nuestra para editar la imagen.
+Con las extensiones los usuarios pueden usar un componente desarrollado por nosotros desde una app externa. Por ejemplo, mientras un usuario ve una página web con Safari, podría usar nuestras extensiones para enviar una imagen o un artículo a nuestra red social. O podría también usar desde la aplicación de fotos de Apple una extensión nuestra para editar la imagen.
 
 Las extensiones pueden ser de tipo _widget_, para realizar acciones desde el notification center, _share_ para compartir contenido con terceros, _action_ para ver contenido desde otra aplicación, _photo editing_ para editar imágenes, o _custom keyboard_ para reemplazar el teclado de iOS por uno personalizado, entre otras posibilidades.
 
@@ -313,11 +314,11 @@ Al terminar este ejemplo tendremos una aplicación formada únicamente una vista
 
 Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto para _iOS_ de tipo _App_. Lo  guardaremos con el nombre `ejercicio_celdas`. 
 
-Primero vamos a arrastrar al storyboard un nuevo controlador de tipo _Table View Controller_ (botón **+** arriba del interfaz).
+Primero vamos a arrastrar al _storyboard_ un nuevo controlador de tipo `Table View Controller' (botón **+** arriba del interfaz).
 
 Ahora haremos que nuestra tabla sea lo primero que aparezca en el storyboard. Esto se puede hacer, por ejemplo, arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo _Table View Controller_. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero `ViewController.swift`, ya que estaba asociado a la vista que hemos borrado.
 
-Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador, para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el Identity Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
+Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador, para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el _Identity Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
 
 ![Asignación del controlador TableViewController](.gitbook/assets/cell_tableviewcontroller.png "Asignación del controlador TableViewController")
 
@@ -366,7 +367,7 @@ Tendremos que vincular a nuestra clase celda los _Outlets_ que hemos creado ante
 
 > Alternativamente, se pueden crear los IBOutlets con el asistente (es más cómodo). Pinchando sobre el símbolo de los anillos (arriba a la derecha), se abre una segunda ventana. Se puede seleccionar la vista en una de las ventanas, y el código en otra. Después, puedes pinchar (botón derecho) sobre el componente de la vista y arrastrarlo al código de la declaración de la clase. Esto crea automáticamente las propiedades, y hace los enlaces. El mismo procedimiento es válido también para crear un _IBAction_.
 
-Ahora volvemos a la vista de la celda en el storyboard y enlazamos los Outlets creados en la clase con los objetos de la vista.
+Ahora volvemos a la vista de la celda en el _storyboard_ y enlazamos los Outlets creados en la clase con los objetos de la vista.
 
 Una vez hecho esto abrimos de nuevo la clase controladora de la tabla `TableViewController.swift` y modificamos los siguientes métodos:
 
