@@ -4,9 +4,9 @@ a la hora de diseñar nuestras aplicaciones y el hecho de no hacerlo puede ser m
 
 ## Guías de estilo en iOS
 
-Tanto el iPhone como el iPad supusieron un revolucionario giro en cuanto a diseño de interfaz. Para evitar el caos a la hora de diseñar cualquier tipo de aplicación, tras cada actualización de iOS _Apple_ plantea una serie de guías de estilo que todo desarrollador debe seguir en la medida de lo posible para diseñar una app. Normalmente estas guias de estilo no son válidas, como es lógico, a la hora de diseñar la interfaz de un juego, pero son muy útiles en aplicaciones.
+Tanto el iPhone como el iPad supusieron un revolucionario giro en cuanto a diseño de interfaz. Para evitar el caos a la hora de diseñar cualquier tipo de aplicación, tras cada actualización de iOS _Apple_ plantea una serie de guías de estilo que todo desarrollador debe seguir en la medida de lo posible para diseñar una app. Estas guias de estilo no se aplican, como es lógico, a la hora de diseñar la interfaz de un juego, pero son muy útiles para crear aplicaciones.
 
-En esta sesión vamos a aprender a diseñar apps para iPhone / iPad que sean usables, accesibles y en las que el usuario perciba una buena experiencia al hacer uso de ellas. Hay que tener en cuenta que un usuario de iPhone está habituado a una serie de elementos y situaciones básicas como la navegación dentro de vistas mediante _Navigation Controllers_, navegación por las opciones fundamentales mediante los _Tab Bar Controllers_, uso de botones claros, etc. Aquí haremos un resumen de todo lo que Apple propone en sus <a href="https://developer.apple.com/ios/human-interface-guidelines/">guias de estilo</a>. A pesar de que nos centraremos en los aspectos principales de la guía, es recomendable leer por completo las guías de estilo tras cada actualización de iOS.
+En esta sesión vamos a aprender a diseñar apps para iPhone / iPad que sean usables, accesibles y en las que el usuario perciba una buena experiencia de uso. Hay que tener en cuenta que un usuario de iOS está habituado a una serie de elementos y situaciones básicas, como la navegación dentro de vistas mediante _Navigation Controllers_, navegación por las opciones fundamentales mediante los _Tab Bar Controllers_, uso de botones, etc. Aquí haremos un resumen de todo lo que Apple propone en sus <a href="https://developer.apple.com/ios/human-interface-guidelines/">guias de estilo</a>. En esta asignatura nos centraremos en los aspectos principales de la guía, aunque es recomendable leer por completo las guías de estilo tras cada actualización de iOS, ya que las guías cambian mucho de un año para otro.
 
 Además de la guía de estilo oficial, conviene consultar detalladamente este enlace:
 
@@ -24,22 +24,22 @@ Veremos 3 puntos principales:
 
 ### Principios de diseño
 
-_Apple_ recomienda diseñar apps siguiendo estos tres principios:
+_Apple_ recomienda diseñar apps siguiendo estos principios:
 
 * **Claridad**. En nuestras apps el texto debe poder ser legible a cualquier tamaño, los iconos deben ser precisos y claros, los adornos poco recargados y apropiados, y debemos centrarnos principalmente en la funcionalidad. Los espacios negativos, colores, fuentes, gráficos y elementos del interfaz deben resaltar el contenido que es importante y facilitar la interactividad.
-* **Amigabilidad**. Un interfaz fluido, claro y visualmente atractivo ayuda a los usuarios a entender e interactuar con el contenido, que normalmente ocupa la pantalla completa. Las transparencias y los elementos difuminados ofrecen al usuario guías sobre en qué puntos interactuar. Es recomendable no usar gradientes, brillos o sombras, ya que esto ayuda a mantener el interfaz ligero y claro mientras que el contenido destacará mejor.
+* **Amigabilidad**. Un interfaz fluido, claro y visualmente atractivo ayuda a los usuarios a entender e interactuar con el contenido, que normalmente ocupa la pantalla completa. Es importante mantener el interfaz ligero y claro para que el contenido destaque mejor.
 * **Profundidad**. Las distintas capas visuales y el movimiento realista deben facilitar la comprensión de la jerarquía del interfaz e imprimir dinamismo. Tocar y descubrir mejora la sensación de interacción y permite el acceso a funcionalidades y contenidos adicionales sin perder el contexto. Las transiciones proporcionan una sensación de profundidad mientras se navega por el contenido.
 
 En general, lo principal que deben tener las aplicaciones es:
 
 * Integridad estética: debemos integrar adecuadamente el aspecto visual con su funcionalidad.
 * Consistencia: deben usarse elementos estándar a los que ya están habituados los usuarios de iOS, y un diseño uniforme.
-* Manipulación directa: es recomendable que  el contenido de la pantalla cambie cuando se rota el dispositivo o se usan gestos.
+* Adaptabilidad: es recomendable que  el contenido de la pantalla cambie cuando se rota el dispositivo o se usan gestos. Las vistan deben adaptarse a cambios de orientación de dispositivo, modo oscuro (_dark mode_) y tipos dinámicos, dejando que los usuarios elijan las configuraciones que prefieran desde la configuración general del dispositivo. 
 * _Feedback_: se deben confirmar las acciones y mostrar resultados para informar al usuario de que ha interactuado con nuestra app.
 
 Antes de comenzar a diseñar una app también es muy importante conocer quiénes son los usuarios a los que nos dirigimos, es decir, el público objetivo, y en función de esto definir la interfaz gráfica, los controles, terminología, etc. No es lo mismo diseñar una app para niños que una de contabilidad, o una app para empresas.
 
-Se recomienda hacer un diseño previo usando Mockups, o bien usando el storyboard antes de que la aplicación sea funcional. Existen varias herramientas de Mockups, tales como <a href="https://mockup.io/">mockup.io</a> o <a href="https://balsamiq.com">Balsamiq</a>.
+Se recomienda hacer un diseño previo usando Mockups, o bien usando storyboards u otras herramientas antes de que la app sea funcional. Existen varios programas para  Mockups, tales como <a href="https://mockup.io/">mockup.io</a> o <a href="https://balsamiq.com">Balsamiq</a>.
 
 <!---
 
@@ -56,34 +56,61 @@ Existen distintas estrategias de diseño de aplicaciones. Apple nos recomienda r
 
 #### Diseño según el dispositivo
 
-La aplicación que diseñes debe estar totalmente adaptada a un dispositivo iOS, no a otro tipo ni a web. El usuario lo agradecerá (y Apple también). La inmensa mayoria de usuarios de iOS están acostumbrados al uso de botones, barras de navegación, _Tab Bars_, etc. Debemos, en la medida de lo posible, hacer uso de toda esta serie de componentes que son diseñados de forma específica para dispositivos iOS y con los que los usuarios están muy familiarizados.
+La aplicación que diseñes debe estar totalmente adaptada a un dispositivo iOS, no a otro tipo ni a web. El usuario lo agradecerá (y Apple, cuando lo revise, también). La inmensa mayoria de usuarios de iOS están acostumbrados al uso de botones, barras de navegación, _Tab Bars_, etc. Debemos, en la medida de lo posible, hacer uso de toda esta serie de componentes que son diseñados de forma específica para dispositivos iOS y con los que los usuarios están muy familiarizados.
 
-Se recomienda usar los componentes estándar de Apple, cuya referencia se puede encontrar en el <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html">Catálogo de UIKit</a>. Los elementos del interfaz de _UIKit_ se dividen en tres categorías principales:
+#### Componentes
+
+<!---
+Los elementos del interfaz de _UIKit_ se dividen en tres categorías principales:
+
 
 * [_Bars_](https://developer.apple.com/design/human-interface-guidelines/ios/bars/navigation-bars/): Indican a los usuarios dónde están en la app, proporcionan navegación y pueden contener botones u otros elementos para realizar acciones y comunicar información.
 * [_Views_](https://developer.apple.com/design/human-interface-guidelines/ios/views/action-sheets/): Son el contenido principal que los usuarios ven, como texto, animaciones y elementos interactivos. Las vistas pueden incluir _scroll_, inserción, borrado y relocalización.
 * [_Controls_](https://developer.apple.com/design/human-interface-guidelines/ios/controls/buttons/): Inician acciones y transmiten información. Son los botones, _switches_, campos de texto e indicadores de progreso, entre otros.
+--->
 
-Es importante que si la aplicación es universal (es decir, si está disponible para iPhone y iPad), debe funcionar correctamente en todos los dispositivos. Hay que asegurarse antes de publicar en _App Store_ de que no hay _bugs_, ya que si estos existen Apple puede rechazar la aplicación o el usuario podría puntuarla mal o deje de usarla. Existen una serie de puntos a tener en cuenta en este caso:
+En <a href="https://developer.apple.com/design/human-interface-guidelines/components/all-components">este enlace</a> se pueden ver todos los componentes que podemos usar en nuestras apps. Se dividen en:
 
-* Hay que diseñar cada aplicación según el dispositivo en el que se use teniendo en cuenta especialmente las capas de vistas, ya que estas cambian bastante.
-* Se debe de adaptar todo el arte (imágenes, videos, etc.) al dispositivo adecuado. El iPad y el iPhone 6 tendrán una pantalla con mayor resolución que un iPhone 4, por ejemplo. Los _Assets_ sirven para esto. En las últimas versiones de iOS, se recomienda usar ficheros PDF en los _Assets_, ya que se adaptarán a cualquier tamaño.
+* Contenido. Estos componentes sirven para mostrar gráficos, texto, imágenes, o contenidos web.
+* Distribución y organización. Elementos como las colecciones, tablas o etiquetas pueden usarse para organizar y mostrar los datos. 
+* Menús y acciones. Para interaccionar con el usuario disponemos de botones, menús o pop-ups, entre otros.
+* Navegación y búsqueda. El usuario puede moverse por nuestra app usando barras de navegación, _tab bars_ o usando campos de búsqueda, entre otros.
+* Presentación. Para presentar los datos podemos usar alertas, controles de página, popovers, vistas de scroll, etc.
+* Selección y entradas. Entre otros, se pueden elegir valores de una lista con _pickers_, usando _segmented controls_, o emplear _sliders_ para valores numéricos.
+* Estado. El estado de una tarea se puede medir con barras de progreso, anillos de actividad o medidores (_gauges_).
+* Experiencias del sistema. El usuario puede recibir notificaciones, puede ver la barra de estado de la app, usar _widgets_, etc.
+
+Todos los componentes pueden consultarse con más detalle en la referencia del <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html">catálogo de UIKit</a>. 
+
+#### Recomendaciones generales
+
+Es importante que las aplicaciones funcionen correctamente en todos los dispositivos que puedan usarlas. También hay que asegurarse antes de publicar en _App Store_ de que no hay _bugs_, ya que si estos existen Apple puede rechazar la aplicación, o si aparecen después los usuarios podrían puntuarla mal o deje de usarla. Existen una serie de puntos a tener en cuenta en este caso:
+
+* Hay que diseñar cada aplicación según el dispositivo en el que se use teniendo en cuenta especialmente las capas de vistas, ya que estas pueden cambiar bastante en función del tamaño de pantalla disponible.
+* Se debe de adaptar todo el arte (imágenes, videos, etc.) al dispositivo adecuado. Para esto se usan los _Assets_. En las últimas versiones de iOS, se recomienda usar ficheros PDF en los _Assets_, ya que se adaptarán a cualquier tamaño.
 * Las características de la aplicación deben conservarse a pesar del tipo de dispositivo que se use.
-* Cuando sea posible, se deben diseñar apps universales y no únicamente para iPhone o iPad.
+* Cuando sea posible, es conveniente diseñar las apps para que funcionen en todos los dispositivos Apple (iOS, iPadOS, watchOS, tvOS y macOS).
 
 ### Características principales de la plataforma iOS
 
 #### La pantalla
 
-Todo usuario que usa una aplicación interactúa mediante la pantalla. Existen distintas resoluciones de pantalla (a nivel de desarrollo de código y a nivel físico) según cada dispositivo. Se puede consultar la resolución de todos los modelos de Apple en <a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/">este enlace</a> y también en [este otro](http://iosres.com).
+Todo usuario que usa una aplicación interactúa mediante la pantalla. Existen distintas resoluciones de pantalla (a nivel de desarrollo de código y a nivel físico) según cada dispositivo. Se pueden consultar consejos de diseño y la resolución de todos los modelos de Apple en <a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/">este enlace</a>. 
 
-El tamaño en puntos no es el mismo que el tamaño en píxeles, que normalmente es un múltiplo (2x, 3x) de los puntos, como puede verse en el siguiente ejemplo:
+<!---
+Las distintas resoluciones también pueden verse en [este otro](http://iosres.com).
+
+-->
+
+Es importante resaltar que el tamaño en puntos no es el mismo que el tamaño en píxeles, que normalmente es un múltiplo (2x, 3x) de los puntos, como puede verse en el siguiente ejemplo:
 
 ![Resolución iPhone](.gitbook/assets/design-resolutions.jpg "Resolución iphone")
 
 > Detección de contacto (touch events). El tamaño de la zona mínima para que el evento de contacto funcione correctamente debe de ser de al menos 44 x 44 puntos.
 
-Dada la diferencia de resolución entre los distintos dispositivos de Apple, se recomienda usar siempre [_autolayout_](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/) en lugar de indicar explícitamente coordenadas de la pantalla para colocar los componentes.
+Dada la diferencia de resolución entre los distintos dispositivos de Apple, se recomienda usar siempre _autolayout_ o SwiftUI en lugar de indicar explícitamente coordenadas de la pantalla para colocar los componentes.
+
+> **SwiftUI** es el nuevo sistema de Apple para el desarrollo de interfaces. Tiene como principal ventaja sobre el sistema tradicional (UIKit) que se ahorra código (usa sintaxis declarativa) y facilita que la app funcione correctamente en todos los dispositivos mejorando el  _autolayout_ de UIKit. Sin embargo, en esta asignatura todavía no introduciremos este entorno porque es muy nuevo, todavía tiene bugs y está sujeto a bastantes cambios que pueden hacer que las apps no compilen correctamente en pocos meses. Si quieres más información sobre swiftUI puedes consultar [este enlace](https://developer.apple.com/xcode/swiftui/).
 
 <!---
 ![Resolución iOS](ios_resolutions_old.png "Resolución de los distintos dispositivos en iOS")
@@ -91,9 +118,9 @@ Dada la diferencia de resolución entre los distintos dispositivos de Apple, se 
 
 #### Orientación del dispositivo
 
-Uno de los requisitos a la hora de publicar una aplicación de iPhone/iPad en el _App Store_ es la compatibilidad con las distintas orientaciones que puede adoptar el dispositivo iOS, tanto  vertical (_portrait_) como horizontal (_landscape_). Cualquier aplicación debe  estar adaptada a ambas posiciones para mejorar la usabilidad y la comodidad. La programación de la orientación en una aplicación iOS es relativamente sencilla, excepto casos puntuales y no implementarla puede suponer, como hemos comentado, el rechazo de su publicación en el _App Store_.
+Uno de los requisitos a la hora de publicar una aplicación de iPhone/iPad en el _App Store_ es la compatibilidad con las distintas orientaciones que puede adoptar el dispositivo iOS, tanto  vertical (_portrait_) como horizontal (_landscape_). Cualquier aplicación debe  estar adaptada a ambas posiciones para mejorar la usabilidad. La programación de la orientación en una aplicación iOS es relativamente sencilla (excepto en casos puntuales) y no implementarla puede suponer, como hemos comentado, el rechazo de su publicación en el _App Store_.
 
-A continuación puedes ver algunas orientaciones de un iPhone y su layout:
+A continuación puedes ver orientaciones de ejemplo para un iPhone y su layout:
 
 ![Resolución iPhone](.gitbook/assets/design_iphone.jpg)
 
@@ -107,40 +134,37 @@ Según el dispositivo del que dispongamos, la pantalla inicial (_Launch Screen_)
 
 #### _Storyboards_
 
-Debemos diseñar un `Main.storyboard` para nuestra app. Para la pantalla de inicio que se muestra brevemente al arrancar la aplicación, a veces interesa hacer otro _storyboard_ adicional (`LaunchScreen.storyboard`) cuando el proceso de carga de la app es lento.
+Debemos diseñar un `Main.storyboard` para nuestra app. Para la pantalla de inicio que se muestra brevemente al arrancar la aplicación, a veces interesa hacer otro _storyboard_ adicional (`LaunchScreen.storyboard`) cuando el proceso de carga de la app es lento. Las nuevas apps basadas en SwiftUI no necesitan _storyboards_.
 
 #### Gestos
 
-Llamamos gestos a los distintos movimientos que hace el usuario sobre la pantalla para realizar acciones. Cuantos más gestos se implementen en una app, más agradable e intutiva será de usar. En la sesión sobre _multitouch_ veremos en detalle cómo gestionar los gestos.
+Llamamos gestos a los distintos movimientos que hace el usuario sobre la pantalla para realizar acciones. En la sesión sobre _multitouch_ veremos en detalle cómo gestionar los gestos.
 
 #### Ayuda
 
-La aplicación debe ser lo suficientemente intuitiva para que el usuario sepa usarla. **Lo ideal es que no sea necesario ningún texto de ayuda**, pero si existe debe ser lo más claro y compacto posible, y si se pueden utilizar imágenes o videos, mejor.
-
-Hay que tener en cuenta que el usuario no tendrá tiempo ni ganas de estar leyendo la ayuda la primera vez que usa la aplicación. La ayuda no debería ser necesaria si se utilizan las guias de estilo establecidas por Apple y que tienen por finalidad, como hemos comentado anteriormente, establecer una interfaz simple e intuitiva de usar.
+Una aplicación debe ser lo suficientemente simple e intuitiva para que el usuario sepa usarla. Hay que tener en cuenta que el usuario no tendrá tiempo ni ganas de estar leyendo la ayuda la primera vez que usa la aplicación. Por tanto, lo ideal es que no sea necesario ningún texto de ayuda, pero si existe debe ser lo más claro y compacto posible, y si se pueden utilizar imágenes o videos, mejor.
 
 #### Sonidos
 
 A veces nos interesa reproducir sonidos en nuestra app, bien porque sea necesario o para producir un efecto agradable en el usuario. Para evitar justamente lo contrario, hay que tener en cuenta que:
 
-* Si el usuario activa el modo _silencio_ en el dispositivo, este no debe de emitir ningún tipo de sonido. Hay apps que se saltan esto, y suele ser algo bastante molesto. Además, si nuestra app se basa completamente en el sonido (por ejemplo, un reproductor musical) puede que tengamos que hacer alguna acción (por ejemplo pausar la música) cuando se silencie el móvil.
-* En la medida de lo posible, se debe dejar al usuario la opción de ajustar el volumen de sonido como desee.
+* Si el usuario activa el modo _silencio_ en el dispositivo, este no debe de emitir ningún tipo de sonido. Hay apps que se saltan esto, y suele ser algo bastante molesto. Si nuestra app se basa completamente en el sonido (por ejemplo, un reproductor musical) puede que tengamos que hacer alguna acción (como por ejemplo pausar la música) cuando se silencie el móvil.
 * El tipo de sonido escogido para las distintas características de la aplicación es muy importante. Estos sonidos deben ser adecuados y se deben ajustar al tipo de acción que se esté ejecutando.
 * Hay que tener también en cuenta la gestión de las interrupciones de audio. Por ejemplo, puede producirse una llamada entrante, la aplicación pasar a estado inactivo (_background_), etc.
 * Si estamos desarrollando una aplicación musical, para mejorar la experiencia de usuario también podemos usar el control remoto de Apple o el sistema _AirPlay_.
 
 #### Accesibilidad
 
-iOS ofrece funcionalidades de accesibilidad para usuarios con discapacidades visuales o auditivas. Con poco esfuerzo y usando los componentes de _UIKit_ podemos adaptar nuestra app para que todos los usuarios puedan disfrutarla por igual. Para esto se recomienda:
+iOS ofrece funcionalidades de accesibilidad para usuarios con discapacidades visuales o auditivas. Con poco esfuerzo y usando los componentes de _UIKit_ podemos adaptar nuestra app para que todos los usuarios puedan usarla. Para esto se recomienda:
 
 * Proporcionar etiquetas de texto alternativas para imágenes, iconos y elementos del interfaz. Estas etiquetas alternativas no serán visibles en la pantalla, pero permitirán al sistema de voz (_VoiceOver_) describir qué hay en la pantalla, ayudando a las personas con problemas visuales.
-* Responder a las opciones de accesibilidad. Debemos permitir a UIKit implementar su interfaz de usuario, para que los elementos se adapten a las preferencias de accesibilidad como texto en negrita o más grande, o eliminar animaciones. Debemos usar la fuente de texto del sistema cuando sea posible.
+* Responder a las opciones de accesibilidad. Debemos permitir a _UIKit_ implementar su interfaz de usuario, para que los elementos se adapten a las preferencias de accesibilidad como texto en negrita o más grande, o eliminar animaciones. Debemos usar la fuente de texto del sistema cuando sea posible.
 * Probar la app en modo accesible, para ver cómo queda.
 * Usar suficiente contraste para que los iconos y el texto sean fácilmente distinguibles.
 
 #### Carga
 
-Si usamos una pantalla estática mientras se está cargando contenido, puede parecer que la app se haya bloqueado. En lugar de esto, hay que dejar claro que la carga está en marcha, por ejemplo usando barras de progreso o animaciones. En cualquier caso debemos mostrar el contenido en cuanto sea posible, en lugar de hacer al usuario esperar que el contenido se cargue antes de ver la pantalla correspondiente.
+Si usamos una pantalla estática mientras se está cargando contenido, puede parecer que la app se haya bloqueado. En lugar de esto, hay que dejar claro que la carga está en marcha, por ejemplo usando barras de progreso o animaciones. 
 
 #### Preferencias
 
@@ -150,24 +174,27 @@ Si la aplicación utiliza preferencias propias, podemos hacer una vista para ell
 
 ### Guías de uso de las principales tecnologías disponibles en iOS
 
-La API de iOS nos da acceso a múltiples tecnologías nativas descritas a continuación:
+La API de iOS nos da acceso a múltiples tecnologías nativas que se describen a continuación:
 
 #### Multitarea
 
-Mediante la multitarea nuestro dispositivo puede ejecutar más de dos aplicaciones al mismo tiempo. Otras tareas que no estén mostrándose en pantalla pueden estar almacenadas en memoria, es decir, en _background_, o también mostrándose simultáneamente en la pantalla. Apple recomienda que nuestra aplicación tenga en cuenta dicha característica ya que de esta forma el usuario puede estar realizando otras tareas al mismo tiempo sin necesidad de cerrarla.
+Mediante la multitarea nuestro dispositivo puede ejecutar más de dos aplicaciones al mismo tiempo. Otras tareas que no estén mostrándose en pantalla pueden estar guardadas en memoria (en _background_) o también mostrándose simultáneamente en la pantalla. Apple recomienda que nuestra aplicación tenga en cuenta dicha característica ya que de esta forma el usuario puede estar realizando otras tareas al mismo tiempo sin necesidad de cerrarla.
 
 ![Captura multitarea iOS](.gitbook/assets/multitasking2.png "Captura multitarea iOS")
 
-La aplicación debe estar preparada para gestionar interrupciones de audio en cualquier momento, pararse y reiniciarse sin ninguna complicación ni lag y de forma "suave", y debe comportarse de forma adecuada cuando se encuentra en _background_. La multitarea es una tecnología que se utiliza muy a menudo en iOS y es por ello que debemos tenerla muy presente cuando diseñamos nuestras aplicaciones. La gestión del paso de un estado _activo_ a _inactivo_ debe programarse cuando sea necesario. Por ejemplo, hay que tener en cuenta que nuestro juego puede interrumpirse por una llamada a mitad del lanzamiento de un pájaro.
+La aplicación debe estar preparada para gestionar interrupciones de audio en cualquier momento, pararse y reiniciarse sin ninguna complicación ni lag y de forma "suave", y debe comportarse de forma adecuada cuando se encuentra en _background_. La multitarea es una tecnología que se utiliza muy a menudo en iOS y es por ello que debemos tenerla presente cuando diseñamos nuestras aplicaciones. La gestión del paso de un estado _activo_ a _inactivo_ debe programarse cuando sea necesario. Por ejemplo, hay que tener en cuenta que nuestro juego Angry Birds puede interrumpirse por una llamada a mitad del lanzamiento de un pájaro.
 
-Para determinar el comportamiento de nuestra aplicación cuando entra en _background_ podemos implementar métodos que se verán en otras asignaturas del máster.
+Para determinar el comportamiento de nuestra aplicación cuando entra en modo _background_ podemos implementar métodos que se verán en otras asignaturas del máster.
 
 Además de tener que estar preparados para interrupciones, la multitarea implica que nuestra app puede ejecutarse sólo en una zona de la pantalla, por lo que hay que tener en cuenta esto en la fase de diseño.
 
 #### Notificaciones
 
-Las notificaciones _push_ permiten avisar a los usuarios independientemente de si la aplicación está funcionando en ese momento. Esto es muy útil en apps que usen un calendario, para avisar de eventos futuros, o para algún tipo de recordatorio. También se utiliza muy a menudo en juegos.
+Las <a href="https://developer.apple.com/documentation/usernotifications">notificaciones _push_</a> permiten avisar a los usuarios independientemente de si la aplicación está funcionando en ese momento. Esto es muy útil en apps que usen un calendario, para avisar de eventos futuros, o para algún tipo de recordatorio. También se utiliza muy a menudo en juegos.
 
+![Notificación push](.gitbook/assets/notificaciones_push.png "Notificación push alert")
+
+<!---
 Hay dos estilos de notificaciones: 
 
 * _Alert_: Aparece en la pare superior de la pantalla mientras el dispositivo está en uso y se queda hasta que el usuario la quite manualmente.
@@ -176,10 +203,17 @@ Hay dos estilos de notificaciones:
 ![Notificación push](.gitbook/assets/notif_ctr_alert.png "Notificación push alert")
 ![Notificación push](.gitbook/assets/notif_ctr_banner.png "Notificación push banner")
 
-La implementación de este servicio es algo compleja y requiere un servidor propio, aunque se pueden contratar servicios externos que realicen esa tarea de forma bastante económica. Al mismo tiempo que se activa la notificación _push_ se muestra un número en la esquina superior derecha del icono de la aplicación. A esto se le llama _badge_ y es muy sencillo de implementar en nuestras aplicaciones.
+-->
+
+Se pueden enviar notificaciones usando un servidor propio, o bien generarlas localmente desde nuestra app. En el caso de requerir un servidor también se pueden contratar servicios externos que realicen esa tarea de forma bastante económica.
+
+<!--
+La implementación de este servicio es algo compleja y normalmente requiere un servidor propio, aunque se pueden contratar servicios externos que realicen esa tarea de forma bastante económica. Al mismo tiempo que se activa la notificación _push_ se muestra un número en la esquina superior derecha del icono de la aplicación. A esto se le llama _badge_ y es muy sencillo de implementar en nuestras aplicaciones.
 
 ![Ejemplo badge en app](.gitbook/assets/notif_ctr_badge.png "Ejemplo badge en app")
+-->
 
+<!--
 #### _AirPrint_
 
 Mediante _Airprint_ podemos enviar a imprimir cualquier documento desde nuestra app. El SDK de iOS se encarga de gestionar la localización de impresoras y la ejecución de tareas de impresión, mientras que el desarrollador se encarga de especificar los elementos que desea imprimir (normalmente PDF o imágenes).
@@ -187,7 +221,7 @@ Mediante _Airprint_ podemos enviar a imprimir cualquier documento desde nuestra 
 #### _QuickLook_
 
 Usando _Quicklook_ los usuarios pueden acceder a una vista previa de documentos descargados desde las aplicaciones (por ejemplo, _pdf_). Dependiendo del dispositivo en el que se muestra, los documentos se presentarán dentro de una ventana modal o dentro de una vista completa.
-
+-->
 <!---
 
 #### Social media (redes sociales)
@@ -277,11 +311,13 @@ A diferencia de la personalización de otros componentes, la personalización de
 
 Al terminar este ejemplo tendremos una aplicación formada únicamente una vista de tabla `UITableView` con celdas personalizadas. Estas celdas tendrán una imagen en el lado izquierdo, un texto en negrita en la parte superior y otro texto pequeño en la parte inferior. Las celdas tendrán un tamaño algo mayor al que viene por defecto y, para finalizar, la tabla tendrá estilo _zebra_, es decir, el fondo de las celdas tendrá colores intercalados para cada fila.
 
-Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto de tipo _Single View Application_ en Swift. Lo  guardaremos con el nombre `ejercicio_celdas`. Vamos a arrastrar al storyboard un nuevo controlador de tipo _Table View Controller_.
+Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto para _iOS_ de tipo _App_. Lo  guardaremos con el nombre `ejercicio_celdas`. 
+
+Primero vamos a arrastrar al storyboard un nuevo controlador de tipo _Table View Controller_ (botón **+** arriba del interfaz).
 
 Ahora haremos que nuestra tabla sea lo primero que aparezca en el storyboard. Esto se puede hacer, por ejemplo, arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo _Table View Controller_. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero `ViewController.swift`, ya que estaba asociado a la vista que hemos borrado.
 
-Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador, para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el _Attribute Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
+Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador, para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el Identity Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
 
 ![Asignación del controlador TableViewController](.gitbook/assets/cell_tableviewcontroller.png "Asignación del controlador TableViewController")
 
