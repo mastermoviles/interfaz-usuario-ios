@@ -289,9 +289,9 @@ Las extensiones pueden ser de tipo _widget_, para realizar acciones desde el not
 ![Widget](.gitbook/assets/widget_experience_2x.png "Widget")
 ![Action](.gitbook/assets/share_action_appex_2x.png "Action")
 
-# Ejercicios
-
 Básicamente estos son los conceptos principales de la guía de estilo de Apple, aunque hay más tecnologías que pueden verse en su <a href="https://developer.apple.com/ios/human-interface-guidelines/">guía de estilo</a>.
+
+# Ejercicios
 
 A continuación vamos a empezar programando ejemplos de personalización de controladores. Llamaremos personalizaciones a las modificaciones sobre el aspecto visual de los componentes estándar de Apple. Normalmente las personalizaciones no son recomendables para no confundir al usuario, pero a veces son necesarias para juegos o aplicaciones que requieran un aspecto diferente, como puede verse en el siguiente ejemplo:
 
@@ -299,26 +299,33 @@ A continuación vamos a empezar programando ejemplos de personalización de cont
 
 ## Ejercicio 1- Personalización de celdas
 
-La captura siguiente muestra la pantalla principal del cliente de Twitter para iPhone _Twinkle_ (en iOS6) y, aunque no lo parezca, es simplemente una tabla con
-las celdas totalmente personalizadas.
+La captura siguiente muestra un ejemplo de una tabla con las celdas totalmente personalizadas.
 
-![Ejemplo personalización Twinkle](.gitbook/assets/ui-s02-img6.png "Ejemplo personalización Twinkle")
+<!--
+[ejemplo de código](https://medium.com/q-software/ios-custom-table-views-with-cells-2e4ba692cfc8) 
+-->
 
-A diferencia de la personalización de otros componentes, la personalización de celdas de una tabla es algo muy habitual (y a veces necesaria) en iOS. Con esto podremos hacer que nuestras tablas se distingan del resto, mostrar datos de forma más adecuada, y ofrecer un "toque" característico y concordante con nuestras aplicaciones.
+![Ejemplo personalización celdas](.gitbook/assets/custom_cells.png "Ejemplo personalización celdas")
 
-¿Cómo podemos hacer este tipo de celdas en nuestra aplicación iOS? Es muy sencillo, a continuación veremos mediante un ejemplo paso a paso el diseño y programación de celdas personalizadas con el _Interface Builder_ de XCode.
+A diferencia de la personalización de otros componentes, la personalización de celdas de una tabla es algo muy habitual en iOS. De esta forma podemos hacer que nuestras tablas se distingan del resto, mostrar datos de forma más adecuada, y ofrecer un aspecto característico para nuestra app.
+
+¿Cómo podemos hacer este tipo de celdas? Es muy sencillo, a continuación veremos mediante un ejemplo paso a paso el diseño y programación de celdas personalizadas mediante XCode.
 
 ### Creando el proyecto y las clases básicas
 
-Al terminar este ejemplo tendremos una aplicación formada únicamente una vista de tabla `UITableView` con celdas personalizadas. Estas celdas tendrán una imagen en el lado izquierdo, un texto en negrita en la parte superior y otro texto pequeño en la parte inferior. Las celdas tendrán un tamaño algo mayor al que viene por defecto y, para finalizar, la tabla tendrá estilo _zebra_, es decir, el fondo de las celdas tendrá colores intercalados para cada fila.
+Al terminar este ejemplo tendremos una aplicación que solo contiene una vista de tabla `UITableView` con celdas personalizadas. Estas celdas tendrán una imagen en el lado izquierdo, un texto en negrita en la parte superior y otro texto pequeño en la parte inferior. Las celdas tendrán un tamaño algo mayor al que viene por defecto y, para finalizar, la tabla tendrá estilo _zebra_, es decir, el fondo de las celdas tendrá colores intercalados para cada fila.
 
-Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto para _iOS_ de tipo _App_. Lo  guardaremos con el nombre `ejercicio_celdas`. 
+Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto para _iOS_ de tipo _App_. Lo  guardaremos con el nombre `ejercicio_celdas`, y debemos elegir el interfaz Storyboard:
 
-Primero vamos a arrastrar al _storyboard_ un nuevo controlador de tipo `Table View Controller' (botón **+** arriba del interfaz).
+![Inicialización ejercicio celdas](.gitbook/assets/cell_init.png "Inicialización ejercicio celdas")
 
-Ahora haremos que nuestra tabla sea lo primero que aparezca en el storyboard. Esto se puede hacer, por ejemplo, arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo _Table View Controller_. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero `ViewController.swift`, ya que estaba asociado a la vista que hemos borrado.
+Para empezar vamos a añadir al _storyboard_ principal (_Main_) un nuevo controlador de tipo `Table View Controller' (usando el botón **+** en la parte superior del interfaz de XCode).
 
-Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador, para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el _Identity Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
+Ahora haremos que nuestra tabla sea lo primero que aparezca cuando se lance la app. Esto se puede hacer, por ejemplo, arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo _Table View Controller_. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero `ViewController.swift`, ya que estaba asociado a la vista que hemos borrado.
+
+Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". 
+
+Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el _Identity Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
 
 ![Asignación del controlador TableViewController](.gitbook/assets/cell_tableviewcontroller.png "Asignación del controlador TableViewController")
 
@@ -332,20 +339,20 @@ Una vez  hemos creado el proyecto y la clase controladora de la tabla y la celda
 
 Una vez hemos vinculado la vista de la celda a nuestro controlador, vamos a modificar la altura de la celda desde el _size inspector_, usando una altura de 70 puntos:
 
-![Ajustes de tamaño vista celda](.gitbook/assets/table_view_cell_row1.png "Ajustes de tamaño vista celda")
+![Ajustes de tamaño vista celda](.gitbook/assets/cell_table_view_row1.png "Ajustes de tamaño vista celda")
 
 Además de indicar la altura de la celda para el _Table View Cell_ (lo cual nos sirve para saber cómo quedan los elementos en la vista de diseño), también debemos hacerlo para las  celdas del _Table View_:
 
-![Ajustes de tamaño vista tabla](.gitbook/assets/table_view_cell_row2.png "Ajustes de tamaño vista tabla")
+![Ajustes de tamaño vista tabla](.gitbook/assets/cell_table_view_row2.png "Ajustes de tamaño vista tabla")
 
 
-Si quisieramos hacer esto mismo desde código (no hace falta), podríamos indicarlo así en el método _viewDidLoad_:
+Si quisieramos hacer esto mismo desde código (como lo hemos hecho desde el interfaz no hace falta), podríamos indicarlo así en el método _viewDidLoad_:
 
 ```swift
  self.tableView.rowHeight=70
 ```
 
-Ahora queda arrastrar los objetos que queramos que aparezcan en la celda: en este ejemplo, vamos a añadir dos labels y una imagen (_UIImageView_). La celda quedará de la siguiente manera en el _Interface builder_:
+Ahora solo tenemos que arrastrar los objetos que queremos que aparezcan en la celda. En este ejemplo vamos a añadir dos etiquetas (_labels_) y una imagen (_UIImageView_). La celda quedará de la siguiente manera en el _Interface builder_:
 
 ![Vista celda](.gitbook/assets/cell_mytableviewcell.png "Vista celda")
 
@@ -365,9 +372,9 @@ Tendremos que vincular a nuestra clase celda los _Outlets_ que hemos creado ante
 @IBOutlet weak var labelAuthor: UILabel!
 ```
 
-> Alternativamente, se pueden crear los IBOutlets con el asistente (es más cómodo). Pinchando sobre el símbolo de los anillos (arriba a la derecha), se abre una segunda ventana. Se puede seleccionar la vista en una de las ventanas, y el código en otra. Después, puedes pinchar (botón derecho) sobre el componente de la vista y arrastrarlo al código de la declaración de la clase. Esto crea automáticamente las propiedades, y hace los enlaces. El mismo procedimiento es válido también para crear un _IBAction_.
+> Alternativamente, se pueden crear los IBOutlets con el asistente (a veces es más cómodo). Pinchando sobre el símbolo que representa una tabla con un _+_ dentro de ella (arriba a la derecha), se abre una segunda ventana de edición. Así se puede seleccionar la vista en una de las ventanas, y el código en otra. Después, puedes pinchar (botón derecho) sobre el componente de la vista y arrastrarlo al código de la declaración de la clase. Esto crea automáticamente las propiedades, y hace los enlaces. El mismo procedimiento es válido también para crear un _IBAction_.
 
-Ahora volvemos a la vista de la celda en el _storyboard_ y enlazamos los Outlets creados en la clase con los objetos de la vista.
+Ahora volvemos a la vista de la celda en el _storyboard_ y enlazamos los _Outlets_ creados en la clase con los objetos de la vista.
 
 Una vez hecho esto abrimos de nuevo la clase controladora de la tabla `TableViewController.swift` y modificamos los siguientes métodos:
 
@@ -391,7 +398,7 @@ Una vez hecho esto abrimos de nuevo la clase controladora de la tabla `TableView
  }
 ```
 
-Descarga la imagen _logo\_master.png_ desde <a href=".gitbook/assets/logo-master.png">aqui</a> y arrástrala dentro de XCode a _Assets.xcassets_ del proyecto. Ahora ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño, por defecto iPhone 8), nos saldrán los elementos más o menos bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los _constraints_. De momento no te preocupes por esto, lo arreglaremos más adelante.
+Ahora descarga la imagen <a href=".gitbook/assets/logo-master.png">_logo\_master.png</a> y arrástrala dentro de XCode a los _Assets_ del proyecto. Ahora ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño), nos saldrán los elementos relativamente bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los _constraints_. De momento no te preocupes por esto, lo arreglaremos más adelante.
 
 <!---
 Como podrás ver, se solapa la barra de estado con el principio de la tabla. Esto podríamos resolverlo añadiendo la siguiente línea al método `ViewDidLoad`:
@@ -400,16 +407,21 @@ Como podrás ver, se solapa la barra de estado con el principio de la tabla. Est
 ```
 -->
 
-La aplicación funciona y se muestra una tabla, aunque no tiene barra de navegación. Normalmente todos los controladores en iOS suelen ir incrustados en controladores contenedores, que son los que gestionan la navegación, como `UINavigationController`, `UITabBarController` o  `UISplitViewController`. Para nuestro ejercicio, lo más adecuado incrustrar la tabla en un _Navigation Controller_, seleccionando el controlador de la tabla en el storyboard y eligiendo _Editor > Embed in > Navigation Controller_. Añade un título para la tabla mediante la siguiente línea de código en `viewDidLoad` (o si lo prefieres, desde el _Interface Builder_):
+### Añadiendo la barra de navegación
+
+La aplicación funciona y se muestra una tabla, aunque no tiene barra de navegación. Normalmente todos los controladores en iOS suelen ir incrustados en controladores contenedores, que son los que gestionan la navegación, como `UINavigationController`, `UITabBarController` o  `UISplitViewController`. Para nuestro ejercicio, lo más adecuado incrustrar la tabla en un _Navigation Controller_, seleccionando el controlador de la tabla en el storyboard y eligiendo _Editor > Embed in > Navigation Controller_. Añade un título para la tabla mediante la siguiente línea de código en `viewDidLoad` de `TableViewController` (o si lo prefieres, desde el _Interface Builder_):
 
 ```swift
     self.title = "Mi tabla personalizada"
 ```
 
-Una vez que tenemos las celdas hechas vamos a personalizar la tabla un poco más añadiendo un fondo a las celdas pares y otro a las impares, para hacer un efecto _zebra_. Necesitaremos dos imágenes más que se pueden descargar <a
-href=".gitbook/assets/img_fondo_celdas.zip">aquí</a>.
 
-Abrimos la vista de la celda en el storyboard y arrastramos un `UIImageView` ocupando todo el espacio de la celda. Es necesario enviar esta vista al fondo, con el menú _Editor > Arrange > Send to back_. Si en el modo visual se van descolocando las vistas de la celda cuando las mueves (no debería ocurrir en las últimas versiones de XCode), ajusta los tamaños desde el _Size Inspector_.
+### Personalización con efecto _zebra_
+
+Una vez tenemos las celdas hechas vamos a personalizar la tabla un poco más, añadiendo un fondo a las celdas pares y otro a las impares, lo que se conoce como efecto _zebra_. Para esto necesitaremos dos imágenes más que se pueden descargar <a
+href=".gitbook/assets/img_fondo_celdas.zip">aquí</a> y añadirlas a los _Assets_.
+
+Abrimos la vista de la celda en el _storyboard_ y arrastramos un `UIImageView` ocupando todo el espacio de la celda. Es necesario enviar esta vista al fondo, con el menú _Editor > Arrange > Send to back_. Si en el modo visual se van descolocando las vistas de la celda cuando las mueves (aunque esto no debería ocurrir con las últimas versiones de XCode), ajusta los tamaños desde el _Size Inspector_.
 
 En el fichero `TableViewCell.swift` enlazamos el nuevo `UIImageView`, como hemos hecho con el resto de elementos, y lo llamamos `fondo`.
 
@@ -428,19 +440,27 @@ Si ejecutamos ahora el proyecto tendremos nuestra tabla con las celdas personali
 
 ![Celdas final](.gitbook/assets/cell_final.png "Resultado de celdas personalizadas")
 
-Sólo hay un problema: como hemos comentado anteriormente, se ha diseñado la vista para un iPhone en concreto (iPhone 8 por defecto), y si ejecutamos el simulador con otro iPhone (por ejemplo el 5s) los elementos de la celda nos saldrán descolocados. Para que salgan bien nos falta ajustar las _constraints_ de la vista.
+### Ajuste de las _constraints_
 
-Para esto, seleccionamos el `TableViewCell` desde el Storyboard y en la parte inferior ("All Views in Table View Cell") marcamos "Reset to Suggested Constraints". Probamos y vemos que la tabla es correcta, incluso rotando el dispositivo.
+Sólo hay un problema: como hemos comentado anteriormente, se ha diseñado la vista para un iPhone en concreto (iPhone 14 Pro por defecto), y si ejecutamos el simulador con otro iPhone (por ejemplo el SE) los elementos de la celda nos saldrán descolocados. Para que salgan bien nos falta ajustar las _constraints_ de la vista.
+
+Para esto, seleccionamos el `TableViewCell` desde el _storyboard_, y en la parte inferior ("All Views in Table View Cell") marcamos "All Views in TableViewController" -> "Reset to Suggested Constraints". Probamos y vemos que la tabla es correcta, incluso rotando el dispositivo.
 
 > Esta opción de Reset te puede sacar de más de un apuro cuando el ajustar el autolayout sea complicado. Recomiendo probar primero con ella, y si no funciona a la primera entonces ajustar las constraints a mano.
 
 ![Celdas constraints](.gitbook/assets/cell_constraints.png "Constraints automáticas para las celdas personalizadas")
 
+Si se te queda muy corta la imagen del fondo cuando rotas el dispositivo puedes seleccionar la opción "Scale to Fill" en el inspector de atributos:
+
+![Celdas ajuste del fondo](.gitbook/assets/cell_scale.png "Ajuste de imagen de fondo para rellenar celda")
+
+### Insertar datos en la tabla
+
 Para finalizar, extenderemos nuestro programa con las siguientes opciones:
 
-_a)_  Vamos a rellenar las celdas de la tabla con datos de libros. Para ello, crearemos una nueva clase (_File > New > Swift file_) a la que llamaremos `Book`. Reemplaza en este fichero `import Foundation` por `import UIKit`, y añade a la clase un `String` que será el título del libro, otro `String` que será el autor y una imagen (`UIImage`) que será la portada. Añade también un método `init` para inicializar las variables de la clase.
+_a)_ Vamos a rellenar las celdas de la tabla con datos de libros. Para ello, crearemos una nueva clase (con _File > New > Swift file_) a la que llamaremos `Libro`. Reemplaza en este fichero `import Foundation` por `import UIKit`, y crea la clase con un `String` que será el título del libro, otro `String` que será el autor y una imagen (`UIImage`) que será la portada. Añade también un método `init` para inicializar las variables de la clase.
 
-_b)_ Ahora crearemos un array dentro de la clase `TableViewController`, lo inicializamos y lo completamos con los 3 libros que prefieras. Cada elemento del array será de la clase `Book`.
+_b)_ Ahora crearemos un array dentro de la clase `TableViewController`, lo inicializamos y lo completamos con los 3 libros que prefieras. Cada elemento del array será de la clase `Libro`.
 
 _c)_ Una vez creado el array de libros vamos a mostrarlos en nuestra tabla. Para ello deberemos modificar los métodos de la clase `TableViewController`, asignando los datos del array a las celdas correspondientes.
 
@@ -448,11 +468,15 @@ _d)_ Cuando hayamos terminado, comprobamos que la aplicación funciona según lo
 
 ---
 
-## Ejercicio 2- Personalización de ToolBars
+## Ejercicio 2- Personalización de _ToolBars_
 
-Los _ToolBar_, al igual que la gran mayoría de componentes, se pueden personalizar para conseguir las funcionalidades que deseemos en nuestras aplicaciones de iOS. En el siguiente ejemplo vamos a crear una vista _ToolBar_ con un estilo determinado usando una imagen de fondo, estilos para los botones, añadiendo botones de distinto tipo, etc.
+Los _ToolBars_, al igual que la mayor parte de componentes, se pueden personalizar para conseguir las funcionalidades que deseemos para nuestras apps. En el siguiente ejemplo vamos a crear una vista _ToolBar_ personalizada con una imagen de fondo, estilos para los botones, añadiendo botones de distinto tipo, etc.
 
-Comenzamos creando un nuevo proyecto de tipo _Single-View application_ con el nombre  `ejercicio_toolbar`. Abrimos la vista principal del storyboard. Arrastramosa la vista un objeto `UIToolBar` y lo situamos en la parte superior. También ponemos un objeto `UILabel` en el centro de la vista.
+Comenzamos creando un nuevo proyecto de tipo _iOS -> App_ con el nombre  `ejercicio_toolbar` y con interfaz _Storyboard_. 
+
+### Diseño de la vista
+
+Abrimos la vista principal del _storyboard_, arrastramos un objeto `UIToolBar` y lo situamos en la parte superior. También vamos a añadir un objeto `UILabel` en el centro de la vista.
 
 ![ToolBar básico](.gitbook/assets/toolbar_empty.png "ToolBar básico")
 
@@ -463,7 +487,6 @@ Ahora vamos a añadir los elementos que deseemos sobre el _ToolBar_. En nuestro 
 
 Como podemos observar, la función del objeto _Flexible Space_ no es más que añadir un espacio flexible entre dos objetos dentro de un _ToolBar_. Una vez que tenemos la barra con todos sus elementos vamos a definir los elementos dentro de la clase. Dentro del código de la clase `ViewController` añadimos los siguientes outlets:
 
-
 ```swift
 @IBOutlet weak var toolBar: UIToolbar!
 @IBOutlet weak var textField: UITextField!
@@ -473,7 +496,11 @@ Como podemos observar, la función del objeto _Flexible Space_ no es más que a�
 @IBOutlet weak var segmentLabel: UILabel!
 ```
 
-Seguidamente tenemos que enlazar los _outlets_ dentro de la vista. Si ejecutamos el código, veremos que el _toolbar_ y el _label_ salen descolocados (si es que salen). Vamos a añadir _constraints_ desde XCode para fijar los márgenes. Selecciona el toolbar, y añade las siguientes _constraints_ (arriba, izquierda, derecha) y marca _Constrain to margins_ para que no se solape con la barra de estado):
+Seguidamente tenemos que enlazar los _outlets_ dentro de la vista. Si ejecutamos el código, es posible que el _toolbar_ y el _label_ salgan descolocados (o que no salgan) cuando rotemos el dispositivo. 
+
+### Ajuste de las _constraints_
+
+Vamos a añadir _constraints_ desde XCode para fijar los márgenes. Selecciona el toolbar, y añade las siguientes _constraints_ (arriba, izquierda, derecha) marcando _Constrain to margins_ para que no se solape con la barra de estado:
 
 ![Toolbar constraints](.gitbook/assets/toolbar_constraints.png "Toolbar constraints")
 
@@ -485,7 +512,9 @@ Puedes ver los _constraints_ añadidos para cada elemento en el _Size inspector_
 
 ![Label size inspector](.gitbook/assets/toolbar_size_inspector.png  "Label size inspector")
 
-Ahora vamos a implementar la acción del _Segmented Control_, para ello declaramos el siguiente método dentro de la clase `ViewController`:
+### Acciones
+
+Ahora vamos a implementar la acción del _Segmented Control_. Para ello declaramos el siguiente método dentro de la clase `ViewController`:
 
 
 ```swift
@@ -494,9 +523,13 @@ Ahora vamos a implementar la acción del _Segmented Control_, para ello declaram
 }
 ```
 
-Para que el método se llame cuando se pulsa un botón del _Segmented Control_ debemos enlazarlo dentro de la vista. En este punto ya podemos ejecutar el proyecto por primera vez y comprobar que al pulsar sobre uno de los botones del _Segmented Control_ la etiqueta _Label_ cambia.
+Para que el método se invoque cuando se pulsa un botón del _Segmented Control_, deberemos enlazarlo con la vista. 
 
-Ya tenemos un objeto _ToolBar_ con una personalización básica funcionando. Ahora vamos a personalizarlo un poco más: vamos a añadirle una imagen de fondo, a asignar un color de fondo al _Segmented Control_ y a modificar el diseño del _TextField_. Para hacer todo esto debemos cambiar el método `viewDidLoad` de la clase `ViewController` de forma que quede de la siguiente manera:
+En este momento ya podemos ejecutar el proyecto por primera vez y comprobar que al pulsar sobre uno de los botones del _Segmented Control_ la etiqueta _Label_ cambia.
+
+### Personalización avanzada
+
+Ya tenemos un objeto _ToolBar_ con una personalización básica funcionando. Ahora vamos a cambiarlo un poco más: vamos a añadirle una imagen de fondo, a asignar un color de fondo al _Segmented Control_ y a modificar el diseño del _TextField_. Para hacer todo esto debemos cambiar el método `viewDidLoad` de la clase `ViewController` de forma que quede de la siguiente manera:
 
 ```swift
 override func viewDidLoad() {
@@ -522,8 +555,8 @@ override func viewDidLoad() {
 ```
 
 Para que el código funcione debemos descargarnos las imágenes desde <a
-href=".gitbook/assets/imagenes_toolbar.zip">aquí</a> y añadirlas a los _Assets_ del proyecto. Una vez hecho esto ya podemos ejecutar el proyecto y ver cómo ha cambiado. De esta forma tendremos nuestro componente _ToolBar_ bastante personalizado, dándole a la aplicación un aspecto visual diferenciado.
+href=".gitbook/assets/imagenes_toolbar.zip">aquí</a> y añadirlas a los _Assets_ del proyecto. Una vez hecho esto ya podemos ejecutarlo y ver cómo ha cambiado. De esta forma tendremos nuestro componente _ToolBar_ bastante personalizado, dándole a la aplicación un aspecto visual diferenciado.
 
 ![ToolBar personalizado](.gitbook/assets/toolbar_final.png "ToolBar personalizado")
 
-La metodología que acabamos de seguir nos serviría también para personalizar los componentes `UITabBar` y `UINavigationBar`.
+La metodología que acabamos de seguir nos serviría también para personalizar los componentes `UITabBar` y `UINavigationBar`, entre otros.
