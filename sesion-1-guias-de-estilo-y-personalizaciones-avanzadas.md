@@ -468,11 +468,11 @@ _d)_ Cuando hayamos terminado, comprobamos que la aplicación funciona según lo
 
 ---
 
-## Ejercicio 2- Personalización de _ToolBars_
+## Ejercicio 2- Personalización de ToolBars
 
 Los _ToolBars_, al igual que la mayor parte de componentes, se pueden personalizar para conseguir las funcionalidades que deseemos para nuestras apps. En el siguiente ejemplo vamos a crear una vista _ToolBar_ personalizada con una imagen de fondo, estilos para los botones, añadiendo botones de distinto tipo, etc.
 
-Comenzamos creando un nuevo proyecto de tipo _iOS -> App_ con el nombre  `ejercicio_toolbar` y con interfaz _Storyboard_. 
+Comenzamos creando un nuevo proyecto de tipo _iOS > App_ con el nombre  `ejercicio_toolbar` y con interfaz _Storyboard_. 
 
 ### Diseño de la vista
 
