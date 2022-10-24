@@ -470,9 +470,10 @@ _d)_ Cuando hayamos terminado, comprobamos que la aplicación funciona según lo
 
 Los _ToolBars_, al igual que la mayor parte de componentes, se pueden personalizar para conseguir las funcionalidades que deseemos para nuestras apps. En el siguiente ejemplo vamos a crear una vista _ToolBar_ personalizada con una imagen de fondo, estilos para los botones, añadiendo botones de distinto tipo, etc.
 
-Comenzamos creando un nuevo proyecto de tipo _iOS > App_ con el nombre  `ejercicio_toolbar` y con interfaz _Storyboard_. 
+Comenzamos creando un nuevo proyecto de tipo _iOS > App_ con el nombre  `ejercicio_toolbar` y con interfaz _Storyboard_.
 
-### Diseño de la vista
+
+### Diseño de la vista
 
 Abrimos la vista principal del _storyboard_, arrastramos un objeto `UIToolBar` y lo situamos en la parte superior. También vamos a añadir un objeto `UILabel` en el centro de la vista.
 
@@ -496,7 +497,7 @@ Como podemos observar, la función del objeto _Flexible Space_ no es más que a�
 
 Seguidamente tenemos que enlazar los _outlets_ dentro de la vista. Si ejecutamos el código, es posible que el _toolbar_ y el _label_ salgan descolocados (o que no salgan) cuando rotemos el dispositivo. 
 
-### Ajuste de las constraints
+### Ajuste de las constraints
 
 Vamos a añadir _constraints_ desde XCode para fijar los márgenes. Selecciona el toolbar, y añade las siguientes _constraints_ (arriba, izquierda, derecha) marcando _Constrain to margins_ para que no se solape con la barra de estado:
 
