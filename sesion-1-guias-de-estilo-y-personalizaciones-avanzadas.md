@@ -54,11 +54,8 @@ Existen distintas estrategias de diseño de aplicaciones. Apple nos recomienda r
 * 4) Usar el listado de tareas final para definir el tipo de interfaz gráfica a utilizar, los controles y terminología, etc.
 -->
 
-#### Diseño según el dispositivo
-
 La aplicación que diseñes debe estar totalmente adaptada a un dispositivo iOS, no a otro tipo ni a web. El usuario lo agradecerá (y Apple, cuando lo revise, también). La inmensa mayoria de usuarios de iOS están acostumbrados al uso de botones, barras de navegación, _Tab Bars_, etc. Debemos, en la medida de lo posible, hacer uso de toda esta serie de componentes que son diseñados de forma específica para dispositivos iOS y con los que los usuarios están muy familiarizados.
 
-#### Componentes
 
 En <a href="https://developer.apple.com/design/human-interface-guidelines/components/all-components">este enlace</a> se pueden ver todos los componentes que podemos usar en nuestras apps. Se dividen en:
 
@@ -82,8 +79,6 @@ Los elementos del interfaz de _UIKit_ se dividen en tres categorías principales
 * [_Controls_](https://developer.apple.com/design/human-interface-guidelines/ios/controls/buttons/): Inician acciones y transmiten información. Son los botones, _switches_, campos de texto e indicadores de progreso, entre otros.
 --->
 
-
-#### Recomendaciones generales
 
 Es importante que las aplicaciones funcionen correctamente en todos los dispositivos que puedan usarlas. También hay que asegurarse antes de publicar en _App Store_ de que no hay _bugs_, ya que si estos existen Apple puede rechazar la aplicación, o si aparecen después los usuarios podrían puntuarla mal o deje de usarla. Existen una serie de puntos a tener en cuenta en este caso:
 
@@ -290,6 +285,9 @@ Las extensiones pueden ser de tipo _widget_, para realizar acciones desde el not
 ![Action](.gitbook/assets/share_action_appex_2x.png "Action")
 
 Básicamente estos son los conceptos principales de la guía de estilo de Apple, aunque hay más tecnologías que pueden verse en su <a href="https://developer.apple.com/ios/human-interface-guidelines/">guía de estilo</a>.
+
+
+----
 
 # Ejercicios
 
