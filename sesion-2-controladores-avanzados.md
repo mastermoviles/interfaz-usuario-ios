@@ -547,6 +547,8 @@ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: Inde
 
 Como puede verse este método asigna una fuente de datos u otra dependiendo de si la barra de búsqueda está seleccionada o no.
 
+![Resultado final del controlador de búsqueda](.gitbook/assets/search-final.png "Resultado final del controlador de búsqueda")
+
 Esto es lo básico para crear una barra de búsqueda asociada a una tabla. Como puedes ver, el diseño de Cocoa podría ser más sencillo pero tampoco es es demasiado complicado, sobre todo si se compara con cómo se hacía antes de iOS7.
 
 <!---
