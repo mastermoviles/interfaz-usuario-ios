@@ -498,7 +498,7 @@ Como podemos observar, la función del objeto _Flexible Space_ no es más que a�
 
 Seguidamente tenemos que enlazar los _outlets_ dentro de la vista. Si ejecutamos el código, es posible que el _toolbar_ y el _label_ salgan descolocados (o que no salgan) cuando rotemos el dispositivo. 
 
-### Ajuste de las _constraints_
+### Ajuste de las constraints
 
 Vamos a añadir _constraints_ desde XCode para fijar los márgenes. Selecciona el toolbar, y añade las siguientes _constraints_ (arriba, izquierda, derecha) marcando _Constrain to margins_ para que no se solape con la barra de estado:
 
