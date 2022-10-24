@@ -416,7 +416,7 @@ La aplicación funciona y se muestra una tabla, aunque no tiene barra de navegac
 ```
 
 
-### Personalización con efecto _zebra_
+### Personalización con efecto zebra
 
 Una vez tenemos las celdas hechas vamos a personalizar la tabla un poco más, añadiendo un fondo a las celdas pares y otro a las impares, lo que se conoce como efecto _zebra_. Para esto necesitaremos dos imágenes más que se pueden descargar <a
 href=".gitbook/assets/img_fondo_celdas.zip">aquí</a> y añadirlas a los _Assets_.
@@ -440,7 +440,7 @@ Si ejecutamos ahora el proyecto tendremos nuestra tabla con las celdas personali
 
 ![Celdas final](.gitbook/assets/cell_final.png "Resultado de celdas personalizadas")
 
-### Ajuste de las _constraints_
+### Ajuste de las constraints
 
 Sólo hay un problema: como hemos comentado anteriormente, se ha diseñado la vista para un iPhone en concreto (iPhone 14 Pro por defecto), y si ejecutamos el simulador con otro iPhone (por ejemplo el SE) los elementos de la celda nos saldrán descolocados. Para que salgan bien nos falta ajustar las _constraints_ de la vista.
 
