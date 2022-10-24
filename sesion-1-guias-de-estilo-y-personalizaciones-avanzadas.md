@@ -319,7 +319,7 @@ Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo pr
 
 ![Inicialización ejercicio celdas](.gitbook/assets/cell_init.png "Inicialización ejercicio celdas")
 
-Para empezar vamos a añadir al _storyboard_ principal (_Main_) un nuevo controlador de tipo `Table View Controller' (usando el botón **+** en la parte superior del interfaz de XCode).
+Para empezar vamos a añadir al _storyboard_ principal (_Main_) un nuevo controlador de tipo `Table View Controller` (usando el botón **+** en la parte superior del interfaz de XCode).
 
 Ahora haremos que nuestra tabla sea lo primero que aparezca cuando se lance la app. Esto se puede hacer, por ejemplo, arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo _Table View Controller_. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero `ViewController.swift`, ya que estaba asociado a la vista que hemos borrado.
 
