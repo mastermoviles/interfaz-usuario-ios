@@ -15,18 +15,20 @@ Los dispositivos iOS también admiten varias pulsaciones al mismo tiempo, lo que
 
 ## Ejercicio 1 - Gestos
 
-Comenzamos creando un proyecto en XCode de tipo _Single View_ que guardaremos con el nombre `ejercicio_touch`. Creamos un objeto de tipo _UIImageView_, lo arrastramos a la vista colocándolo en la parte superior izquierda de la pantalla, y lo enlazamos a nuestro `ViewController` para crear la propiedad, a la que llamaremos _imageView_. Arrastra la imagen <a href=".gitbook/assets/logo-master.png">logo-master.png</a> al proyecto y asígnala a la vista como se indica a continuación (aunque también se podría hacer por código):
+Comenzamos creando un proyecto en XCode de tipo _App_ con _storyboard_ que guardaremos con el nombre `ejercicio_touch`. Creamos un objeto de tipo _UIImageView_, lo arrastramos a la vista colocándolo en la parte superior izquierda de la pantalla, y lo enlazamos a nuestro `ViewController` para crear la propiedad, a la que llamaremos _imageView_. 
+
+Arrastra la imagen <a href=".gitbook/assets/logo-master.png">logo-master.png</a> al proyecto y asígnala a la vista como se indica a continuación (aunque también se podría hacer por código):
 
 ![Asignar imagen](.gitbook/assets/multitouch_logo-master.png "Asignar imagen")
 
-Ahora editamos el archivo `ViewController.swift`, y añadimos un _booleano_ llamado `tocaImagen`. Debe quedar de la siguiente forma:
+Ahora editamos el archivo `ViewController.swift`, y añadimos un _Outlet_ que enlazamos con nuestro _UIImageView_ y un _booleano_ llamado `tocaImagen`. Debe quedar de la siguiente forma:
 
 ```swift
 @IBOutlet weak var imageView: UIImageView!
 var tocaImagen = false
 ```
 
-Como se puede ver tenemos dos propiedades: una imagen que podremos mover por la pantalla, y un _booleano_ que utilizaremos para indicar si la estamos moviendo o no. Ahora añadimos al fichero `ViewController.swift` los tres métodos que gestionan los gestos:
+Como se puede ver tenemos dos propiedades: una imagen que podremos mover por la pantalla, y un _booleano_ que utilizaremos para indicar si la estamos moviendo o no. Ahora añadimos al fichero `ViewController.swift` los cuatro métodos que gestionan los gestos:
 
 ```swift
 override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,7 +67,7 @@ override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
 }
 ```
 
-Como podemos observar en el código anterior, hemos utilizado la clase de Cocoa `UITouch`. Esta clase representa el evento de toque. Al mismo tiempo que el usuario interactúa con la pantalla, iOS envía continuamente mensajes al evento correspondiente (uno de los cuatro comentados anteriormente). Cada evento incluye información sobre los distintos toques en la secuencia producida por el usuario y cada toque en particular corresponde a una instancia de la clase `UITouch`.
+Como podemos observar en el código anterior, hemos utilizado la clase de UIKit `UITouch`. Esta clase representa el evento de toque. Al mismo tiempo que el usuario interactúa con la pantalla, iOS envía continuamente mensajes al evento correspondiente (uno de los cuatro comentados anteriormente). Cada evento incluye información sobre los distintos toques en la secuencia producida por el usuario y cada toque en particular corresponde a una instancia de la clase `UITouch`.
 
 Con esto último ya podemos ejecutar la aplicación y veremos que podemos pulsar sobre la imagen y arrastrarla.
 
@@ -73,7 +75,7 @@ Con esto último ya podemos ejecutar la aplicación y veremos que podemos pulsar
 
 El funcionamiento de estos métodos es muy simple. Primero se ejecuta `touchesBegan` que detecta el primer _toque_ sobre la pantalla, en el comprobamos si la posición del toque está dentro del cuadro (_frame_) del `UIImageView`. Si es así actualizamos la variable booleana a `true`, y en caso contrario no hacemos nada. En el momento en que arrastremos el dedo sobre la pantalla se ejecutará continuamente el método `touchesMoved`. En este, si la variable booleana `tocaImagen` está a `true` actualizamos la posición de la imagen a la posición detectada, y en caso contrario no hacemos nada. Por último, cuando dejamos de pulsar la pantalla se ejecutará el método `touchesEnded` el cual simplemente volverá a actualizar la variable booleana a `false`.
 
-En caso de que queramos detectar varios toques al mismo tiempo, primero deberemos activarlo, por ejemplo en `viewDidLoad`:
+Si queremos detectar varios toques al mismo tiempo, primero deberemos activarlo, por ejemplo en `viewDidLoad`:
 
 ```swift
    self.imageView.isMultipleTouchEnabled = true
@@ -106,11 +108,11 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 }
 ```
 
-En el fragmento de código anterior, si se ha realizado alguna pulsación distinguimos primero el número de dedos y luego comprobamos el número de pulsaciones rápidas (equivalente a un doble click del ratón). Esto es un claro ejemplo de gestión de la función _multitouch_ de iOS y, como se puede ver, es bastante simple de implementar.
+En el fragmento de código anterior, si se ha hecho alguna pulsación distinguimos primero el número de dedos y luego comprobamos el número de pulsaciones rápidas (equivalente a un doble click del ratón). Esto es un claro ejemplo de gestión de la función _multitouch_ de iOS y, como se puede ver, es bastante simple de implementar.
 
 > Para simular dos pulsaciones al mismo tiempo en el simulador de iPhone/iPad de XCode, podemos pulsar la tecla `alt` (opción) mientras movemos el cursor.
 
-Desde _XCode 7_ existe la opción de usar <a href="https://developer.apple.com/ios/3d-touch/">_3D touch_</a> para iPhone 6S/7 y iPad Pro, y desde _XCode 7.3_ podemos usar el simulador (antes estaba limitado a dispositivos reales). No vamos a entrar en detalles sobre el _3D Touch_, pero si quieres saber más la clase `UITouch` tiene una propiedad adicional llamada `force` que se usa para medir la fuerza de la pulsación del usuario con respecto a una fuerza máxima cuyo valor es `maximumPossibleForce`.
+Desde _XCode 7_ existe la opción de usar _3D touch_, que básicamente consiste en un sensor de presión para la pantalla de forma que se puedan ejecutar distintas acciones en función del grado de presión. Desde _XCode 7.3_ podemos usar el simulador para esto (antes estaba limitado a dispositivos reales). No vamos a entrar en detalles sobre el _3D Touch_, pero si quieres saber más la clase `UITouch` tiene una propiedad adicional llamada `force` que se usa para medir la fuerza de la pulsación del usuario con respecto a una fuerza máxima cuyo valor es `maximumPossibleForce`.
 
 ```swift
 if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available {
@@ -118,7 +120,7 @@ if self.traitCollection.forceTouchCapability == UIForceTouchCapability.available
 }
 ```
 
-Con un iPad Pro también se puede usar un lápiz digital (_Apple Pencil_) en el dispositivo. Podemos distinguir un trazo del lápiz de una pulsación del dedo mediante la siguiente condición:
+En algunos modelos de iPad también se puede usar un lápiz digital (_Apple Pencil_). Podemos distinguir un trazo del lápiz de una pulsación del dedo mediante la siguiente condición:
 
 ```swift
 if touch.type == .stylus {
@@ -126,15 +128,17 @@ if touch.type == .stylus {
 }
 ```
 
-Además, en el iPhone 7 Apple ha introducido _Haptic Feedback_, que permite responder físicamente a las interacciones del usuario con la pantalla. Para más información, se puede consultar la <a href="https://developer.apple.com/reference/uikit/uifeedbackgenerator"> referencia</a> de la clase `UIFeedbackGenerator`.
+Además, desde el iPhone 7 Apple ha introducido _Haptic Feedback_, que permite responder físicamente a las interacciones del usuario con la pantalla. Para más información, se puede consultar la <a href="https://developer.apple.com/reference/uikit/uifeedbackgenerator"> referencia</a> de la clase `UIFeedbackGenerator`.
 
-## UIGestureRecognizer: Reconocimiento de gestos multitáctiles
 
-En el punto anterior hemos visto como mover un objeto por la pantalla usando los métodos de detección de pulsaciones en la pantalla y programando todo el código nosotros.
+
+## Reconocimiento de gestos multitáctiles con UIGestureRecognizer
+
+En el apartado anterior hemos visto como mover un objeto por la pantalla usando los métodos de detección de pulsaciones en la pantalla y programando todo el código nosotros.
 
 Esto está bien para gestos simples, pero el problema de lo que hemos implementado anteriormente es que si queremos detectar un gesto como un _swipe_, tendremos que registrar las notificaciones para cada toque de las vistas (usando `touchesBegan`, `touchesMoved` y `touchesEnded`). En las primeras versiones de iOS cada programador escribía código distinto para detectar los toques en la pantalla, provocando bugs e incosistencias entre apps.
 
-Para evitar esto, hace mucho tiempo (iOS 3) Apple añadió la clase `UIGestureRecognizer` para los gestos comunes en iOS. Esta clase nos permite gestionar los toques, efecto "pellizco" (por ejemplo para hacer zoom), rotaciones, swipes, pans, y pulsaciones largas, entre otras. Usando esta clase no sólo ahorramos mucho código sino que también hacemos que nuestras apps sean consistentes. Los gestos que podemos gestionar en iOS son los siguientes:
+Para evitar esto, hace mucho tiempo (iOS 3) Apple añadió la clase `UIGestureRecognizer` para los gestos comunes en iOS. Esta clase nos permite gestionar los toques, el efecto "pellizco" (por ejemplo para hacer zoom), rotaciones, swipes, pans, y pulsaciones largas, entre otras. Usando esta clase no sólo ahorramos mucho código sino que también hacemos que nuestras apps sean consistentes. Los gestos que podemos gestionar en iOS son los siguientes:
 
 * Toque (_tap_): Consiste en presionar o hacer "click" sobre un botón o cualquier objeto que esté en pantalla.
 * Arrastre (_drag_): Mover el dedo sobre la pantalla en una dirección, puede usarse para navegar sobre los elementos de una tabla, por ejemplo.
@@ -148,17 +152,17 @@ zona que se pulsa.
 * Agitar (_shake_): Para inicializar una acción de deshacer (undo) o rehacer (redo).
 * 3D touch (_hard press_): Los modelos posteriores a iPhone 6S añaden un gesto 3D que se activa cuando pulsamos la pantallas con una presión mayor. Se usa para mostrar información como un _peek_ (una vista flotante) o _pop_ (menú contextual).
 
-Puedes ver vídeos de ejemplo para cada movimiento en la guía de estilo, sección <a href= "https://developer.apple.com/ios/human-interface-guidelines/interaction/gestures/">Interaction > Gestures</a>. También se puede consultar más información sobre _3D touch_ <a href="https://developer.apple.com/ios/3d-touch/">aquí</a>.
+Puedes ver los movimientos en detalle en la guía de estilo, sección <a href= "https://developer.apple.com/design/human-interface-guidelines/inputs/touchscreen-gestures">Inputs > Touchscreen gestures</a>. 
 
-Usar `UIGestureRecognizer` es muy sencillo, simplemente hay que:
+Usar la clase `UIGestureRecognizer` es muy sencillo, simplemente hay que:
 * Crear un _Gesture Recognizer_. Cuando se crea un elemento de esta clase debemos especificar una función _callback_. Esta función se llamará cuando los gestos empiecen, cambien o terminen.
 * Añadir un _Gesture Recognizer_ a la vista. Cada _gesture recognizer_ se asocia con una (y **sólo una**) vista. Cuando se produce un gesto dentro de los límites de esa vista, el _recognizer_ mirará si coincide con el tipo de gesto buscado, y si es así se notificará mediante la función _callback_.
 
-Podemos añadir un _Gesture Recognizer_, bien mediante código o usando el storyboard. Vamos a ver primero cómo hacerlo mediante código (y luego lo veremos con storyboard), haciendo un ejercicio sencillo similar al anterior.
+Podemos añadir un _Gesture Recognizer_ mediante código o usando el storyboard. Veremos como hacerlo de las dos formas mediante un ejercicio sencillo similar al anterior.
 
 ## Ejercicio 2 - Multitouch
 
-Crea un nuevo proyecto y llámalo `ejercicio_multitouch`. Como en el anterior, añade una _UIImageView_ en la parte superior izquierda de la vista y asígnale la imagen _logo-master_. Recuerda marcar para el `UIImageView` desde el Storyboard las casillas `User Interaction Enabled` y `Multiple Touch`, o alternativamente hacerlo mediante código en _viewDidLoad_:
+Crea un nuevo proyecto y llámalo `ejercicio_multitouch`. Como en el anterior, añade una _UIImageView_ en la parte superior izquierda de la vista, asígnale la imagen _logo-master_ y enlázala con el controlador. Recuerda marcar para el `UIImageView` desde el Storyboard las casillas `User Interaction Enabled` y  seleccionar `Multiple Touch`. Alternativamente puedes hacerlo mediante código en _viewDidLoad_:
 
 ```swift
 self.imageView.isUserInteractionEnabled = true
@@ -189,9 +193,9 @@ Ahora implementamos el método `handleTap`:
 }
 ```
 
-Si volvemos a compilar la aplicación veremos ya nos sale el mensaje cuando pulsamos sobre la imagen.
+Si volvemos a ejecutar la aplicación veremos que aparece el mensaje "Tap" cuando pulsamos sobre la imagen.
 
-A continuación vamos a añadir los gestos de arrastre, rotación y el de "pellizcar", de la misma manera que hemos implementado el de pulsación:
+A continuación vamos a añadir los gestos de arrastre, rotación y pellizco de la misma manera que hemos implementado el de pulsación:
 
 ```swift
   // Gesto de pulsar y arrastrar
@@ -258,9 +262,10 @@ En total podemos usar los siguientes gestos en nuestras aplicaciones, además de
 * `UIPanGestureRecognizer`
 * `UIScreenEdgePanGestureRecognizer`
 * `UILongPressGestureRecognizer`
+* `UIHoverGestureRecognizer`
 
 Y esto es lo básico para poder implementar reconocimiento de gestos en nuestra aplicación.
 
-Para finalizar vamos a implementar un gesto adicional, pero en lugar de hacerlo con código esta vez lo haremos desde el Storyboard, para ver una forma alternativa. Para hacerlo de esta forma (aunque probablemente es más rápido desde código), selecciona el gesto _Long press Gesture Recognizer_ desde la _Biblioteca de objetos_, y arrástralo sobre la imagen.
+Para finalizar vamos a implementar un gesto adicional, pero en lugar de hacerlo mediante código lo haremos desde el _storyboard_ para verlo de una forma alternativa. Para añadirlo desde el _storyboard_ (aunque probablemente es más rápido desde código), selecciona el gesto _Long press Gesture Recognizer_ de la Librería (con el botón `+`) y arrástralo sobre la imagen.
 
-Puedes cambiar desde el _Interface builder_ sus parámetros, como por ejemplo la duración mínima. Finalmente asigna un método al gesto, arrastrando el objeto al código de la clase y seleccionando _Action_, y conecta el delegado con nuestro `ViewController`. El método debe imprimir el mensaje `print("long press")` cuando se realice una pulsación larga sobre la imagen. Con el botón derecho sobre el gesto puedes ver con qué objeto se relaciona y cambiarlo si es necesario.
+Puedes cambiar desde el interfaz sus parámetros, como por ejemplo la duración mínima. Finalmente asigna un método al gesto, arrastrando el objeto al código de la clase y seleccionando _Action_, y conecta el delegado con el `ViewController`. El método debe imprimir el mensaje `print("long press")` cuando se realice una pulsación larga sobre la imagen. Con el botón derecho sobre el gesto puedes ver con qué objeto se relaciona y cambiarlo si es necesario.
