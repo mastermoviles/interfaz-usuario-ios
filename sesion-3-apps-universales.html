@@ -518,7 +518,7 @@ A pesar de las recomendaciones de Apple, usar _xib_ para las vistas tiene cierta
 <ul>
 <li>Arrastra un <code>UILabel</code> a la vista principal del <em>storyboard</em> y suéltala por el centro de la vista.</li>
 <li>En el <em>storyboard</em> pincha en la parte inferior, donde aparece el modelo (por ejemplo, iPhone14).
-<img alt="Storyboard preview" src=".gitbook/assets/universalpreview.png" title="Storyboard Preview" /> y elige otro modelo, por ejemplo un iPad.</li>
+<img alt="Storyboard preview" src="gitbook/assets/universalpreview.png" title="Storyboard Preview" /> y elige otro modelo, por ejemplo un iPad.</li>
 <li>La etiqueta se moverá a otro lugar. Si lo rotamos (en la parte inferior, con el icono de un cuadrado que tiene encima una flecha), es posible que hasta desaparezca de la pantalla. </li>
 <li>Ajusta las opciones de <em>autolayout</em> para la etiqueta. Si no controlas todavía <em>autolayout</em>, puedes seleccionar el triángulo de la parte inferior  (<em>Resolve autolayout issues</em>) y elegir <em>Reset to suggested constraints</em>.</li>
 <li>Si mueves el <code>UILabel</code> a otra posición, verás que las líneas azules de guía aparecen ahora de color naranja. Esto es porque todavía tiene las <em>constraints</em> anteriores y son inconsistentes con la nueva posición. Para actualizar la vista, pincha de nuevo en el triángulo y selecciona <em>Update constraint constants</em>.</li>
@@ -539,16 +539,16 @@ A pesar de las recomendaciones de Apple, usar _xib_ para las vistas tiene cierta
 <li><strong>Tamaño</strong>. Compacto o regular.</li>
 </ul>
 <p>Básicamente (aunque en realidad es algo más complicado), los dispositivos de Apple tienen los siguientes tamaños:</p>
-<p><img alt="Size classes" src=".gitbook/assets/size_classes.png" title="Size classes" /></p>
+<p><img alt="Size classes" src="gitbook/assets/size_classes.png" title="Size classes" /></p>
 <p>En la imagen, el iPhone que se ve en arriba a la derecha es un iPhone 6s/7s <strong>plus</strong> (o iPhone X), que son más grandes que otros iphones y por tanto tienen un tamaño regular cuando el móvil está apaisado. </p>
 <p>Puedes ver un listado completo de los tamaños al final de <a href="https://developer.apple.com/design/human-interface-guidelines/foundations/layout/">este enlace</a>.</p>
-<p><img alt="Tamaños" src=".gitbook/assets/sizesios.png" title="Tamaños de dispositivos" /></p>
+<p><img alt="Tamaños" src="gitbook/assets/sizesios.png" title="Tamaños de dispositivos" /></p>
 <blockquote>
 <p>Es más complicado porque hay que tener en cuenta que <strong>no tenemos que asumir que siempre los tamaños de vista son constantes</strong>, ya que por ejemplo nuestra app en un iPad podría mostrarse en una zona compacta de la pantalla en lugar de usar la pantalla completa. Por tanto, siempre hay que diseñar las vistas en modo compacto y regular. </p>
 </blockquote>
 <p>En la ventana inferior de <em>XCode</em> podemos cambiar el tipo de dispositivo, su orientación, y en el caso del iPad, su adaptación. Independientemente de lo que seleccionemos, los cambios que hagamos aquí sobre la vista se aplicarán a <strong>todos</strong> los dispositivos.</p>
 <p>Es posible presentar un componente (por ejemplo, un botón o una etiqueta) sólo para un tamaño determinado. Para esto, puedes seleccionarlo y pinchar en el símbolo <code>+</code> que aparece junto a <code>Installed</code> en las propiedades de nuestro componente. </p>
-<p><img alt="Tamaños" src=".gitbook/assets/sizeTraitsLabel.png" title="Tamaños de dispositivos" /></p>
+<p><img alt="Tamaños" src="gitbook/assets/sizeTraitsLabel.png" title="Tamaños de dispositivos" /></p>
 <p>Si por ejemplo elegimos <em>width Compact</em> y <em>height Regular</em> (<code>wC hR</code>) y desmarcamos <code>Installed</code>, la etiqueta desaparecerá para estos tamaños (pruébalo por ejemplo con un iPhone SE). </p>
 <p>También se pueden cambiar las propiedades de los componentes en función del tamaño.  Por ejemplo: </p>
 <ul>
@@ -606,11 +606,11 @@ Para la vista del popover vamos a crear un controlador pulsando en _File > New >
 Arrastra un componente `UITableViewController` al storyboard, e indica que su controlador va a ser nuestro recien creado `TableViewController`. Dale también un nombre al _Storyboard ID_ (llámalo _tablaStoryboard_) y marca la opción _Use Storyboard ID_,  como puede verse en la siguiente imagen. Esto lo hacemos para poder referenciar la vista desde cualquier punto de nuestro código.
 
 
-![Configuración de la vista](.gitbook/assets/popover.png "Configuración de la vista _popover_")
+![Configuración de la vista](gitbook/assets/popover.png "Configuración de la vista _popover_")
 
 En la pestaña de _Attributes Inspector_ de la celda escribimos un identificador para ella: _TableViewCell_.
 
-![Configuración de la celda](.gitbook/assets/popover_identifier.png "Configuración de la celda")
+![Configuración de la celda](gitbook/assets/popover_identifier.png "Configuración de la celda")
 
 Ahora vamos a configurar el controlador que se verá en el _popover_, es decir, la tabla a mostrar cuando se pulse el botón. Para ello editamos `TableViewController.swift` con el siguiente código:
 
@@ -724,9 +724,9 @@ Como puedes ver, en la última línea del método `accionOpciones` hemos indicad
 <h2 id="split-view">Split View<a class="headerlink" href="#split-view" title="Permanent link">&para;</a></h2>
 <p>Un <strong>Split View</strong> o <em>Vista divida</em> es, como hemos comentado anteriormente, una combinación de dos vistas, una maestra y una detalle.</p>
 <p>En modo horizontal (<em>landscape mode</em>), la primera vista (maestra) es equivalente en anchura a una vista de iPhone cuando se encuentra en orientación vertical. Esta vista maestra se suele usar para la navegación principal dentro de un listado de opciones de la aplicación. Por otro lado, la vista de la derecha (detalle), que corresponderá a la porción más grande de la pantalla, mostrará la información en detalle que hayamos seleccionado en la vista de la izquierda. Este es el uso que Apple propone para este tipo de controlador, aunque puede tener muchos más.</p>
-<p><img alt="Split View" src=".gitbook/assets/splitview_landscape.png" title="Split View en modo horizontal" /></p>
+<p><img alt="Split View" src="gitbook/assets/splitview_landscape.png" title="Split View en modo horizontal" /></p>
 <p>En modo vertical (<em>portrait mode</em>), el <em>Split View</em> cambia y puede verse como un <em>Navigation Bar</em> con dos vistas. La primera es la vista maestra, y la segunda la vista detalle. Esta transformación hace falta programarla si no hacemos uso de las plantillas de XCode. Por tanto, sólo una de las vistas ocupará toda la pantalla del iPad, como podemos ver en la siguiente imagen:</p>
-<p><img alt="Split View vertical" src=".gitbook/assets/splitview_portrait.png" title="Split View vertical" /></p>
+<p><img alt="Split View vertical" src="gitbook/assets/splitview_portrait.png" title="Split View vertical" /></p>
 <ul>
 <li>Es muy recomendable que los <em>Split View Controllers</em>  sean sólo root controllers, por lo que normalmente sólo debemos usarlos en la primera pantalla.</li>
 <li>No podemos añadir un <em>Split View Controller</em> dentro de un <em>Navigation Controller</em>. Esto implica que si lo programamos nosotros en lugar de usar la plantilla perderemos los botones de navegación. Por tanto, tendremos que implementar nosotros la lógica de navegación, como vamos a hacer a continuación.</li>
@@ -880,7 +880,7 @@ Haremos la llamada a este método desde `viewDidLoad` de `MasterViewController` 
 <div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">crearListaTablets</span><span class="p">()</span>
 </code></pre></div>
 
-Las imágenes de las tablets las podemos descargar desde <a href=".gitbook/assets/imagenes_tablets.zip">aquí</a>. Una vez descargadas, las descomprimimos y las arrastramos a los _Assets_.
+Las imágenes de las tablets las podemos descargar desde <a href="gitbook/assets/imagenes_tablets.zip">aquí</a>. Una vez descargadas, las descomprimimos y las arrastramos a los _Assets_.
 
 Compilamos y ejecutamos. Como se puede ver, ya tenemos los nombres en la tabla (cuando el dispositivo está girado), pero al no haber barra de navegación el contenido de la tabla se superpone a la información de la barra superior (_status bar_).
 
@@ -1038,13 +1038,13 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <p>Para empezar vamos a programar una app básica con <em>SplitViewController</em> adaptada a distintos modelos y tamaños de iPad y iPhone.</p>
 <p>Creamos un nuevo proyecto llamado <code>ejercicio_peliculas</code> con <em>iOS &gt; App</em> y <em>storyboard</em>. Selecciona un iPad en la barra de abajo para ir haciendo el diseño del <em>storyboard</em> en este dispositivo, y el mismo modelo en el simulador (en la barra superior) para ejecutarlo. </p>
 <p>Arrastra un <em>UISplitViewController</em> al <em>storyboard</em>. Mueve la flecha de inicio de la aplicación para que el nuevo controlador sea el primero cuando arranque la app y borra el controlador antiguo del <em>storyboard</em> y su fichero <code>ViewController.swift</code>. El <em>storyboard</em> debería quedar así:</p>
-<p><img alt="Split View inicial" src=".gitbook/assets/splitViewInit_storyboard.png" title="Split View inicial" /></p>
+<p><img alt="Split View inicial" src="gitbook/assets/splitViewInit_storyboard.png" title="Split View inicial" /></p>
 <p>Como puedes ver, de nuestro <em>splitViewController</em> salen dos vistas: Una maestra (la tabla) que está controlada por un <em>navigation controller</em>, y una secundaria (detalle) enlazada al <em>splitViewController</em>. Si pinchas en los atributos de este controlador podrás ver algo como lo siguiente:</p>
-<p><img alt="Split View atributos" src=".gitbook/assets/splitviewcontroller_attributes.png" title="Split View atributos" /></p>
+<p><img alt="Split View atributos" src="gitbook/assets/splitviewcontroller_attributes.png" title="Split View atributos" /></p>
 <p>Un atributo muy importante es el estilo (<em>style). Los _splitview</em> pueden tener dos o tres columnas. Lo más común es dos, pero puedes hacer una app de tres columnas y que por tanto estará asociada a tres vistas para mostrar información de segundo nivel. </p>
 <p>Puedes encontrar más información sobre <em>splitView</em> en <a href="https://developer.apple.com/documentation/uikit/uisplitviewcontroller">este enlace</a>.</p>
 <p>Tenemos una tabla y una vista detalle, pero nos faltan los ficheros de código de los controladores. Para la tabla crea un nuevo archivo con <code>File &gt; New &gt; File &gt; Cocoa touch &gt; UITableViewController</code> y llámalo <code>TableViewController</code>. Asigna el controlador a la vista:</p>
-<p><img alt="Asignación Table View Controller" src=".gitbook/assets/splitview_tvc.png" title="Asignación Table View Controller" /></p>
+<p><img alt="Asignación Table View Controller" src="gitbook/assets/splitview_tvc.png" title="Asignación Table View Controller" /></p>
 <p>Creamos otro controlador para la vista detalle, al que llamaremos <code>DetailViewController</code>, subclase de <code>UIViewController</code>, y al igual que el anterior lo asignamos en el <em>storyboard</em>.</p>
 <p>Podemos ejecutar la aplicación. En un iPad veremos que en modo <em>Portrait</em> sólo se muetra la vista detalle. Pinchando en el icono superior se muestra también la maestra. Si rotamos se muestran ambas, aunque todavía están vacías. </p>
 <p>Ahora añadimos algo de información básica para que se muestre. Para esto, añade el siguiente array en <code>TableViewController</code>:</p>
@@ -1066,9 +1066,9 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
     <span class="p">}</span>
 </code></pre></div>
 <p>Recuerda que, al igual que en el ejercicio de la barra de búsqueda, debemos registrar el identificador de la celda en nuestro <code>TableViewCell</code>:</p>
-<p><img alt="Identificador TableViewCell" src=".gitbook/assets/splitview_tvcell.png" title="Identificador TableViewCell" /></p>
+<p><img alt="Identificador TableViewCell" src="gitbook/assets/splitview_tvcell.png" title="Identificador TableViewCell" /></p>
 <p>De momento la vista detalle no tiene nada. Vamos a añadirle una etiqueta en el centro, ajustándola horizontalmente y verticalmente:</p>
-<p><img alt="Vista detalle" src=".gitbook/assets/splitView_dvc.png" title="Vista detalle" /></p>
+<p><img alt="Vista detalle" src="gitbook/assets/splitView_dvc.png" title="Vista detalle" /></p>
 <p>Conectamos la etiqueta con IBOutlet a nuestro controlador <code>DetailViewController</code>. Lo llamamos <code>etiqueta</code>:</p>
 <div class="highlight"><pre><span></span><code>    <span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">etiqueta</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
 </code></pre></div>
@@ -1086,9 +1086,9 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
     <span class="p">}</span>
 </code></pre></div>
 <p>Como puedes ver, hemos accedido al controlador <code>splitViewController</code>, y dentro de este al secundario (la vista detalle) que es de la clase <code>DetailViewController</code>. Ahora podemos acceder al <code>Outlet</code> que habíamos enlazado y ejecutar la app:</p>
-<p><img alt="Primera versión SplitViewController iPad" src=".gitbook/assets/splitview_firstversion_ipad.png" title="Primera versión splitview iPad" /></p>
+<p><img alt="Primera versión SplitViewController iPad" src="gitbook/assets/splitview_firstversion_ipad.png" title="Primera versión splitview iPad" /></p>
 <p>Como puedes ver, si rotas el dispositivo las dos vistas aparecen lado a lado. Ahora ejecuta el programa en un iPhone 14. Verás que el aspecto es distinto:</p>
-<p><img alt="Primera versión SplitViewController iPhone" src=".gitbook/assets/splitview_firstversion_iphone.png" title="Primera versión splitview iPhone" /></p>
+<p><img alt="Primera versión SplitViewController iPhone" src="gitbook/assets/splitview_firstversion_iphone.png" title="Primera versión splitview iPhone" /></p>
 <p>Sólo se muestra la vista maestra, y si pulsamos sobre una celda no se pasa a la vista detalle. El problema es que, aunque hemos cambiado la segunda vista internamente, esta no se ve.</p>
 <p>Para que se vea, añadimos lo siguiente tras la conexión con el controlador detalle (en <code>didSelectRowAt</code>):</p>
 <div class="highlight"><pre><span></span><code>            <span class="c1">// Si el controlador detalle no está presentado lo mostramos</span>
@@ -1129,7 +1129,7 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <span class="p">}</span>
 </code></pre></div>
 <p>Añadimos una llamada a este método al final de <code>viewDidLoad</code> para inicializar las películas.</p>
-<!--- También necesitarás añadir <a href=".gitbook/assets/sentido.jpg">esta imagen</a> a los `Assets`. -->
+<!--- También necesitarás añadir <a href="gitbook/assets/sentido.jpg">esta imagen</a> a los `Assets`. -->
 
 <p>Cambiamos también las siguientes lineas en el método <code>cellForRowAt</code> para mostrar en las celdas el título de la película:</p>
 <div class="highlight"><pre><span></span><code><span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">!.</span><span class="n">text</span> <span class="p">=</span> <span class="n">peliculas</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">].</span><span class="n">titulo</span>
@@ -1143,23 +1143,23 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <span class="n">detailViewController</span><span class="p">?.</span><span class="n">didChangePelicula</span><span class="p">(</span><span class="n">with</span><span class="p">:</span> <span class="n">pelicula</span><span class="p">)</span>
 </code></pre></div>
 <p>Selecciona la vista detalle en el <em>storyboard</em> y haz que sea como la que se muetra a continuación. La etiqueta <code>Titulo</code> es la que teníamos en el centro, que debes mover a la parte superior izquierda. También añadimos otro <code>UILabel</code>, un <code>UIImageView</code> y un <code>UITextView</code>:</p>
-<p><img alt="Vista universal" src=".gitbook/assets/movies_detail_first.png" title="Vista universal" /></p>
+<p><img alt="Vista universal" src="gitbook/assets/movies_detail_first.png" title="Vista universal" /></p>
 <p>Tras colocar los elementos, usa <em>Reset to suggested constraints</em> para que los <em>constraints</em> se ajusten de forma automática. Prueba también a ver la vista con otros dispositivos y orientaciones seleccionándolos en la barra inferior. </p>
 <p>Ponemos el <code>UITextView</code> sólo como lectura, para impedir que el usuario lo edite y salga un teclado cuando se pulsa sobre él. Para esto, desmarca <code>Editable</code> y <code>Selectable</code> en sus propiedades. </p>
-<p><img alt="TextView properties" src=".gitbook/assets/movies_textview.png" title="Propiedades textview" /></p>
+<p><img alt="TextView properties" src="gitbook/assets/movies_textview.png" title="Propiedades textview" /></p>
 <p>Conecta todos los elementos de la vista (<code>titulo</code>, <code>imagen</code>, <code>fecha</code> y  <code>descripcion</code>) al controlador <code>DetailViewController</code> con IBOutlets. </p>
-<p>Necesitarás descargar <a href=".gitbook/assets/sentido.jpg">esta imagen</a> y arrastrarla a los <em>Assets</em>.</p>
+<p>Necesitarás descargar <a href="gitbook/assets/sentido.jpg">esta imagen</a> y arrastrarla a los <em>Assets</em>.</p>
 <p>Por último modifica el método <code>didChangePelicula</code> para actualizar todos los outlets. En el caso de la imagen sería:</p>
 <div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">imagen</span><span class="p">.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="n">pelicula</span><span class="p">.</span><span class="n">caratula</span><span class="p">)</span>
 </code></pre></div>
 <p>Ejecuta el programa con el simulador de distintos iPhone y iPad para ver los resultados. </p>
-<p><img alt="Primera versión" src=".gitbook/assets/movies_second.png" title="Primera versión" /></p>
+<p><img alt="Primera versión" src="gitbook/assets/movies_second.png" title="Primera versión" /></p>
 <p>Seguro que en algunos casos visualmente no queda demasiado bien, pero de momento no es un problema. Vamos a ajustar mejor la vista en función del dispositivo. </p>
 <h4 id="vista-compacta-y-stacks">Vista compacta y stacks<a class="headerlink" href="#vista-compacta-y-stacks" title="Permanent link">&para;</a></h4>
 <p>Empezaremos con el diseño para tamaños compactos. Si ejecutamos el programa en un iPhone SE en <em>landscape</em>, veremos que la imagen ocupa casi toda la pantalla y deja poco espacio para el texto. En apaisado y con tamaños compactos, lo ideal sería que la imagen estuviera a la izquierda y el texto a la derecha.</p>
 <p>Existe una solución limpia para esto: usar <em>Stacks</em> para agrupar las vistas y gestionar los giros.</p>
 <p>Selecciona el <code>UIImageView</code> y el <code>UITextView</code>.  Ahora pulsa sobre el elemento <em>Stack</em>, el icono de la flecha hacia abajo en esta imagen, y selecciona <code>Stack View</code>:</p>
-<p><img alt="Stack views" src=".gitbook/assets/movies_stack.png" title="Stack views" /></p>
+<p><img alt="Stack views" src="gitbook/assets/movies_stack.png" title="Stack views" /></p>
 <p>Verás que las vistas se unen, esto es porque hemos creado un grupo con dos elementos. Como ves, un <em>Stack</em> se usa para agrupar vistas, y nos permite realizar ciertas acciones con ellas. Vamos a reajustar las <em>constraints</em> con este nuevo <em>Stack</em>, seleccionando <em>Reset to suggested constraints</em> para toda la vista detalle.  </p>
 <p>Si ejecutamos el programa, el aspecto será más o menos como el que teníamos antes. Vamos a arreglar los problemas del giro, ya que cuando ponemos un iPhone en <em>landscape</em> no se visualiza bien la película. Para ello, necesitamos conectar nuestro <em>Stack View</em> a <code>DetailViewController</code>. Llámalo <code>stackView</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">stackView</span><span class="p">:</span> <span class="bp">UIStackView</span><span class="p">!</span>
@@ -1175,22 +1175,22 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <span class="p">}</span>
 </code></pre></div>
 <p>Este método se invoca cuando iOS detecta que hay que reajustar las vistas (por ejemplo cuando se realiza un giro). En el código indicamos que cuando tengamos más espacio horizontal que vertical nuestras vistas del <em>stack</em> deben reposicionarse. Además, lo harán con una animación. Prueba a ejecutar de nuevo el programa en un iPhone, debe verse así en <em>portrait</em>:</p>
-<p><img alt="iPhone portrait stack" src=".gitbook/assets/movies_detail_portrait.png" title="iPhone stack portrait" /></p>
+<p><img alt="iPhone portrait stack" src="gitbook/assets/movies_detail_portrait.png" title="iPhone stack portrait" /></p>
 <p>Y así en <em>landscape</em>:</p>
-<p><img alt="iPhone landscape stack" src=".gitbook/assets/movies_detail_landscape.png" title="iPhone stack landscape" /></p>
+<p><img alt="iPhone landscape stack" src="gitbook/assets/movies_detail_landscape.png" title="iPhone stack landscape" /></p>
 <p>Para saber más sobre lo que podemos hacer con la clase <code>UIStackView</code>, puedes consultar su referencia  <a href="https://developer.apple.com/reference/uikit/uistackview">aquí</a>.</p>
 <h4 id="vista-regular">Vista regular<a class="headerlink" href="#vista-regular" title="Permanent link">&para;</a></h4>
 <p>Vamos a ajustar el <em>constraint</em> de la altura de la imagen para hacerla más grande en tamaños <code>wR-hR</code>, ya que en estos casos tenemos más espacio.</p>
-<p><img alt="Constraints1" src=".gitbook/assets/movies_constraint1.png" title="Constraints (1/3)" /></p>
+<p><img alt="Constraints1" src="gitbook/assets/movies_constraint1.png" title="Constraints (1/3)" /></p>
 <p>Ahora pulsamos sobre el botón <code>+</code> de la altura, añadiendo una variación para <code>wR-hR</code>:</p>
-<p><img alt="Constraints2" src=".gitbook/assets/movies_constraint2.png" title="Constraints (2/3)" /></p>
+<p><img alt="Constraints2" src="gitbook/assets/movies_constraint2.png" title="Constraints (2/3)" /></p>
 <p>Y finalmente indicamos un valor más alto:</p>
-<p><img alt="Constraints3" src=".gitbook/assets/movies_constraint3.png" title="Constraints (3/3)" /></p>
+<p><img alt="Constraints3" src="gitbook/assets/movies_constraint3.png" title="Constraints (3/3)" /></p>
 <p>Ejecutamos el programa y vemos que funciona correctamente en iPad, en cualquier orientación. Ahora vamos a cambiar el tipo de letra para <code>wR-hR</code>, de forma que se vea más grande en un iPad. Cambia sólo para tamaños <code>wR-hR</code> la fuente del texto a <em>System-20</em>, y la del título a <em>System-22</em> y en negrita:</p>
-<p><img alt="Movies text" src=".gitbook/assets/movies_text.png" title="Text size change" /></p>
+<p><img alt="Movies text" src="gitbook/assets/movies_text.png" title="Text size change" /></p>
 <p>Ahora vamos a añadir una etiqueta que contenga la fecha, pero sólo en aquellos casos en los que tengamos suficiente espacio en anchura, en orientaciones regular width: <code>wR</code>.</p>
 <p>Seleccionamos un iPad en la barra inferior del <em>storyboard</em>, e indicamos <em>Vary for traits &gt; width</em>. La barra debe cambiar a color azul. Añadimos un <em>UILabel</em> arriba a la derecha, al que pondremos el título <em>Fecha</em>, como puede verse en la siguiente imagen:</p>
-<p><img alt="Fecha" src=".gitbook/assets/movies_fecha.png" title="Fecha sólo para wR" /></p>
+<p><img alt="Fecha" src="gitbook/assets/movies_fecha.png" title="Fecha sólo para wR" /></p>
 <p>Cuando el ancho es <em>Regular</em> tenemos más espacio, es por esto que lo añadimos aquí. Esta etiqueta sólo se mostrará en los iPad cuando nuestra app esté a pantalla completa en cualquier orientación, o en el iPhone 6s/7 Plus con pantalla completa y <em>landscape</em>.</p>
 <!---
 > **Muy importante:** En XCode 8, cuando está activado _Vary for traits_ **si se usa _Reset to Suggested constraints_ los cambios se aplicarán a las vistas de todos los tamaños, no sólo de los seleccionados**, a pesar de estar la barra en azul. Si cambiamos las _constraints_ como hemos visto antes sólo se aplicarán a las vistas del tamaño seleccionado. Asimismo, si **movemos** una vista o **cambiamos** uno de sus atributos directamente desde el Storyboard con la barra en azul, en XCode 8.0 se cambiará a **todos** los tamaños, no sólo para el actual. Esto último es un bug que está arreglado en XCode 8.1.
@@ -1218,8 +1218,8 @@ Vamos a poner un código condicional para la fecha, ya que sólo se mostrará en
 -->
 
 <p>Ejecutamos el código en el simulador de iPad para ver los resultados. Deberíamos obtener algo parecido a esto:</p>
-<p><img alt="Vista iPad portrait" src=".gitbook/assets/movies_ipad_portrait.png" title="Vista iPad portrait" />
-<img alt="Vista iPad landscape" src=".gitbook/assets/movies_ipad_landscape.png" title="Vista iPad landscape" /></p>
+<p><img alt="Vista iPad portrait" src="gitbook/assets/movies_ipad_portrait.png" title="Vista iPad portrait" />
+<img alt="Vista iPad landscape" src="gitbook/assets/movies_ipad_landscape.png" title="Vista iPad landscape" /></p>
 <p>El aspecto no está mal, pero sólo es una primera aproximación. Vamos a mejorar un poco el programa con los siguientes cambios: </p>
 <ul>
 <li>
