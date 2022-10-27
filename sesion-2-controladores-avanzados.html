@@ -1,0 +1,951 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>2- Controladores avanzados - iOS avanzado (IUDM)</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#uipageviewcontroller" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="iOS avanzado (IUDM)" class="md-header__button md-logo" aria-label="iOS avanzado (IUDM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iOS avanzado (IUDM)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2- Controladores avanzados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="iOS avanzado (IUDM)" class="md-nav__button md-logo" aria-label="iOS avanzado (IUDM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    iOS avanzado (IUDM)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-1-guias-de-estilo-y-personalizaciones-avanzadas.html" class="md-nav__link">
+        1- Guías de estilo y personalizaciones avanzadas
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2- Controladores avanzados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sesion-2-controladores-avanzados.html" class="md-nav__link md-nav__link--active">
+        2- Controladores avanzados
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uipageviewcontroller" class="md-nav__link">
+    UIPageViewController
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-uipageviewcontroller" class="md-nav__link">
+    Ejercicio 1 - UIPageViewController
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-uicollectionviewcontroller" class="md-nav__link">
+    Ejercicio 2 - UICollectionViewController
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2 - UICollectionViewController">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-uicollectionviewcontroller" class="md-nav__link">
+    Ejemplo UICollectionViewController
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-3-controlador-de-busqueda" class="md-nav__link">
+    Ejercicio 3 - Controlador de búsqueda
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 3 - Controlador de búsqueda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-la-tabla" class="md-nav__link">
+    Creación de la tabla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-del-controlador-de-busqueda" class="md-nav__link">
+    Implementación del controlador de búsqueda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-3-apps-universales.html" class="md-nav__link">
+        3- Diseño de aplicaciones universales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-4-multitouch.html" class="md-nav__link">
+        4- Detección de gestos
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uipageviewcontroller" class="md-nav__link">
+    UIPageViewController
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-uipageviewcontroller" class="md-nav__link">
+    Ejercicio 1 - UIPageViewController
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-uicollectionviewcontroller" class="md-nav__link">
+    Ejercicio 2 - UICollectionViewController
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2 - UICollectionViewController">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-uicollectionviewcontroller" class="md-nav__link">
+    Ejemplo UICollectionViewController
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-3-controlador-de-busqueda" class="md-nav__link">
+    Ejercicio 3 - Controlador de búsqueda
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 3 - Controlador de búsqueda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-la-tabla" class="md-nav__link">
+    Creación de la tabla
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-del-controlador-de-busqueda" class="md-nav__link">
+    Implementación del controlador de búsqueda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>2- Controladores avanzados</h1>
+
+<p>En esta sesión veremos otros controladores que son comunes en aplicaciones iOS: el controlador paginado (<code>UIPageViewController</code>), las colecciones (<code>UICollectionViewController</code>) y el controlador de búsqueda para tablas (<code>UISearchController</code>).</p>
+<h2 id="uipageviewcontroller">UIPageViewController<a class="headerlink" href="#uipageviewcontroller" title="Permanent link">&para;</a></h2>
+<p>El controlador paginado (<em>UIPageViewController</em>) sirve para poder cambiar entre varias páginas en pantalla que contienen información similar. Es una clase bastante configurable, ya que permite modificar:</p>
+<ul>
+<li>La orientación de las vistas de las páginas (horizontal o vertical).</li>
+<li>El estilo de transición (<em>page-curl</em> o <em>scrolling</em>).</li>
+<li>Para la transición <em>page-curl</em>, la localización del eje.</li>
+<li>Para la transición <em>scrolling</em>, el espacio entre páginas.</li>
+</ul>
+<p>La clase <code>UIPageViewController</code> se considera un controlador contenedor (<em>container controller</em>). Los controladores contenedores pueden usarse para almacenar y gestionar múltiples <em>view controllers</em>, y cambiar de uno a otro cuando sea necesario. Otros ejemplos de controladores contenedores son <code>UINavigationController</code>, <code>UITabBarController</code> y <code>UISplitViewController</code>.</p>
+<!--XCode tiene una plantilla que usa como base este controlador, llamada _Page-Based Application_. Si creamos un nuevo proyecto con esta plantilla, veremos que la aplicación consiste en un libro donde podemos pasar las páginas.
+
+Si vamos a implementar una app parecida a un libro, esta plantilla es útil. Pero si no es el caso (y normalmente no lo es), es mejor programar el controlador desde cero, ya que deberíamos hacer tantas modificaciones en la plantilla que no merecería la pena.
+-->
+
+<p>Vamos a hacer una aplicación de ejemplo para ver las posibilidades de este controlador y cómo se programa.</p>
+<h2 id="ejercicio-1-uipageviewcontroller">Ejercicio 1 - UIPageViewController<a class="headerlink" href="#ejercicio-1-uipageviewcontroller" title="Permanent link">&para;</a></h2>
+<p>Esta aplicación tendrá 4 páginas que contienen información de ayuda. Los controladores paginados se suelen usar frecuentemente para esto. Nuestra app quedará del siguiente modo cuando la terminemos:</p>
+<p><img alt="Aplicación resultado" src=".gitbook/assets/pageview_overall.jpeg" title="Resultado de nuestra aplicación" /></p>
+<p>Para empezar crearemos un proyecto con la plantilla <em>App</em> y con <em>storyboard</em>. Lo llamaremos <code>ejercicio_pageview</code>.</p>
+<!---
+Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuando lo crees.
+--->
+
+<h4 id="creacion-de-las-vistas">Creación de las vistas<a class="headerlink" href="#creacion-de-las-vistas" title="Permanent link">&para;</a></h4>
+<p>Primero vamos a arrastrar un <code>UIPageViewController</code> al <em>storyboard</em> (fuera de la primera vista). Haremos lo mismo con otro <code>UIViewController</code> genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del storyboard que viene por defecto también vamos a usarlo, para superponer sobre él el controlador paginado, como veremos más adelante.</p>
+<p>Tenemos que asignar un identificador del storyboard para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre <code>PageViewController</code> al controlador <em>Page View Controller</em>, y <code>PageContentViewController</code> al  <em>UIViewController</em>.</p>
+<p><img alt="Asignación de storyboard ID" src=".gitbook/assets/pageview-controller-5.png" title="Asignación de storyboard ID" /></p>
+<p>En el <code>PageViewController</code>, verifica que el valor de transición es <code>Scroll</code> en lugar de <code>Page Curl</code>, ya que el segundo queda bien para libros pero no para nuestra aplicación.</p>
+<p><img alt="Cambio de atributo" src=".gitbook/assets/pageview-controller-5-2.png" title="Cambio de atributo" /></p>
+<h4 id="implementacion-de-la-vista-de-contenido-pagecontentviewcontroller">Implementación de la vista de contenido (PageContentViewController)<a class="headerlink" href="#implementacion-de-la-vista-de-contenido-pagecontentviewcontroller" title="Permanent link">&para;</a></h4>
+<p>Vamos a diseñar primero la vista de contenido (<code>PageContentViewController</code>), que debería quedar de forma similar a la siguiente:</p>
+<p><img alt="Diseño de la vista de contenido" src=".gitbook/assets/pageview-content.png" title="Diseño de la vista de contenido" /></p>
+<p>Tendremos un <em>label</em> arriba y una imagen detrás que ocupa toda la pantalla excepto la barra de estado superior.</p>
+<p>Ya tenemos la vista de contenido, pero nos hará falta un controlador para cambiarla dinámicamente. Crea un nuevo fichero con <em>File &gt; New File &gt; Cocoa Touch Class</em>, llámalo <code>PageContentViewController</code> y hazlo subclase de <code>UIViewController</code>, dejando desmarcado <em>Also create Xib</em>.</p>
+<p>Volvemos al storyboard, nos situamos en el <em>PageContentViewController</em> y asignamos el controlador a la vista:</p>
+<p><img alt="Asignación del controlador a la vista" src=".gitbook/assets/pageview-vca.png" title="Asignación del controlador a la vista" /></p>
+<p>Enlazamos los <em>outlets</em> de la imagen y la etiqueta al controlador. Llámalos del siguiente modo:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">titulo</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
+<span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">!</span>
+</code></pre></div>
+<p>Añade los siguientes atributos a los anteriores:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">pageIndex</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="kd">var</span> <span class="nv">titleText</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+<span class="kd">var</span> <span class="nv">imageFilename</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+</code></pre></div>
+<p>La variable pageIndex almacenará el índice de la página actual. Cambiamos también el método <code>viewDidLoad</code> para actualizar la imagen de fondo y el texto:</p>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">imageFilename</span><span class="p">)</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">titulo</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">titleText</span>
+</code></pre></div>
+<h4 id="implementacion-del-primer-controlador-viewcontroller">Implementación del primer controlador (ViewController)<a class="headerlink" href="#implementacion-del-primer-controlador-viewcontroller" title="Permanent link">&para;</a></h4>
+<p>Ya tenemos la vista de contenido. Vamos a modificar ahora la primera vista del storyboard, añadiendo un botón <em>Start again</em>, abajo y centrado:</p>
+<p><img alt="Creación botón Start" src=".gitbook/assets/pageview-firstview.png" title="Creación botón Start" /></p>
+<p>Crearemos una acción de este botón con <code>ViewController</code>. A este método lo que llamaremos <code>restart</code>.</p>
+<h4 id="implementacion-del-controlador-paginado-pageviewcontroller">Implementación del controlador paginado (PageViewController)<a class="headerlink" href="#implementacion-del-controlador-paginado-pageviewcontroller" title="Permanent link">&para;</a></h4>
+<p>La estructura que vamos a seguir es la siguiente:</p>
+<p><img alt="Estructura del ejemplo" src=".gitbook/assets/pageview-structure.jpg" title="Estructura del ejemplo" /></p>
+<p>Por tanto, nuestro controlador paginado gestionará cuatro controladores de la misma clase.</p>
+<p>Para usar este controlador, lo primero que tenemos que hacer es adoptar el protocolo <code>UIPageViewControllerDataSource</code>. El <em>data source</em> es el responsable de gestionar los controladores de las vistas de contenidos cuando se le pidan, por lo que en los métodos de este protocolo indicaremos qué contenido mostrar para cada página.</p>
+<p>En este ejemplo, usaremos la clase <code>ViewController</code> como  <em>data source</em> para la instancia de <code>UIPageViewController</code> que hemos creado. Por esto es necesario indicar que la clase <code>ViewController</code> implementa el protocolo <code>UIPageViewControllerDataSource</code>. Esta clase <code>ViewController</code> también será la responsable de proporcionar los datos de las páginas (imágenes y títulos).</p>
+<p>Abre el fichero <code>ViewController.swift</code> y añade el delegado y estas tres propiedades (el modelo de datos):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="bp">UIPageViewControllerDataSource</span><span class="p">,</span> <span class="bp">UIPageViewControllerDelegate</span> <span class="p">{</span>
+
+    <span class="kd">let</span> <span class="nv">pageTitles</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Over 200 Tips and Tricks&quot;</span><span class="p">,</span> <span class="s">&quot;Discover Hidden Features&quot;</span><span class="p">,</span> <span class="s">&quot;Bookmark Favorite Tip&quot;</span><span class="p">,</span> <span class="s">&quot;Free Regular Update&quot;</span><span class="p">]</span>
+    <span class="kd">let</span> <span class="nv">pageImages</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;page1.png&quot;</span><span class="p">,</span> <span class="s">&quot;page2.png&quot;</span><span class="p">,</span> <span class="s">&quot;page3.png&quot;</span><span class="p">,</span> <span class="s">&quot;page4.png&quot;</span><span class="p">]</span>
+
+    <span class="kd">var</span> <span class="nv">pageViewController</span> <span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">?</span>
+</code></pre></div>
+<p>Puedes descargar las imágenes que vamos a usar desde <a href=".gitbook/assets/pageview_images.zip">aquí</a>, y añadirlas a los <em>Assets</em> del proyecto.</p>
+<p>Ya hemos creado el modelo de datos, pero nos falta implementar los métodos del protocolo <code>UIPageViewControllerDataSource</code>, que deben ser al menos estos dos:</p>
+<ul>
+<li><code>viewControllerAfterViewController</code>: Aquí debemos indicar qué controlador mostrar en la siguiente página.</li>
+<li><code>viewControllerBeforeViewController</code>: Aquí debemos indicar qué controlador mostrar en la página anterior.</li>
+</ul>
+<p>Añade las siguientes líneas a  <code>ViewController.swift</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">viewControllerAtIndex</span><span class="p">(</span><span class="n">index</span> <span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">PageContentViewController</span><span class="p">?</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">.</span><span class="bp">count</span> <span class="p">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">.</span><span class="bp">count</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="kc">nil</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="c1">// Crear un nuevo controlador de contenido y pasar los datos</span>
+      <span class="kd">let</span> <span class="nv">pageContentViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">storyboard</span><span class="p">?.</span><span class="n">instantiateViewController</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;PageContentViewController&quot;</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="n">PageContentViewController</span>
+
+      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">imageFilename</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageImages</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">titleText</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">pageIndex</span> <span class="p">=</span> <span class="n">index</span><span class="p">;</span>
+
+      <span class="k">return</span> <span class="n">pageContentViewController</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">func</span> <span class="nf">pageViewController</span><span class="p">(</span><span class="kc">_</span> <span class="n">pageViewController</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">,</span> <span class="n">viewControllerBefore</span> <span class="n">viewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UIViewController</span><span class="p">?</span> <span class="p">{</span>
+
+      <span class="kd">let</span> <span class="nv">pvc</span> <span class="p">=</span> <span class="n">viewController</span> <span class="k">as</span><span class="p">!</span> <span class="n">PageContentViewController</span>
+      <span class="kd">var</span> <span class="nv">index</span> <span class="p">=</span> <span class="n">pvc</span><span class="p">.</span><span class="n">pageIndex</span><span class="p">;</span>
+
+      <span class="k">if</span> <span class="n">index</span> <span class="p">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="p">==</span> <span class="n">Foundation</span><span class="p">.</span><span class="n">NSNotFound</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="kc">nil</span>
+      <span class="p">}</span>
+
+      <span class="n">index</span> <span class="o">-=</span> <span class="mi">1</span>
+      <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">viewControllerAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">func</span> <span class="nf">pageViewController</span><span class="p">(</span><span class="kc">_</span> <span class="n">pageViewController</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">,</span> <span class="n">viewControllerAfter</span> <span class="n">viewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UIViewController</span><span class="p">?</span> <span class="p">{</span>
+
+      <span class="kd">let</span> <span class="nv">pvc</span> <span class="p">=</span> <span class="n">viewController</span> <span class="k">as</span><span class="p">!</span> <span class="n">PageContentViewController</span>
+      <span class="kd">var</span> <span class="nv">index</span> <span class="p">=</span> <span class="n">pvc</span><span class="p">.</span><span class="n">pageIndex</span><span class="p">;</span>
+
+      <span class="k">if</span> <span class="n">index</span> <span class="p">==</span> <span class="n">Foundation</span><span class="p">.</span><span class="n">NSNotFound</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="kc">nil</span>
+      <span class="p">}</span>
+
+      <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">if</span> <span class="n">index</span> <span class="p">==</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">.</span><span class="bp">count</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="kc">nil</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">viewControllerAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">index</span><span class="p">)</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p>Como puedes ver, los métodos delegados de <code>pageViewController</code> son muy sencillos. Simplemente miramos el índice actual, lo incrementamos o decrementamos en función del método y devolvemos el controlador a mostrar.</p>
+<p>El método <code>viewControllerAtIndex</code> es el que muestra el controlador indicado. Para ello, como puede verse, usamos la siguiente instrucción:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">pageContentViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">storyboard</span><span class="p">?.</span><span class="n">instantiateViewController</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;PageContentViewController&quot;</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="n">PageContentViewController</span>
+</code></pre></div>
+<p>Recuerda que habíamos asignado un <em>storyboardID</em> a los controladores. Este identificador lo hemos usado como referencia para crear las nuevas instancias, ya que si te fijas, <code>PageContentViewController</code> está suelto en el storyboard.</p>
+<p>Ya lo tenemos casi. Para mostrar un indicador de página, tenemos que indicarle a iOS el número de páginas (el número de puntos a mostrar) y qué número de página se selecciona inicialmente. Añade los siguientes métodos al final de <code>ViewController.swift</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">presentationCount</span><span class="p">(</span><span class="k">for</span> <span class="n">pageViewController</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">.</span><span class="bp">count</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">presentationIndex</span><span class="p">(</span><span class="k">for</span> <span class="n">pageViewController</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Si no se implementan estos métodos, no se mostrará el indicador de página</p>
+</blockquote>
+<p>Por último, vamos a crear el controlador paginado. Lo haremos en el método <code>viewDidLoad</code> de <code>ViewController.swift</code>. Cámbialo por el siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+
+    <span class="c1">// Creamos el controlador paginado</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">storyboard</span><span class="p">?.</span><span class="n">instantiateViewController</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;PageViewController&quot;</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="bp">UIPageViewController</span><span class="p">?</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">dataSource</span> <span class="p">=</span> <span class="kc">self</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span><span class="p">;</span>
+
+    <span class="c1">// Creamos el primer controlador de contenido</span>
+    <span class="kd">let</span> <span class="nv">startingViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">viewControllerAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">viewControllers</span> <span class="p">=</span> <span class="p">[</span><span class="n">startingViewController</span><span class="p">!]</span>
+
+    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">setViewControllers</span><span class="p">(</span><span class="n">viewControllers</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">.</span><span class="n">NavigationDirection</span><span class="p">.</span><span class="n">forward</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+
+    <span class="c1">// Cambiamos el tamaño para que quepa el botón de abajo</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span> <span class="p">=</span> <span class="n">CGRect</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="o">-</span><span class="mi">30</span><span class="p">)</span>
+
+    <span class="c1">// Añadimos el primer controlador de contenido</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">addChild</span><span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">!)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">((</span><span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">view</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">didMove</span><span class="p">(</span><span class="n">toParent</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En este método hemos creado una instancia de <code>PageViewController</code>. Después especificamos el <em>data source</em> (la fuente de datos), que es la clase actual. Creamos el primer controlador de contenido, lo añadimos a un array de controladores, y lo asignamos al controlador de la página para mostrarlo.</p>
+<p>Compilamos y ejecutamos. Debería funcionar, pero la vista sale descolocada debido a que falta ajustar las <em>constraints</em>. Para arreglarlo, seleccionamos el <em>PageContentViewController</em> en el storyboard, y marcamos <em>Reset to suggested constraints</em>. Ejecutamos de nuevo y podemos ver que el contenido ya se muestra bien, aunque falta todavía el botón de abajo. Seleccionamos nuestro <code>ViewController</code> y marcamos de nuevo <em>Reset to suggested constraints</em>. Ahora sí que vemos el botón. Lo único que nos falta son los puntos de abajo, que están ahí pero que no se ven porque son del mismo color que el fondo. Vamos a cambiarles el color.</p>
+<p>Abre el fichero <code>AppDelegate.swift</code>, y añade las siguientes líneas en <code>didFinishLaunchingWithOptions</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">pageControl</span> <span class="p">=</span> <span class="bp">UIPageControl</span><span class="p">.</span><span class="n">appearance</span><span class="p">()</span>
+<span class="n">pageControl</span><span class="p">.</span><span class="n">pageIndicatorTintColor</span> <span class="p">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">lightGray</span>
+<span class="n">pageControl</span><span class="p">.</span><span class="n">currentPageIndicatorTintColor</span> <span class="p">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">black</span>
+<span class="n">pageControl</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="p">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">white</span>
+</code></pre></div>
+<p>Si se te "chafa" el botón de <em>Start again</em>, bájalo un poco en la vista, resetea de nuevo las <em>constraints</em> y recompila.</p>
+<p>Sólo nos falta la implementación de este botón para volver a la primera página. El método <code>restart</code> en <code>ViewController.swift</code> debería quedar de la siguiente manera:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">restart</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">AnyObject</span><span class="p">)</span> <span class="p">{</span>    
+    <span class="kd">let</span> <span class="nv">startingViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">viewControllerAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">viewControllers</span> <span class="p">=</span> <span class="p">[</span><span class="n">startingViewController</span><span class="p">!]</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">setViewControllers</span><span class="p">(</span><span class="n">viewControllers</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">.</span><span class="n">NavigationDirection</span><span class="p">.</span><span class="bp">reverse</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+Si ejecutamos de nuevo la aplicación, veremos que el botón ya funciona.</p>
+<p>En este ejercicio hemos hecho la parte principal para usar un <code>UIPageViewController</code> en un storyboard. Se ha implementado la transición en <em>scroll</em>, pero este controlador es muy configurable y como hemos visto podemos  usarlo también para implementar una app con navegación de tipo libro.</p>
+<h2 id="ejercicio-2-uicollectionviewcontroller">Ejercicio 2 - UICollectionViewController<a class="headerlink" href="#ejercicio-2-uicollectionviewcontroller" title="Permanent link">&para;</a></h2>
+<p>Las colecciones pueden usarse como alternativa a las tablas cuando tenemos una distribución de los elementos de tipo rejilla (<em>grid</em>), por ejemplo.</p>
+<p><img alt="Ejemplo 1 controlador de colecciones" src=".gitbook/assets/collectionviewcontroller-ex1.png" title="Ejemplo 1 controlador de colecciones" />
+<img alt="Ejemplo 2 controlador de colecciones" src=".gitbook/assets/collectionviewcontroller-ex2.png" title="Ejemplo 2 controlador de colecciones" /></p>
+<p>Para implementar una colección es necesario indicar el número de secciones, el tamaño de las celdas, y especificar los contenidos de cada celda. El controlador de la colección automáticamente reorganizará las posiciones de las celdas en función de su tamaño y del tamaño de la pantalla.</p>
+<h3 id="ejemplo-uicollectionviewcontroller">Ejemplo UICollectionViewController<a class="headerlink" href="#ejemplo-uicollectionviewcontroller" title="Permanent link">&para;</a></h3>
+<p>Vamos a hacer un ejercicio sencillo para ver cómo funciona. Crearemos un proyecto llamado <code>ejercicio_collection</code>, de tipo <em>iOS App</em> con <em>storyboard</em>.</p>
+<p>Arrastramos al storyboard (fuera de la vista inicial) un nuevo <code>UICollectionViewController</code>, y movemos en el storyboard la flecha que apunta al controlador inicial para que ahora este sea nuestro <code>UICollectionViewController</code>. Borramos el<code>ViewController.swift</code> y también su controlador del <em>storyboard</em>, ya que no los necesitaremos. Creamos un nuevo controlador con <em>New &gt; File &gt; Cocoa Touch</em>. Lo llamaremos <code>CollectionViewController</code>, subclase de <code>UICollectionViewController</code>, dejando desmarcado <em>Also create Xib</em>.</p>
+<p>En el storyboard, seleccionamos nuestra vista e indicamos cuál va a ser el controlador:</p>
+<p><img alt="Collection View Controller asignación" src=".gitbook/assets/collection-assign.png" title="Asignación del controlador a la vista" /></p>
+<h4 id="creacion-de-las-celdas">Creación de las celdas<a class="headerlink" href="#creacion-de-las-celdas" title="Permanent link">&para;</a></h4>
+<p>En la vista de <code>UICollectionViewController</code> veremos un rectángulo en la parte superior izquierda, que se corresponde con una celda. Vamos a crear una clase propia para las celdas, de forma que podamos configurarlas para darles el aspecto que queramos. El procedimiento es similar al que hicimos para las celdas personalizadas.</p>
+<p>Creamos una nueva clase llamada <code>CollectionViewCell</code>, subclase de <code>UICollectionViewCell</code>, y desmarcando <em>Also create XIB</em>.</p>
+<p>En el storyboard, seleccionamos la celda que hay dentro de nuestro controlador de colecciones, y cambiamos la clase <code>UICollectionViewCell</code> por la que hemos creado, <code>CollectionViewCell</code>.</p>
+<p><img alt="Cell View Controller asignación" src=".gitbook/assets/collection-cell-assign.png" title="Asignación del controlador de celda a la vista" /></p>
+<p>En la pestaña de <em>Attributes Inspector</em> escribimos el identificador <strong>idCelda</strong> para nuestras celdas.</p>
+<p><img alt="Asignación del identificador de la celda" src=".gitbook/assets/collection-cellid.png" title="Asignación del identificador de la celda" /></p>
+<p>Seleccionamos el objeto <em>Collection View</em> en el <em>storyboard</em>, y en el <em>Size inspector</em> cambiamos el tamaño de las celdas (<em>Cell Size</em>) a 100 x 100 puntos.</p>
+<p><img alt="Atributos de la colección" src=".gitbook/assets/collection-attributes.png" title="Atributos de la colección" /></p>
+<p>Como puede verse, tenemos más atributos que podríamos cambiar, como el tamaño de la cabecera y pie, el espaciado entre celdas, o los <em>insets</em>, que se pueden usar para crear bordes alrededor de las celdas.</p>
+<p>También tenemos que cambiar el tamaño de la celda, seleccionando en el storyBoard nuestro <em>idCelda</em>:</p>
+<p><img alt="Atributos de la celda" src=".gitbook/assets/collectionview_cell_size.png" title="Atributos de la celda" /></p>
+<p>En este ejercicio configuraremos las celdas para que muestren una imagen. Para ello, desde el <em>Interface Builder</em> arrastramos un <code>UIImageView</code> a la celda, de forma que ocupe todo su tamaño. Crearemos un outlet de la imagen en nuestra celda personalizada y lo llamamos <code>imageView</code>.</p>
+<p><img alt="Creación de outlet de ImageView" src=".gitbook/assets/collection-linkcell.png" title="Creación de outlet de ImageView" /></p>
+<p>Ya tenemos la vista preparada, sólo falta añadir los datos.</p>
+<h4 id="configurar-los-datos">Configurar los datos<a class="headerlink" href="#configurar-los-datos" title="Permanent link">&para;</a></h4>
+<p>Nos queda configurar el <em>data source</em>, es decir, implementar los métodos delegados de <code>UICollectionViewDataSource</code> para mostrar los datos de las celdas. Abre el fichero <code>CollectionViewController.swift</code>, y mira los métodos de la sección <code>UICollectionViewDataSource</code>. Como puedes ver, nuestra clase debe implementar:</p>
+<ul>
+<li><code>numberOfSections</code>. Como en una tabla, debemos indicar el número de secciones. Este método es opcional, y si no lo implementamos se asumirá una sóla sección.</li>
+<li><code>numberOfItemsInSection</code>. Aquí indicaremos la cantidad de items (celdas) para cada sección.</li>
+<li><code>cellForItemAt</code>: Como en una tabla, en este método indicaremos el contenido de cada celda.</li>
+</ul>
+<blockquote>
+<p>Si quieres más información sobre los métodos de un protocolo o de cualquier clase Cocoa, en la vista de código de XCode puedes pinchar sobre el nombre del mismo con <em>Option+click</em> para ver la ayuda rápida, o con <em>Command+click</em> para ver más opciones. </p>
+</blockquote>
+<p>Vamos a crear los datos de nuestra aplicación. Descarga <a href=".gitbook/assets/collectionview_image_pack.zip">este</a> fichero con imágenes, y añádelas todas al proyecto. Crearemos un array en <em>CollectionViewController</em> para almacenarlas:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">foodImages</span> <span class="p">=</span> <span class="p">[</span><span class="nb">String</span><span class="p">]()</span>
+</code></pre></div>
+<p>Inicializamos el array al final del método <code>viewDidLoad</code> de <code>CollectionViewController</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">1.</span><span class="p">.&lt;</span><span class="mi">17</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">image</span> <span class="p">=</span> <span class="s">&quot;</span><span class="si">\(</span><span class="n">i</span><span class="si">)</span><span class="s">.jpg&quot;</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">foodImages</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Para un bucle <em>for</em> lo normal es usar fast enumeration, pero en casos como este (cuando tenemos rangos) podemos usar el estilo anterior.</p>
+</blockquote>
+<p>Modificamos los métodos delegados desde <code>CollectionViewController</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="kc">_</span> <span class="n">collectionView</span><span class="p">:</span> <span class="bp">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="n">section</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">foodImages</span><span class="p">.</span><span class="bp">count</span>
+<span class="p">}</span>
+
+<span class="kr">override</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="kc">_</span> <span class="n">collectionView</span><span class="p">:</span> <span class="bp">UICollectionView</span><span class="p">,</span> <span class="n">cellForItemAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UICollectionViewCell</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">collectionView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withReuseIdentifier</span><span class="p">:</span> <span class="s">&quot;idCelda&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="n">CollectionViewCell</span>
+
+    <span class="c1">// Configure the cell</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span><span class="kc">self</span><span class="p">.</span><span class="n">foodImages</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">])</span> <span class="p">{</span>
+        <span class="n">cell</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">image</span> <span class="p">=</span> <span class="n">image</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Podemos comentar el método <code>numberOfSections</code>, ya que su implementación no es obligatoria.</p>
+<p>Si ejecutamos la aplicación en el simulador, veremos algo como esto:</p>
+<p><img alt="Resultado simulador iPhone6 en portrait" src=".gitbook/assets/collection-sim-portrait-1.png" title="Resultado simulador iPhone en portrait" /></p>
+<p>Y en landscape podemos ver cómo se adapta:</p>
+<p><img alt="Resultado simulador iPhone6 en landscape" src=".gitbook/assets/collection-sim-landscape-1.png" title="Resultado simulador iPhone en landscape" /></p>
+<p>Evidentemente, no queda muy bien que las imágenes estén tan pegadas a los bordes. Vamos a cambiar esto con los <em>insets</em>, desde las propiedades de la colección:</p>
+<p><img alt="Insets" src=".gitbook/assets/collection-insets.png" title="Atributos  insets" /></p>
+<p>Como puedes ver, ahora queda algo mejor. Desde código también podemos jugar con los tamaños de los bordes cambiando los atributos del controlador en función del dispositivo, pero para este ejemplo no es necesario. Además podríamos hacer que cuando se pulse una imagen se mostrara una vista de la misma a pantalla completa, aunque esto tampoco lo implementaremos en este ejercicio.</p>
+<h2 id="ejercicio-3-controlador-de-busqueda">Ejercicio 3 - Controlador de búsqueda<a class="headerlink" href="#ejercicio-3-controlador-de-busqueda" title="Permanent link">&para;</a></h2>
+<p>En las aplicaciones iOS es común encontrar una barra de búsqueda en  asociada a una tabla en la que se muestran los resultados de la búsqueda. Este comportamiento estándar se definía, hasta <em>iOS7</em>, con la clase <code>UISearchDisplayController</code>. Este controlador era bastante complejo, por lo que <em>Apple</em> decidió cambiarlo en <em>iOS7</em> por <code>UISearchController</code>. Vamos a ver cómo se implementa este último, ya que es bastante más sencillo, aunque aun así no es trivial.</p>
+<h3 id="creacion-de-la-tabla">Creación de la tabla<a class="headerlink" href="#creacion-de-la-tabla" title="Permanent link">&para;</a></h3>
+<p>Crea un proyecto llamado <code>ejercicio_search</code> usando la plantilla <em>App</em>. Para empezar vamos a añadir al <em>storyboard</em> principal (<em>Main</em>) un nuevo controlador de tipo <code>Table View Controller</code>.</p>
+<p>Haremos que nuestra tabla sea lo primero que aparezca cuando se lance la app arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo <em>Table View Controller</em>. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero <code>ViewController.swift</code>, ya que estaba asociado a la vista que hemos borrado.</p>
+<p>Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos <em>File &gt; New &gt; File &gt; Cocoa Touch Class</em>, y le damos el nombre <code>TableViewController</code>, subclase de <code>UITableViewController</code>, dejando sin marcar "<em>Also create XIB file</em>". </p>
+<p>Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el <em>Identity Inspector</em> le asignamos la clase que hemos creado <code>TableViewController</code>, como se muestra en la imagen:</p>
+<p><img alt="Asignación del controlador TableViewController" src=".gitbook/assets/cell_tableviewcontroller.png" title="Asignación del controlador TableViewController" /></p>
+<p>También embebemos el controlador en una barra de navegación, seleccionándolo en el <em>storyboard</em> e indicando desde el menú de XCode <em>Editor &gt; Embed in &gt; Navigation Controller</em>. Para ponerle un título, añadimos el siguiente código en el método <code>viewDidLoad</code> del <code>TableViewController</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">&quot;Búsqueda&quot;</span>
+</code></pre></div>
+<p>Ahora vamoas a añadir unos datos de ejemplo a la clase <code>TableViewController</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">contenido</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;En&quot;</span><span class="p">,</span><span class="s">&quot;un&quot;</span><span class="p">,</span><span class="s">&quot;lugar&quot;</span><span class="p">,</span><span class="s">&quot;de&quot;</span><span class="p">,</span><span class="s">&quot;la&quot;</span><span class="p">,</span><span class="s">&quot;mancha&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>Y completamos el código de de esta clase para gestionar la tabla:</p>
+<div class="highlight"><pre><span></span><code>   <span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="n">section</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+        <span class="c1">// #warning Incomplete implementation, return the number of rows</span>
+        <span class="k">return</span> <span class="n">contenido</span><span class="p">.</span><span class="bp">count</span>
+    <span class="p">}</span>
+
+
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UITableViewCell</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;Cell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+
+        <span class="c1">// Configure the cell...</span>
+        <span class="kd">let</span> <span class="nv">c</span> <span class="p">=</span> <span class="n">contenido</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+        <span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">!.</span><span class="n">text</span> <span class="p">=</span> <span class="n">c</span>
+
+        <span class="k">return</span> <span class="n">cell</span>
+    <span class="p">}</span>
+</code></pre></div>
+<p>Por último, debemos enlazar la celda a nuestro controlador, indicando el nombre <code>Cell</code> que le hemos dado en el código:</p>
+<p><img alt="Enlace celda" src=".gitbook/assets/search_cell.png" title="Asignación de la celda en storyboard" /></p>
+<p>En este punto ya podemos ejecutar el código y tendremos una tabla funcional, aunque sin barra de búsqueda:</p>
+<p><img alt="Tabla vacía" src=".gitbook/assets/search_emptytable.png" title="Tabla vacía" /> </p>
+<h3 id="implementacion-del-controlador-de-busqueda">Implementación del controlador de búsqueda<a class="headerlink" href="#implementacion-del-controlador-de-busqueda" title="Permanent link">&para;</a></h3>
+<p>El controlador de búsqueda ha ido evolucionando con las distintas versiones de XCode.</p>
+<p><strong>Antes de <em>iOS7</em></strong>, esto se hacía arrastrando un objeto de tipo <em>Search Bar and Search Display Controller</em> al principio de la tabla desde el <em>Interface Builder</em>. La gestión de esto era algo  complicada, ya que teníamos varias conexiones que debíamos gestionar manualmente.</p>
+<p><strong>Ahora</strong>, <em>Search Display Controller</em> es un controlador <em>deprecated</em> (obsoleto), y <em>Apple</em> recomienda usar la clase <em>UISearchController</em> introducida en <em>iOS7</em>. Paradójicamente, esta clase no está en el <em>Interface Builder</em>, y sólo podemos usarla mediante código, pero simplifica bastante el procedimiento. Es de esta forma como vamos a hacerlo en nuestro ejemplo.</p>
+<p>Para esto, primero debemos crear nuestro <em>searchController</em>, y un array <em>searchResults</em> que contendrá los resultados filtrados de la búsqueda. Al principio de la clase <code>TableViewController</code> declararemos las siguientes variables (privadas, ya que no hace falta acceder a ellas desde fuera de la misma):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">var</span> <span class="nv">searchController</span> <span class="p">:</span> <span class="bp">UISearchController</span><span class="p">?</span>
+<span class="kd">private</span> <span class="kd">var</span> <span class="nv">searchResults</span> <span class="p">=</span> <span class="p">[</span><span class="nb">String</span><span class="p">]()</span>
+</code></pre></div>
+<p>En el método <code>viewDidLoad</code> de <code>TableViewController</code> creamos la barra de búsqueda y la inicializamos. Añadimos lo siguiente al final del método:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Creamos una tabla alternativa para visualizar los resultados cuando se seleccione la búsqueda</span>
+<span class="kd">let</span> <span class="nv">searchResultsController</span> <span class="p">=</span> <span class="bp">UITableViewController</span><span class="p">(</span><span class="n">style</span><span class="p">:</span> <span class="p">.</span><span class="n">plain</span><span class="p">)</span>
+<span class="n">searchResultsController</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">dataSource</span> <span class="p">=</span> <span class="kc">self</span>
+<span class="n">searchResultsController</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+
+<span class="c1">// Asignamos esta tabla a nuestro controlador de búsqueda</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">searchController</span> <span class="p">=</span> <span class="bp">UISearchController</span><span class="p">(</span><span class="n">searchResultsController</span><span class="p">:</span> <span class="n">searchResultsController</span><span class="p">)</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchResultsUpdater</span> <span class="p">=</span> <span class="kc">self</span>        
+
+<span class="c1">// Especificamos el tamaño de la barra de búsqueda</span>
+<span class="k">if</span> <span class="kd">let</span> <span class="nv">frame</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchBar</span><span class="p">.</span><span class="n">frame</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchBar</span><span class="p">.</span><span class="n">frame</span> <span class="p">=</span> <span class="n">CGRect</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">frame</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">frame</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mf">44.0</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// La añadimos a la cabecera de la tabla</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">tableHeaderView</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchBar</span>
+
+<span class="c1">// Esto es para indicar que nuestra vista de tabla de búsqueda se superpondrá a la ya existente</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">definesPresentationContext</span> <span class="p">=</span> <span class="kc">true</span>
+</code></pre></div>
+<p>Ahora tendremos que cambiar los métodos <em>numberOfRowsInSection</em> y <em>cellForRowAtIndexPath</em>. Esto lo haremos porque en función de si está o no activa la barra de búsqueda tendremos que mostrar una información u otra. Si la vista de la tabla es la dada por el controlador de búsqueda, tendremos que usar los elementos de la lista filtrada. En caso contrario, los de la lista principal.</p>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="n">section</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">src</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchResultsController</span> <span class="k">as</span><span class="p">!</span> <span class="bp">UITableViewController</span>
+
+    <span class="k">if</span> <span class="n">tableView</span> <span class="p">==</span> <span class="n">src</span><span class="p">.</span><span class="n">tableView</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchResults</span><span class="p">.</span><span class="bp">count</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">contenido</span><span class="p">.</span><span class="bp">count</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UITableViewCell</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;Cell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+
+    <span class="kd">let</span> <span class="nv">src</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchResultsController</span> <span class="k">as</span><span class="p">!</span> <span class="bp">UITableViewController</span>
+    <span class="kd">let</span> <span class="nv">object</span> <span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+
+    <span class="k">if</span> <span class="n">tableView</span> <span class="p">==</span> <span class="n">src</span><span class="p">.</span><span class="n">tableView</span> <span class="p">{</span>
+        <span class="n">object</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchResults</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="n">object</span> <span class="p">=</span> <span class="n">contenido</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">!.</span><span class="n">text</span> <span class="p">=</span> <span class="n">object</span>
+    <span class="k">return</span> <span class="n">cell</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Añade el protocolo de la barra de búsqueda a la clase <code>TableViewController</code>. Este protocolo se llama  <code>UISearchResultsUpdating</code>. A continuación tenemos que crear el método delegado para actualizar los datos de la tabla cuando el usuario modifique el texto de búsqueda. Añade el siguiente código:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">updateSearchResults</span><span class="p">(</span><span class="k">for</span> <span class="n">searchController</span><span class="p">:</span> <span class="bp">UISearchController</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Cogemos el texto introducido en la barra de búsqueda</span>
+    <span class="kd">let</span> <span class="nv">searchString</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchBar</span><span class="p">.</span><span class="n">text</span>
+
+
+    <span class="c1">// Si la cadena de búsqueda es vacía, copiamos en searchResults todos los objetos</span>
+    <span class="k">if</span> <span class="n">searchString</span> <span class="p">==</span> <span class="kc">nil</span> <span class="o">||</span> <span class="n">searchString</span> <span class="p">==</span> <span class="s">&quot;&quot;</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">searchResults</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">contenido</span>
+    <span class="p">}</span>
+    <span class="c1">// Si no, copiamos en searchResults sólo los que coinciden con el texto de búsqueda</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">searchPredicate</span> <span class="p">=</span> <span class="bp">NSPredicate</span><span class="p">(</span><span class="n">format</span><span class="p">:</span> <span class="s">&quot;SELF BEGINSWITH[c] %@&quot;</span><span class="p">,</span> <span class="n">searchString</span><span class="p">!)</span>
+        <span class="kd">let</span> <span class="nv">array</span> <span class="p">=</span> <span class="p">(</span><span class="kc">self</span><span class="p">.</span><span class="n">contenido</span> <span class="k">as</span> <span class="bp">NSArray</span><span class="p">).</span><span class="n">filtered</span><span class="p">(</span><span class="n">using</span><span class="p">:</span> <span class="n">searchPredicate</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">searchResults</span> <span class="p">=</span> <span class="n">array</span> <span class="k">as</span><span class="p">!</span> <span class="p">[</span><span class="nb">String</span><span class="p">]</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Recargamos los datos de la tabla</span>
+    <span class="kd">let</span> <span class="nv">tvc</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchResultsController</span> <span class="k">as</span><span class="p">!</span> <span class="bp">UITableViewController</span>
+    <span class="n">tvc</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">reloadData</span><span class="p">()</span>
+
+    <span class="c1">// Deseleccionamos la celda de la tabla principal</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">selected</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">indexPathForSelectedRow</span> <span class="p">{</span>
+        <span class="n">tableView</span><span class="p">.</span><span class="n">deselectRow</span><span class="p">(</span><span class="n">at</span><span class="p">:</span><span class="n">selected</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si ejecutamos el programa veremos que casi lo tenemos listo. El único pequeño problema es que fallará estrepitosamente cuando se pulse sobre la barra de búsqueda.</p>
+<p>Para arreglar este error, debemos asignar el prototipo de la celda del storyboard. En <code>CellForRowAt IndexPath</code> sustituye la siguiente línea:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;Cell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+</code></pre></div>
+Por esta otra:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;Cell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+</code></pre></div>
+<p>Si ejecutas de nuevo, la barra de búsqueda debe funcionar (aparece un teclado y es funcional). </p>
+<p>Sin embargo, en caso de que quisiéramos leer o usar el valor que el usuario ha seleccionado, todavía nos haría falta añadir lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nv">object</span> <span class="p">:</span> <span class="nb">String</span>
+
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">indexPath</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">indexPathForSelectedRow</span> <span class="p">{</span>
+        <span class="n">object</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">contenido</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">sc</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchResultsController</span> <span class="k">as</span><span class="p">!</span> <span class="bp">UITableViewController</span>
+        <span class="n">object</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchResults</span><span class="p">[(</span><span class="n">sc</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">indexPathForSelectedRow</span><span class="p">?.</span><span class="n">row</span><span class="p">)</span><span class="o">!</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="bp">print</span> <span class="p">(</span><span class="n">object</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Como puede verse este método asigna una fuente de datos u otra dependiendo de si la barra de búsqueda está seleccionada o no.</p>
+<p><img alt="Resultado final del controlador de búsqueda" src=".gitbook/assets/search-final.png" title="Resultado final del controlador de búsqueda" /></p>
+<p>Esto es lo básico para crear una barra de búsqueda asociada a una tabla. Como puedes ver, el diseño de Cocoa podría ser más sencillo pero tampoco es es demasiado complicado, sobre todo si se compara con cómo se hacía antes de iOS7.</p>
+<!---
+## Ejercicio 4 - UIDatePicker
+
+Este controlador puede usarse para que el usuario seleccione una fecha. Se abrirá un calendario cuyo aspecto podemos configurar.
+
+![Date picker](.gitbook/assets/datepicker-view.png "Vista de un UIDatePicker")
+
+Vamos a hacer un ejemplo muy sencillo para ver cómo implementarlo.
+
+Crearemos una aplicación llamada `ejercicio_datepicker` de tipo _Single View_. Arrastramos a la vista principal un componente `UIDatePicker` y una etiqueta (`UILabel`). Situamos la etiqueta en el centro, le damos casi toda la anchura de la pantalla, y con el _Interface Builder_ le ponemos alineamiento de texto centrado.
+
+!["Diseño de la vista"](.gitbook/assets/datepicker-design.png "Diseño de la vista")
+
+Ajusta los constraints con la opción _Reset to suggested constraints_.
+
+Arrastramos los _outlets_ a la vista `ViewController` para enlazarlos. Las propiedades deben llamarse respectivamente _pickerFecha_ y _labelFecha_, como puede verse en el siguiente código:
+
+<div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">pickerFecha</span><span class="p">:</span> <span class="bp">UIDatePicker</span><span class="p">!</span>
+<span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">labelFecha</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>   
+</code></pre></div>
+
+Ahora arrastramos de nuevo el `UIDatePicker` hacia `ViewController`, pero esta vez para crear una acción llamada `fechaCambiada`. Este es el método que se invocará cuando el usuario cambie la fecha con el controlador. Su código sería:
+
+<div class="highlight"><pre><span></span><code><span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">fechaCambiada</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">AnyObject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Cogemos la nueva fecha y la almacenamos</span>
+    <span class="kd">let</span> <span class="nv">pickerDate</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pickerFecha</span><span class="p">.</span><span class="n">date</span>
+
+    <span class="c1">// La imprimimos en la etiqueta con el formato que queramos</span>
+    <span class="kd">let</span> <span class="nv">locale</span> <span class="p">=</span> <span class="n">Locale</span><span class="p">(</span><span class="n">identifier</span><span class="p">:</span> <span class="s">&quot;es_ES&quot;</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">selectionString</span> <span class="p">=</span> <span class="n">pickerDate</span><span class="p">.</span><span class="n">description</span><span class="p">(</span><span class="n">with</span><span class="p">:</span> <span class="n">locale</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">labelFecha</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">selectionString</span>
+<span class="p">}</span>
+</code></pre></div>
+
+Como puedes ver simplemente capturamos la fecha, y la imprimimos en la etiqueta en formato de fecha española (`es_ES`). Si ejecutamos la aplicación, veremos algo parecido a lo siguiente:
+
+![Resultado](.gitbook/assets/datepicker-final.png "Resultado de la aplicación")
+
+Podemos observar que el formato final de la fecha está en castellano, pero el selector está en inglés. Esto es así porque por defecto se coge la _locale_ del dispositivo, y el simulador está en inglés. Si cambiamos la propiedad _locale_ de _default_ a _Spanish_, veremos que ahora sí sale en castellano.
+
+![Cambio de locale](.gitbook/assets/datepicker-locale.png "Cambio de locale")
+
+Puedes ver que, además del atributo _locale_, podemos seleccionar también el formato de la fecha desde el inspector de atributos del _Interface Builder_.
+
+Además de poder poner el controlador en una vista, también existe la opción de añadirlo _inline_ dentro de una tabla como puede verse en el siguiente ejemplo:
+
+![Datepicker inline](.gitbook/assets/datepicker-inline.png "UIDatePicker inline")
+
+En esta sesión no tenemos tiempo de ver cómo se implementa esta opción, ya que es algo más complicada de lo que puede parecer inicialmente, pero si quieres saber cómo se haría puedes mirar un ejemplo de código <a href="https://github.com/KoheiHayakawa/DateCell">aquí</a>.
+--->
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="sesion-1-guias-de-estilo-y-personalizaciones-avanzadas.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 1- Guías de estilo y personalizaciones avanzadas" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              1- Guías de estilo y personalizaciones avanzadas
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="sesion-3-apps-universales.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 3- Diseño de aplicaciones universales" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              3- Diseño de aplicaciones universales
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
