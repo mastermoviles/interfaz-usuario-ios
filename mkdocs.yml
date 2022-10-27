@@ -32,6 +32,9 @@ extra:
 #plugins:
 #    - pdf-export
 
+hide:
+  - toc
+
 markdown_extensions:
     - admonition
     - codehilite:
