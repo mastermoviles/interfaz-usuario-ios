@@ -10,17 +10,15 @@ a la hora de diseñar nuestras aplicaciones y el hecho de no hacerlo puede ser m
 
 Tanto el iPhone como el iPad supusieron un revolucionario giro en cuanto a diseño de interfaz. Para evitar el caos a la hora de diseñar cualquier tipo de aplicación, tras cada actualización de iOS _Apple_ plantea una serie de guías de estilo que todo desarrollador debe seguir en la medida de lo posible para diseñar una app. Estas guias de estilo no se aplican, como es lógico, a la hora de diseñar la interfaz de un juego, pero son muy útiles para crear aplicaciones.
 
-En esta sesión vamos a aprender a diseñar apps para iPhone / iPad que sean usables, accesibles y en las que el usuario perciba una buena experiencia de uso. Hay que tener en cuenta que un usuario de iOS está habituado a una serie de elementos y situaciones básicas, como la navegación dentro de vistas mediante _Navigation Controllers_, navegación por las opciones fundamentales mediante los _Tab Bar Controllers_, uso de botones, etc. Aquí haremos un resumen de todo lo que Apple propone en sus <a href="https://developer.apple.com/ios/human-interface-guidelines/">guias de estilo</a>. En esta asignatura nos centraremos en los aspectos principales de la guía, aunque es recomendable leer por completo las guías de estilo tras cada actualización de iOS, ya que las guías cambian mucho de un año para otro.
+En esta sesión vamos a aprender a diseñar apps para iPhone / iPad que sean usables, accesibles y en las que el usuario perciba una buena experiencia de uso. Hay que tener en cuenta que un usuario de iOS está habituado a una serie de elementos y situaciones básicas, como la navegación dentro de vistas mediante _Navigation Controllers_, navegación por las opciones mediante los _Tab Bar Controllers_, uso de botones, etc. Aquí haremos un resumen de todo lo que Apple propone en sus <a href="https://developer.apple.com/ios/human-interface-guidelines/">guias de estilo</a>. En esta asignatura nos centraremos en los aspectos principales de la guía, aunque es recomendable leer por completo las guías de estilo tras cada actualización de iOS, ya que las guías cambian de un año para otro.
 
-Además de la guía de estilo oficial, conviene consultar detalladamente este enlace:
-
-[iOS Design do's and don'ts](https://developer.apple.com/design/tips/)
+Además de la guía de estilo oficial, conviene consultar detalladamente este enlace: [iOS Design do's and don'ts](https://developer.apple.com/design/tips/).
 
 <!---
 [Designing for iOS](http://v1.designcode.io/iosdesign-guidelines) (este enlace no es de Apple).
 --->
 
-Veremos 3 puntos principales:
+En esta sección veremos 3 puntos principales:
 
 * Principios de diseño
 * Características de la plataforma iOS
@@ -30,7 +28,7 @@ Veremos 3 puntos principales:
 
 _Apple_ recomienda diseñar apps siguiendo estos principios:
 
-* **Claridad**. En nuestras apps el texto debe poder ser legible a cualquier tamaño, los iconos deben ser precisos y claros, los adornos poco recargados y apropiados, y debemos centrarnos principalmente en la funcionalidad. Los espacios negativos, colores, fuentes, gráficos y elementos del interfaz deben resaltar el contenido que es importante y facilitar la interactividad.
+* **Claridad**. En nuestras apps el texto debe poder ser legible a cualquier tamaño, los iconos deben ser precisos y claros, los adornos poco recargados y apropiados, y debemos centrarnos principalmente en la funcionalidad. Los espacios negativos, colores, fuentes, gráficos y elementos del interfaz deben resaltar el contenido que es importante y facilitar la interacción.
 * **Amigabilidad**. Un interfaz fluido, claro y visualmente atractivo ayuda a los usuarios a entender e interactuar con el contenido, que normalmente ocupa la pantalla completa. Es importante mantener el interfaz ligero y claro para que el contenido destaque mejor.
 * **Profundidad**. Las distintas capas visuales y el movimiento realista deben facilitar la comprensión de la jerarquía del interfaz e imprimir dinamismo. Tocar y descubrir mejora la sensación de interacción y permite el acceso a funcionalidades y contenidos adicionales sin perder el contexto. Las transiciones proporcionan una sensación de profundidad mientras se navega por el contenido.
 
@@ -41,9 +39,9 @@ En general, lo principal que deben tener las aplicaciones es:
 * Adaptabilidad: es muy recomendable que el contenido de la pantalla cambie cuando se rota el dispositivo o se usan gestos. Las vistas deben adaptarse a cambios de orientación de dispositivo, modo oscuro (_dark mode_) y tipos dinámicos, dejando que los usuarios elijan las configuraciones que prefieran desde la configuración general del dispositivo. 
 * _Feedback_: se deben confirmar las acciones y mostrar resultados para informar al usuario de que ha interactuado con nuestra app.
 
-Antes de comenzar a diseñar una app también es muy importante conocer quiénes son los usuarios a los que nos dirigimos, es decir, el público objetivo, y en función de esto definir la interfaz gráfica, los controles, terminología, etc. No es lo mismo diseñar una app para niños que una de contabilidad, o una app para empresas.
+Antes de comenzar a diseñar una app también es muy importante conocer quiénes son los usuarios a los que nos dirigimos, es decir, el público objetivo, y en función de esto definir la interfaz gráfica, los controles, terminología, etc. No es lo mismo diseñar una app para niños que una de contabilidad, por ejemplo.
 
-Se recomienda hacer un diseño previo usando Mockups, o bien usando storyboards u otras herramientas antes de que la app sea funcional. Existen varios programas para  Mockups, tales como <a href="https://mockup.io/">mockup.io</a> o <a href="https://balsamiq.com">Balsamiq</a>.
+Siempre es recomendable hacer un diseño previo usando Mockups, _storyboards_ u otras herramientas antes de que la app sea funcional. Existen varios programas de Mockups, como <a href="https://mockup.io/">mockup.io</a> o <a href="https://balsamiq.com">Balsamiq</a>.
 
 <!---
 
@@ -58,7 +56,7 @@ Existen distintas estrategias de diseño de aplicaciones. Apple nos recomienda r
 * 4) Usar el listado de tareas final para definir el tipo de interfaz gráfica a utilizar, los controles y terminología, etc.
 -->
 
-La aplicación que diseñes debe estar totalmente adaptada a un dispositivo iOS, no a otro tipo ni a web. El usuario lo agradecerá (y Apple, cuando lo revise, también). La inmensa mayoria de usuarios de iOS están acostumbrados al uso de botones, barras de navegación, _Tab Bars_, etc. Debemos, en la medida de lo posible, hacer uso de toda esta serie de componentes que son diseñados de forma específica para dispositivos iOS y con los que los usuarios están muy familiarizados.
+La aplicación que diseñes debe estar totalmente adaptada a un dispositivo iOS, no a web u otro tipo. El usuario lo agradecerá (y Apple, cuando lo revise, también). La inmensa mayoria de usuarios de iOS están acostumbrados al uso de botones, barras de navegación, _Tab Bars_, etc. Por tanto, en la medida de lo posible debemos hacer uso de toda esta serie de componentes que han sido diseñados de forma específica para dispositivos iOS y con los que los usuarios están muy familiarizados.
 
 
 En <a href="https://developer.apple.com/design/human-interface-guidelines/components/all-components">este enlace</a> se pueden ver todos los componentes que podemos usar en nuestras apps. Se dividen en:
@@ -84,11 +82,11 @@ Los elementos del interfaz de _UIKit_ se dividen en tres categorías principales
 --->
 
 
-Es importante que las aplicaciones funcionen correctamente en todos los dispositivos que puedan usarlas. También hay que asegurarse antes de publicar en _App Store_ de que no hay _bugs_, ya que si estos existen Apple puede rechazar la aplicación, o si aparecen después los usuarios podrían puntuarla mal o deje de usarla. Existen una serie de puntos a tener en cuenta en este caso:
+Es importante que las aplicaciones funcionen correctamente en todos los dispositivos donde puedan instalarse. También hay que asegurarse antes de publicar en _App Store_ de que no hay _bugs_, ya que si estos existen Apple puede rechazar la aplicación, o si aparecen después los usuarios podrían puntuarla mal o dejar de usarla. Existen una serie de puntos a tener en cuenta para esto:
 
-* Hay que diseñar cada aplicación según el dispositivo en el que se use teniendo en cuenta especialmente las capas de vistas, ya que estas pueden cambiar bastante en función del tamaño de pantalla disponible.
-* Se debe de adaptar todo el arte (imágenes, videos, etc.) al dispositivo adecuado. Para esto se usan los _Assets_. En las últimas versiones de iOS, se recomienda usar ficheros PDF en los _Assets_, ya que se adaptarán a cualquier tamaño.
-* Las características de la aplicación deben conservarse a pesar del tipo de dispositivo que se use.
+* Hay que diseñar cada aplicación según el dispositivo en el que se use teniendo en cuenta especialmente las capas de vistas, ya que su aspecto puede cambiar bastante en función del tamaño de pantalla disponible.
+* Se debe de adaptar todo el arte (imágenes, videos, etc.) al dispositivo en cuestión. Para esto se usan los _Assets_. En las últimas versiones de iOS, se recomienda usar ficheros PDF en los _Assets_, ya que se adaptarán a cualquier tamaño.
+* Las características principales de la aplicación deben conservarse independientemente del tipo de dispositivo que se use.
 * Cuando sea posible, es conveniente diseñar las apps para que funcionen en todos los dispositivos Apple (iOS, iPadOS, watchOS, tvOS y macOS).
 
 ### Características principales de la plataforma iOS
@@ -106,11 +104,11 @@ Es importante resaltar que el tamaño en puntos no es el mismo que el tamaño en
 
 ![Resolución iPhone](gitbook/assets/design-resolutions.jpg "Resolución iphone")
 
-> Detección de contacto (touch events). El tamaño de la zona mínima para que el evento de contacto funcione correctamente debe de ser de al menos 44 x 44 puntos.
+> Nota sobre la detección de contacto (touch events): El tamaño de la zona mínima para que el evento de contacto funcione correctamente debe de ser de al menos 44 x 44 puntos.
 
-Dada la diferencia de resolución entre los distintos dispositivos de Apple, se recomienda usar siempre _autolayout_ o SwiftUI en lugar de indicar explícitamente coordenadas de la pantalla para colocar los componentes.
+Dada la diferencia de resolución entre los distintos dispositivos de Apple, se recomienda usar siempre _autolayout_ o _SwiftUI_ en lugar de indicar explícitamente coordenadas de la pantalla donde colocar los componentes.
 
-> **SwiftUI** es el nuevo sistema de Apple para el desarrollo de interfaces. Tiene como principal ventaja sobre el sistema tradicional (UIKit) que se ahorra código (usa sintaxis declarativa) y facilita que la app funcione correctamente en todos los dispositivos mejorando el  _autolayout_ de UIKit. Sin embargo, en esta asignatura todavía no introduciremos este entorno porque es muy nuevo, todavía tiene bugs y está sujeto a bastantes cambios que pueden hacer que las apps no compilen correctamente en pocos meses. Si quieres más información sobre swiftUI puedes consultar [este enlace](https://developer.apple.com/xcode/swiftui/).
+> **SwiftUI** es el nuevo sistema de Apple para el desarrollo de interfaces. Tiene como principal ventaja sobre el sistema tradicional (_UIKit_) que se ahorra código al usar sintaxis declarativa. También facilita que la app funcione correctamente en todos los dispositivos debido a las mejores sobre el _autolayout_ de _UIKit_. Sin embargo, en esta asignatura todavía no vamos a introducir este entorno porque es muy reciente, todavía tiene bugs y está sujeto a cambios frecuentes que pueden hacer que las apps no compilen correctamente en pocos meses. De todos modos, si quieres más información sobre _SwiftUI_ puedes consultar [este enlace](https://developer.apple.com/xcode/swiftui/).
 
 <!---
 ![Resolución iOS](ios_resolutions_old.png "Resolución de los distintos dispositivos en iOS")
@@ -134,22 +132,22 @@ Según el dispositivo del que dispongamos, la pantalla inicial (_Launch Screen_)
 
 #### _Storyboards_
 
-Debemos diseñar un `Main.storyboard` para nuestra app. Para la pantalla de inicio que se muestra brevemente al arrancar la aplicación, a veces interesa hacer otro _storyboard_ adicional (`LaunchScreen.storyboard`) cuando el proceso de carga de la app es lento. Las nuevas apps basadas en SwiftUI no necesitan _storyboards_.
+Con `UIKit` se suelen diseñar las apps usando un `Main.storyboard` (aunque también puede hacerse desde código). Para la pantalla de inicio que se muestra brevemente al arrancar la aplicación, a veces interesa implementar  otro _storyboard_ adicional (`LaunchScreen.storyboard`) si el proceso de carga de la app es lento. Las nuevas apps basadas en `SwiftUI` no usan _storyboards_.
 
 #### Gestos
 
-Llamamos gestos a los distintos movimientos que hace el usuario sobre la pantalla para realizar acciones. En la sesión sobre _multitouch_ veremos en detalle cómo gestionar los gestos.
+Llamamos gestos a los distintos movimientos que hace el usuario sobre la pantalla para realizar acciones. En la última sesión veremos en detalle cómo gestionar los gestos sobre la pantalla.
 
 #### Ayuda
 
-Una aplicación debe ser lo suficientemente simple e intuitiva para que el usuario sepa usarla. Hay que tener en cuenta que el usuario no tendrá tiempo ni ganas de estar leyendo la ayuda la primera vez que usa la aplicación. Por tanto, lo ideal es que no sea necesario ningún texto de ayuda, pero si existe debe ser lo más claro y compacto posible, y si se pueden utilizar imágenes o videos, mejor.
+Una aplicación debe ser lo suficientemente simple e intuitiva para que el usuario sepa usarla. Hay que tener en cuenta que el usuario no tendrá tiempo ni ganas de estar leyendo un texto de ayuda la primera vez que usa la aplicación. Lo ideal es que no sea necesario ninguna ayuda, pero si existe debe ser lo más clara y compacta posible, y si se pueden utilizar imágenes o videos, mejor.
 
 #### Sonidos
 
-A veces nos interesa reproducir sonidos en nuestra app, bien porque sea necesario o para producir un efecto agradable en el usuario. Para evitar justamente lo contrario, hay que tener en cuenta que:
+A veces nos interesa reproducir sonidos en nuestra app, bien porque es necesario o para llamar la atención del usuario. Sin embargho hay que tener en cuenta lo siguiente:
 
-* Si el usuario activa el modo _silencio_ en el dispositivo, este no debe de emitir ningún tipo de sonido. Hay apps que se saltan esto, y suele ser algo bastante molesto. Si nuestra app se basa completamente en el sonido (por ejemplo, un reproductor musical) puede que tengamos que hacer alguna acción (como por ejemplo pausar la música) cuando se silencie el móvil.
-* El tipo de sonido escogido para las distintas características de la aplicación es muy importante. Estos sonidos deben ser adecuados y se deben ajustar al tipo de acción que se esté ejecutando.
+* Si el usuario activa el modo _silencio_ en el dispositivo, este no debe de emitir ningún tipo de sonido. Hay apps que se saltan esto, y suele ser algo bastante molesto. Si nuestra app se basa completamente en el sonido (por ejemplo, un reproductor musical) puede que tengamos que hacer alguna acción (por ejemplo pausar la música) cuando se silencie el móvil.
+* El tipo de sonido escogido para las distintas características de la aplicación es muy importante. Estos sonidos deben ser adecuados y deben ajustarse al tipo de acción que se esté ejecutando.
 * Hay que tener también en cuenta la gestión de las interrupciones de audio. Por ejemplo, puede producirse una llamada entrante, la aplicación pasar a estado inactivo (_background_), etc.
 * Si estamos desarrollando una aplicación musical, para mejorar la experiencia de usuario también podemos usar el control remoto de Apple o el sistema _AirPlay_.
 
@@ -180,7 +178,7 @@ La API de iOS nos da acceso a múltiples tecnologías nativas que se describen a
 
 Mediante la multitarea nuestro dispositivo puede ejecutar más de dos aplicaciones al mismo tiempo. Otras tareas que no estén mostrándose en pantalla pueden estar guardadas en memoria (en _background_) o también mostrándose simultáneamente en la pantalla. Apple recomienda que nuestra aplicación tenga en cuenta dicha característica ya que de esta forma el usuario puede estar realizando otras tareas al mismo tiempo sin necesidad de cerrarla.
 
-![Captura multitarea iOS](gitbook/assets/multitasking2.png "Captura multitarea iOS")
+![Captura multitarea iOS](gitbook/assets/multitasking3.png "Captura multitarea iOS")
 
 La aplicación debe estar preparada para gestionar interrupciones de audio en cualquier momento, pararse y reiniciarse sin ninguna complicación ni lag y de forma "suave", y debe comportarse de forma adecuada cuando se encuentra en _background_. La multitarea es una tecnología que se utiliza muy a menudo en iOS y es por ello que debemos tenerla presente cuando diseñamos nuestras aplicaciones. La gestión del paso de un estado _activo_ a _inactivo_ debe programarse cuando sea necesario. Por ejemplo, hay que tener en cuenta que nuestro juego Angry Birds puede interrumpirse por una llamada a mitad del lanzamiento de un pájaro.
 
@@ -192,7 +190,7 @@ Además de tener que estar preparados para interrupciones, la multitarea implica
 
 Las <a href="https://developer.apple.com/documentation/usernotifications">notificaciones _push_</a> permiten avisar a los usuarios independientemente de si la aplicación está funcionando en ese momento. Esto es muy útil en apps que usen un calendario, para avisar de eventos futuros, o para algún tipo de recordatorio. También se utiliza muy a menudo en juegos.
 
-![Notificación push](gitbook/assets/notificaciones_push.png "Notificación push alert")
+![Notificación push](gitbook/assets/notificaciones_push.jpg "Notificación push alert")
 
 <!---
 Hay dos estilos de notificaciones: 
@@ -295,13 +293,15 @@ Básicamente estos son los conceptos principales de la guía de estilo de Apple,
 
 # Ejercicios
 
-A continuación vamos a empezar programando ejemplos de personalización de controladores. Llamaremos personalizaciones a las modificaciones sobre el aspecto visual de los componentes estándar de Apple. Normalmente las personalizaciones no son recomendables para no confundir al usuario, pero a veces son necesarias para juegos o aplicaciones que requieran un aspecto diferente, como puede verse en el siguiente ejemplo:
+Las personalizaciones son las modificaciones sobre el aspecto visual de los componentes estándar de Apple. Normalmente las personalizaciones no son recomendables para evitar confundir al usuario, pero a veces son necesarias para juegos o aplicaciones que requieran un aspecto diferente, como puede verse en el siguiente ejemplo:
 
 ![Personalización](gitbook/assets/customization.png "Personalización")
 
+Vamos a empezar programando ejemplos de personalización de controladores. 
+
 ## Ejercicio 1- Personalización de celdas
 
-La captura siguiente muestra un ejemplo de una tabla con las celdas totalmente personalizadas.
+La siguiente imagen muestra un ejemplo de una tabla con las celdas totalmente personalizadas.
 
 <!--
 [ejemplo de código](https://medium.com/q-software/ios-custom-table-views-with-cells-2e4ba692cfc8) 
@@ -309,7 +309,7 @@ La captura siguiente muestra un ejemplo de una tabla con las celdas totalmente p
 
 ![Ejemplo personalización celdas](gitbook/assets/custom_cells.png "Ejemplo personalización celdas")
 
-A diferencia de la personalización de otros componentes, la personalización de celdas de una tabla es algo muy habitual en iOS. De esta forma podemos hacer que nuestras tablas se distingan del resto, mostrar datos de forma más adecuada, y ofrecer un aspecto característico para nuestra app.
+A diferencia de la personalización de otros componentes, la personalización de celdas en las tablas es algo muy habitual en iOS. De esta forma podemos hacer que nuestras tablas se distingan del resto, mostrar datos de forma más adecuada, y ofrecer un aspecto característico para nuestra app.
 
 ¿Cómo podemos hacer este tipo de celdas? Es muy sencillo, a continuación veremos mediante un ejemplo paso a paso el diseño y programación de celdas personalizadas mediante XCode.
 
@@ -317,15 +317,15 @@ A diferencia de la personalización de otros componentes, la personalización de
 
 Al terminar este ejemplo tendremos una aplicación que solo contiene una vista de tabla `UITableView` con celdas personalizadas. Estas celdas tendrán una imagen en el lado izquierdo, un texto en negrita en la parte superior y otro texto pequeño en la parte inferior. Las celdas tendrán un tamaño algo mayor al que viene por defecto y, para finalizar, la tabla tendrá estilo _zebra_, es decir, el fondo de las celdas tendrá colores intercalados para cada fila.
 
-Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto para _iOS_ de tipo _App_. Lo  guardaremos con el nombre `ejercicio_celdas`, y debemos elegir el interfaz Storyboard:
+Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto para _iOS_ de tipo _App_. Lo guardaremos con el nombre `ejercicio_celdas` seleccionando el interfaz _Storyboard_:
 
 ![Inicialización ejercicio celdas](gitbook/assets/cell_init.png "Inicialización ejercicio celdas")
 
-Para empezar vamos a añadir al _storyboard_ principal (_Main_) un nuevo controlador de tipo `Table View Controller` (usando el botón **+** en la parte superior del interfaz de XCode).
+Para empezar vamos a añadir al _storyboard_ principal (_Main_) un nuevo controlador (usando el botón **+** en la parte superior del interfaz de XCode) de tipo `Table View Controller`.
 
-Ahora haremos que nuestra tabla sea lo primero que aparezca cuando se lance la app. Esto se puede hacer, por ejemplo, arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo _Table View Controller_. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero `ViewController.swift`, ya que estaba asociado a la vista que hemos borrado.
+Ahora haremos que nuestra tabla sea lo primero que aparezca cuando se inicie la app. Esto se puede hacer, por ejemplo, arrastrando la flecha horizontal que apunta al primer controlador hacia nuestro nuevo _Table View Controller_. Ya podemos borrar la vista vacía del _storyboard_, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero `ViewController.swift`, ya que estaba asociado a la vista que hemos eliminado.
 
-Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". 
+Ya tenemos la vista de la tabla. Ahora vamos a crear también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". 
 
 Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el _Identity Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
 
@@ -335,26 +335,25 @@ Por último, para nuestra vista personalizada vamos a crear un nuevo fichero sub
 
 ### Diseñando la celda desde Interface Builder
 
-Una vez hemos creado el proyecto y la clase controladora de la tabla y la celda ahora vamos a diseñar su vista. Para ello abrimos la tabla en el storyboard. Dentro de _Prototype cells_ podemos diseñar la vista de la celda. Pero antes tenemos que asignar la clase `TableViewCell` que hemos creado a las celdas de nuestra tabla.
+Una vez hemos creado el proyecto y la clase controladora de la tabla y la celda vamos a diseñar su vista. Para ello abrimos la tabla en el _storyboard_. Dentro de _Prototype cells_ podemos diseñar la vista de la celda, pero antes tenemos que asignar a las celdas de nuestra tabla la clase `TableViewCell` que hemos creado.
 
 ![Asignación de la celda personalizada](gitbook/assets/cell_custom_class.png "Asignación de la celda personalizada")
 
-Una vez hemos vinculado la vista de la celda a nuestro controlador, vamos a modificar la altura de la celda desde el _size inspector_, usando una altura de 70 puntos:
+Una vez hemos vinculado la vista de la celda a nuestro controlador vamos a modificar la altura de la celda desde el _size inspector_, usando una altura de 70 puntos:
 
 ![Ajustes de tamaño vista celda](gitbook/assets/cell_table_view_row1.png "Ajustes de tamaño vista celda")
 
-Además de indicar la altura de la celda para el _Table View Cell_ (lo cual nos sirve para saber cómo quedan los elementos en la vista de diseño), también debemos hacerlo para las  celdas del _Table View_:
+Además de indicar la altura de la celda para el `Table View Cell` (lo cual nos sirve para saber cómo quedan los elementos en la vista de diseño), también debemos hacerlo para las celdas del `Table View`:
 
 ![Ajustes de tamaño vista tabla](gitbook/assets/cell_table_view_row2.png "Ajustes de tamaño vista tabla")
 
-
-Si quisieramos hacer esto mismo desde código (como lo hemos hecho desde el interfaz no hace falta), podríamos indicarlo así en el método _viewDidLoad_:
+Si quisieramos hacer lo mismo pero desde código, podríamos indicarlo así en el método `viewDidLoad`:
 
 ```swift
  self.tableView.rowHeight=70
 ```
 
-Ahora solo tenemos que arrastrar los objetos que queremos que aparezcan en la celda. En este ejemplo vamos a añadir dos etiquetas (_labels_) y una imagen (_UIImageView_). La celda quedará de la siguiente manera en el _Interface builder_:
+Ahora solo tenemos que arrastrar los objetos que queremos que aparezcan en la celda. En este ejemplo vamos a añadir dos etiquetas (`UILabel`) y una imagen (`UIImageView`). La celda quedará así en el _Interface builder_:
 
 ![Vista celda](gitbook/assets/cell_mytableviewcell.png "Vista celda")
 
@@ -374,7 +373,7 @@ Tendremos que vincular a nuestra clase celda los _Outlets_ que hemos creado ante
 @IBOutlet weak var labelAuthor: UILabel!
 ```
 
-> Alternativamente, se pueden crear los IBOutlets con el asistente (a veces es más cómodo). Pinchando sobre el símbolo que representa una tabla con un _+_ dentro de ella (arriba a la derecha), se abre una segunda ventana de edición. Así se puede seleccionar la vista en una de las ventanas, y el código en otra. Después, puedes pinchar (botón derecho) sobre el componente de la vista y arrastrarlo al código de la declaración de la clase. Esto crea automáticamente las propiedades, y hace los enlaces. El mismo procedimiento es válido también para crear un _IBAction_.
+> Alternativamente, se pueden crear los IBOutlets con el asistente (a veces es más cómodo). Pinchando sobre el símbolo que representa una tabla con un _+_ dentro de ella (arriba a la derecha), se abre una segunda ventana de edición. Así se puede seleccionar la vista en una de las ventanas, y el código en otra. Después, puedes pinchar (botón derecho) sobre el componente de la vista y arrastrarlo al código de la declaración de la clase. Esto crea automáticamente las propiedades, y genera los enlaces. El mismo procedimiento es válido también para crear un `IBAction`.
 
 Ahora volvemos a la vista de la celda en el _storyboard_ y enlazamos los _Outlets_ creados en la clase con los objetos de la vista.
 
@@ -400,7 +399,9 @@ Una vez hecho esto abrimos de nuevo la clase controladora de la tabla `TableView
  }
 ```
 
-Ahora descarga la imagen <a href="gitbook/assets/logo-master.png">logo\_master.png</a> y arrástrala dentro de XCode a los _Assets_ del proyecto. En este momento ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño), nos saldrán los elementos relativamente bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los _constraints_ (de hecho se mostrará algún _warning_ por este motivo). De momento no te preocupes por esto, lo arreglaremos más adelante.
+Descarga la imagen <a href="gitbook/assets/logo-master.png">logo\_master.png</a> y arrástrala dentro de XCode a los _Assets_ del proyecto. 
+
+En este momento ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño), nos saldrán los elementos relativamente bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los _constraints_ (de hecho se mostrará algún _warning_ por este motivo). De momento no te preocupes por esto, lo arreglaremos más adelante.
 
 <!---
 Como podrás ver, se solapa la barra de estado con el principio de la tabla. Esto podríamos resolverlo añadiendo la siguiente línea al método `ViewDidLoad`:
@@ -411,7 +412,9 @@ Como podrás ver, se solapa la barra de estado con el principio de la tabla. Est
 
 ### Añadiendo la barra de navegación
 
-La aplicación funciona y se muestra una tabla, aunque no tiene barra de navegación. Normalmente todos los controladores en iOS suelen ir incrustados en controladores contenedores, que son los que gestionan la navegación, como `UINavigationController`, `UITabBarController` o  `UISplitViewController`. Para nuestro ejercicio, lo más adecuado incrustrar la tabla en un _Navigation Controller_, seleccionando el controlador de la tabla en el storyboard y eligiendo _Editor > Embed in > Navigation Controller_. Añade un título para la tabla mediante la siguiente línea de código en `viewDidLoad` de `TableViewController` (o si lo prefieres, desde el _Interface Builder_):
+La aplicación funciona se muestra una tabla, pero no tiene barra de navegación. Normalmente todos los controladores en iOS suelen ir incrustados en controladores contenedores, que son los que gestionan la navegación, como `UINavigationController`, `UITabBarController` o  `UISplitViewController`. 
+
+Para nuestro ejercicio, lo más adecuado incrustrar la tabla en un `UINavigationController`, seleccionando el controlador de la tabla en el storyboard y eligiendo _Editor > Embed in > Navigation Controller_. Añade un título para la tabla mediante la siguiente línea de código en `viewDidLoad` de `TableViewController` (o si lo prefieres, desde el _Interface Builder_):
 
 ```swift
     self.title = "Mi tabla personalizada"
@@ -420,7 +423,7 @@ La aplicación funciona y se muestra una tabla, aunque no tiene barra de navegac
 
 ### Personalización con efecto zebra
 
-Una vez tenemos las celdas hechas vamos a personalizar la tabla un poco más, añadiendo un fondo a las celdas pares y otro a las impares, lo que se conoce como efecto _zebra_. Para esto necesitaremos dos imágenes más que se pueden descargar <a
+Una vez tenemos las celdas vamos a personalizar la tabla un poco más, añadiendo un fondo a las celdas pares y otro a las impares, lo que se conoce como efecto _zebra_. Para esto necesitaremos dos imágenes más que se pueden descargar <a
 href="gitbook/assets/img_fondo_celdas.zip">aquí</a> y añadirlas a los _Assets_.
 
 Abrimos la vista de la celda en el _storyboard_ y arrastramos un `UIImageView` ocupando todo el espacio de la celda. Es necesario enviar esta vista al fondo, con el menú _Editor > Arrange > Send to back_. Si en el modo visual se van descolocando las vistas de la celda cuando las mueves (aunque esto no debería ocurrir con las últimas versiones de XCode), ajusta los tamaños desde el _Size Inspector_.
@@ -474,8 +477,7 @@ _d)_ Cuando hayamos terminado, comprobamos que la aplicación funciona según lo
 
 Los _ToolBars_, al igual que la mayor parte de componentes, se pueden personalizar para conseguir las funcionalidades que deseemos para nuestras apps. En el siguiente ejemplo vamos a crear una vista _ToolBar_ personalizada con una imagen de fondo, estilos para los botones, añadiendo botones de distinto tipo, etc.
 
-Comenzamos creando un nuevo proyecto de tipo _iOS > App_ con el nombre  `ejercicio_toolbar` y con interfaz _Storyboard_.
-
+Comenzamos creando un nuevo proyecto de tipo _iOS > App_ con el nombre  `ejercicio_toolbar` y con interfaz _storyboard_.
 
 ### Diseño de la vista
 
@@ -488,7 +490,9 @@ Ahora vamos a añadir los elementos que deseemos sobre el _ToolBar_. En nuestro 
 ![ToolBar con botones y campos de texto](gitbook/assets/toolbar_view.png "ToolBar con botones y campos de texto")
 
 
-Como podemos observar, la función del objeto _Flexible Space_ no es más que añadir un espacio flexible entre dos objetos dentro de un _ToolBar_. Una vez que tenemos la barra con todos sus elementos vamos a definir los elementos dentro de la clase. Dentro del código de la clase `ViewController` añadimos los siguientes outlets:
+Como podemos observar, la función del objeto _Flexible Space_ no es más que añadir un espacio flexible entre dos objetos dentro de un _ToolBar_ o de una barra de navegación. 
+
+Una vez tenemos la barra con todos sus elementos, vamos a definir los elementos dentro de la clase. En el código de la clase `ViewController` añadimos los siguientes outlets:
 
 ```swift
 @IBOutlet weak var toolBar: UIToolbar!
@@ -499,7 +503,7 @@ Como podemos observar, la función del objeto _Flexible Space_ no es más que a�
 @IBOutlet weak var segmentLabel: UILabel!
 ```
 
-Seguidamente tenemos que enlazar los _outlets_ dentro de la vista. Si ejecutamos el código, es posible que el _toolbar_ y el _label_ salgan descolocados (o que no salgan) cuando rotemos el dispositivo. 
+Seguidamente tenemos que enlazar los _outlets_ dentro de la vista. Si ejecutamos el código, es posible que el _toolbar_ y el _label_ salgan descolocados (o no salgan) cuando rotemos el dispositivo. 
 
 ### Ajuste de las constraints
 
@@ -519,7 +523,6 @@ Puedes ver los _constraints_ añadidos para cada elemento en el _Size inspector_
 
 Ahora vamos a implementar la acción del _Segmented Control_. Para ello declaramos el siguiente método dentro de la clase `ViewController`:
 
-
 ```swift
 @IBAction func segmentedControlIndexChanged(_ sender: Any) {
           self.segmentLabel.text = self.segmentedControl.selectedSegmentIndex == 0 ? "Segmento 1" : "Segmento 2"
@@ -532,7 +535,7 @@ En este momento ya podemos ejecutar el proyecto por primera vez y comprobar que 
 
 ### Personalización avanzada
 
-Ya tenemos un objeto _ToolBar_ con una personalización básica funcionando. Ahora vamos a cambiarlo un poco más: vamos a añadirle una imagen de fondo, a asignar un color de fondo al _Segmented Control_ y a modificar el diseño del _TextField_. Para hacer todo esto debemos cambiar el método `viewDidLoad` de la clase `ViewController` de forma que quede de la siguiente manera:
+Ya tenemos un objeto _ToolBar_ con una personalización básica funcionando. Ahora vamos a cambiarlo un poco más: vamos a añadirle una imagen de fondo, a asignar un color de fondo al _Segmented Control_ y a modificar el diseño del _TextField_. Para hacer todo esto debemos cambiar el método `viewDidLoad` de la clase `ViewController` para que quede de la siguiente manera:
 
 ```swift
 override func viewDidLoad() {
@@ -562,4 +565,4 @@ href="gitbook/assets/imagenes_toolbar.zip">aquí</a> y añadirlas a los _Assets_
 
 ![ToolBar personalizado](gitbook/assets/toolbar_final.png "ToolBar personalizado")
 
-La metodología que acabamos de seguir nos serviría también para personalizar los componentes `UITabBar` y `UINavigationBar`, entre otros.
+La metodología que acabamos de seguir también sirve para personalizar los componentes `UITabBar` y `UINavigationBar`, entre otros.
