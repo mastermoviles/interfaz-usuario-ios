@@ -1,0 +1,629 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>4- Detección de gestos - iOS avanzado (IUDM)</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pantalla-tactil" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="iOS avanzado (IUDM)" class="md-header__button md-logo" aria-label="iOS avanzado (IUDM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iOS avanzado (IUDM)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4- Detección de gestos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="iOS avanzado (IUDM)" class="md-nav__button md-logo" aria-label="iOS avanzado (IUDM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    iOS avanzado (IUDM)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-1-guias-de-estilo-y-personalizaciones-avanzadas.html" class="md-nav__link">
+        1- Guías de estilo y personalizaciones avanzadas
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-2-controladores-avanzados.html" class="md-nav__link">
+        2- Controladores avanzados
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-3-apps-universales.html" class="md-nav__link">
+        3- Diseño de aplicaciones universales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4- Detección de gestos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sesion-4-multitouch.html" class="md-nav__link md-nav__link--active">
+        4- Detección de gestos
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pantalla-tactil" class="md-nav__link">
+    Pantalla táctil
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-gestos" class="md-nav__link">
+    Ejercicio 1 - Gestos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconocimiento-de-gestos-multitactiles-con-uigesturerecognizer" class="md-nav__link">
+    Reconocimiento de gestos multitáctiles con UIGestureRecognizer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-multitouch" class="md-nav__link">
+    Ejercicio 2 - Multitouch
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pantalla-tactil" class="md-nav__link">
+    Pantalla táctil
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-1-gestos" class="md-nav__link">
+    Ejercicio 1 - Gestos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconocimiento-de-gestos-multitactiles-con-uigesturerecognizer" class="md-nav__link">
+    Reconocimiento de gestos multitáctiles con UIGestureRecognizer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-2-multitouch" class="md-nav__link">
+    Ejercicio 2 - Multitouch
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>4- Detección de gestos</h1>
+
+<h2 id="pantalla-tactil">Pantalla táctil<a class="headerlink" href="#pantalla-tactil" title="Permanent link">&para;</a></h2>
+<p>El sensor de pantalla es, obviamente, el más usado y común de todos. En una aplicación iOS que utilice los componentes básicos de <code>UIKit</code> como tablas, botones, campos de texto, etc. problamente no tendremos que preocuparnos por gestionar los eventos producidos por el sensor de la pantalla. En aplicaciones como juegos, o más elaboradas, es muy habitual que tengamos que hacer uso de los eventos que detallaremos a continuación.</p>
+<p>La gestión de eventos de entrada (<em>Touch Events</em>) se realiza a través de los siguientes métodos, que más adelante detallaremos mediante un ejemplo:</p>
+<ul>
+<li><code>func touchesBegan(Set&lt;UITouch&gt;, with: UIEvent?)</code>: Captura las pulsaciones sobre la pantalla. El método recibe la lista de pulsaciones que se detectan.</li>
+<li><code>func touchesMoved(Set&lt;UITouch&gt;, with: UIEvent?)</code>: Captura los movimientos de las pulsaciones sobre la pantalla</li>
+<li><code>func touchesEnded(Set&lt;UITouch&gt;, with: UIEvent?)</code>: Captura las últimas pulsaciones sobre la pantalla</li>
+<li><code>func touchesCancelled(Set&lt;UITouch&gt;, with: UIEvent?)</code>: Evento que se ejecuta cuando cerramos la aplicación o la vista mientras se está detectando pulsaciones en la pantalla, o cuando se interrumpe por un evento externo como una llamada.</li>
+</ul>
+<p>En general, estos eventos pertenecen a la clase <code>UIResponder</code>. Puedes obtener más información sobre esta clase <a href="https://developer.apple.com/reference/uikit/uiresponder">aquí</a>. Además de los eventos de pulsación sobre la pantalla, controla los de movimiento (por ejemplo cuando se agita el dispositivo) y los de control remoto (cuando se dispone de un dispositivo externo de control).</p>
+<p>Los dispositivos iOS también admiten varias pulsaciones al mismo tiempo, lo que se le conoce con el nombre de <em>multitouch</em>. Esta característica hay que tenerla en cuenta a la hora de implementar los métodos anteriores. Para entrar más en profundidad en el uso de las funciones de pulsaciones en iOS, vamos a realizar una aplicación de ejemplo en la que arrastraremos una imagen por la pantalla de nuestro dispositivo.</p>
+<h2 id="ejercicio-1-gestos">Ejercicio 1 - Gestos<a class="headerlink" href="#ejercicio-1-gestos" title="Permanent link">&para;</a></h2>
+<p>Comenzamos creando un proyecto en XCode de tipo <em>App</em> con <em>storyboard</em> que guardaremos con el nombre <code>ejercicio_touch</code>. Creamos un objeto de tipo <em>UIImageView</em>, lo arrastramos a la vista colocándolo en la parte superior izquierda de la pantalla, y lo enlazamos a nuestro <code>ViewController</code> para crear la propiedad, a la que llamaremos <em>imageView</em>. </p>
+<p>Arrastra la imagen <a href=".gitbook/assets/logo-master.png">logo-master.png</a> al proyecto y asígnala a la vista como se indica a continuación (aunque también se podría hacer por código):</p>
+<p><img alt="Asignar imagen" src=".gitbook/assets/multitouch_logo-master.png" title="Asignar imagen" /></p>
+<p>Ahora editamos el archivo <code>ViewController.swift</code>, y añadimos un <em>Outlet</em> que enlazamos con nuestro <em>UIImageView</em> y un <em>booleano</em> llamado <code>tocaImagen</code>. Debe quedar de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">imageView</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">!</span>
+<span class="kd">var</span> <span class="nv">tocaImagen</span> <span class="p">=</span> <span class="kc">false</span>
+</code></pre></div>
+<p>Como se puede ver tenemos dos propiedades: una imagen que podremos mover por la pantalla, y un <em>booleano</em> que utilizaremos para indicar si la estamos moviendo o no. Ahora añadimos al fichero <code>ViewController.swift</code> los cuatro métodos que gestionan los gestos:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">touchesBegan</span><span class="p">(</span><span class="kc">_</span> <span class="n">touches</span><span class="p">:</span> <span class="n">Set</span><span class="p">&lt;</span><span class="bp">UITouch</span><span class="p">&gt;,</span> <span class="n">with</span> <span class="n">event</span><span class="p">:</span> <span class="bp">UIEvent</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">touch</span> <span class="p">=</span> <span class="n">touches</span><span class="p">.</span><span class="bp">first</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Touches began&quot;</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">loc</span> <span class="p">=</span> <span class="n">touch</span><span class="p">.</span><span class="n">location</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+        <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="bp">contains</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Detectado toque sobre la imagen&quot;</span><span class="p">)</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">tocaImagen</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kc">super</span><span class="p">.</span><span class="n">touchesBegan</span><span class="p">(</span><span class="n">touches</span><span class="p">,</span> <span class="n">with</span><span class="p">:</span> <span class="n">event</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">override</span> <span class="kd">func</span> <span class="nf">touchesMoved</span><span class="p">(</span><span class="kc">_</span> <span class="n">touches</span><span class="p">:</span> <span class="n">Set</span><span class="p">&lt;</span><span class="bp">UITouch</span><span class="p">&gt;,</span> <span class="n">with</span> <span class="n">event</span><span class="p">:</span> <span class="bp">UIEvent</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">touch</span> <span class="p">=</span> <span class="n">touches</span><span class="p">.</span><span class="bp">first</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Touches moved&quot;</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nv">loc</span> <span class="p">=</span> <span class="n">touch</span><span class="p">.</span><span class="n">location</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+        <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">tocaImagen</span> <span class="p">==</span> <span class="kc">true</span> <span class="p">{</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">center</span> <span class="p">=</span> <span class="n">loc</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kc">super</span><span class="p">.</span><span class="n">touchesMoved</span><span class="p">(</span><span class="n">touches</span><span class="p">,</span> <span class="n">with</span><span class="p">:</span> <span class="n">event</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">override</span> <span class="kd">func</span> <span class="nf">touchesEnded</span><span class="p">(</span><span class="kc">_</span> <span class="n">touches</span><span class="p">:</span> <span class="n">Set</span><span class="p">&lt;</span><span class="bp">UITouch</span><span class="p">&gt;,</span> <span class="n">with</span> <span class="n">event</span><span class="p">:</span> <span class="bp">UIEvent</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Touches ended&quot;</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">tocaImagen</span> <span class="p">=</span> <span class="kc">false</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">touchesEnded</span><span class="p">(</span><span class="n">touches</span><span class="p">,</span> <span class="n">with</span><span class="p">:</span> <span class="n">event</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">override</span> <span class="kd">func</span> <span class="nf">touchesCancelled</span><span class="p">(</span><span class="kc">_</span> <span class="n">touches</span><span class="p">:</span> <span class="n">Set</span><span class="p">&lt;</span><span class="bp">UITouch</span><span class="p">&gt;,</span> <span class="n">with</span> <span class="n">event</span><span class="p">:</span> <span class="bp">UIEvent</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Touches cancelled&quot;</span><span class="p">)</span>
+        <span class="kc">self</span><span class="p">.</span><span class="n">tocaImagen</span> <span class="p">=</span> <span class="kc">false</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">touchesCancelled</span><span class="p">(</span><span class="n">touches</span><span class="p">,</span> <span class="n">with</span><span class="p">:</span> <span class="n">event</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Como podemos observar en el código anterior, hemos utilizado la clase de UIKit <code>UITouch</code>. Esta clase representa el evento de toque. Al mismo tiempo que el usuario interactúa con la pantalla, iOS envía continuamente mensajes al evento correspondiente (uno de los cuatro comentados anteriormente). Cada evento incluye información sobre los distintos toques en la secuencia producida por el usuario y cada toque en particular corresponde a una instancia de la clase <code>UITouch</code>.</p>
+<p>Con esto último ya podemos ejecutar la aplicación y veremos que podemos pulsar sobre la imagen y arrastrarla.</p>
+<p><img alt="Pantalla de la aplicación" src=".gitbook/assets/multitouch_pantalla_app.png" title="Pantalla de la aplicación" /></p>
+<p>El funcionamiento de estos métodos es muy simple. Primero se ejecuta <code>touchesBegan</code> que detecta el primer <em>toque</em> sobre la pantalla, en el comprobamos si la posición del toque está dentro del cuadro (<em>frame</em>) del <code>UIImageView</code>. Si es así actualizamos la variable booleana a <code>true</code>, y en caso contrario no hacemos nada. En el momento en que arrastremos el dedo sobre la pantalla se ejecutará continuamente el método <code>touchesMoved</code>. En este, si la variable booleana <code>tocaImagen</code> está a <code>true</code> actualizamos la posición de la imagen a la posición detectada, y en caso contrario no hacemos nada. Por último, cuando dejamos de pulsar la pantalla se ejecutará el método <code>touchesEnded</code> el cual simplemente volverá a actualizar la variable booleana a <code>false</code>.</p>
+<p>Si queremos detectar varios toques al mismo tiempo, primero deberemos activarlo, por ejemplo en <code>viewDidLoad</code>:</p>
+<div class="highlight"><pre><span></span><code>   <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">isMultipleTouchEnabled</span> <span class="p">=</span> <span class="kc">true</span>
+</code></pre></div>
+<p>También podríamos haberlo hecho desde el Storyboard, pinchando sobre el <code>UIImageView</code>:</p>
+<p><img alt="Multitouch storyboard" src=".gitbook/assets/multitouch_storyboard.png" title="Multitouch desde el storyboard" /></p>
+<p>Y luego podemos gestionar los toques simultáneos como en el siguiente ejemplo, en el que vamos a modificar el método <code>touchesBegan</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">touchesBegan</span><span class="p">(</span><span class="kc">_</span> <span class="n">touches</span><span class="p">:</span> <span class="n">Set</span><span class="p">&lt;</span><span class="bp">UITouch</span><span class="p">&gt;,</span> <span class="n">with</span> <span class="n">event</span><span class="p">:</span> <span class="bp">UIEvent</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">touch</span> <span class="p">=</span> <span class="n">touches</span><span class="p">.</span><span class="bp">first</span> <span class="p">{</span>  <span class="c1">// Sólo nos centramos en el primer toque</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Touches began&quot;</span><span class="p">)</span>
+
+        <span class="kd">let</span> <span class="nv">touchCount</span> <span class="p">=</span> <span class="n">event</span><span class="p">!.</span><span class="n">allTouches</span><span class="p">!.</span><span class="bp">count</span> <span class="c1">// Número de dedos pulsando</span>
+        <span class="kd">let</span> <span class="nv">tapCount</span> <span class="p">=</span> <span class="n">touch</span><span class="p">.</span><span class="n">tapCount</span>  <span class="c1">// Núero de pulsaciones rápidas</span>
+
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Finger count= </span><span class="si">\(</span><span class="n">touchCount</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+        <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Tap count= </span><span class="si">\(</span><span class="n">tapCount</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+
+        <span class="kd">let</span> <span class="nv">loc</span> <span class="p">=</span> <span class="n">touch</span><span class="p">.</span><span class="n">location</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+        <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="bp">contains</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span> <span class="p">{</span>
+            <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Detectado toque sobre la imagen&quot;</span><span class="p">)</span>
+            <span class="kc">self</span><span class="p">.</span><span class="n">tocaImagen</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kc">super</span><span class="p">.</span><span class="n">touchesBegan</span><span class="p">(</span><span class="n">touches</span><span class="p">,</span> <span class="n">with</span><span class="p">:</span> <span class="n">event</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En el fragmento de código anterior, si se ha hecho alguna pulsación distinguimos primero el número de dedos y luego comprobamos el número de pulsaciones rápidas (equivalente a un doble click del ratón). Esto es un claro ejemplo de gestión de la función <em>multitouch</em> de iOS y, como se puede ver, es bastante simple de implementar.</p>
+<blockquote>
+<p>Para simular dos pulsaciones al mismo tiempo en el simulador de iPhone/iPad de XCode, podemos pulsar la tecla <code>alt</code> (opción) mientras movemos el cursor.</p>
+</blockquote>
+<p>Desde <em>XCode 7</em> existe la opción de usar <em>3D touch</em>, que básicamente consiste en un sensor de presión para la pantalla de forma que se puedan ejecutar distintas acciones en función del grado de presión. Desde <em>XCode 7.3</em> podemos usar el simulador para esto (antes estaba limitado a dispositivos reales). No vamos a entrar en detalles sobre el <em>3D Touch</em>, pero si quieres saber más la clase <code>UITouch</code> tiene una propiedad adicional llamada <code>force</code> que se usa para medir la fuerza de la pulsación del usuario con respecto a una fuerza máxima cuyo valor es <code>maximumPossibleForce</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">traitCollection</span><span class="p">.</span><span class="n">forceTouchCapability</span> <span class="p">==</span> <span class="n">UIForceTouchCapability</span><span class="p">.</span><span class="n">available</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Force= </span><span class="si">\(</span><span class="n">touch</span><span class="p">.</span><span class="n">force</span><span class="si">)</span><span class="s"> from </span><span class="si">\(</span><span class="n">touch</span><span class="p">.</span><span class="n">maximumPossibleForce</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En algunos modelos de iPad también se puede usar un lápiz digital (<em>Apple Pencil</em>). Podemos distinguir un trazo del lápiz de una pulsación del dedo mediante la siguiente condición:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">touch</span><span class="p">.</span><span class="n">type</span> <span class="p">==</span> <span class="p">.</span><span class="n">stylus</span> <span class="p">{</span>
+   <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Stylus detected&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Además, desde el iPhone 7 Apple ha introducido <em>Haptic Feedback</em>, que permite responder físicamente a las interacciones del usuario con la pantalla. Para más información, se puede consultar la <a href="https://developer.apple.com/reference/uikit/uifeedbackgenerator"> referencia</a> de la clase <code>UIFeedbackGenerator</code>.</p>
+<h2 id="reconocimiento-de-gestos-multitactiles-con-uigesturerecognizer">Reconocimiento de gestos multitáctiles con UIGestureRecognizer<a class="headerlink" href="#reconocimiento-de-gestos-multitactiles-con-uigesturerecognizer" title="Permanent link">&para;</a></h2>
+<p>En el apartado anterior hemos visto como mover un objeto por la pantalla usando los métodos de detección de pulsaciones en la pantalla y programando todo el código nosotros.</p>
+<p>Esto está bien para gestos simples, pero el problema de lo que hemos implementado anteriormente es que si queremos detectar un gesto como un <em>swipe</em>, tendremos que registrar las notificaciones para cada toque de las vistas (usando <code>touchesBegan</code>, <code>touchesMoved</code> y <code>touchesEnded</code>). En las primeras versiones de iOS cada programador escribía código distinto para detectar los toques en la pantalla, provocando bugs e incosistencias entre apps.</p>
+<p>Para evitar esto, hace mucho tiempo (iOS 3) Apple añadió la clase <code>UIGestureRecognizer</code> para los gestos comunes en iOS. Esta clase nos permite gestionar los toques, el efecto "pellizco" (por ejemplo para hacer zoom), rotaciones, swipes, pans, y pulsaciones largas, entre otras. Usando esta clase no sólo ahorramos mucho código sino que también hacemos que nuestras apps sean consistentes. Los gestos que podemos gestionar en iOS son los siguientes:</p>
+<ul>
+<li>Toque (<em>tap</em>): Consiste en presionar o hacer "click" sobre un botón o cualquier objeto que esté en pantalla.</li>
+<li>Arrastre (<em>drag</em>): Mover el dedo sobre la pantalla en una dirección, puede usarse para navegar sobre los elementos de una tabla, por ejemplo.</li>
+<li>Arrastre rápido (<em>flick</em>): Como el anterior, pero más rápido. Sirve para moverse por la pantalla de forma rápida.</li>
+<li>Arrastre lateral (<em>swipe</em>): Mover el dedo en dirección horizontal, sirve para mostrar el botón de "Eliminar" en una fila de una tabla.</li>
+<li>Doble toque (<em>double tap</em>): Presionar dos veces seguidas y de forma rápida la pantalla. Sirve para aumentar una imagen o un mapa, por ejemplo.</li>
+<li>Pellizco exterior (<em>pinch open</em>): Gesto de pellizco sobre la pantalla que sirve para aumentar una imagen o un mapa.</li>
+<li>Pellizco interior (<em>pinch close</em>): El inverso del anterior.</li>
+<li>Toque continuo (<em>touch and hold</em>): Como el toque básico, pero manteniendo el dedo sobre la pantalla. Sirve para mostrar un menu contextual sobre la
+zona que se pulsa.</li>
+<li>Agitar (<em>shake</em>): Para inicializar una acción de deshacer (undo) o rehacer (redo).</li>
+<li>3D touch (<em>hard press</em>): Los modelos posteriores a iPhone 6S añaden un gesto 3D que se activa cuando pulsamos la pantallas con una presión mayor. Se usa para mostrar información como un <em>peek</em> (una vista flotante) o <em>pop</em> (menú contextual).</li>
+</ul>
+<p>Puedes ver los movimientos en detalle en la guía de estilo, sección <a href= "https://developer.apple.com/design/human-interface-guidelines/inputs/touchscreen-gestures">Inputs &gt; Touchscreen gestures</a>. </p>
+<p>Usar la clase <code>UIGestureRecognizer</code> es muy sencillo, simplemente hay que:
+* Crear un <em>Gesture Recognizer</em>. Cuando se crea un elemento de esta clase debemos especificar una función <em>callback</em>. Esta función se llamará cuando los gestos empiecen, cambien o terminen.
+* Añadir un <em>Gesture Recognizer</em> a la vista. Cada <em>gesture recognizer</em> se asocia con una (y <strong>sólo una</strong>) vista. Cuando se produce un gesto dentro de los límites de esa vista, el <em>recognizer</em> mirará si coincide con el tipo de gesto buscado, y si es así se notificará mediante la función <em>callback</em>.</p>
+<p>Podemos añadir un <em>Gesture Recognizer</em> mediante código o usando el storyboard. Veremos como hacerlo de las dos formas mediante un ejercicio sencillo similar al anterior.</p>
+<h2 id="ejercicio-2-multitouch">Ejercicio 2 - Multitouch<a class="headerlink" href="#ejercicio-2-multitouch" title="Permanent link">&para;</a></h2>
+<p>Crea un nuevo proyecto y llámalo <code>ejercicio_multitouch</code>. Como en el anterior, añade una <em>UIImageView</em> en la parte superior izquierda de la vista, asígnale la imagen <em>logo-master</em> y enlázala con el controlador. Recuerda marcar para el <code>UIImageView</code> desde el Storyboard las casillas <code>User Interaction Enabled</code> y  seleccionar <code>Multiple Touch</code>. Alternativamente puedes hacerlo mediante código en <em>viewDidLoad</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">isUserInteractionEnabled</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">isMultipleTouchEnabled</span> <span class="p">=</span> <span class="kc">true</span>
+</code></pre></div>
+<p>Vamos a definir un gesto que realice la función de pulsación, similar a lo realizado en el primer ejemplo, pero con <code>UIGestureRecognizer</code>. Para ello, en <code>ViewController.swift</code>  asignamos el protocolo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">ViewController</span> <span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="bp">UIGestureRecognizerDelegate</span>
+</code></pre></div>
+<p>Y en el fichero <code>ViewController.swift</code> añadimos lo siguiente al final del método <code>viewDidLoad</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">tap</span> <span class="p">=</span> <span class="bp">UITapGestureRecognizer</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="kc">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span><span class="k">#selector</span><span class="p">(</span><span class="n">handleTap</span><span class="p">))</span>
+<span class="n">tap</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+<span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">addGestureRecognizer</span><span class="p">(</span><span class="n">tap</span><span class="p">)</span>
+</code></pre></div>
+<p>En el código anterior nos hemos definido un objeto de la clase <code>UITapGestureRecognizer</code>, al cual le hemos asignado una acción llamada <code>handleTap</code> que se ejecutará cuando se detecte una pulsación. También hemos asignado el objeto creado a la imagen para que los gestos estén únicamente asociados a esa vista.</p>
+<p>Ahora implementamos el método <code>handleTap</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">@objc</span> <span class="kd">func</span> <span class="nf">handleTap</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="bp">UITapGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Tap&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si volvemos a ejecutar la aplicación veremos que aparece el mensaje "Tap" cuando pulsamos sobre la imagen.</p>
+<p>A continuación vamos a añadir los gestos de arrastre, rotación y pellizco de la misma manera que hemos implementado el de pulsación:</p>
+<div class="highlight"><pre><span></span><code>  <span class="c1">// Gesto de pulsar y arrastrar</span>
+  <span class="kd">let</span> <span class="nv">pan</span> <span class="p">=</span> <span class="bp">UIPanGestureRecognizer</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="kc">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span><span class="k">#selector</span><span class="p">(</span><span class="n">handlePan</span><span class="p">))</span>
+  <span class="n">pan</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+  <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">addGestureRecognizer</span><span class="p">(</span><span class="n">pan</span><span class="p">)</span>
+
+  <span class="c1">// Gesto de rotación</span>
+  <span class="kd">let</span> <span class="nv">rotation</span> <span class="p">=</span> <span class="bp">UIRotationGestureRecognizer</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="kc">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span><span class="k">#selector</span><span class="p">(</span><span class="n">handleRotation</span><span class="p">))</span>
+  <span class="n">rotation</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+  <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">addGestureRecognizer</span><span class="p">(</span><span class="n">rotation</span><span class="p">)</span>
+
+  <span class="c1">// Gesto de pellizcar</span>
+  <span class="kd">let</span> <span class="nv">pinch</span> <span class="p">=</span> <span class="bp">UIPinchGestureRecognizer</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="kc">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span><span class="k">#selector</span><span class="p">(</span><span class="n">handlePinch</span><span class="p">))</span>
+  <span class="n">pinch</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+  <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">addGestureRecognizer</span><span class="p">(</span><span class="n">pinch</span><span class="p">)</span>
+</code></pre></div>
+<p>Implementamos los métodos de las acciones:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">@objc</span> <span class="kd">func</span> <span class="nf">handlePan</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="bp">UIPanGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Pan&quot;</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nv">translation</span> <span class="p">=</span> <span class="n">sender</span><span class="p">.</span><span class="n">translation</span><span class="p">(</span><span class="k">in</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">view</span> <span class="p">=</span> <span class="n">sender</span><span class="p">.</span><span class="n">view</span> <span class="p">{</span>
+        <span class="n">view</span><span class="p">.</span><span class="n">center</span> <span class="p">=</span> <span class="n">CGPoint</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">view</span><span class="p">.</span><span class="n">center</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">translation</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">view</span><span class="p">.</span><span class="n">center</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">translation</span><span class="p">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">sender</span><span class="p">.</span><span class="n">setTranslation</span><span class="p">(</span><span class="n">CGPoint</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span> <span class="k">in</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">@objc</span> <span class="kd">func</span> <span class="nf">handleRotation</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="bp">UIRotationGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Rotation&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">view</span> <span class="p">=</span> <span class="n">sender</span><span class="p">.</span><span class="n">view</span> <span class="p">{</span>
+        <span class="n">view</span><span class="p">.</span><span class="n">transform</span> <span class="p">=</span> <span class="n">view</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">rotated</span><span class="p">(</span><span class="n">by</span><span class="p">:</span> <span class="n">sender</span><span class="p">.</span><span class="n">rotation</span><span class="p">)</span>
+        <span class="n">sender</span><span class="p">.</span><span class="n">rotation</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">@objc</span> <span class="kd">func</span> <span class="nf">handlePinch</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="bp">UIPinchGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Pinch&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="kd">let</span> <span class="nv">view</span> <span class="p">=</span> <span class="n">sender</span><span class="p">.</span><span class="n">view</span> <span class="p">{</span>
+        <span class="n">view</span><span class="p">.</span><span class="n">transform</span> <span class="p">=</span> <span class="n">view</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">scaledBy</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">sender</span><span class="p">.</span><span class="n">scale</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">sender</span><span class="p">.</span><span class="n">scale</span><span class="p">)</span>
+        <span class="n">sender</span><span class="p">.</span><span class="n">scale</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si ejecutamos la aplicación veremos que funciona todo correctamente pero al intentar realizar dos gestos al mismo tiempo estos no funcionan de manera simultánea por ejemplo, ampliar y rotar). Para que dos o más gestos se puedan usar al mismo tiempo, en el fichero <code>ViewController.swift</code> tenemos que implementar el método <code>shouldRecognizeSimultaneouslyWithGestureRecognizer</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">gestureRecognizer</span><span class="p">(</span><span class="kc">_</span> <span class="n">gestureRecognizer</span><span class="p">:</span> <span class="bp">UIGestureRecognizer</span><span class="p">,</span> <span class="n">shouldRecognizeSimultaneouslyWith</span> <span class="n">otherGestureRecognizer</span><span class="p">:</span> <span class="bp">UIGestureRecognizer</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si volvemos a ejecutar la aplicación de nuevo, veremos que ya podemos realizar dos o más gestos al mismo tiempo.</p>
+<p>En total podemos usar los siguientes gestos en nuestras aplicaciones, además de crear los nuestros propios creando subclases de <code>UIGestureRecognizer</code>:</p>
+<ul>
+<li><code>UITapGestureRecognizer</code></li>
+<li><code>UIPinchGestureRecognizer</code></li>
+<li><code>UIRotationGestureRecognizer</code></li>
+<li><code>UISwipeGestureRecognizer</code></li>
+<li><code>UIPanGestureRecognizer</code></li>
+<li><code>UIScreenEdgePanGestureRecognizer</code></li>
+<li><code>UILongPressGestureRecognizer</code></li>
+</ul>
+<p>Y esto es lo básico para poder implementar reconocimiento de gestos en nuestra aplicación.</p>
+<p>Para finalizar vamos a implementar un gesto adicional, pero en lugar de hacerlo mediante código lo haremos desde el <em>storyboard</em> para verlo de una forma alternativa. Para añadirlo desde el <em>storyboard</em> (aunque probablemente es más rápido desde código), selecciona el gesto <em>Long press Gesture Recognizer</em> de la Librería (con el botón <code>+</code>) y arrástralo sobre la imagen.</p>
+<p>Puedes cambiar desde el interfaz sus parámetros, como por ejemplo la duración mínima. Finalmente asigna un método al gesto, arrastrando el objeto al código de la clase y seleccionando <em>Action</em>, y conecta el delegado con el <code>ViewController</code>. El método debe imprimir el mensaje <code>print("long press")</code> cuando se realice una pulsación larga sobre la imagen. Con el botón derecho sobre el gesto puedes ver con qué objeto se relaciona y cambiarlo si es necesario.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+        
+        <a href="sesion-3-apps-universales.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 3- Diseño de aplicaciones universales" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              3- Diseño de aplicaciones universales
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

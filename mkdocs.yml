@@ -1,0 +1,45 @@
+site_name: iOS avanzado (IUDM)
+use_directory_urls: false
+
+nav:
+- 1- Guías de estilo y personalizaciones avanzadas : 'sesion-1-guias-de-estilo-y-personalizaciones-avanzadas.md'
+- 2- Controladores avanzados : 'sesion-2-controladores-avanzados.md'
+- 3- Diseño de aplicaciones universales : 'sesion-3-apps-universales.md'
+- 4- Detección de gestos : 'sesion-4-multitouch.md'
+
+theme:
+    language: es
+    name: 'material'
+    palette:
+        primary: 'Teal'
+        accent: 'Teal'
+    font:
+        text: 'Roboto'
+        code: 'Roboto Mono'
+#    logo: 'imagenes/logo.png'
+
+# Ponemos como idioma de búsqueda el inglés
+# para conseguir que busque correctamente
+# todas las palabras en castellano, sin eliminar
+# los excesivos derivados que se definen en
+# https://github.com/MihaiValentin/lunr-languages/blob/master/lunr.es.js
+
+extra:
+    search:
+        language: 'en'
+        
+# Problema: pdf-export solo admite que las imagenes de la pagina sean pdf o svg, no otros formatos
+#plugins:
+#    - pdf-export
+
+markdown_extensions:
+    - admonition
+    - codehilite:
+        linenums: true
+    - footnotes
+    - meta
+    - sane_lists
+    - toc:
+       permalink: true
+       toc_depth: 3
+    - pymdownx.superfences

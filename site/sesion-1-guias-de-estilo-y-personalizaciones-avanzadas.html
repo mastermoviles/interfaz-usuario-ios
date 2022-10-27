@@ -1,0 +1,1071 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>1- Guías de estilo y personalizaciones avanzadas - iOS avanzado (IUDM)</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guias-de-estilo-en-ios" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="." title="iOS avanzado (IUDM)" class="md-header__button md-logo" aria-label="iOS avanzado (IUDM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iOS avanzado (IUDM)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1- Guías de estilo y personalizaciones avanzadas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Limpiar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="iOS avanzado (IUDM)" class="md-nav__button md-logo" aria-label="iOS avanzado (IUDM)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    iOS avanzado (IUDM)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1- Guías de estilo y personalizaciones avanzadas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="sesion-1-guias-de-estilo-y-personalizaciones-avanzadas.html" class="md-nav__link md-nav__link--active">
+        1- Guías de estilo y personalizaciones avanzadas
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guias-de-estilo-en-ios" class="md-nav__link">
+    Guías de estilo en iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Guías de estilo en iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principios-de-diseno" class="md-nav__link">
+    Principios de diseño
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-principales-de-la-plataforma-ios" class="md-nav__link">
+    Características principales de la plataforma iOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guias-de-uso-de-las-principales-tecnologias-disponibles-en-ios" class="md-nav__link">
+    Guías de uso de las principales tecnologías disponibles en iOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-personalizacion-de-celdas" class="md-nav__link">
+    Ejercicio 1- Personalización de celdas
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 1- Personalización de celdas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creando-el-proyecto-y-las-clases-basicas" class="md-nav__link">
+    Creando el proyecto y las clases básicas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disenando-la-celda-desde-interface-builder" class="md-nav__link">
+    Diseñando la celda desde Interface Builder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programando-la-celda" class="md-nav__link">
+    Programando la celda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadiendo-la-barra-de-navegacion" class="md-nav__link">
+    Añadiendo la barra de navegación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizacion-con-efecto-zebra" class="md-nav__link">
+    Personalización con efecto zebra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-de-las-constraints" class="md-nav__link">
+    Ajuste de las constraints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertar-datos-en-la-tabla" class="md-nav__link">
+    Insertar datos en la tabla
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-personalizacion-de-toolbars" class="md-nav__link">
+    Ejercicio 2- Personalización de ToolBars
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2- Personalización de ToolBars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diseno-de-la-vista" class="md-nav__link">
+    Diseño de la vista
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-de-las-constraints_1" class="md-nav__link">
+    Ajuste de las constraints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acciones" class="md-nav__link">
+    Acciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizacion-avanzada" class="md-nav__link">
+    Personalización avanzada
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-2-controladores-avanzados.html" class="md-nav__link">
+        2- Controladores avanzados
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-3-apps-universales.html" class="md-nav__link">
+        3- Diseño de aplicaciones universales
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sesion-4-multitouch.html" class="md-nav__link">
+        4- Detección de gestos
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guias-de-estilo-en-ios" class="md-nav__link">
+    Guías de estilo en iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="Guías de estilo en iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principios-de-diseno" class="md-nav__link">
+    Principios de diseño
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caracteristicas-principales-de-la-plataforma-ios" class="md-nav__link">
+    Características principales de la plataforma iOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guias-de-uso-de-las-principales-tecnologias-disponibles-en-ios" class="md-nav__link">
+    Guías de uso de las principales tecnologías disponibles en iOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios" class="md-nav__link">
+    Ejercicios
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-personalizacion-de-celdas" class="md-nav__link">
+    Ejercicio 1- Personalización de celdas
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 1- Personalización de celdas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creando-el-proyecto-y-las-clases-basicas" class="md-nav__link">
+    Creando el proyecto y las clases básicas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disenando-la-celda-desde-interface-builder" class="md-nav__link">
+    Diseñando la celda desde Interface Builder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programando-la-celda" class="md-nav__link">
+    Programando la celda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadiendo-la-barra-de-navegacion" class="md-nav__link">
+    Añadiendo la barra de navegación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizacion-con-efecto-zebra" class="md-nav__link">
+    Personalización con efecto zebra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-de-las-constraints" class="md-nav__link">
+    Ajuste de las constraints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertar-datos-en-la-tabla" class="md-nav__link">
+    Insertar datos en la tabla
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-personalizacion-de-toolbars" class="md-nav__link">
+    Ejercicio 2- Personalización de ToolBars
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio 2- Personalización de ToolBars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diseno-de-la-vista" class="md-nav__link">
+    Diseño de la vista
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ajuste-de-las-constraints_1" class="md-nav__link">
+    Ajuste de las constraints
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acciones" class="md-nav__link">
+    Acciones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizacion-avanzada" class="md-nav__link">
+    Personalización avanzada
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p>En esta sesión hablaremos de los patrones de diseño que Apple nos recomienda seguir para nuestras aplicaciones. En algunos casos es obligatorio cumplir estos patrones
+a la hora de diseñar nuestras aplicaciones y el hecho de no hacerlo puede ser motivo de rechazo para publicar en el <em>App Store</em>. Comentaremos las distintas características de cada dispositivo iOS. Por último detallaremos distintas técnicas que existen para personalizar los controladores y vistas más usadas y, de esta forma, conseguir un aspecto más atractivo para el usuario final.</p>
+<h2 id="guias-de-estilo-en-ios">Guías de estilo en iOS<a class="headerlink" href="#guias-de-estilo-en-ios" title="Permanent link">&para;</a></h2>
+<p>Tanto el iPhone como el iPad supusieron un revolucionario giro en cuanto a diseño de interfaz. Para evitar el caos a la hora de diseñar cualquier tipo de aplicación, tras cada actualización de iOS <em>Apple</em> plantea una serie de guías de estilo que todo desarrollador debe seguir en la medida de lo posible para diseñar una app. Estas guias de estilo no se aplican, como es lógico, a la hora de diseñar la interfaz de un juego, pero son muy útiles para crear aplicaciones.</p>
+<p>En esta sesión vamos a aprender a diseñar apps para iPhone / iPad que sean usables, accesibles y en las que el usuario perciba una buena experiencia de uso. Hay que tener en cuenta que un usuario de iOS está habituado a una serie de elementos y situaciones básicas, como la navegación dentro de vistas mediante <em>Navigation Controllers</em>, navegación por las opciones fundamentales mediante los <em>Tab Bar Controllers</em>, uso de botones, etc. Aquí haremos un resumen de todo lo que Apple propone en sus <a href="https://developer.apple.com/ios/human-interface-guidelines/">guias de estilo</a>. En esta asignatura nos centraremos en los aspectos principales de la guía, aunque es recomendable leer por completo las guías de estilo tras cada actualización de iOS, ya que las guías cambian mucho de un año para otro.</p>
+<p>Además de la guía de estilo oficial, conviene consultar detalladamente este enlace:</p>
+<p><a href="https://developer.apple.com/design/tips/">iOS Design do's and don'ts</a></p>
+<!---
+[Designing for iOS](http://v1.designcode.io/iosdesign-guidelines) (este enlace no es de Apple).
+--->
+
+<p>Veremos 3 puntos principales:</p>
+<ul>
+<li>Principios de diseño</li>
+<li>Características de la plataforma iOS</li>
+<li>Guías de uso de las principales tecnologías disponibles en iOS</li>
+</ul>
+<h3 id="principios-de-diseno">Principios de diseño<a class="headerlink" href="#principios-de-diseno" title="Permanent link">&para;</a></h3>
+<p><em>Apple</em> recomienda diseñar apps siguiendo estos principios:</p>
+<ul>
+<li><strong>Claridad</strong>. En nuestras apps el texto debe poder ser legible a cualquier tamaño, los iconos deben ser precisos y claros, los adornos poco recargados y apropiados, y debemos centrarnos principalmente en la funcionalidad. Los espacios negativos, colores, fuentes, gráficos y elementos del interfaz deben resaltar el contenido que es importante y facilitar la interactividad.</li>
+<li><strong>Amigabilidad</strong>. Un interfaz fluido, claro y visualmente atractivo ayuda a los usuarios a entender e interactuar con el contenido, que normalmente ocupa la pantalla completa. Es importante mantener el interfaz ligero y claro para que el contenido destaque mejor.</li>
+<li><strong>Profundidad</strong>. Las distintas capas visuales y el movimiento realista deben facilitar la comprensión de la jerarquía del interfaz e imprimir dinamismo. Tocar y descubrir mejora la sensación de interacción y permite el acceso a funcionalidades y contenidos adicionales sin perder el contexto. Las transiciones proporcionan una sensación de profundidad mientras se navega por el contenido.</li>
+</ul>
+<p>En general, lo principal que deben tener las aplicaciones es:</p>
+<ul>
+<li>Integridad estética: debemos integrar adecuadamente el aspecto visual con su funcionalidad.</li>
+<li>Consistencia: deben usarse elementos estándar a los que ya están habituados los usuarios de iOS y un diseño uniforme durante toda la app.</li>
+<li>Adaptabilidad: es muy recomendable que el contenido de la pantalla cambie cuando se rota el dispositivo o se usan gestos. Las vistas deben adaptarse a cambios de orientación de dispositivo, modo oscuro (<em>dark mode</em>) y tipos dinámicos, dejando que los usuarios elijan las configuraciones que prefieran desde la configuración general del dispositivo. </li>
+<li><em>Feedback</em>: se deben confirmar las acciones y mostrar resultados para informar al usuario de que ha interactuado con nuestra app.</li>
+</ul>
+<p>Antes de comenzar a diseñar una app también es muy importante conocer quiénes son los usuarios a los que nos dirigimos, es decir, el público objetivo, y en función de esto definir la interfaz gráfica, los controles, terminología, etc. No es lo mismo diseñar una app para niños que una de contabilidad, o una app para empresas.</p>
+<p>Se recomienda hacer un diseño previo usando Mockups, o bien usando storyboards u otras herramientas antes de que la app sea funcional. Existen varios programas para  Mockups, tales como <a href="https://mockup.io/">mockup.io</a> o <a href="https://balsamiq.com">Balsamiq</a>.</p>
+<!---
+
+#### Documento descriptivo de la aplicación
+
+Existen distintas estrategias de diseño de aplicaciones. Apple nos recomienda redactar un pequeño documento que describa la aplicación de la manera más clara y concisa posibla siguiendo cuatro pasos básicos:
+
+
+* 1) Listar todas las tareas que debe implementar la aplicación sin importar que esta lista sea grande, después puede reducirse.
+* 2) Determinar quiénes son los usuarios que van a usar la aplicación.
+* 3) Filtrar el listado de tareas del primer punto según los tipos de usuario definidos en el segundo punto.
+* 4) Usar el listado de tareas final para definir el tipo de interfaz gráfica a utilizar, los controles y terminología, etc.
+-->
+
+<p>La aplicación que diseñes debe estar totalmente adaptada a un dispositivo iOS, no a otro tipo ni a web. El usuario lo agradecerá (y Apple, cuando lo revise, también). La inmensa mayoria de usuarios de iOS están acostumbrados al uso de botones, barras de navegación, <em>Tab Bars</em>, etc. Debemos, en la medida de lo posible, hacer uso de toda esta serie de componentes que son diseñados de forma específica para dispositivos iOS y con los que los usuarios están muy familiarizados.</p>
+<p>En <a href="https://developer.apple.com/design/human-interface-guidelines/components/all-components">este enlace</a> se pueden ver todos los componentes que podemos usar en nuestras apps. Se dividen en:</p>
+<ul>
+<li>Contenido. Estos componentes sirven para mostrar gráficos, texto, imágenes, o contenidos web.</li>
+<li>Distribución y organización. Elementos como las colecciones, tablas o etiquetas pueden usarse para organizar y mostrar los datos. </li>
+<li>Menús y acciones. Para interaccionar con el usuario disponemos de botones, menús o pop-ups, entre otros.</li>
+<li>Navegación y búsqueda. El usuario puede moverse por nuestra app usando barras de navegación, <em>tab bars</em> o usando campos de búsqueda, entre otros.</li>
+<li>Presentación. Para presentar los datos podemos usar alertas, controles de página, popovers, vistas de scroll, etc.</li>
+<li>Selección y entradas. Entre otros, se pueden elegir valores de una lista con <em>pickers</em>, usando <em>segmented controls</em>, o emplear <em>sliders</em> para valores numéricos.</li>
+<li>Estado. El estado de una tarea se puede medir con barras de progreso, anillos de actividad o medidores (<em>gauges</em>).</li>
+<li>Experiencias del sistema. El usuario puede recibir notificaciones, puede ver la barra de estado de la app, usar <em>widgets</em>, etc.</li>
+</ul>
+<p>Todos los componentes pueden consultarse con más detalle en la referencia del <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html">catálogo de UIKit</a>. </p>
+<!---
+Los elementos del interfaz de _UIKit_ se dividen en tres categorías principales:
+
+
+* [_Bars_](https://developer.apple.com/design/human-interface-guidelines/ios/bars/navigation-bars/): Indican a los usuarios dónde están en la app, proporcionan navegación y pueden contener botones u otros elementos para realizar acciones y comunicar información.
+* [_Views_](https://developer.apple.com/design/human-interface-guidelines/ios/views/action-sheets/): Son el contenido principal que los usuarios ven, como texto, animaciones y elementos interactivos. Las vistas pueden incluir _scroll_, inserción, borrado y relocalización.
+* [_Controls_](https://developer.apple.com/design/human-interface-guidelines/ios/controls/buttons/): Inician acciones y transmiten información. Son los botones, _switches_, campos de texto e indicadores de progreso, entre otros.
+--->
+
+<p>Es importante que las aplicaciones funcionen correctamente en todos los dispositivos que puedan usarlas. También hay que asegurarse antes de publicar en <em>App Store</em> de que no hay <em>bugs</em>, ya que si estos existen Apple puede rechazar la aplicación, o si aparecen después los usuarios podrían puntuarla mal o deje de usarla. Existen una serie de puntos a tener en cuenta en este caso:</p>
+<ul>
+<li>Hay que diseñar cada aplicación según el dispositivo en el que se use teniendo en cuenta especialmente las capas de vistas, ya que estas pueden cambiar bastante en función del tamaño de pantalla disponible.</li>
+<li>Se debe de adaptar todo el arte (imágenes, videos, etc.) al dispositivo adecuado. Para esto se usan los <em>Assets</em>. En las últimas versiones de iOS, se recomienda usar ficheros PDF en los <em>Assets</em>, ya que se adaptarán a cualquier tamaño.</li>
+<li>Las características de la aplicación deben conservarse a pesar del tipo de dispositivo que se use.</li>
+<li>Cuando sea posible, es conveniente diseñar las apps para que funcionen en todos los dispositivos Apple (iOS, iPadOS, watchOS, tvOS y macOS).</li>
+</ul>
+<h3 id="caracteristicas-principales-de-la-plataforma-ios">Características principales de la plataforma iOS<a class="headerlink" href="#caracteristicas-principales-de-la-plataforma-ios" title="Permanent link">&para;</a></h3>
+<h4 id="la-pantalla">La pantalla<a class="headerlink" href="#la-pantalla" title="Permanent link">&para;</a></h4>
+<p>Todo usuario que usa una aplicación interactúa mediante la pantalla. Existen distintas resoluciones de pantalla (a nivel de desarrollo de código y a nivel físico) según cada dispositivo. Se pueden consultar consejos de diseño y la resolución de todos los modelos de Apple en <a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/">este enlace</a>. </p>
+<!---
+Las distintas resoluciones también pueden verse en [este otro](http://iosres.com).
+
+-->
+
+<p>Es importante resaltar que el tamaño en puntos no es el mismo que el tamaño en píxeles, que normalmente es un múltiplo (2x, 3x) de los puntos, como puede verse en el siguiente ejemplo:</p>
+<p><img alt="Resolución iPhone" src=".gitbook/assets/design-resolutions.jpg" title="Resolución iphone" /></p>
+<blockquote>
+<p>Detección de contacto (touch events). El tamaño de la zona mínima para que el evento de contacto funcione correctamente debe de ser de al menos 44 x 44 puntos.</p>
+</blockquote>
+<p>Dada la diferencia de resolución entre los distintos dispositivos de Apple, se recomienda usar siempre <em>autolayout</em> o SwiftUI en lugar de indicar explícitamente coordenadas de la pantalla para colocar los componentes.</p>
+<blockquote>
+<p><strong>SwiftUI</strong> es el nuevo sistema de Apple para el desarrollo de interfaces. Tiene como principal ventaja sobre el sistema tradicional (UIKit) que se ahorra código (usa sintaxis declarativa) y facilita que la app funcione correctamente en todos los dispositivos mejorando el  <em>autolayout</em> de UIKit. Sin embargo, en esta asignatura todavía no introduciremos este entorno porque es muy nuevo, todavía tiene bugs y está sujeto a bastantes cambios que pueden hacer que las apps no compilen correctamente en pocos meses. Si quieres más información sobre swiftUI puedes consultar <a href="https://developer.apple.com/xcode/swiftui/">este enlace</a>.</p>
+</blockquote>
+<!---
+![Resolución iOS](ios_resolutions_old.png "Resolución de los distintos dispositivos en iOS")
+--->
+
+<h4 id="orientacion-del-dispositivo">Orientación del dispositivo<a class="headerlink" href="#orientacion-del-dispositivo" title="Permanent link">&para;</a></h4>
+<p>Uno de los requisitos a la hora de publicar una aplicación de iPhone/iPad en el <em>App Store</em> es la compatibilidad con las distintas orientaciones que puede adoptar el dispositivo iOS, tanto  vertical (<em>portrait</em>) como horizontal (<em>landscape</em>). Cualquier aplicación debe  estar adaptada a ambas posiciones para mejorar la usabilidad. La programación de la orientación en una aplicación iOS es relativamente sencilla (excepto en casos puntuales) y no implementarla puede suponer, como hemos comentado, el rechazo de su publicación en el <em>App Store</em>.</p>
+<p>A continuación puedes ver orientaciones de ejemplo para un iPhone y su layout:</p>
+<p><img alt="Resolución iPhone" src=".gitbook/assets/design_iphone.jpg" /></p>
+<p>Y para el iPad:</p>
+<p><img alt="Resolución iPhone" src=".gitbook/assets/design_ipad.jpg" /></p>
+<!---
+Según el dispositivo del que dispongamos, la pantalla inicial (_Launch Screen_) acepta una orientación vertical, horizontal o ambas. Por ejemplo, un iPhone o iPod Touch pequeño muestra su pantalla de inicio sólo en vertical, mientras que en los iPhone grandes o iPad se puede mostrar en vertical y en horizontal.
+-->
+
+<h4 id="storyboards"><em>Storyboards</em><a class="headerlink" href="#storyboards" title="Permanent link">&para;</a></h4>
+<p>Debemos diseñar un <code>Main.storyboard</code> para nuestra app. Para la pantalla de inicio que se muestra brevemente al arrancar la aplicación, a veces interesa hacer otro <em>storyboard</em> adicional (<code>LaunchScreen.storyboard</code>) cuando el proceso de carga de la app es lento. Las nuevas apps basadas en SwiftUI no necesitan <em>storyboards</em>.</p>
+<h4 id="gestos">Gestos<a class="headerlink" href="#gestos" title="Permanent link">&para;</a></h4>
+<p>Llamamos gestos a los distintos movimientos que hace el usuario sobre la pantalla para realizar acciones. En la sesión sobre <em>multitouch</em> veremos en detalle cómo gestionar los gestos.</p>
+<h4 id="ayuda">Ayuda<a class="headerlink" href="#ayuda" title="Permanent link">&para;</a></h4>
+<p>Una aplicación debe ser lo suficientemente simple e intuitiva para que el usuario sepa usarla. Hay que tener en cuenta que el usuario no tendrá tiempo ni ganas de estar leyendo la ayuda la primera vez que usa la aplicación. Por tanto, lo ideal es que no sea necesario ningún texto de ayuda, pero si existe debe ser lo más claro y compacto posible, y si se pueden utilizar imágenes o videos, mejor.</p>
+<h4 id="sonidos">Sonidos<a class="headerlink" href="#sonidos" title="Permanent link">&para;</a></h4>
+<p>A veces nos interesa reproducir sonidos en nuestra app, bien porque sea necesario o para producir un efecto agradable en el usuario. Para evitar justamente lo contrario, hay que tener en cuenta que:</p>
+<ul>
+<li>Si el usuario activa el modo <em>silencio</em> en el dispositivo, este no debe de emitir ningún tipo de sonido. Hay apps que se saltan esto, y suele ser algo bastante molesto. Si nuestra app se basa completamente en el sonido (por ejemplo, un reproductor musical) puede que tengamos que hacer alguna acción (como por ejemplo pausar la música) cuando se silencie el móvil.</li>
+<li>El tipo de sonido escogido para las distintas características de la aplicación es muy importante. Estos sonidos deben ser adecuados y se deben ajustar al tipo de acción que se esté ejecutando.</li>
+<li>Hay que tener también en cuenta la gestión de las interrupciones de audio. Por ejemplo, puede producirse una llamada entrante, la aplicación pasar a estado inactivo (<em>background</em>), etc.</li>
+<li>Si estamos desarrollando una aplicación musical, para mejorar la experiencia de usuario también podemos usar el control remoto de Apple o el sistema <em>AirPlay</em>.</li>
+</ul>
+<h4 id="accesibilidad">Accesibilidad<a class="headerlink" href="#accesibilidad" title="Permanent link">&para;</a></h4>
+<p>iOS ofrece funcionalidades de accesibilidad para usuarios con discapacidades visuales o auditivas. Con poco esfuerzo y usando los componentes de <em>UIKit</em> podemos adaptar nuestra app para que todos los usuarios puedan usarla. Para esto se recomienda:</p>
+<ul>
+<li>Proporcionar etiquetas de texto alternativas para imágenes, iconos y elementos del interfaz. Estas etiquetas alternativas no serán visibles en la pantalla, pero permitirán al sistema de voz (<em>VoiceOver</em>) describir qué hay en la pantalla, ayudando a las personas con problemas visuales.</li>
+<li>Responder a las opciones de accesibilidad. Debemos permitir a <em>UIKit</em> implementar su interfaz de usuario, para que los elementos se adapten a las preferencias de accesibilidad como texto en negrita o más grande, o eliminar animaciones. Debemos usar la fuente de texto del sistema cuando sea posible.</li>
+<li>Probar la app en modo accesible, para ver cómo queda.</li>
+<li>Usar suficiente contraste para que los iconos y el texto sean fácilmente distinguibles.</li>
+</ul>
+<h4 id="carga">Carga<a class="headerlink" href="#carga" title="Permanent link">&para;</a></h4>
+<p>Si usamos una pantalla estática mientras se está cargando contenido, puede parecer que la app se haya bloqueado. En lugar de esto, hay que dejar claro que la carga está en marcha, por ejemplo usando barras de progreso o animaciones. </p>
+<h4 id="preferencias">Preferencias<a class="headerlink" href="#preferencias" title="Permanent link">&para;</a></h4>
+<p>Si la aplicación utiliza preferencias propias, podemos hacer una vista para ellas dentro de nuestra aplicación en el caso de que el usuario necesite cambiarlas con frecuencia, o bien añadir un <em>settings bundle</em> si el cambio no es tan frecuente. Un <em>settings bundle</em> contiene ficheros (principalmente <em>.plist</em>) que describen la estructura y estilo de presentación de las preferencias, y es muy sencillo de implementar. La app <em>Settings</em> usa esta información para crear una entrada para nuestra aplicación y mostrar las preferencias.</p>
+<p><img alt="Preferencias" src=".gitbook/assets/preferencias.png" title="Ejemplo de preferencias en Bundle Settings" /></p>
+<h3 id="guias-de-uso-de-las-principales-tecnologias-disponibles-en-ios">Guías de uso de las principales tecnologías disponibles en iOS<a class="headerlink" href="#guias-de-uso-de-las-principales-tecnologias-disponibles-en-ios" title="Permanent link">&para;</a></h3>
+<p>La API de iOS nos da acceso a múltiples tecnologías nativas que se describen a continuación:</p>
+<h4 id="multitarea">Multitarea<a class="headerlink" href="#multitarea" title="Permanent link">&para;</a></h4>
+<p>Mediante la multitarea nuestro dispositivo puede ejecutar más de dos aplicaciones al mismo tiempo. Otras tareas que no estén mostrándose en pantalla pueden estar guardadas en memoria (en <em>background</em>) o también mostrándose simultáneamente en la pantalla. Apple recomienda que nuestra aplicación tenga en cuenta dicha característica ya que de esta forma el usuario puede estar realizando otras tareas al mismo tiempo sin necesidad de cerrarla.</p>
+<p><img alt="Captura multitarea iOS" src=".gitbook/assets/multitasking2.png" title="Captura multitarea iOS" /></p>
+<p>La aplicación debe estar preparada para gestionar interrupciones de audio en cualquier momento, pararse y reiniciarse sin ninguna complicación ni lag y de forma "suave", y debe comportarse de forma adecuada cuando se encuentra en <em>background</em>. La multitarea es una tecnología que se utiliza muy a menudo en iOS y es por ello que debemos tenerla presente cuando diseñamos nuestras aplicaciones. La gestión del paso de un estado <em>activo</em> a <em>inactivo</em> debe programarse cuando sea necesario. Por ejemplo, hay que tener en cuenta que nuestro juego Angry Birds puede interrumpirse por una llamada a mitad del lanzamiento de un pájaro.</p>
+<p>Para determinar el comportamiento de nuestra aplicación cuando entra en modo <em>background</em> podemos implementar métodos que se verán en otras asignaturas del máster.</p>
+<p>Además de tener que estar preparados para interrupciones, la multitarea implica que nuestra app puede ejecutarse sólo en una zona de la pantalla, por lo que hay que tener en cuenta esto en la fase de diseño.</p>
+<h4 id="notificaciones">Notificaciones<a class="headerlink" href="#notificaciones" title="Permanent link">&para;</a></h4>
+<p>Las <a href="https://developer.apple.com/documentation/usernotifications">notificaciones <em>push</em></a> permiten avisar a los usuarios independientemente de si la aplicación está funcionando en ese momento. Esto es muy útil en apps que usen un calendario, para avisar de eventos futuros, o para algún tipo de recordatorio. También se utiliza muy a menudo en juegos.</p>
+<p><img alt="Notificación push" src=".gitbook/assets/notificaciones_push.png" title="Notificación push alert" /></p>
+<!---
+Hay dos estilos de notificaciones: 
+
+* _Alert_: Aparece en la pare superior de la pantalla mientras el dispositivo está en uso y se queda hasta que el usuario la quite manualmente.
+* _Banner_: Aparece en la parte superior de la pantalla unos segundos mientras el dispositivo está en uso, y después desaparece automáticamente.
+
+![Notificación push](.gitbook/assets/notif_ctr_alert.png "Notificación push alert")
+![Notificación push](.gitbook/assets/notif_ctr_banner.png "Notificación push banner")
+
+-->
+
+<p>Se pueden enviar notificaciones usando un servidor propio, o bien generarlas localmente desde nuestra app. En el caso de requerir un servidor también se pueden contratar servicios externos que realicen esa tarea de forma bastante económica.</p>
+<!--
+La implementación de este servicio es algo compleja y normalmente requiere un servidor propio, aunque se pueden contratar servicios externos que realicen esa tarea de forma bastante económica. Al mismo tiempo que se activa la notificación _push_ se muestra un número en la esquina superior derecha del icono de la aplicación. A esto se le llama _badge_ y es muy sencillo de implementar en nuestras aplicaciones.
+
+![Ejemplo badge en app](.gitbook/assets/notif_ctr_badge.png "Ejemplo badge en app")
+-->
+
+<!--
+#### _AirPrint_
+
+Mediante _Airprint_ podemos enviar a imprimir cualquier documento desde nuestra app. El SDK de iOS se encarga de gestionar la localización de impresoras y la ejecución de tareas de impresión, mientras que el desarrollador se encarga de especificar los elementos que desea imprimir (normalmente PDF o imágenes).
+
+#### _QuickLook_
+
+Usando _Quicklook_ los usuarios pueden acceder a una vista previa de documentos descargados desde las aplicaciones (por ejemplo, _pdf_). Dependiendo del dispositivo en el que se muestra, los documentos se presentarán dentro de una ventana modal o dentro de una vista completa.
+-->
+<!---
+
+#### Social media (redes sociales)
+
+Podemos querer que nuestros usuarios accedan a redes sociales desde nuestra aplicación. Para ello, Apple tiene una serie de clases que facilitan el acceso a las mismas mediante una extensión como se ha visto anteriormente, que podemos configurar para esta tarea.
+
+#### iCloud
+
+Con iCloud disponemos de un espacio de almacenamiento en la nube accesible por nuestros usuarios independientemente del dispositivo en el que estén trabajando. Cuando integramos iCloud en nuestra aplicación, los usuarios pueden usar distintas instancias de las misma en distintos dispositivos para ver y editar contenidos sin tener que hacer una sincronización explícita.
+
+![iCloud](icloud_intro_2x.png "iCloud")
+
+#### In-App purchase
+
+Podemos hacer que los usuarios realicen compras desde nuestra aplicación. Esto es muy común en juegos, por ejemplo, donde se pueden comprar objetos con dinero real. También podemos usarlo para actualizar de una versión gratuita (básica) a una versión de pago (premium) o para renovar una subscripción, por ejemplo.
+
+![In-App purchase](in-app_purchase_2x.png "In-app purchase")
+
+#### Passbook (Wallet)
+
+Con Wallet podemos gestionar _passes_, que son representaciones de objetos físicos como tarjetas de embarque, cupones, o tickets. Podemos crear un _pass_, distribuirlo a los usuarios, y actualizarlo cuando creamos oportuno.
+
+![Passbook](pass_example_2x.png "Passbook")
+
+
+#### Game center
+
+Game Center permite a los usuarios participar en distintos juegos y organizar partidas multijugador online, por ejemplo. Los jugadores pueden usar la app _Game Center_ para entrar en su cuenta, descubrir nuevos juegos, añadir amigos, y ver los resultados conseguidos.
+
+
+
+#### Servicios de localización
+
+Los servicios de localización permiten a los usuarios acceder a una situación geográfica en cualquier momento y
+lugar. Si nuestra aplicación hace uso de los mapas, por ejemplo, estos intentarán a su vez hacer uso de los servicios de localización del dispositivo para poder situar de una forma bastante certera la posición actual del usuario en el mapa.
+
+Al intentar hacer uso de estos servicios, la aplicación lanzará una ventana emergente preguntando por los permisos de acceso. Los sistemas de localización se basan principalmente en la brújula, GPS y Wifi.
+
+
+#### Siri
+
+Desde _iOS 10_, podemos desarrollar apps integradas con Siri para realizar ciertas tareas en respuesta a comandos hablados y a preguntas de los usuarios.
+
+Por ejemplo, podemos iniciar llamadas o buscar en el histórico de llamadas, enviar mensajes o leer mensajes recibidos, aceptar pagos, buscar o mostrar fotos, reservar viajes o proporcionar información sobre los mismos, e incluso con _CarPlay_ podemos cambiar la fuente de audio en el coche, la temperatura del asiento o la emisora de radio.
+
+
+#### Menú de edición
+
+Existe un <a href="https://developer.apple.com/ios/human-interface-guidelines/ui-controls/edit-menus/">menú contextual de edición</a> básico que incorpora iOS por defecto. Este contiene las opciones de copiar, cortar y seleccionar. Los desarrolladores podemos modificar este menú si queremos, eliminando o incluyendo nuevas opciones que se ajusten más a nuestra aplicación.
+
+![Menú de edición](edit_menu.png "Menú de edición")
+
+#### Teclado
+
+El teclado virtual es totalmente modificable según nuestros requerimientos. Por ejemplo, si queremos utilizar un teclado numérico sólo deberemos indicarlo al cargar el teclado dentro del método adecuado. Desde iOS8, se permite añadir teclados personalizados además de los que vienen con el sistema.
+-->
+
+<h4 id="extensiones">Extensiones<a class="headerlink" href="#extensiones" title="Permanent link">&para;</a></h4>
+<p>Con las extensiones los usuarios pueden usar un componente desarrollado por nosotros desde una app externa. Por ejemplo, mientras un usuario ve una página web con Safari, podría usar nuestras extensiones para enviar una imagen o un artículo a nuestra red social. O podría también usar desde la aplicación de fotos de Apple una extensión nuestra para editar la imagen.</p>
+<p>Las extensiones pueden ser de tipo <em>widget</em>, para realizar acciones desde el notification center, <em>share</em> para compartir contenido con terceros, <em>action</em> para ver contenido desde otra aplicación, <em>photo editing</em> para editar imágenes, o <em>custom keyboard</em> para reemplazar el teclado de iOS por uno personalizado, entre otras posibilidades.</p>
+<p><img alt="Widget" src=".gitbook/assets/widget_experience_2x.png" title="Widget" />
+<img alt="Action" src=".gitbook/assets/share_action_appex_2x.png" title="Action" /></p>
+<p>Básicamente estos son los conceptos principales de la guía de estilo de Apple, aunque hay más tecnologías que pueden verse en su <a href="https://developer.apple.com/ios/human-interface-guidelines/">guía de estilo</a>.</p>
+<hr />
+<h1 id="ejercicios">Ejercicios<a class="headerlink" href="#ejercicios" title="Permanent link">&para;</a></h1>
+<p>A continuación vamos a empezar programando ejemplos de personalización de controladores. Llamaremos personalizaciones a las modificaciones sobre el aspecto visual de los componentes estándar de Apple. Normalmente las personalizaciones no son recomendables para no confundir al usuario, pero a veces son necesarias para juegos o aplicaciones que requieran un aspecto diferente, como puede verse en el siguiente ejemplo:</p>
+<p><img alt="Personalización" src=".gitbook/assets/customization.png" title="Personalización" /></p>
+<h2 id="ejercicio-1-personalizacion-de-celdas">Ejercicio 1- Personalización de celdas<a class="headerlink" href="#ejercicio-1-personalizacion-de-celdas" title="Permanent link">&para;</a></h2>
+<p>La captura siguiente muestra un ejemplo de una tabla con las celdas totalmente personalizadas.</p>
+<!--
+[ejemplo de código](https://medium.com/q-software/ios-custom-table-views-with-cells-2e4ba692cfc8) 
+-->
+
+<p><img alt="Ejemplo personalización celdas" src=".gitbook/assets/custom_cells.png" title="Ejemplo personalización celdas" /></p>
+<p>A diferencia de la personalización de otros componentes, la personalización de celdas de una tabla es algo muy habitual en iOS. De esta forma podemos hacer que nuestras tablas se distingan del resto, mostrar datos de forma más adecuada, y ofrecer un aspecto característico para nuestra app.</p>
+<p>¿Cómo podemos hacer este tipo de celdas? Es muy sencillo, a continuación veremos mediante un ejemplo paso a paso el diseño y programación de celdas personalizadas mediante XCode.</p>
+<h3 id="creando-el-proyecto-y-las-clases-basicas">Creando el proyecto y las clases básicas<a class="headerlink" href="#creando-el-proyecto-y-las-clases-basicas" title="Permanent link">&para;</a></h3>
+<p>Al terminar este ejemplo tendremos una aplicación que solo contiene una vista de tabla <code>UITableView</code> con celdas personalizadas. Estas celdas tendrán una imagen en el lado izquierdo, un texto en negrita en la parte superior y otro texto pequeño en la parte inferior. Las celdas tendrán un tamaño algo mayor al que viene por defecto y, para finalizar, la tabla tendrá estilo <em>zebra</em>, es decir, el fondo de las celdas tendrá colores intercalados para cada fila.</p>
+<p>Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto para <em>iOS</em> de tipo <em>App</em>. Lo  guardaremos con el nombre <code>ejercicio_celdas</code>, y debemos elegir el interfaz Storyboard:</p>
+<p><img alt="Inicialización ejercicio celdas" src=".gitbook/assets/cell_init.png" title="Inicialización ejercicio celdas" /></p>
+<p>Para empezar vamos a añadir al <em>storyboard</em> principal (<em>Main</em>) un nuevo controlador de tipo <code>Table View Controller</code> (usando el botón <strong>+</strong> en la parte superior del interfaz de XCode).</p>
+<p>Ahora haremos que nuestra tabla sea lo primero que aparezca cuando se lance la app. Esto se puede hacer, por ejemplo, arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo <em>Table View Controller</em>. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero <code>ViewController.swift</code>, ya que estaba asociado a la vista que hemos borrado.</p>
+<p>Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos <em>File &gt; New &gt; File &gt; Cocoa Touch Class</em>, y le damos el nombre <code>TableViewController</code>, subclase de <code>UITableViewController</code>, dejando sin marcar "<em>Also create XIB file</em>". </p>
+<p>Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el <em>Identity Inspector</em> le asignamos la clase que hemos creado <code>TableViewController</code>, como se muestra en la imagen:</p>
+<p><img alt="Asignación del controlador TableViewController" src=".gitbook/assets/cell_tableviewcontroller.png" title="Asignación del controlador TableViewController" /></p>
+<p>Por último, para nuestra vista personalizada vamos a crear un nuevo fichero subclase de <code>UITableViewCell</code>. Hacemos click en <em>File &gt; New &gt; File &gt; Cocoa Touch Class</em>, y seleccionamos Subclass of <code>UITableViewCell</code>, dejando sin marcar "<em>Also create XIB file</em>". Lo guardamos con el nombre <code>TableViewCell</code>.</p>
+<h3 id="disenando-la-celda-desde-interface-builder">Diseñando la celda desde Interface Builder<a class="headerlink" href="#disenando-la-celda-desde-interface-builder" title="Permanent link">&para;</a></h3>
+<p>Una vez hemos creado el proyecto y la clase controladora de la tabla y la celda ahora vamos a diseñar su vista. Para ello abrimos la tabla en el storyboard. Dentro de <em>Prototype cells</em> podemos diseñar la vista de la celda. Pero antes tenemos que asignar la clase <code>TableViewCell</code> que hemos creado a las celdas de nuestra tabla.</p>
+<p><img alt="Asignación de la celda personalizada" src=".gitbook/assets/cell_custom_class.png" title="Asignación de la celda personalizada" /></p>
+<p>Una vez hemos vinculado la vista de la celda a nuestro controlador, vamos a modificar la altura de la celda desde el <em>size inspector</em>, usando una altura de 70 puntos:</p>
+<p><img alt="Ajustes de tamaño vista celda" src=".gitbook/assets/cell_table_view_row1.png" title="Ajustes de tamaño vista celda" /></p>
+<p>Además de indicar la altura de la celda para el <em>Table View Cell</em> (lo cual nos sirve para saber cómo quedan los elementos en la vista de diseño), también debemos hacerlo para las  celdas del <em>Table View</em>:</p>
+<p><img alt="Ajustes de tamaño vista tabla" src=".gitbook/assets/cell_table_view_row2.png" title="Ajustes de tamaño vista tabla" /></p>
+<p>Si quisieramos hacer esto mismo desde código (como lo hemos hecho desde el interfaz no hace falta), podríamos indicarlo así en el método <em>viewDidLoad</em>:</p>
+<div class="highlight"><pre><span></span><code> <span class="kc">self</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">rowHeight</span><span class="p">=</span><span class="mi">70</span>
+</code></pre></div>
+<p>Ahora solo tenemos que arrastrar los objetos que queremos que aparezcan en la celda. En este ejemplo vamos a añadir dos etiquetas (<em>labels</em>) y una imagen (<em>UIImageView</em>). La celda quedará de la siguiente manera en el <em>Interface builder</em>:</p>
+<p><img alt="Vista celda" src=".gitbook/assets/cell_mytableviewcell.png" title="Vista celda" /></p>
+<p>En la pestaña de <em>Attributes Inspector</em> de la celda escribimos un identificador para ella: <code>TableViewCell</code>. Esto servirá más adelante para referenciarla desde el controlador de la tabla y así poder utilizar las celdas desde este controlador:</p>
+<p><img alt="Identificador en la celda" src=".gitbook/assets/cell_attributes.png" title="Identificador en la celda" /></p>
+<p>Ya hemos diseñado la vista de la celda. Ahora vamos a programar el código de su controlador.</p>
+<h3 id="programando-la-celda">Programando la celda<a class="headerlink" href="#programando-la-celda" title="Permanent link">&para;</a></h3>
+<p>Tendremos que vincular a nuestra clase celda los <em>Outlets</em> que hemos creado antes en la vista. Para ello abrimos el fichero <em>TableViewCell.swift</em> y añadimos las siguientes propiedades a la clase:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">imagen</span><span class="p">:</span> <span class="bp">UIImageView</span><span class="p">!</span>
+<span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">labelTitle</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
+<span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">labelAuthor</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
+</code></pre></div>
+<blockquote>
+<p>Alternativamente, se pueden crear los IBOutlets con el asistente (a veces es más cómodo). Pinchando sobre el símbolo que representa una tabla con un <em>+</em> dentro de ella (arriba a la derecha), se abre una segunda ventana de edición. Así se puede seleccionar la vista en una de las ventanas, y el código en otra. Después, puedes pinchar (botón derecho) sobre el componente de la vista y arrastrarlo al código de la declaración de la clase. Esto crea automáticamente las propiedades, y hace los enlaces. El mismo procedimiento es válido también para crear un <em>IBAction</em>.</p>
+</blockquote>
+<p>Ahora volvemos a la vista de la celda en el <em>storyboard</em> y enlazamos los <em>Outlets</em> creados en la clase con los objetos de la vista.</p>
+<p>Una vez hecho esto abrimos de nuevo la clase controladora de la tabla <code>TableViewController.swift</code> y modificamos los siguientes métodos:</p>
+<div class="highlight"><pre><span></span><code> <span class="kr">override</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="mi">1</span>
+ <span class="p">}</span>
+
+ <span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="n">section</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+     <span class="k">return</span> <span class="mi">3</span>
+ <span class="p">}</span>
+
+ <span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UITableViewCell</span> <span class="p">{</span>
+     <span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;TableViewCell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="n">TableViewCell</span>
+
+     <span class="n">cell</span><span class="p">.</span><span class="n">labelTitle</span><span class="p">?.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&quot;Título </span><span class="si">\(</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="si">)</span><span class="s">&quot;</span>
+     <span class="n">cell</span><span class="p">.</span><span class="n">labelAuthor</span><span class="p">?.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&quot;Autor&quot;</span>
+     <span class="n">cell</span><span class="p">.</span><span class="n">imagen</span><span class="p">?.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span> <span class="p">:</span> <span class="s">&quot;logo-master.png&quot;</span><span class="p">)</span>
+
+     <span class="k">return</span> <span class="n">cell</span>
+ <span class="p">}</span>
+</code></pre></div>
+<p>Ahora descarga la imagen <a href=".gitbook/assets/logo-master.png">logo_master.png</a> y arrástrala dentro de XCode a los <em>Assets</em> del proyecto. En este momento ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño), nos saldrán los elementos relativamente bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los <em>constraints</em> (de hecho se mostrará algún <em>warning</em> por este motivo). De momento no te preocupes por esto, lo arreglaremos más adelante.</p>
+<!---
+Como podrás ver, se solapa la barra de estado con el principio de la tabla. Esto podríamos resolverlo añadiendo la siguiente línea al método `ViewDidLoad`:
+<div class="highlight"><pre><span></span><code>    <span class="kc">self</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">contentInset</span> <span class="p">=</span> <span class="n">UIEdgeInsetsMake</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+-->
+
+<h3 id="anadiendo-la-barra-de-navegacion">Añadiendo la barra de navegación<a class="headerlink" href="#anadiendo-la-barra-de-navegacion" title="Permanent link">&para;</a></h3>
+<p>La aplicación funciona y se muestra una tabla, aunque no tiene barra de navegación. Normalmente todos los controladores en iOS suelen ir incrustados en controladores contenedores, que son los que gestionan la navegación, como <code>UINavigationController</code>, <code>UITabBarController</code> o  <code>UISplitViewController</code>. Para nuestro ejercicio, lo más adecuado incrustrar la tabla en un <em>Navigation Controller</em>, seleccionando el controlador de la tabla en el storyboard y eligiendo <em>Editor &gt; Embed in &gt; Navigation Controller</em>. Añade un título para la tabla mediante la siguiente línea de código en <code>viewDidLoad</code> de <code>TableViewController</code> (o si lo prefieres, desde el <em>Interface Builder</em>):</p>
+<div class="highlight"><pre><span></span><code>    <span class="kc">self</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">&quot;Mi tabla personalizada&quot;</span>
+</code></pre></div>
+<h3 id="personalizacion-con-efecto-zebra">Personalización con efecto zebra<a class="headerlink" href="#personalizacion-con-efecto-zebra" title="Permanent link">&para;</a></h3>
+<p>Una vez tenemos las celdas hechas vamos a personalizar la tabla un poco más, añadiendo un fondo a las celdas pares y otro a las impares, lo que se conoce como efecto <em>zebra</em>. Para esto necesitaremos dos imágenes más que se pueden descargar <a
+href=".gitbook/assets/img_fondo_celdas.zip">aquí</a> y añadirlas a los <em>Assets</em>.</p>
+<p>Abrimos la vista de la celda en el <em>storyboard</em> y arrastramos un <code>UIImageView</code> ocupando todo el espacio de la celda. Es necesario enviar esta vista al fondo, con el menú <em>Editor &gt; Arrange &gt; Send to back</em>. Si en el modo visual se van descolocando las vistas de la celda cuando las mueves (aunque esto no debería ocurrir con las últimas versiones de XCode), ajusta los tamaños desde el <em>Size Inspector</em>.</p>
+<p>En el fichero <code>TableViewCell.swift</code> enlazamos el nuevo <code>UIImageView</code>, como hemos hecho con el resto de elementos, y lo llamamos <code>fondo</code>.</p>
+<p>Ahora, en la clase <code>TableViewController</code>, dentro del método <code>cellForRowAt</code> añadimos lo siguiente justo antes de <code>return cell</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">indexPath</span><span class="p">.</span><span class="n">row</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="n">cell</span><span class="p">.</span><span class="n">fondo</span><span class="p">.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span><span class="s">&quot;fondo_celda1.png&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="n">cell</span><span class="p">.</span><span class="n">fondo</span><span class="p">.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span><span class="s">&quot;fondo_celda2.png&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Si ejecutamos ahora el proyecto tendremos nuestra tabla con las celdas personalizadas:</p>
+<p><img alt="Celdas final" src=".gitbook/assets/cell_final.png" title="Resultado de celdas personalizadas" /></p>
+<h3 id="ajuste-de-las-constraints">Ajuste de las constraints<a class="headerlink" href="#ajuste-de-las-constraints" title="Permanent link">&para;</a></h3>
+<p>Sólo hay un problema: como hemos comentado anteriormente, se ha diseñado la vista para un iPhone en concreto (iPhone 14 Pro por defecto), y si ejecutamos el simulador con otro iPhone (por ejemplo el SE) los elementos de la celda nos saldrán descolocados. Para que salgan bien nos falta ajustar las <em>constraints</em> de la vista.</p>
+<p>Para esto, seleccionamos el <code>TableViewCell</code> desde el <em>storyboard</em>, y en la parte inferior ("All Views in Table View Cell") marcamos "All Views in TableViewController" -&gt; "Reset to Suggested Constraints". Probamos y vemos que la tabla es correcta, incluso rotando el dispositivo.</p>
+<blockquote>
+<p>Esta opción de Reset te puede sacar de más de un apuro cuando el ajustar el autolayout sea complicado. Recomiendo probar primero con ella, y si no funciona a la primera entonces ajustar las constraints a mano.</p>
+</blockquote>
+<p><img alt="Celdas constraints" src=".gitbook/assets/cell_constraints.png" title="Constraints automáticas para las celdas personalizadas" /></p>
+<p>Si se te queda muy corta la imagen del fondo cuando rotas el dispositivo puedes seleccionar la opción "Scale to Fill" en el inspector de atributos:</p>
+<p><img alt="Celdas ajuste del fondo" src=".gitbook/assets/cell_scale.png" title="Ajuste de imagen de fondo para rellenar celda" /></p>
+<h3 id="insertar-datos-en-la-tabla">Insertar datos en la tabla<a class="headerlink" href="#insertar-datos-en-la-tabla" title="Permanent link">&para;</a></h3>
+<p>Para finalizar, extenderemos nuestro programa con las siguientes opciones:</p>
+<p><em>a)</em> Vamos a rellenar las celdas de la tabla con datos de libros. Para ello, crearemos una nueva clase (con <em>File &gt; New &gt; Swift file</em>) a la que llamaremos <code>Libro</code>. Reemplaza en este fichero <code>import Foundation</code> por <code>import UIKit</code>, y crea la clase con un <code>String</code> que será el título del libro, otro <code>String</code> que será el autor y una imagen (<code>UIImage</code>) que será la portada. Añade también un método <code>init</code> para inicializar las variables de la clase.</p>
+<p><em>b)</em> Ahora crearemos un array dentro de la clase <code>TableViewController</code>, lo inicializamos y lo completamos con los 3 libros que prefieras. Cada elemento del array será de la clase <code>Libro</code>.</p>
+<p><em>c)</em> Una vez creado el array de libros vamos a mostrarlos en nuestra tabla. Para ello deberemos modificar los métodos de la clase <code>TableViewController</code>, asignando los datos del array a las celdas correspondientes.</p>
+<p><em>d)</em> Cuando hayamos terminado, comprobamos que la aplicación funciona según lo esperado.</p>
+<hr />
+<h2 id="ejercicio-2-personalizacion-de-toolbars">Ejercicio 2- Personalización de ToolBars<a class="headerlink" href="#ejercicio-2-personalizacion-de-toolbars" title="Permanent link">&para;</a></h2>
+<p>Los <em>ToolBars</em>, al igual que la mayor parte de componentes, se pueden personalizar para conseguir las funcionalidades que deseemos para nuestras apps. En el siguiente ejemplo vamos a crear una vista <em>ToolBar</em> personalizada con una imagen de fondo, estilos para los botones, añadiendo botones de distinto tipo, etc.</p>
+<p>Comenzamos creando un nuevo proyecto de tipo <em>iOS &gt; App</em> con el nombre  <code>ejercicio_toolbar</code> y con interfaz <em>Storyboard</em>.</p>
+<h3 id="diseno-de-la-vista">Diseño de la vista<a class="headerlink" href="#diseno-de-la-vista" title="Permanent link">&para;</a></h3>
+<p>Abrimos la vista principal del <em>storyboard</em>, arrastramos un objeto <code>UIToolBar</code> y lo situamos en la parte superior. También vamos a añadir un objeto <code>UILabel</code> en el centro de la vista.</p>
+<p><img alt="ToolBar básico" src=".gitbook/assets/toolbar_empty.png" title="ToolBar básico" /></p>
+<p>Ahora vamos a añadir los elementos que deseemos sobre el <em>ToolBar</em>. En nuestro caso arrastraremos desde el listado de objetos (en el siguiente orden) un <em>Text Field</em>, un <em>Flexible Space Bar</em> y un <em>Segmented Control</em>. Borraremos el botón <em>Item</em> de la izquierda. El <em>ToolBar</em> debe quedar de la siguiente manera:</p>
+<p><img alt="ToolBar con botones y campos de texto" src=".gitbook/assets/toolbar_view.png" title="ToolBar con botones y campos de texto" /></p>
+<p>Como podemos observar, la función del objeto <em>Flexible Space</em> no es más que añadir un espacio flexible entre dos objetos dentro de un <em>ToolBar</em>. Una vez que tenemos la barra con todos sus elementos vamos a definir los elementos dentro de la clase. Dentro del código de la clase <code>ViewController</code> añadimos los siguientes outlets:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">toolBar</span><span class="p">:</span> <span class="bp">UIToolbar</span><span class="p">!</span>
+<span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">textField</span><span class="p">:</span> <span class="bp">UITextField</span><span class="p">!</span>
+<span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">segmentedControl</span><span class="p">:</span> <span class="bp">UISegmentedControl</span><span class="p">!</span>
+
+<span class="c1">// Para la etiqueta centrada en la vista</span>
+<span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">segmentLabel</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
+</code></pre></div>
+<p>Seguidamente tenemos que enlazar los <em>outlets</em> dentro de la vista. Si ejecutamos el código, es posible que el <em>toolbar</em> y el <em>label</em> salgan descolocados (o que no salgan) cuando rotemos el dispositivo. </p>
+<h3 id="ajuste-de-las-constraints_1">Ajuste de las constraints<a class="headerlink" href="#ajuste-de-las-constraints_1" title="Permanent link">&para;</a></h3>
+<p>Vamos a añadir <em>constraints</em> desde XCode para fijar los márgenes. Selecciona el toolbar, y añade las siguientes <em>constraints</em> (arriba, izquierda, derecha) marcando <em>Constrain to margins</em> para que no se solape con la barra de estado:</p>
+<p><img alt="Toolbar constraints" src=".gitbook/assets/toolbar_constraints.png" title="Toolbar constraints" /></p>
+<p>Vamos a centrar ahora el <em>label</em>, añadiendo restricciones de centrado horizontal y vertical:</p>
+<p><img alt="Label constraints" src=".gitbook/assets/toolbar_label_constraints.png" title="Label constraints" /></p>
+<p>Puedes ver los <em>constraints</em> añadidos para cada elemento en el <em>Size inspector</em>. Por ejemplo, para el <em>label</em> tendríamos:</p>
+<p><img alt="Label size inspector" src=".gitbook/assets/toolbar_size_inspector.png" title="Label size inspector" /></p>
+<h3 id="acciones">Acciones<a class="headerlink" href="#acciones" title="Permanent link">&para;</a></h3>
+<p>Ahora vamos a implementar la acción del <em>Segmented Control</em>. Para ello declaramos el siguiente método dentro de la clase <code>ViewController</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">segmentedControlIndexChanged</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">Any</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kc">self</span><span class="p">.</span><span class="n">segmentLabel</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">segmentedControl</span><span class="p">.</span><span class="n">selectedSegmentIndex</span> <span class="p">==</span> <span class="mi">0</span> <span class="p">?</span> <span class="s">&quot;Segmento 1&quot;</span> <span class="p">:</span> <span class="s">&quot;Segmento 2&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Para que el método se invoque cuando se pulsa un botón del <em>Segmented Control</em>, deberemos enlazarlo con la vista. </p>
+<p>En este momento ya podemos ejecutar el proyecto por primera vez y comprobar que al pulsar sobre uno de los botones del <em>Segmented Control</em> la etiqueta <em>Label</em> cambia.</p>
+<h3 id="personalizacion-avanzada">Personalización avanzada<a class="headerlink" href="#personalizacion-avanzada" title="Permanent link">&para;</a></h3>
+<p>Ya tenemos un objeto <em>ToolBar</em> con una personalización básica funcionando. Ahora vamos a cambiarlo un poco más: vamos a añadirle una imagen de fondo, a asignar un color de fondo al <em>Segmented Control</em> y a modificar el diseño del <em>TextField</em>. Para hacer todo esto debemos cambiar el método <code>viewDidLoad</code> de la clase <code>ViewController</code> de forma que quede de la siguiente manera:</p>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+
+    <span class="c1">// Vamos a añadir la imagen de fondo como un imageView, pero esta vez sin usar el storyboard (por hacerlo distinto)</span>
+    <span class="kd">let</span> <span class="nv">iv</span> <span class="p">=</span> <span class="bp">UIImageView</span><span class="p">(</span><span class="n">image</span><span class="p">:</span><span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span><span class="s">&quot;fondo_madera.png&quot;</span><span class="p">))</span>
+    <span class="n">iv</span><span class="p">.</span><span class="n">frame</span> <span class="p">=</span> <span class="n">CGRect</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span><span class="kc">self</span><span class="p">.</span><span class="n">toolBar</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span><span class="mi">44</span><span class="p">)</span>
+    <span class="n">iv</span><span class="p">.</span><span class="n">autoresizingMask</span> <span class="p">=</span> <span class="bp">UIView</span><span class="p">.</span><span class="n">AutoresizingMask</span><span class="p">.</span><span class="n">flexibleWidth</span>
+
+    <span class="c1">// Añadimos la subview</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">toolBar</span><span class="p">.</span><span class="n">insertSubview</span><span class="p">(</span><span class="n">iv</span><span class="p">,</span> <span class="n">at</span><span class="p">:</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1">// Cambiamos el color del SegmentedControl</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">segmentedControl</span><span class="p">.</span><span class="n">tintColor</span><span class="p">=</span><span class="bp">UIColor</span><span class="p">.</span><span class="n">brown</span>
+
+    <span class="c1">// Personalizamos el TextField desde código (también se podría hacer desde el Interface Builder)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">textField</span><span class="p">.</span><span class="n">textColor</span> <span class="p">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">white</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">textField</span><span class="p">.</span><span class="n">borderStyle</span> <span class="p">=</span> <span class="bp">UITextField</span><span class="p">.</span><span class="n">BorderStyle</span><span class="p">.</span><span class="kr">none</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">textField</span><span class="p">.</span><span class="n">background</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span><span class="s">&quot;fondo_textfield.png&quot;</span><span class="p">)</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">textField</span><span class="p">.</span><span class="n">placeholder</span> <span class="p">=</span> <span class="s">&quot;Escribe aquí&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Para que el código funcione debemos descargarnos las imágenes desde <a
+href=".gitbook/assets/imagenes_toolbar.zip">aquí</a> y añadirlas a los <em>Assets</em> del proyecto. Una vez hecho esto ya podemos ejecutarlo y ver cómo ha cambiado. De esta forma tendremos nuestro componente <em>ToolBar</em> bastante personalizado, dándole a la aplicación un aspecto visual diferenciado.</p>
+<p><img alt="ToolBar personalizado" src=".gitbook/assets/toolbar_final.png" title="ToolBar personalizado" /></p>
+<p>La metodología que acabamos de seguir nos serviría también para personalizar los componentes <code>UITabBar</code> y <code>UINavigationBar</code>, entre otros.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pie" >
+      
+      
+        
+        <a href="sesion-2-controladores-avanzados.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 2- Controladores avanzados" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              2- Controladores avanzados
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.config.lang": "es", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "B\u00fasqueda", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version.title": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>
