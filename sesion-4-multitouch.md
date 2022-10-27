@@ -262,7 +262,6 @@ En total podemos usar los siguientes gestos en nuestras aplicaciones, además de
 * `UIPanGestureRecognizer`
 * `UIScreenEdgePanGestureRecognizer`
 * `UILongPressGestureRecognizer`
-* `UIHoverGestureRecognizer`
 
 Y esto es lo básico para poder implementar reconocimiento de gestos en nuestra aplicación.
 
