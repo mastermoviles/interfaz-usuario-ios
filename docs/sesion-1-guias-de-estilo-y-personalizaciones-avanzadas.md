@@ -118,11 +118,11 @@ Uno de los requisitos a la hora de publicar una aplicación de iPhone/iPad en el
 
 A continuación puedes ver orientaciones de ejemplo para un iPhone y su layout:
 
-![Resolución iPhone](.gitbook/assets/design_iphone.jpg)
+![Resolución iPhone](gitbook/assets/design_iphone.jpg)
 
 Y para el iPad:
 
-![Resolución iPhone](.gitbook/assets/design_ipad.jpg)
+![Resolución iPhone](gitbook/assets/design_ipad.jpg)
 
 <!---
 Según el dispositivo del que dispongamos, la pantalla inicial (_Launch Screen_) acepta una orientación vertical, horizontal o ambas. Por ejemplo, un iPhone o iPod Touch pequeño muestra su pantalla de inicio sólo en vertical, mientras que en los iPhone grandes o iPad se puede mostrar en vertical y en horizontal.
@@ -166,7 +166,7 @@ Si usamos una pantalla estática mientras se está cargando contenido, puede par
 
 Si la aplicación utiliza preferencias propias, podemos hacer una vista para ellas dentro de nuestra aplicación en el caso de que el usuario necesite cambiarlas con frecuencia, o bien añadir un _settings bundle_ si el cambio no es tan frecuente. Un _settings bundle_ contiene ficheros (principalmente _.plist_) que describen la estructura y estilo de presentación de las preferencias, y es muy sencillo de implementar. La app _Settings_ usa esta información para crear una entrada para nuestra aplicación y mostrar las preferencias.
 
-![Preferencias](.gitbook/assets/preferencias.png "Ejemplo de preferencias en Bundle Settings")
+![Preferencias](gitbook/assets/preferencias.png "Ejemplo de preferencias en Bundle Settings")
 
 ### Guías de uso de las principales tecnologías disponibles en iOS
 
@@ -176,7 +176,7 @@ La API de iOS nos da acceso a múltiples tecnologías nativas que se describen a
 
 Mediante la multitarea nuestro dispositivo puede ejecutar más de dos aplicaciones al mismo tiempo. Otras tareas que no estén mostrándose en pantalla pueden estar guardadas en memoria (en _background_) o también mostrándose simultáneamente en la pantalla. Apple recomienda que nuestra aplicación tenga en cuenta dicha característica ya que de esta forma el usuario puede estar realizando otras tareas al mismo tiempo sin necesidad de cerrarla.
 
-![Captura multitarea iOS](.gitbook/assets/multitasking2.png "Captura multitarea iOS")
+![Captura multitarea iOS](gitbook/assets/multitasking2.png "Captura multitarea iOS")
 
 La aplicación debe estar preparada para gestionar interrupciones de audio en cualquier momento, pararse y reiniciarse sin ninguna complicación ni lag y de forma "suave", y debe comportarse de forma adecuada cuando se encuentra en _background_. La multitarea es una tecnología que se utiliza muy a menudo en iOS y es por ello que debemos tenerla presente cuando diseñamos nuestras aplicaciones. La gestión del paso de un estado _activo_ a _inactivo_ debe programarse cuando sea necesario. Por ejemplo, hay que tener en cuenta que nuestro juego Angry Birds puede interrumpirse por una llamada a mitad del lanzamiento de un pájaro.
 
@@ -188,7 +188,7 @@ Además de tener que estar preparados para interrupciones, la multitarea implica
 
 Las <a href="https://developer.apple.com/documentation/usernotifications">notificaciones _push_</a> permiten avisar a los usuarios independientemente de si la aplicación está funcionando en ese momento. Esto es muy útil en apps que usen un calendario, para avisar de eventos futuros, o para algún tipo de recordatorio. También se utiliza muy a menudo en juegos.
 
-![Notificación push](.gitbook/assets/notificaciones_push.png "Notificación push alert")
+![Notificación push](gitbook/assets/notificaciones_push.png "Notificación push alert")
 
 <!---
 Hay dos estilos de notificaciones: 
@@ -196,8 +196,8 @@ Hay dos estilos de notificaciones:
 * _Alert_: Aparece en la pare superior de la pantalla mientras el dispositivo está en uso y se queda hasta que el usuario la quite manualmente.
 * _Banner_: Aparece en la parte superior de la pantalla unos segundos mientras el dispositivo está en uso, y después desaparece automáticamente.
 
-![Notificación push](.gitbook/assets/notif_ctr_alert.png "Notificación push alert")
-![Notificación push](.gitbook/assets/notif_ctr_banner.png "Notificación push banner")
+![Notificación push](gitbook/assets/notif_ctr_alert.png "Notificación push alert")
+![Notificación push](gitbook/assets/notif_ctr_banner.png "Notificación push banner")
 
 -->
 
@@ -206,7 +206,7 @@ Se pueden enviar notificaciones usando un servidor propio, o bien generarlas loc
 <!--
 La implementación de este servicio es algo compleja y normalmente requiere un servidor propio, aunque se pueden contratar servicios externos que realicen esa tarea de forma bastante económica. Al mismo tiempo que se activa la notificación _push_ se muestra un número en la esquina superior derecha del icono de la aplicación. A esto se le llama _badge_ y es muy sencillo de implementar en nuestras aplicaciones.
 
-![Ejemplo badge en app](.gitbook/assets/notif_ctr_badge.png "Ejemplo badge en app")
+![Ejemplo badge en app](gitbook/assets/notif_ctr_badge.png "Ejemplo badge en app")
 -->
 
 <!--
@@ -281,8 +281,8 @@ Con las extensiones los usuarios pueden usar un componente desarrollado por noso
 
 Las extensiones pueden ser de tipo _widget_, para realizar acciones desde el notification center, _share_ para compartir contenido con terceros, _action_ para ver contenido desde otra aplicación, _photo editing_ para editar imágenes, o _custom keyboard_ para reemplazar el teclado de iOS por uno personalizado, entre otras posibilidades.
 
-![Widget](.gitbook/assets/widget_experience_2x.png "Widget")
-![Action](.gitbook/assets/share_action_appex_2x.png "Action")
+![Widget](gitbook/assets/widget_experience_2x.png "Widget")
+![Action](gitbook/assets/share_action_appex_2x.png "Action")
 
 Básicamente estos son los conceptos principales de la guía de estilo de Apple, aunque hay más tecnologías que pueden verse en su <a href="https://developer.apple.com/ios/human-interface-guidelines/">guía de estilo</a>.
 
@@ -293,7 +293,7 @@ Básicamente estos son los conceptos principales de la guía de estilo de Apple,
 
 A continuación vamos a empezar programando ejemplos de personalización de controladores. Llamaremos personalizaciones a las modificaciones sobre el aspecto visual de los componentes estándar de Apple. Normalmente las personalizaciones no son recomendables para no confundir al usuario, pero a veces son necesarias para juegos o aplicaciones que requieran un aspecto diferente, como puede verse en el siguiente ejemplo:
 
-![Personalización](.gitbook/assets/customization.png "Personalización")
+![Personalización](gitbook/assets/customization.png "Personalización")
 
 ## Ejercicio 1- Personalización de celdas
 
@@ -303,7 +303,7 @@ La captura siguiente muestra un ejemplo de una tabla con las celdas totalmente p
 [ejemplo de código](https://medium.com/q-software/ios-custom-table-views-with-cells-2e4ba692cfc8) 
 -->
 
-![Ejemplo personalización celdas](.gitbook/assets/custom_cells.png "Ejemplo personalización celdas")
+![Ejemplo personalización celdas](gitbook/assets/custom_cells.png "Ejemplo personalización celdas")
 
 A diferencia de la personalización de otros componentes, la personalización de celdas de una tabla es algo muy habitual en iOS. De esta forma podemos hacer que nuestras tablas se distingan del resto, mostrar datos de forma más adecuada, y ofrecer un aspecto característico para nuestra app.
 
@@ -315,7 +315,7 @@ Al terminar este ejemplo tendremos una aplicación que solo contiene una vista d
 
 Comenzaremos creando el proyecto. Para ello, abrimos XCode y creamos un nuevo proyecto para _iOS_ de tipo _App_. Lo  guardaremos con el nombre `ejercicio_celdas`, y debemos elegir el interfaz Storyboard:
 
-![Inicialización ejercicio celdas](.gitbook/assets/cell_init.png "Inicialización ejercicio celdas")
+![Inicialización ejercicio celdas](gitbook/assets/cell_init.png "Inicialización ejercicio celdas")
 
 Para empezar vamos a añadir al _storyboard_ principal (_Main_) un nuevo controlador de tipo `Table View Controller` (usando el botón **+** en la parte superior del interfaz de XCode).
 
@@ -325,7 +325,7 @@ Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de códi
 
 Ahora tenemos que asignar la vista al controlador. Para ello, seleccionamos el controlador en el storyboard, y desde el _Identity Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
 
-![Asignación del controlador TableViewController](.gitbook/assets/cell_tableviewcontroller.png "Asignación del controlador TableViewController")
+![Asignación del controlador TableViewController](gitbook/assets/cell_tableviewcontroller.png "Asignación del controlador TableViewController")
 
 Por último, para nuestra vista personalizada vamos a crear un nuevo fichero subclase de `UITableViewCell`. Hacemos click en _File > New > File > Cocoa Touch Class_, y seleccionamos Subclass of `UITableViewCell`, dejando sin marcar "_Also create XIB file_". Lo guardamos con el nombre `TableViewCell`.
 
@@ -333,15 +333,15 @@ Por último, para nuestra vista personalizada vamos a crear un nuevo fichero sub
 
 Una vez hemos creado el proyecto y la clase controladora de la tabla y la celda ahora vamos a diseñar su vista. Para ello abrimos la tabla en el storyboard. Dentro de _Prototype cells_ podemos diseñar la vista de la celda. Pero antes tenemos que asignar la clase `TableViewCell` que hemos creado a las celdas de nuestra tabla.
 
-![Asignación de la celda personalizada](.gitbook/assets/cell_custom_class.png "Asignación de la celda personalizada")
+![Asignación de la celda personalizada](gitbook/assets/cell_custom_class.png "Asignación de la celda personalizada")
 
 Una vez hemos vinculado la vista de la celda a nuestro controlador, vamos a modificar la altura de la celda desde el _size inspector_, usando una altura de 70 puntos:
 
-![Ajustes de tamaño vista celda](.gitbook/assets/cell_table_view_row1.png "Ajustes de tamaño vista celda")
+![Ajustes de tamaño vista celda](gitbook/assets/cell_table_view_row1.png "Ajustes de tamaño vista celda")
 
 Además de indicar la altura de la celda para el _Table View Cell_ (lo cual nos sirve para saber cómo quedan los elementos en la vista de diseño), también debemos hacerlo para las  celdas del _Table View_:
 
-![Ajustes de tamaño vista tabla](.gitbook/assets/cell_table_view_row2.png "Ajustes de tamaño vista tabla")
+![Ajustes de tamaño vista tabla](gitbook/assets/cell_table_view_row2.png "Ajustes de tamaño vista tabla")
 
 
 Si quisieramos hacer esto mismo desde código (como lo hemos hecho desde el interfaz no hace falta), podríamos indicarlo así en el método _viewDidLoad_:
@@ -352,11 +352,11 @@ Si quisieramos hacer esto mismo desde código (como lo hemos hecho desde el inte
 
 Ahora solo tenemos que arrastrar los objetos que queremos que aparezcan en la celda. En este ejemplo vamos a añadir dos etiquetas (_labels_) y una imagen (_UIImageView_). La celda quedará de la siguiente manera en el _Interface builder_:
 
-![Vista celda](.gitbook/assets/cell_mytableviewcell.png "Vista celda")
+![Vista celda](gitbook/assets/cell_mytableviewcell.png "Vista celda")
 
 En la pestaña de _Attributes Inspector_ de la celda escribimos un identificador para ella: `TableViewCell`. Esto servirá más adelante para referenciarla desde el controlador de la tabla y así poder utilizar las celdas desde este controlador:
 
-![Identificador en la celda](.gitbook/assets/cell_attributes.png "Identificador en la celda")
+![Identificador en la celda](gitbook/assets/cell_attributes.png "Identificador en la celda")
 
 Ya hemos diseñado la vista de la celda. Ahora vamos a programar el código de su controlador.
 
@@ -396,7 +396,7 @@ Una vez hecho esto abrimos de nuevo la clase controladora de la tabla `TableView
  }
 ```
 
-Ahora descarga la imagen <a href=".gitbook/assets/logo-master.png">logo\_master.png</a> y arrástrala dentro de XCode a los _Assets_ del proyecto. En este momento ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño), nos saldrán los elementos relativamente bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los _constraints_ (de hecho se mostrará algún _warning_ por este motivo). De momento no te preocupes por esto, lo arreglaremos más adelante.
+Ahora descarga la imagen <a href="gitbook/assets/logo-master.png">logo\_master.png</a> y arrástrala dentro de XCode a los _Assets_ del proyecto. En este momento ya podemos ejecutar la aplicación y nos debe aparecer la tabla con las celdas que acabamos de programar. Si la ejecutamos en el mismo dispositivo que teníamos seleccionado en la barra inferior (sobre el cuál hemos hecho el diseño), nos saldrán los elementos relativamente bien colocados. En cambio, si la ejecutamos con el simulador para otro dispositivo distinto, probablemente se nos descoloquen los elementos de la celda porque falta ajustar los _constraints_ (de hecho se mostrará algún _warning_ por este motivo). De momento no te preocupes por esto, lo arreglaremos más adelante.
 
 <!---
 Como podrás ver, se solapa la barra de estado con el principio de la tabla. Esto podríamos resolverlo añadiendo la siguiente línea al método `ViewDidLoad`:
@@ -417,7 +417,7 @@ La aplicación funciona y se muestra una tabla, aunque no tiene barra de navegac
 ### Personalización con efecto zebra
 
 Una vez tenemos las celdas hechas vamos a personalizar la tabla un poco más, añadiendo un fondo a las celdas pares y otro a las impares, lo que se conoce como efecto _zebra_. Para esto necesitaremos dos imágenes más que se pueden descargar <a
-href=".gitbook/assets/img_fondo_celdas.zip">aquí</a> y añadirlas a los _Assets_.
+href="gitbook/assets/img_fondo_celdas.zip">aquí</a> y añadirlas a los _Assets_.
 
 Abrimos la vista de la celda en el _storyboard_ y arrastramos un `UIImageView` ocupando todo el espacio de la celda. Es necesario enviar esta vista al fondo, con el menú _Editor > Arrange > Send to back_. Si en el modo visual se van descolocando las vistas de la celda cuando las mueves (aunque esto no debería ocurrir con las últimas versiones de XCode), ajusta los tamaños desde el _Size Inspector_.
 
@@ -436,7 +436,7 @@ else {
 
 Si ejecutamos ahora el proyecto tendremos nuestra tabla con las celdas personalizadas:
 
-![Celdas final](.gitbook/assets/cell_final.png "Resultado de celdas personalizadas")
+![Celdas final](gitbook/assets/cell_final.png "Resultado de celdas personalizadas")
 
 ### Ajuste de las constraints
 
@@ -446,11 +446,11 @@ Para esto, seleccionamos el `TableViewCell` desde el _storyboard_, y en la parte
 
 > Esta opción de Reset te puede sacar de más de un apuro cuando el ajustar el autolayout sea complicado. Recomiendo probar primero con ella, y si no funciona a la primera entonces ajustar las constraints a mano.
 
-![Celdas constraints](.gitbook/assets/cell_constraints.png "Constraints automáticas para las celdas personalizadas")
+![Celdas constraints](gitbook/assets/cell_constraints.png "Constraints automáticas para las celdas personalizadas")
 
 Si se te queda muy corta la imagen del fondo cuando rotas el dispositivo puedes seleccionar la opción "Scale to Fill" en el inspector de atributos:
 
-![Celdas ajuste del fondo](.gitbook/assets/cell_scale.png "Ajuste de imagen de fondo para rellenar celda")
+![Celdas ajuste del fondo](gitbook/assets/cell_scale.png "Ajuste de imagen de fondo para rellenar celda")
 
 ### Insertar datos en la tabla
 
@@ -477,11 +477,11 @@ Comenzamos creando un nuevo proyecto de tipo _iOS > App_ con el nombre  `ejercic
 
 Abrimos la vista principal del _storyboard_, arrastramos un objeto `UIToolBar` y lo situamos en la parte superior. También vamos a añadir un objeto `UILabel` en el centro de la vista.
 
-![ToolBar básico](.gitbook/assets/toolbar_empty.png "ToolBar básico")
+![ToolBar básico](gitbook/assets/toolbar_empty.png "ToolBar básico")
 
 Ahora vamos a añadir los elementos que deseemos sobre el _ToolBar_. En nuestro caso arrastraremos desde el listado de objetos (en el siguiente orden) un _Text Field_, un _Flexible Space Bar_ y un _Segmented Control_. Borraremos el botón _Item_ de la izquierda. El _ToolBar_ debe quedar de la siguiente manera:
 
-![ToolBar con botones y campos de texto](.gitbook/assets/toolbar_view.png "ToolBar con botones y campos de texto")
+![ToolBar con botones y campos de texto](gitbook/assets/toolbar_view.png "ToolBar con botones y campos de texto")
 
 
 Como podemos observar, la función del objeto _Flexible Space_ no es más que añadir un espacio flexible entre dos objetos dentro de un _ToolBar_. Una vez que tenemos la barra con todos sus elementos vamos a definir los elementos dentro de la clase. Dentro del código de la clase `ViewController` añadimos los siguientes outlets:
@@ -501,15 +501,15 @@ Seguidamente tenemos que enlazar los _outlets_ dentro de la vista. Si ejecutamos
 
 Vamos a añadir _constraints_ desde XCode para fijar los márgenes. Selecciona el toolbar, y añade las siguientes _constraints_ (arriba, izquierda, derecha) marcando _Constrain to margins_ para que no se solape con la barra de estado:
 
-![Toolbar constraints](.gitbook/assets/toolbar_constraints.png "Toolbar constraints")
+![Toolbar constraints](gitbook/assets/toolbar_constraints.png "Toolbar constraints")
 
 Vamos a centrar ahora el _label_, añadiendo restricciones de centrado horizontal y vertical:
 
-![Label constraints](.gitbook/assets/toolbar_label_constraints.png "Label constraints")
+![Label constraints](gitbook/assets/toolbar_label_constraints.png "Label constraints")
 
 Puedes ver los _constraints_ añadidos para cada elemento en el _Size inspector_. Por ejemplo, para el _label_ tendríamos:
 
-![Label size inspector](.gitbook/assets/toolbar_size_inspector.png  "Label size inspector")
+![Label size inspector](gitbook/assets/toolbar_size_inspector.png  "Label size inspector")
 
 ### Acciones
 
@@ -554,8 +554,8 @@ override func viewDidLoad() {
 ```
 
 Para que el código funcione debemos descargarnos las imágenes desde <a
-href=".gitbook/assets/imagenes_toolbar.zip">aquí</a> y añadirlas a los _Assets_ del proyecto. Una vez hecho esto ya podemos ejecutarlo y ver cómo ha cambiado. De esta forma tendremos nuestro componente _ToolBar_ bastante personalizado, dándole a la aplicación un aspecto visual diferenciado.
+href="gitbook/assets/imagenes_toolbar.zip">aquí</a> y añadirlas a los _Assets_ del proyecto. Una vez hecho esto ya podemos ejecutarlo y ver cómo ha cambiado. De esta forma tendremos nuestro componente _ToolBar_ bastante personalizado, dándole a la aplicación un aspecto visual diferenciado.
 
-![ToolBar personalizado](.gitbook/assets/toolbar_final.png "ToolBar personalizado")
+![ToolBar personalizado](gitbook/assets/toolbar_final.png "ToolBar personalizado")
 
 La metodología que acabamos de seguir nos serviría también para personalizar los componentes `UITabBar` y `UINavigationBar`, entre otros.
