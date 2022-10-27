@@ -428,7 +428,7 @@
   <h1>2- Controladores avanzados</h1>
 
 <p>En esta sesión veremos otros controladores que son comunes en aplicaciones iOS: el controlador paginado (<code>UIPageViewController</code>), las colecciones (<code>UICollectionViewController</code>) y el controlador de búsqueda para tablas (<code>UISearchController</code>).</p>
-<h2 id="uipageviewcontroller">UIPageViewController<a class="headerlink" href="#uipageviewcontroller" title="Permanent link">&para;</a></h2>
+<h2 id="uipageviewcontroller">UIPageViewController</h2>
 <p>El controlador paginado (<em>UIPageViewController</em>) sirve para poder cambiar entre varias páginas en pantalla que contienen información similar. Es una clase bastante configurable, ya que permite modificar:</p>
 <ul>
 <li>La orientación de las vistas de las páginas (horizontal o vertical).</li>
@@ -443,7 +443,7 @@ Si vamos a implementar una app parecida a un libro, esta plantilla es útil. Per
 -->
 
 <p>Vamos a hacer una aplicación de ejemplo para ver las posibilidades de este controlador y cómo se programa.</p>
-<h2 id="ejercicio-1-uipageviewcontroller">Ejercicio 1 - UIPageViewController<a class="headerlink" href="#ejercicio-1-uipageviewcontroller" title="Permanent link">&para;</a></h2>
+<h2 id="ejercicio-1-uipageviewcontroller">Ejercicio 1 - UIPageViewController</h2>
 <p>Esta aplicación tendrá 4 páginas que contienen información de ayuda. Los controladores paginados se suelen usar frecuentemente para esto. Nuestra app quedará del siguiente modo cuando la terminemos:</p>
 <p><img alt="Aplicación resultado" src="gitbook/assets/pageview_overall.jpeg" title="Resultado de nuestra aplicación" /></p>
 <p>Para empezar crearemos un proyecto con la plantilla <em>App</em> y con <em>storyboard</em>. Lo llamaremos <code>ejercicio_pageview</code>.</p>
@@ -451,13 +451,13 @@ Si vamos a implementar una app parecida a un libro, esta plantilla es útil. Per
 Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuando lo crees.
 --->
 
-<h4 id="creacion-de-las-vistas">Creación de las vistas<a class="headerlink" href="#creacion-de-las-vistas" title="Permanent link">&para;</a></h4>
+<h4 id="creacion-de-las-vistas">Creación de las vistas</h4>
 <p>Primero vamos a arrastrar un <code>UIPageViewController</code> al <em>storyboard</em> (fuera de la primera vista). Haremos lo mismo con otro <code>UIViewController</code> genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del storyboard que viene por defecto también vamos a usarlo, para superponer sobre él el controlador paginado, como veremos más adelante.</p>
 <p>Tenemos que asignar un identificador del storyboard para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre <code>PageViewController</code> al controlador <em>Page View Controller</em>, y <code>PageContentViewController</code> al  <em>UIViewController</em>.</p>
 <p><img alt="Asignación de storyboard ID" src="gitbook/assets/pageview-controller-5.png" title="Asignación de storyboard ID" /></p>
 <p>En el <code>PageViewController</code>, verifica que el valor de transición es <code>Scroll</code> en lugar de <code>Page Curl</code>, ya que el segundo queda bien para libros pero no para nuestra aplicación.</p>
 <p><img alt="Cambio de atributo" src="gitbook/assets/pageview-controller-5-2.png" title="Cambio de atributo" /></p>
-<h4 id="implementacion-de-la-vista-de-contenido-pagecontentviewcontroller">Implementación de la vista de contenido (PageContentViewController)<a class="headerlink" href="#implementacion-de-la-vista-de-contenido-pagecontentviewcontroller" title="Permanent link">&para;</a></h4>
+<h4 id="implementacion-de-la-vista-de-contenido-pagecontentviewcontroller">Implementación de la vista de contenido (PageContentViewController)</h4>
 <p>Vamos a diseñar primero la vista de contenido (<code>PageContentViewController</code>), que debería quedar de forma similar a la siguiente:</p>
 <p><img alt="Diseño de la vista de contenido" src="gitbook/assets/pageview-content.png" title="Diseño de la vista de contenido" /></p>
 <p>Tendremos un <em>label</em> arriba y una imagen detrás que ocupa toda la pantalla excepto la barra de estado superior.</p>
@@ -477,11 +477,11 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 <div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="kc">self</span><span class="p">.</span><span class="n">imageFilename</span><span class="p">)</span>
 <span class="kc">self</span><span class="p">.</span><span class="n">titulo</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">titleText</span>
 </code></pre></div>
-<h4 id="implementacion-del-primer-controlador-viewcontroller">Implementación del primer controlador (ViewController)<a class="headerlink" href="#implementacion-del-primer-controlador-viewcontroller" title="Permanent link">&para;</a></h4>
+<h4 id="implementacion-del-primer-controlador-viewcontroller">Implementación del primer controlador (ViewController)</h4>
 <p>Ya tenemos la vista de contenido. Vamos a modificar ahora la primera vista del storyboard, añadiendo un botón <em>Start again</em>, abajo y centrado:</p>
 <p><img alt="Creación botón Start" src="gitbook/assets/pageview-firstview.png" title="Creación botón Start" /></p>
 <p>Crearemos una acción de este botón con <code>ViewController</code>. A este método lo que llamaremos <code>restart</code>.</p>
-<h4 id="implementacion-del-controlador-paginado-pageviewcontroller">Implementación del controlador paginado (PageViewController)<a class="headerlink" href="#implementacion-del-controlador-paginado-pageviewcontroller" title="Permanent link">&para;</a></h4>
+<h4 id="implementacion-del-controlador-paginado-pageviewcontroller">Implementación del controlador paginado (PageViewController)</h4>
 <p>La estructura que vamos a seguir es la siguiente:</p>
 <p><img alt="Estructura del ejemplo" src="gitbook/assets/pageview-structure.jpg" title="Estructura del ejemplo" /></p>
 <p>Por tanto, nuestro controlador paginado gestionará cuatro controladores de la misma clase.</p>
@@ -605,17 +605,17 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 </code></pre></div>
 Si ejecutamos de nuevo la aplicación, veremos que el botón ya funciona.</p>
 <p>En este ejercicio hemos hecho la parte principal para usar un <code>UIPageViewController</code> en un storyboard. Se ha implementado la transición en <em>scroll</em>, pero este controlador es muy configurable y como hemos visto podemos  usarlo también para implementar una app con navegación de tipo libro.</p>
-<h2 id="ejercicio-2-uicollectionviewcontroller">Ejercicio 2 - UICollectionViewController<a class="headerlink" href="#ejercicio-2-uicollectionviewcontroller" title="Permanent link">&para;</a></h2>
+<h2 id="ejercicio-2-uicollectionviewcontroller">Ejercicio 2 - UICollectionViewController</h2>
 <p>Las colecciones pueden usarse como alternativa a las tablas cuando tenemos una distribución de los elementos de tipo rejilla (<em>grid</em>), por ejemplo.</p>
 <p><img alt="Ejemplo 1 controlador de colecciones" src="gitbook/assets/collectionviewcontroller-ex1.png" title="Ejemplo 1 controlador de colecciones" />
 <img alt="Ejemplo 2 controlador de colecciones" src="gitbook/assets/collectionviewcontroller-ex2.png" title="Ejemplo 2 controlador de colecciones" /></p>
 <p>Para implementar una colección es necesario indicar el número de secciones, el tamaño de las celdas, y especificar los contenidos de cada celda. El controlador de la colección automáticamente reorganizará las posiciones de las celdas en función de su tamaño y del tamaño de la pantalla.</p>
-<h3 id="ejemplo-uicollectionviewcontroller">Ejemplo UICollectionViewController<a class="headerlink" href="#ejemplo-uicollectionviewcontroller" title="Permanent link">&para;</a></h3>
+<h3 id="ejemplo-uicollectionviewcontroller">Ejemplo UICollectionViewController</h3>
 <p>Vamos a hacer un ejercicio sencillo para ver cómo funciona. Crearemos un proyecto llamado <code>ejercicio_collection</code>, de tipo <em>iOS App</em> con <em>storyboard</em>.</p>
 <p>Arrastramos al storyboard (fuera de la vista inicial) un nuevo <code>UICollectionViewController</code>, y movemos en el storyboard la flecha que apunta al controlador inicial para que ahora este sea nuestro <code>UICollectionViewController</code>. Borramos el<code>ViewController.swift</code> y también su controlador del <em>storyboard</em>, ya que no los necesitaremos. Creamos un nuevo controlador con <em>New &gt; File &gt; Cocoa Touch</em>. Lo llamaremos <code>CollectionViewController</code>, subclase de <code>UICollectionViewController</code>, dejando desmarcado <em>Also create Xib</em>.</p>
 <p>En el storyboard, seleccionamos nuestra vista e indicamos cuál va a ser el controlador:</p>
 <p><img alt="Collection View Controller asignación" src="gitbook/assets/collection-assign.png" title="Asignación del controlador a la vista" /></p>
-<h4 id="creacion-de-las-celdas">Creación de las celdas<a class="headerlink" href="#creacion-de-las-celdas" title="Permanent link">&para;</a></h4>
+<h4 id="creacion-de-las-celdas">Creación de las celdas</h4>
 <p>En la vista de <code>UICollectionViewController</code> veremos un rectángulo en la parte superior izquierda, que se corresponde con una celda. Vamos a crear una clase propia para las celdas, de forma que podamos configurarlas para darles el aspecto que queramos. El procedimiento es similar al que hicimos para las celdas personalizadas.</p>
 <p>Creamos una nueva clase llamada <code>CollectionViewCell</code>, subclase de <code>UICollectionViewCell</code>, y desmarcando <em>Also create XIB</em>.</p>
 <p>En el storyboard, seleccionamos la celda que hay dentro de nuestro controlador de colecciones, y cambiamos la clase <code>UICollectionViewCell</code> por la que hemos creado, <code>CollectionViewCell</code>.</p>
@@ -630,7 +630,7 @@ Si ejecutamos de nuevo la aplicación, veremos que el botón ya funciona.</p>
 <p>En este ejercicio configuraremos las celdas para que muestren una imagen. Para ello, desde el <em>Interface Builder</em> arrastramos un <code>UIImageView</code> a la celda, de forma que ocupe todo su tamaño. Crearemos un outlet de la imagen en nuestra celda personalizada y lo llamamos <code>imageView</code>.</p>
 <p><img alt="Creación de outlet de ImageView" src="gitbook/assets/collection-linkcell.png" title="Creación de outlet de ImageView" /></p>
 <p>Ya tenemos la vista preparada, sólo falta añadir los datos.</p>
-<h4 id="configurar-los-datos">Configurar los datos<a class="headerlink" href="#configurar-los-datos" title="Permanent link">&para;</a></h4>
+<h4 id="configurar-los-datos">Configurar los datos</h4>
 <p>Nos queda configurar el <em>data source</em>, es decir, implementar los métodos delegados de <code>UICollectionViewDataSource</code> para mostrar los datos de las celdas. Abre el fichero <code>CollectionViewController.swift</code>, y mira los métodos de la sección <code>UICollectionViewDataSource</code>. Como puedes ver, nuestra clase debe implementar:</p>
 <ul>
 <li><code>numberOfSections</code>. Como en una tabla, debemos indicar el número de secciones. Este método es opcional, y si no lo implementamos se asumirá una sóla sección.</li>
@@ -675,9 +675,9 @@ Si ejecutamos de nuevo la aplicación, veremos que el botón ya funciona.</p>
 <p>Evidentemente, no queda muy bien que las imágenes estén tan pegadas a los bordes. Vamos a cambiar esto con los <em>insets</em>, desde las propiedades de la colección:</p>
 <p><img alt="Insets" src="gitbook/assets/collection-insets.png" title="Atributos  insets" /></p>
 <p>Como puedes ver, ahora queda algo mejor. Desde código también podemos jugar con los tamaños de los bordes cambiando los atributos del controlador en función del dispositivo, pero para este ejemplo no es necesario. Además podríamos hacer que cuando se pulse una imagen se mostrara una vista de la misma a pantalla completa, aunque esto tampoco lo implementaremos en este ejercicio.</p>
-<h2 id="ejercicio-3-controlador-de-busqueda">Ejercicio 3 - Controlador de búsqueda<a class="headerlink" href="#ejercicio-3-controlador-de-busqueda" title="Permanent link">&para;</a></h2>
+<h2 id="ejercicio-3-controlador-de-busqueda">Ejercicio 3 - Controlador de búsqueda</h2>
 <p>En las aplicaciones iOS es común encontrar una barra de búsqueda en  asociada a una tabla en la que se muestran los resultados de la búsqueda. Este comportamiento estándar se definía, hasta <em>iOS7</em>, con la clase <code>UISearchDisplayController</code>. Este controlador era bastante complejo, por lo que <em>Apple</em> decidió cambiarlo en <em>iOS7</em> por <code>UISearchController</code>. Vamos a ver cómo se implementa este último, ya que es bastante más sencillo, aunque aun así no es trivial.</p>
-<h3 id="creacion-de-la-tabla">Creación de la tabla<a class="headerlink" href="#creacion-de-la-tabla" title="Permanent link">&para;</a></h3>
+<h3 id="creacion-de-la-tabla">Creación de la tabla</h3>
 <p>Crea un proyecto llamado <code>ejercicio_search</code> usando la plantilla <em>App</em>. Para empezar vamos a añadir al <em>storyboard</em> principal (<em>Main</em>) un nuevo controlador de tipo <code>Table View Controller</code>.</p>
 <p>Haremos que nuestra tabla sea lo primero que aparezca cuando se lance la app arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo <em>Table View Controller</em>. Ya podemos borrar la vista vacía del storyboard, que ahora comenzará con nuestra tabla. Podemos también borrar el fichero <code>ViewController.swift</code>, ya que estaba asociado a la vista que hemos borrado.</p>
 <p>Ya tenemos la vista de la tabla, pero vamos a crear también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos <em>File &gt; New &gt; File &gt; Cocoa Touch Class</em>, y le damos el nombre <code>TableViewController</code>, subclase de <code>UITableViewController</code>, dejando sin marcar "<em>Also create XIB file</em>". </p>
@@ -710,7 +710,7 @@ Si ejecutamos de nuevo la aplicación, veremos que el botón ya funciona.</p>
 <p><img alt="Enlace celda" src="gitbook/assets/search_cell.png" title="Asignación de la celda en storyboard" /></p>
 <p>En este punto ya podemos ejecutar el código y tendremos una tabla funcional, aunque sin barra de búsqueda:</p>
 <p><img alt="Tabla vacía" src="gitbook/assets/search_emptytable.png" title="Tabla vacía" /> </p>
-<h3 id="implementacion-del-controlador-de-busqueda">Implementación del controlador de búsqueda<a class="headerlink" href="#implementacion-del-controlador-de-busqueda" title="Permanent link">&para;</a></h3>
+<h3 id="implementacion-del-controlador-de-busqueda">Implementación del controlador de búsqueda</h3>
 <p>El controlador de búsqueda ha ido evolucionando con las distintas versiones de XCode.</p>
 <p><strong>Antes de <em>iOS7</em></strong>, esto se hacía arrastrando un objeto de tipo <em>Search Bar and Search Display Controller</em> al principio de la tabla desde el <em>Interface Builder</em>. La gestión de esto era algo  complicada, ya que teníamos varias conexiones que debíamos gestionar manualmente.</p>
 <p><strong>Ahora</strong>, <em>Search Display Controller</em> es un controlador <em>deprecated</em> (obsoleto), y <em>Apple</em> recomienda usar la clase <em>UISearchController</em> introducida en <em>iOS7</em>. Paradójicamente, esta clase no está en el <em>Interface Builder</em>, y sólo podemos usarla mediante código, pero simplifica bastante el procedimiento. Es de esta forma como vamos a hacerlo en nuestro ejemplo.</p>

@@ -361,7 +361,7 @@
 
   <h1>4- Detección de gestos</h1>
 
-<h2 id="pantalla-tactil">Pantalla táctil<a class="headerlink" href="#pantalla-tactil" title="Permanent link">&para;</a></h2>
+<h2 id="pantalla-tactil">Pantalla táctil</h2>
 <p>El sensor de pantalla es, obviamente, el más usado y común de todos. En una aplicación iOS que utilice los componentes básicos de <code>UIKit</code> como tablas, botones, campos de texto, etc. problamente no tendremos que preocuparnos por gestionar los eventos producidos por el sensor de la pantalla. En aplicaciones como juegos, o más elaboradas, es muy habitual que tengamos que hacer uso de los eventos que detallaremos a continuación.</p>
 <p>La gestión de eventos de entrada (<em>Touch Events</em>) se realiza a través de los siguientes métodos, que más adelante detallaremos mediante un ejemplo:</p>
 <ul>
@@ -372,7 +372,7 @@
 </ul>
 <p>En general, estos eventos pertenecen a la clase <code>UIResponder</code>. Puedes obtener más información sobre esta clase <a href="https://developer.apple.com/reference/uikit/uiresponder">aquí</a>. Además de los eventos de pulsación sobre la pantalla, controla los de movimiento (por ejemplo cuando se agita el dispositivo) y los de control remoto (cuando se dispone de un dispositivo externo de control).</p>
 <p>Los dispositivos iOS también admiten varias pulsaciones al mismo tiempo, lo que se le conoce con el nombre de <em>multitouch</em>. Esta característica hay que tenerla en cuenta a la hora de implementar los métodos anteriores. Para entrar más en profundidad en el uso de las funciones de pulsaciones en iOS, vamos a realizar una aplicación de ejemplo en la que arrastraremos una imagen por la pantalla de nuestro dispositivo.</p>
-<h2 id="ejercicio-1-gestos">Ejercicio 1 - Gestos<a class="headerlink" href="#ejercicio-1-gestos" title="Permanent link">&para;</a></h2>
+<h2 id="ejercicio-1-gestos">Ejercicio 1 - Gestos</h2>
 <p>Comenzamos creando un proyecto en XCode de tipo <em>App</em> con <em>storyboard</em> que guardaremos con el nombre <code>ejercicio_touch</code>. Creamos un objeto de tipo <em>UIImageView</em>, lo arrastramos a la vista colocándolo en la parte superior izquierda de la pantalla, y lo enlazamos a nuestro <code>ViewController</code> para crear la propiedad, a la que llamaremos <em>imageView</em>. </p>
 <p>Arrastra la imagen <a href="gitbook/assets/logo-master.png">logo-master.png</a> al proyecto y asígnala a la vista como se indica a continuación (aunque también se podría hacer por código):</p>
 <p><img alt="Asignar imagen" src="gitbook/assets/multitouch_logo-master.png" title="Asignar imagen" /></p>
@@ -460,7 +460,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>Además, desde el iPhone 7 Apple ha introducido <em>Haptic Feedback</em>, que permite responder físicamente a las interacciones del usuario con la pantalla. Para más información, se puede consultar la <a href="https://developer.apple.com/reference/uikit/uifeedbackgenerator"> referencia</a> de la clase <code>UIFeedbackGenerator</code>.</p>
-<h2 id="reconocimiento-de-gestos-multitactiles-con-uigesturerecognizer">Reconocimiento de gestos multitáctiles con UIGestureRecognizer<a class="headerlink" href="#reconocimiento-de-gestos-multitactiles-con-uigesturerecognizer" title="Permanent link">&para;</a></h2>
+<h2 id="reconocimiento-de-gestos-multitactiles-con-uigesturerecognizer">Reconocimiento de gestos multitáctiles con UIGestureRecognizer</h2>
 <p>En el apartado anterior hemos visto como mover un objeto por la pantalla usando los métodos de detección de pulsaciones en la pantalla y programando todo el código nosotros.</p>
 <p>Esto está bien para gestos simples, pero el problema de lo que hemos implementado anteriormente es que si queremos detectar un gesto como un <em>swipe</em>, tendremos que registrar las notificaciones para cada toque de las vistas (usando <code>touchesBegan</code>, <code>touchesMoved</code> y <code>touchesEnded</code>). En las primeras versiones de iOS cada programador escribía código distinto para detectar los toques en la pantalla, provocando bugs e incosistencias entre apps.</p>
 <p>Para evitar esto, hace mucho tiempo (iOS 3) Apple añadió la clase <code>UIGestureRecognizer</code> para los gestos comunes en iOS. Esta clase nos permite gestionar los toques, el efecto "pellizco" (por ejemplo para hacer zoom), rotaciones, swipes, pans, y pulsaciones largas, entre otras. Usando esta clase no sólo ahorramos mucho código sino que también hacemos que nuestras apps sean consistentes. Los gestos que podemos gestionar en iOS son los siguientes:</p>
@@ -482,7 +482,7 @@ zona que se pulsa.</li>
 * Crear un <em>Gesture Recognizer</em>. Cuando se crea un elemento de esta clase debemos especificar una función <em>callback</em>. Esta función se llamará cuando los gestos empiecen, cambien o terminen.
 * Añadir un <em>Gesture Recognizer</em> a la vista. Cada <em>gesture recognizer</em> se asocia con una (y <strong>sólo una</strong>) vista. Cuando se produce un gesto dentro de los límites de esa vista, el <em>recognizer</em> mirará si coincide con el tipo de gesto buscado, y si es así se notificará mediante la función <em>callback</em>.</p>
 <p>Podemos añadir un <em>Gesture Recognizer</em> mediante código o usando el storyboard. Veremos como hacerlo de las dos formas mediante un ejercicio sencillo similar al anterior.</p>
-<h2 id="ejercicio-2-multitouch">Ejercicio 2 - Multitouch<a class="headerlink" href="#ejercicio-2-multitouch" title="Permanent link">&para;</a></h2>
+<h2 id="ejercicio-2-multitouch">Ejercicio 2 - Multitouch</h2>
 <p>Crea un nuevo proyecto y llámalo <code>ejercicio_multitouch</code>. Como en el anterior, añade una <em>UIImageView</em> en la parte superior izquierda de la vista, asígnale la imagen <em>logo-master</em> y enlázala con el controlador. Recuerda marcar para el <code>UIImageView</code> desde el Storyboard las casillas <code>User Interaction Enabled</code> y  seleccionar <code>Multiple Touch</code>. Alternativamente puedes hacerlo mediante código en <em>viewDidLoad</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">isUserInteractionEnabled</span> <span class="p">=</span> <span class="kc">true</span>
 <span class="kc">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">isMultipleTouchEnabled</span> <span class="p">=</span> <span class="kc">true</span>
