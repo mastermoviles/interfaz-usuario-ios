@@ -24,6 +24,7 @@ theme:
 # los excesivos derivados que se definen en
 # https://github.com/MihaiValentin/lunr-languages/blob/master/lunr.es.js
 
+
 extra:
     search:
         language: 'en'
@@ -31,9 +32,6 @@ extra:
 # Problema: pdf-export solo admite que las imagenes de la pagina sean pdf o svg, no otros formatos
 #plugins:
 #    - pdf-export
-
-hide:
-  - toc
 
 markdown_extensions:
     - admonition
@@ -43,6 +41,6 @@ markdown_extensions:
     - meta
     - sane_lists
     - toc:
-       permalink: true
-       toc_depth: 3
+       permalink: false
+       toc_depth: 2
     - pymdownx.superfences
