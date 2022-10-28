@@ -3,8 +3,9 @@ hide:
   - navigation
 ---
 
-En esta sesión hablaremos de los patrones de diseño que Apple nos recomienda seguir para nuestras aplicaciones. En algunos casos es obligatorio cumplir estos patrones
-a la hora de diseñar nuestras aplicaciones y el hecho de no hacerlo puede ser motivo de rechazo para publicar en el _App Store_. Comentaremos las distintas características de cada dispositivo iOS. Por último detallaremos distintas técnicas que existen para personalizar los controladores y vistas más usadas y, de esta forma, conseguir un aspecto más atractivo para el usuario final.
+# Guías de estilo y personalizaciones avanzadas
+
+En esta primera sesión veremos los patrones de diseño que Apple nos recomienda seguir para nuestras aplicaciones. En algunos casos es obligatorio cumplir estos patrones y el hecho de no hacerlo puede ser motivo de rechazo para publicar en el _App Store_. Por último implementaremos dos ejercicios de personalización de controladores. 
 
 ## Guías de estilo en iOS
 
