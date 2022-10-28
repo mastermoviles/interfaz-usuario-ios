@@ -292,9 +292,9 @@ Básicamente estos son los conceptos principales de la guía de estilo de Apple,
 
 ----
 
-# Ejercicios
+## Personalizaciones avanzadas
 
-Las personalizaciones son las modificaciones sobre el aspecto visual de los componentes estándar de Apple. Normalmente las personalizaciones no son recomendables para evitar confundir al usuario, pero a veces son necesarias para juegos o aplicaciones que requieran un aspecto diferente, como puede verse en el siguiente ejemplo:
+Las personalizaciones son las modificaciones sobre el aspecto visual de los componentes estándar de Apple. Por lo general las personalizaciones no se recomiendan para evitar confundir al usuario, pero a veces son necesarias para juegos o aplicaciones que requieran un aspecto diferente, como puede verse en el siguiente ejemplo:
 
 ![Personalización](gitbook/assets/customization.png "Personalización")
 

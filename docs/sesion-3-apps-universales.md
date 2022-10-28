@@ -3,6 +3,7 @@ hide:
   - navigation
 ---
 
+# 3- Aplicaciones universales 
 
 En esta primera parte empezaremos explicando cómo programar apps universales cuya interfaz se adapte a modelos y tamaños diferentes de iPhone y iPad, teniendo en cuenta si las vistas son compactas o regulares. Finalmente haremos un ejercicio usando _Split View_ adaptado a los distintos dispositivos. 
 
