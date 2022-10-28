@@ -249,13 +249,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#uipageviewcontroller" class="md-nav__link">
-    UIPageViewController
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#ejercicio-1-uipageviewcontroller" class="md-nav__link">
     Ejercicio 1 - UIPageViewController
   </a>
@@ -343,13 +336,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#uipageviewcontroller" class="md-nav__link">
-    UIPageViewController
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#ejercicio-1-uipageviewcontroller" class="md-nav__link">
     Ejercicio 1 - UIPageViewController
   </a>
@@ -386,7 +372,12 @@
 
 <h1 id="2-controladores-avanzados">2- Controladores avanzados</h1>
 <p>En esta sesión veremos algunos controladores bastante comunes en aplicaciones iOS: el controlador paginado (<code>UIPageViewController</code>), las colecciones (<code>UICollectionViewController</code>) y el controlador de búsqueda para tablas (<code>UISearchController</code>).</p>
-<h2 id="uipageviewcontroller">UIPageViewController</h2>
+<!--XCode tiene una plantilla que usa como base este controlador, llamada _Page-Based Application_. Si creamos un nuevo proyecto con esta plantilla, veremos que la aplicación consiste en un libro donde podemos pasar las páginas.
+
+Si vamos a implementar una app parecida a un libro, esta plantilla es útil. Pero si no es el caso (y normalmente no lo es), es mejor programar el controlador desde cero, ya que deberíamos hacer tantas modificaciones en la plantilla que no merecería la pena.
+-->
+
+<h2 id="ejercicio-1-uipageviewcontroller">Ejercicio 1 - UIPageViewController</h2>
 <p>El controlador paginado (<em>UIPageViewController</em>) sirve para poder cambiar entre varias páginas en pantalla que contienen información similar. Es una clase bastante configurable, ya que permite modificar:</p>
 <ul>
 <li>La orientación de las vistas de las páginas (horizontal o vertical).</li>
@@ -395,14 +386,7 @@
 <li>Para la transición <em>scrolling</em>, el espacio entre páginas.</li>
 </ul>
 <p>La clase <code>UIPageViewController</code> se considera un controlador contenedor (<em>Container Controller</em>). Los controladores contenedores pueden usarse para almacenar y gestionar múltiples <em>View Controllers</em>, y cambiar de uno a otro cuando sea necesario. Otros ejemplos de controladores contenedores son <code>UINavigationController</code>, <code>UITabBarController</code> y <code>UISplitViewController</code>.</p>
-<!--XCode tiene una plantilla que usa como base este controlador, llamada _Page-Based Application_. Si creamos un nuevo proyecto con esta plantilla, veremos que la aplicación consiste en un libro donde podemos pasar las páginas.
-
-Si vamos a implementar una app parecida a un libro, esta plantilla es útil. Pero si no es el caso (y normalmente no lo es), es mejor programar el controlador desde cero, ya que deberíamos hacer tantas modificaciones en la plantilla que no merecería la pena.
--->
-
-<p>Vamos a hacer una aplicación de ejemplo para ver las posibilidades de este controlador y cómo se programa.</p>
-<h2 id="ejercicio-1-uipageviewcontroller">Ejercicio 1 - UIPageViewController</h2>
-<p>La aplicación que vamos a implementar tendrá 4 páginas que contienen información de ayuda. Los controladores paginados se suelen usar frecuentemente para esto. Nuestra app quedará del siguiente modo cuando la terminemos:</p>
+<p>Vamos a hacer una aplicación de ejemplo para ver las posibilidades del controlador paginado y cómo se programa. Nuestra app tendrá 4 páginas que contienen información de ayuda. Los controladores paginados se suelen usar frecuentemente para esto. El ejercicio quedará del siguiente modo cuando lo terminemos:</p>
 <p><img alt="Aplicación resultado" src="gitbook/assets/pageview_overall.jpeg" title="Resultado de nuestra aplicación" /></p>
 <p>Para empezar crearemos un proyecto con la plantilla <em>iOS &gt; App</em> y  <em>storyboard</em>. Lo llamaremos <code>ejercicio_pageview</code>.</p>
 <!---
