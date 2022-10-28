@@ -7,7 +7,18 @@ hide:
 
 En esta sesión veremos algunos controladores bastante comunes en aplicaciones iOS: el controlador paginado (`UIPageViewController`), las colecciones (`UICollectionViewController`) y el controlador de búsqueda para tablas (`UISearchController`).
 
-## UIPageViewController
+
+
+
+<!--XCode tiene una plantilla que usa como base este controlador, llamada _Page-Based Application_. Si creamos un nuevo proyecto con esta plantilla, veremos que la aplicación consiste en un libro donde podemos pasar las páginas.
+
+Si vamos a implementar una app parecida a un libro, esta plantilla es útil. Pero si no es el caso (y normalmente no lo es), es mejor programar el controlador desde cero, ya que deberíamos hacer tantas modificaciones en la plantilla que no merecería la pena.
+-->
+
+
+
+## Ejercicio 1 - UIPageViewController
+
 
 El controlador paginado (_UIPageViewController_) sirve para poder cambiar entre varias páginas en pantalla que contienen información similar. Es una clase bastante configurable, ya que permite modificar:
 
@@ -18,20 +29,7 @@ El controlador paginado (_UIPageViewController_) sirve para poder cambiar entre 
 
 La clase `UIPageViewController` se considera un controlador contenedor (_Container Controller_). Los controladores contenedores pueden usarse para almacenar y gestionar múltiples _View Controllers_, y cambiar de uno a otro cuando sea necesario. Otros ejemplos de controladores contenedores son `UINavigationController`, `UITabBarController` y `UISplitViewController`.
 
-
-
-
-
-<!--XCode tiene una plantilla que usa como base este controlador, llamada _Page-Based Application_. Si creamos un nuevo proyecto con esta plantilla, veremos que la aplicación consiste en un libro donde podemos pasar las páginas.
-
-Si vamos a implementar una app parecida a un libro, esta plantilla es útil. Pero si no es el caso (y normalmente no lo es), es mejor programar el controlador desde cero, ya que deberíamos hacer tantas modificaciones en la plantilla que no merecería la pena.
--->
-
-Vamos a hacer una aplicación de ejemplo para ver las posibilidades de este controlador y cómo se programa.
-
-## Ejercicio 1 - UIPageViewController
-
-La aplicación que vamos a implementar tendrá 4 páginas que contienen información de ayuda. Los controladores paginados se suelen usar frecuentemente para esto. Nuestra app quedará del siguiente modo cuando la terminemos:
+Vamos a hacer una aplicación de ejemplo para ver las posibilidades del controlador paginado y cómo se programa. Nuestra app tendrá 4 páginas que contienen información de ayuda. Los controladores paginados se suelen usar frecuentemente para esto. El ejercicio quedará del siguiente modo cuando lo terminemos:
 
 ![Aplicación resultado](gitbook/assets/pageview_overall.jpeg "Resultado de nuestra aplicación")
 

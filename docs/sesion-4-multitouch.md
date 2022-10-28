@@ -3,6 +3,10 @@ hide:
   - navigation
 ---
 
+# 4- Gestos
+
+En esta sesión veremos cómo capturar y gestionar los gestos del usuario sobre la pantalla.
+
 ## Pantalla táctil
 
 El sensor de pantalla es, obviamente, el más usado y común de todos. En una aplicación iOS que utilice los componentes básicos de `UIKit` como tablas, botones, campos de texto, etc. problamente no tendremos que preocuparnos por gestionar los eventos producidos por el sensor de la pantalla. En aplicaciones como juegos, o más elaboradas, es muy habitual que tengamos que hacer uso de los eventos que detallaremos a continuación.
