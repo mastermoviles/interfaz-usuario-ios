@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# Guías de estilo y personalizaciones avanzadas
+# 1- Guías de estilo y personalizaciones avanzadas
 
 En esta primera sesión veremos los patrones de diseño que Apple nos recomienda seguir para nuestras aplicaciones. En algunos casos es obligatorio cumplir estos patrones y el hecho de no hacerlo puede ser motivo de rechazo para publicar en el _App Store_. Por último implementaremos dos ejercicios de personalización de controladores. 
 
