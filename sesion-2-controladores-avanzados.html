@@ -394,7 +394,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 --->
 
 <h4 id="creacion-de-las-vistas">Creación de las vistas</h4>
-<p>Primero vamos a arrastrar un <code>UIPageViewController</code> al <em>storyboard</em> (fuera de la primera vista). Haremos lo mismo con otro <code>UIViewController</code> genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del storyboard que viene por defecto también vamos a usarlo para superponer sobre él el controlador paginado, como veremos más adelante.</p>
+<p>Primero vamos a arrastrar un <code>UIPageViewController</code> al <em>storyboard</em> (fuera de la primera vista). Haremos lo mismo con otro <code>UIViewController</code> genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del <em>storyboard</em> que viene por defecto también vamos a usarlo para superponer sobre él el controlador paginado como veremos más adelante.</p>
 <p>Tenemos que asignar un identificador del <em>storyboard</em> para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre <code>PageViewController</code> al controlador <em>Page View Controller</em>, y <code>PageContentViewController</code> al  <em>View Controller</em>.</p>
 <p><img alt="Asignación de storyboard ID" src="gitbook/assets/pageview-controller-5.png" title="Asignación de storyboard ID" /></p>
 <p>En <code>PageViewController</code> verifica que el valor de transición es <code>Scroll</code> en lugar de <code>Page Curl</code>, ya que el segundo se suele utilizar para libros pero no quedaría bien en nuestra aplicación.</p>
@@ -402,7 +402,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 <h4 id="implementacion-de-la-vista-de-contenido-pagecontentviewcontroller">Implementación de la vista de contenido (PageContentViewController)</h4>
 <p>Vamos a diseñar la vista de contenido (<code>PageContentViewController</code>), que debería quedar como la siguiente:</p>
 <p><img alt="Diseño de la vista de contenido" src="gitbook/assets/pageview-content.png" title="Diseño de la vista de contenido" /></p>
-<p>Tendremos un <em>label</em> arriba y una imagen detrás que ocupa toda la pantalla excepto la barra de estado superior.</p>
+<p>Tendremos un <code>UILabel</code> arriba y una imagen detrás que ocupa toda la pantalla excepto la barra de estado superior.</p>
 <p>Ahora tenemos la vista de contenido, pero nos hará falta un controlador para cambiarla dinámicamente. Crea un nuevo fichero con <em>File &gt; New File &gt; Cocoa Touch Class</em>, llámalo <code>PageContentViewController</code> y hazlo subclase de <code>UIViewController</code>, dejando desmarcado <em>Also create Xib</em>.</p>
 <p>Volvemos al <em>storyboard</em>, nos situamos en el <em>PageContentViewController</em> y asignamos el controlador a la vista:</p>
 <p><img alt="Asignación del controlador a la vista" src="gitbook/assets/pageview-vca.png" title="Asignación del controlador a la vista" /></p>
@@ -492,8 +492,8 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 <p>El método <code>viewControllerAtIndex</code> es el que muestra el controlador indicado. Para ello, como puede verse, usamos la siguiente instrucción:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">pageContentViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">storyboard</span><span class="p">?.</span><span class="n">instantiateViewController</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;PageContentViewController&quot;</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="n">PageContentViewController</span>
 </code></pre></div>
-<p>Recuerda que habíamos asignado un <em>storyboardID</em> a los controladores. Este identificador lo hemos usado como referencia para crear las nuevas instancias, ya que si te fijas, <code>PageContentViewController</code> está suelto en el storyboard.</p>
-<p>Ya lo tenemos casi. Para mostrar un indicador de página, tenemos que indicarle a iOS el número de páginas (el número de puntos a mostrar) y qué número de página se selecciona inicialmente. Añade los siguientes métodos al final de <code>ViewController.swift</code>:</p>
+<p>Recuerda que habíamos asignado un <em>storyboardID</em> a los controladores. Este identificador lo hemos usado como referencia para crear las nuevas instancias, ya que si te fijas, <code>PageContentViewController</code> está suelto en el <em>storyboard</em>.</p>
+<p>Ya lo tenemos casi. Para mostrar un indicador de página, tenemos que indicar el número de páginas (la cantidad de puntos a mostrar) y qué número de página se selecciona inicialmente. Añade los siguientes métodos al final de <code>ViewController.swift</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">presentationCount</span><span class="p">(</span><span class="k">for</span> <span class="n">pageViewController</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">.</span><span class="bp">count</span>
 <span class="p">}</span>
@@ -503,7 +503,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 <span class="p">}</span>
 </code></pre></div>
 <blockquote>
-<p>Si no se implementan estos métodos, no se mostrará el indicador de página</p>
+<p>Si no se implementan estos métodos no se mostrará el indicador de página.</p>
 </blockquote>
 <p>Por último, vamos a crear el controlador paginado. Lo haremos en el método <code>viewDidLoad</code> de <code>ViewController.swift</code>. Cámbialo por el siguiente:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
@@ -530,7 +530,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 <span class="p">}</span>
 </code></pre></div>
 <p>En este método hemos creado una instancia de <code>PageViewController</code>. Después especificamos el <em>data source</em> (la fuente de datos), que es la clase actual. Creamos el primer controlador de contenido, lo añadimos a un array de controladores, y lo asignamos al controlador de la página para mostrarlo.</p>
-<p>Compilamos y ejecutamos. Debería funcionar, pero la vista sale descolocada debido a que falta ajustar las <em>constraints</em>. Para arreglarlo, seleccionamos nuestro <code>PageContentViewController</code> en el <em>storyboard</em> y marcamos <em>Reset to suggested constraints</em>. Ejecutamos de nuevo y podemos ver que el contenido ya se muestra bien, aunque todavía falta el botón de abajo. Seleccionamos nuestro <code>ViewController</code> y marcamos de nuevo <em>Reset to suggested constraints</em>. Ahora sí que vemos el botón. Lo único que nos falta son los puntos de abajo, que están ahí pero que no se ven porque son del mismo color que el fondo. Vamos a cambiarles el color.</p>
+<p>Compilamos y ejecutamos. Debería funcionar, pero la vista sale descolocada debido a que falta ajustar las <em>constraints</em>. Para arreglarlo, seleccionamos el <code>PageContentViewController</code> en el <em>storyboard</em> y marcamos <em>Reset to suggested constraints</em>. Ejecutamos de nuevo y podemos ver que el contenido ya se muestra bien, aunque todavía falta el botón de abajo. Seleccionamos nuestro <code>ViewController</code> y marcamos de nuevo <em>Reset to suggested constraints</em>. Ahora sí que vemos el botón. Lo único que nos falta son los puntos de abajo, que están ahí pero que no se ven porque son del mismo color que el fondo. Vamos a cambiarles el color.</p>
 <p>Abre el fichero <code>AppDelegate.swift</code>, y añade las siguientes líneas en <code>didFinishLaunchingWithOptions</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">pageControl</span> <span class="p">=</span> <span class="bp">UIPageControl</span><span class="p">.</span><span class="n">appearance</span><span class="p">()</span>
 <span class="n">pageControl</span><span class="p">.</span><span class="n">pageIndicatorTintColor</span> <span class="p">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">lightGray</span>
@@ -554,7 +554,7 @@ Si ejecutamos de nuevo la aplicación veremos que el botón ya funciona.</p>
 <p>Para implementar una colección es necesario indicar el número de secciones, el tamaño de las celdas, y especificar los contenidos de cada celda. El controlador de la colección automáticamente reorganizará las posiciones de las celdas en función de su tamaño y del tamaño de la pantalla.</p>
 <h3 id="ejemplo-uicollectionviewcontroller">Ejemplo UICollectionViewController</h3>
 <p>Vamos a implementar un ejercicio sencillo para ver cómo funciona <code>UICollectionViewController</code>. </p>
-<p>Creamos un proyecto llamado <code>ejercicio_collection</code>, de tipo <em>iOS &gt; App</em> con <em>storyboard</em>. Arrastramos al <em>storyboard</em> (fuera de la vista inicial) un nuevo <code>UICollectionViewController</code>, y movemos en el storyboard la flecha que apunta al controlador inicial para que ahora sea nuestro <code>UICollectionViewController</code>. Borramos el fichero <code>ViewController.swift</code> y también su controlador del <em>storyboard</em>, ya que no los necesitaremos. </p>
+<p>Creamos un proyecto llamado <code>ejercicio_collection</code>, de tipo <em>iOS &gt; App</em> con <em>storyboard</em>. Arrastramos al <em>storyboard</em> (fuera de la vista inicial) un nuevo <code>UICollectionViewController</code>, y movemos en el <em>storyboard</em> la flecha que apunta al controlador inicial para que ahora sea nuestro <code>UICollectionViewController</code>. Borramos el fichero <code>ViewController.swift</code> y también su controlador del <em>storyboard</em>, ya que no los necesitaremos. </p>
 <p>Creamos un nuevo controlador con <em>New &gt; File &gt; Cocoa Touch</em>. Lo llamaremos <code>CollectionViewController</code>, subclase de <code>UICollectionViewController</code>, dejando desmarcado <em>Also create Xib</em>. En el <em>storyboard</em> seleccionamos nuestra vista e indicamos cuál va a ser el controlador:</p>
 <p><img alt="Collection View Controller asignación" src="gitbook/assets/collection-assign.png" title="Asignación del controlador a la vista" /></p>
 <h4 id="creacion-de-las-celdas">Creación de las celdas</h4>
@@ -622,7 +622,7 @@ Si ejecutamos de nuevo la aplicación veremos que el botón ya funciona.</p>
 <h3 id="creacion-de-la-tabla">Creación de la tabla</h3>
 <p>Crea un proyecto llamado <code>ejercicio_search</code> usando la plantilla <em>iOS &gt; App</em>. Para empezar vamos a añadir al <em>storyboard</em> un nuevo controlador de tipo <code>Table View Controller</code>.</p>
 <p>Hacemos que nuestra tabla sea lo primero que aparezca cuando se lance la app arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo <em>Table View Controller</em>. Ya podemos borrar esta vista vacía del <em>storyboard</em> y también borramos el fichero <code>ViewController.swift</code> asociado a la vista que hemos eliminado.</p>
-<p>Ya hemos creado la vista de la tabla, pero vamos a usar también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos <em>File &gt; New &gt; File &gt; Cocoa Touch Class</em>, y le damos el nombre <code>TableViewController</code>, subclase de <code>UITableViewController</code>, dejando sin marcar "<em>Also create XIB file</em>". </p>
+<p>Ya hemos creado la vista de la tabla, pero vamos a usar también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos <em>File &gt; New &gt; File &gt; Cocoa Touch Class</em>, y le damos el nombre <code>TableViewController</code>, subclase de <code>UITableViewController</code>, dejando sin marcar <em>Also create XIB file</em>. </p>
 <p>A continuación asignamos la vista al controlador. Para esto seleccionamos el controlador en el <em>storyboard</em>, y desde el <em>Identity Inspector</em> le asignamos la clase que hemos creado <code>TableViewController</code>, como se muestra en la imagen:</p>
 <p><img alt="Asignación del controlador TableViewController" src="gitbook/assets/cell_tableviewcontroller.png" title="Asignación del controlador TableViewController" /></p>
 <p>También embebemos el controlador en una barra de navegación, seleccionándolo en el <em>storyboard</em> e indicando desde el menú de XCode <em>Editor &gt; Embed in &gt; Navigation Controller</em>. Para ponerle un título, añadimos el siguiente código en el método <code>viewDidLoad</code> de <code>TableViewController</code>:</p>
@@ -650,13 +650,13 @@ Si ejecutamos de nuevo la aplicación veremos que el botón ya funciona.</p>
 </code></pre></div>
 <p>Por último, debemos enlazar la celda a nuestro controlador, indicando el nombre <code>Cell</code> que le hemos dado en el código:</p>
 <p><img alt="Enlace celda" src="gitbook/assets/search_cell.png" title="Asignación de la celda en storyboard" /></p>
-<p>En este punto ya podemos ejecutar el código y tendremos una tabla funcional, aunque sin barra de búsqueda:</p>
+<p>En este momento ya podemos ejecutar el código y tendremos una tabla funcional, aunque sin la barra de búsqueda:</p>
 <p><img alt="Tabla vacía" src="gitbook/assets/search_emptytable.png" title="Tabla vacía" /> </p>
 <h3 id="implementacion-del-controlador-de-busqueda">Implementación del controlador de búsqueda</h3>
 <p>Como se ha mencionado anteriormente, el controlador de búsqueda ha ido evolucionando con las distintas versiones de XCode.</p>
 <p><strong>Antes de <em>iOS7</em></strong>, se implementaba arrastrando un objeto de tipo <em>Search Bar and Search Display Controller</em> al principio de la tabla desde el <em>Interface Builder</em>. La gestión de esto era bastante complicada, ya que teníamos varias conexiones que debíamos gestionar manualmente.</p>
 <p><strong>Ahora</strong>, <em>Search Display Controller</em> es un controlador <em>deprecated</em> (obsoleto), y <em>Apple</em> recomienda usar la clase <em>UISearchController</em> introducida en <em>iOS7</em>. Paradójicamente, esta clase no está en el <em>Interface Builder</em>, y sólo podemos usarla mediante código, pero se simplifica bastante el procedimiento. Es así como vamos a hacerlo en nuestro ejemplo.</p>
-<p>Para esto, primero debemos crear nuestro <code>searchController</code> y un array <code>searchResults</code> que contendrá los resultados filtrados de la búsqueda. Al principio de la clase <code>TableViewController</code> declaramos las siguientes variables privadas (no hace falta acceder a ellas desde fuera del controlador):</p>
+<p>Para esto, primero debemos crear nuestro <code>searchController</code> y un array <code>searchResults</code> que contendrá los resultados filtrados de la búsqueda. Al principio de la clase <code>TableViewController</code> declaramos las siguientes variables privadas (ya que no hace falta acceder a ellas desde fuera del controlador):</p>
 <div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">var</span> <span class="nv">searchController</span> <span class="p">:</span> <span class="bp">UISearchController</span><span class="p">?</span>
 <span class="kd">private</span> <span class="kd">var</span> <span class="nv">searchResults</span> <span class="p">=</span> <span class="p">[</span><span class="nb">String</span><span class="p">]()</span>
 </code></pre></div>
@@ -681,7 +681,7 @@ Si ejecutamos de nuevo la aplicación veremos que el botón ya funciona.</p>
 <span class="c1">// Esto es para indicar que nuestra vista de tabla de búsqueda se superpondrá a la ya existente</span>
 <span class="kc">self</span><span class="p">.</span><span class="n">definesPresentationContext</span> <span class="p">=</span> <span class="kc">true</span>
 </code></pre></div>
-<p>Ahora tendremos que cambiar los métodos <code>numberOfRowsInSection</code> y <code>cellForRowAtIndexPath</code>. Esto lo haremos porque en función de si está o no activa la barra de búsqueda tendremos que mostrar una información u otra. Si la vista de la tabla es la dada por el controlador de búsqueda, tendremos que usar los elementos de la lista filtrada. En caso contrario, los de la lista principal.</p>
+<p>Ahora tendremos que cambiar los métodos <code>numberOfRowsInSection</code> y <code>cellForRowAtIndexPath</code>. Esto lo haremos porque en función de si está o no activa la barra de búsqueda tendremos que mostrar una información u otra. Si la vista de la tabla es la del controlador de búsqueda, tendremos que usar los elementos de la lista filtrada. En caso contrario, los de la lista principal.</p>
 <div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="n">section</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">src</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">searchController</span><span class="p">?.</span><span class="n">searchResultsController</span> <span class="k">as</span><span class="p">!</span> <span class="bp">UITableViewController</span>
 
@@ -737,15 +737,14 @@ Si ejecutamos de nuevo la aplicación veremos que el botón ya funciona.</p>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Si ejecutamos el programa veremos que casi lo tenemos listo. Pero el problema es que cuando se pulse sobre la barra de búsqueda la app fallará.</p>
+<p>Si ejecutamos el programa veremos que casi lo tenemos listo. Pero el (pequeño) problema es que cuando se pulse sobre la barra de búsqueda la app fallará.</p>
 <p>Para arreglar este error debemos asignar el prototipo de la celda del <em>storyboard</em>. En <code>CellForRowAt IndexPath</code> sustituye la siguiente línea:</p>
 <p><div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;Cell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
 </code></pre></div>
 Por esta otra:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;Cell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
 </code></pre></div>
-<p>Si ejecutas de nuevo el programa verás como la barra de búsqueda ahora funciona (aparece un teclado y es funcional). </p>
-<p>Sin embargo, si queremos leer o usar el valor que el usuario ha introducido  todavía tenemos que añadir lo siguiente:</p>
+<p>Si ejecutas de nuevo el programa verás como la barra de búsqueda ahora funciona (aparece un teclado y es funcional). Sin embargo, si queremos leer o usar el valor que el usuario ha introducido  todavía tenemos que añadir lo siguiente:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nv">object</span> <span class="p">:</span> <span class="nb">String</span>
 
