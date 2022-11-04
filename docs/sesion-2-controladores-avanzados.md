@@ -41,7 +41,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 
 #### Creación de las vistas
 
-Primero vamos a arrastrar un `UIPageViewController` al _storyboard_ (fuera de la primera vista). Haremos lo mismo con otro `UIViewController` genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del storyboard que viene por defecto también vamos a usarlo para superponer sobre él el controlador paginado, como veremos más adelante.
+Primero vamos a arrastrar un `UIPageViewController` al _storyboard_ (fuera de la primera vista). Haremos lo mismo con otro `UIViewController` genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del _storyboard_ que viene por defecto también vamos a usarlo para superponer sobre él el controlador paginado como veremos más adelante.
 
 Tenemos que asignar un identificador del _storyboard_ para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre `PageViewController` al controlador _Page View Controller_, y `PageContentViewController` al  _View Controller_.
 
@@ -57,7 +57,7 @@ Vamos a diseñar la vista de contenido (`PageContentViewController`), que deber�
 
 ![Diseño de la vista de contenido](gitbook/assets/pageview-content.png "Diseño de la vista de contenido")
 
-Tendremos un _label_ arriba y una imagen detrás que ocupa toda la pantalla excepto la barra de estado superior.
+Tendremos un `UILabel` arriba y una imagen detrás que ocupa toda la pantalla excepto la barra de estado superior.
 
 Ahora tenemos la vista de contenido, pero nos hará falta un controlador para cambiarla dinámicamente. Crea un nuevo fichero con _File > New File > Cocoa Touch Class_, llámalo `PageContentViewController` y hazlo subclase de `UIViewController`, dejando desmarcado _Also create Xib_.
 
@@ -181,9 +181,9 @@ El método `viewControllerAtIndex` es el que muestra el controlador indicado. Pa
 let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! PageContentViewController
 ```
 
-Recuerda que habíamos asignado un _storyboardID_ a los controladores. Este identificador lo hemos usado como referencia para crear las nuevas instancias, ya que si te fijas, `PageContentViewController` está suelto en el storyboard.
+Recuerda que habíamos asignado un _storyboardID_ a los controladores. Este identificador lo hemos usado como referencia para crear las nuevas instancias, ya que si te fijas, `PageContentViewController` está suelto en el _storyboard_.
 
-Ya lo tenemos casi. Para mostrar un indicador de página, tenemos que indicarle a iOS el número de páginas (el número de puntos a mostrar) y qué número de página se selecciona inicialmente. Añade los siguientes métodos al final de `ViewController.swift`:
+Ya lo tenemos casi. Para mostrar un indicador de página, tenemos que indicar el número de páginas (la cantidad de puntos a mostrar) y qué número de página se selecciona inicialmente. Añade los siguientes métodos al final de `ViewController.swift`:
 
 ```swift
 func presentationCount(for pageViewController: UIPageViewController) -> Int {
@@ -194,7 +194,7 @@ func presentationIndex(for pageViewController: UIPageViewController) -> Int {
     return 0
 }
 ```
-> Si no se implementan estos métodos, no se mostrará el indicador de página
+> Si no se implementan estos métodos no se mostrará el indicador de página.
 
 Por último, vamos a crear el controlador paginado. Lo haremos en el método `viewDidLoad` de `ViewController.swift`. Cámbialo por el siguiente:
 
@@ -225,7 +225,7 @@ override func viewDidLoad() {
 
 En este método hemos creado una instancia de `PageViewController`. Después especificamos el _data source_ (la fuente de datos), que es la clase actual. Creamos el primer controlador de contenido, lo añadimos a un array de controladores, y lo asignamos al controlador de la página para mostrarlo.
 
-Compilamos y ejecutamos. Debería funcionar, pero la vista sale descolocada debido a que falta ajustar las _constraints_. Para arreglarlo, seleccionamos nuestro `PageContentViewController` en el _storyboard_ y marcamos _Reset to suggested constraints_. Ejecutamos de nuevo y podemos ver que el contenido ya se muestra bien, aunque todavía falta el botón de abajo. Seleccionamos nuestro `ViewController` y marcamos de nuevo _Reset to suggested constraints_. Ahora sí que vemos el botón. Lo único que nos falta son los puntos de abajo, que están ahí pero que no se ven porque son del mismo color que el fondo. Vamos a cambiarles el color.
+Compilamos y ejecutamos. Debería funcionar, pero la vista sale descolocada debido a que falta ajustar las _constraints_. Para arreglarlo, seleccionamos el `PageContentViewController` en el _storyboard_ y marcamos _Reset to suggested constraints_. Ejecutamos de nuevo y podemos ver que el contenido ya se muestra bien, aunque todavía falta el botón de abajo. Seleccionamos nuestro `ViewController` y marcamos de nuevo _Reset to suggested constraints_. Ahora sí que vemos el botón. Lo único que nos falta son los puntos de abajo, que están ahí pero que no se ven porque son del mismo color que el fondo. Vamos a cambiarles el color.
 
 Abre el fichero `AppDelegate.swift`, y añade las siguientes líneas en `didFinishLaunchingWithOptions`:
 
@@ -264,7 +264,7 @@ Para implementar una colección es necesario indicar el número de secciones, el
 
 Vamos a implementar un ejercicio sencillo para ver cómo funciona `UICollectionViewController`. 
 
-Creamos un proyecto llamado `ejercicio_collection`, de tipo _iOS > App_ con _storyboard_. Arrastramos al _storyboard_ (fuera de la vista inicial) un nuevo `UICollectionViewController`, y movemos en el storyboard la flecha que apunta al controlador inicial para que ahora sea nuestro `UICollectionViewController`. Borramos el fichero `ViewController.swift` y también su controlador del _storyboard_, ya que no los necesitaremos. 
+Creamos un proyecto llamado `ejercicio_collection`, de tipo _iOS > App_ con _storyboard_. Arrastramos al _storyboard_ (fuera de la vista inicial) un nuevo `UICollectionViewController`, y movemos en el _storyboard_ la flecha que apunta al controlador inicial para que ahora sea nuestro `UICollectionViewController`. Borramos el fichero `ViewController.swift` y también su controlador del _storyboard_, ya que no los necesitaremos. 
 
 Creamos un nuevo controlador con _New > File > Cocoa Touch_. Lo llamaremos `CollectionViewController`, subclase de `UICollectionViewController`, dejando desmarcado _Also create Xib_. En el _storyboard_ seleccionamos nuestra vista e indicamos cuál va a ser el controlador:
 
@@ -371,7 +371,7 @@ Crea un proyecto llamado `ejercicio_search` usando la plantilla _iOS > App_. Par
 
 Hacemos que nuestra tabla sea lo primero que aparezca cuando se lance la app arrastrando la flecha horizontal que apunta al primer controlador (la vista vacía) hacia nuestro nuevo _Table View Controller_. Ya podemos borrar esta vista vacía del _storyboard_ y también borramos el fichero `ViewController.swift` asociado a la vista que hemos eliminado.
 
-Ya hemos creado la vista de la tabla, pero vamos a usar también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar "_Also create XIB file_". 
+Ya hemos creado la vista de la tabla, pero vamos a usar también un fichero de código como controlador para poder programar los elementos de la celda. Seleccionamos _File > New > File > Cocoa Touch Class_, y le damos el nombre `TableViewController`, subclase de `UITableViewController`, dejando sin marcar _Also create XIB file_. 
 
 A continuación asignamos la vista al controlador. Para esto seleccionamos el controlador en el _storyboard_, y desde el _Identity Inspector_ le asignamos la clase que hemos creado `TableViewController`, como se muestra en la imagen:
 
@@ -413,7 +413,7 @@ Por último, debemos enlazar la celda a nuestro controlador, indicando el nombre
 
 ![Enlace celda](gitbook/assets/search_cell.png "Asignación de la celda en storyboard")
 
-En este punto ya podemos ejecutar el código y tendremos una tabla funcional, aunque sin barra de búsqueda:
+En este momento ya podemos ejecutar el código y tendremos una tabla funcional, aunque sin la barra de búsqueda:
 
 ![Tabla vacía](gitbook/assets/search_emptytable.png "Tabla vacía") 
 
@@ -425,7 +425,7 @@ Como se ha mencionado anteriormente, el controlador de búsqueda ha ido evolucio
 
 **Ahora**, _Search Display Controller_ es un controlador _deprecated_ (obsoleto), y _Apple_ recomienda usar la clase _UISearchController_ introducida en _iOS7_. Paradójicamente, esta clase no está en el _Interface Builder_, y sólo podemos usarla mediante código, pero se simplifica bastante el procedimiento. Es así como vamos a hacerlo en nuestro ejemplo.
 
-Para esto, primero debemos crear nuestro `searchController` y un array `searchResults` que contendrá los resultados filtrados de la búsqueda. Al principio de la clase `TableViewController` declaramos las siguientes variables privadas (no hace falta acceder a ellas desde fuera del controlador):
+Para esto, primero debemos crear nuestro `searchController` y un array `searchResults` que contendrá los resultados filtrados de la búsqueda. Al principio de la clase `TableViewController` declaramos las siguientes variables privadas (ya que no hace falta acceder a ellas desde fuera del controlador):
 
 ```swift
 private var searchController : UISearchController?
@@ -456,7 +456,7 @@ self.tableView.tableHeaderView = self.searchController?.searchBar
 self.definesPresentationContext = true
 ```
 
-Ahora tendremos que cambiar los métodos `numberOfRowsInSection` y `cellForRowAtIndexPath`. Esto lo haremos porque en función de si está o no activa la barra de búsqueda tendremos que mostrar una información u otra. Si la vista de la tabla es la dada por el controlador de búsqueda, tendremos que usar los elementos de la lista filtrada. En caso contrario, los de la lista principal.
+Ahora tendremos que cambiar los métodos `numberOfRowsInSection` y `cellForRowAtIndexPath`. Esto lo haremos porque en función de si está o no activa la barra de búsqueda tendremos que mostrar una información u otra. Si la vista de la tabla es la del controlador de búsqueda, tendremos que usar los elementos de la lista filtrada. En caso contrario, los de la lista principal.
 
 ```swift
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -518,7 +518,7 @@ func updateSearchResults(for searchController: UISearchController) {
 }
 ```
 
-Si ejecutamos el programa veremos que casi lo tenemos listo. Pero el problema es que cuando se pulse sobre la barra de búsqueda la app fallará.
+Si ejecutamos el programa veremos que casi lo tenemos listo. Pero el (pequeño) problema es que cuando se pulse sobre la barra de búsqueda la app fallará.
 
 Para arreglar este error debemos asignar el prototipo de la celda del _storyboard_. En `CellForRowAt IndexPath` sustituye la siguiente línea:
 
@@ -531,9 +531,7 @@ Por esta otra:
 let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 ```
 
-Si ejecutas de nuevo el programa verás como la barra de búsqueda ahora funciona (aparece un teclado y es funcional). 
-
-Sin embargo, si queremos leer o usar el valor que el usuario ha introducido  todavía tenemos que añadir lo siguiente:
+Si ejecutas de nuevo el programa verás como la barra de búsqueda ahora funciona (aparece un teclado y es funcional). Sin embargo, si queremos leer o usar el valor que el usuario ha introducido  todavía tenemos que añadir lo siguiente:
 
 ```swift
 override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
