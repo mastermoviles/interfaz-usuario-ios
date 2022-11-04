@@ -47,8 +47,8 @@ A pesar de las recomendaciones de Apple, usar _xib_ para las vistas tiene cierta
 Comenzamos abriendo _XCode_ y creando un nuevo proyecto de tipo `iOS > App` al que llamaremos `ejercicio_peliculas` Abrimos la vista principal del _storyboard_. 
 
 * Arrastra un `UILabel` a la vista principal del _storyboard_ y suéltala por el centro de la vista.
-* Podemos ver cómo quedaría en distintos dispositivos sin llegar a ejecutar el simulador. En el _storyboard_ pincha en la parte inferior, donde aparece el modelo (por ejemplo, iPhone14).
-![Storyboard preview](gitbook/assets/universalpreview.png "Storyboard Preview") y elige otro modelo, por ejemplo un iPad.
+* Podemos ver cómo quedaría en distintos dispositivos sin llegar a ejecutar el simulador. En el _storyboard_ pincha en la parte inferior, donde aparece el modelo (por ejemplo, iPhone14) y elige otro modelo, por ejemplo un iPad.
+![Storyboard preview](gitbook/assets/universalpreview.png "Storyboard Preview")
 * La etiqueta se desplazará a otro lugar. Si rotamos el dispositivo (en la parte inferior, con el icono de un cuadrado que tiene encima una flecha), es posible que hasta desaparezca de la pantalla. 
 * Ajusta las opciones de _autolayout_ para la etiqueta. Si no controlas todavía _autolayout_, puedes seleccionar el triángulo de la parte inferior  (_Resolve autolayout issues_) y elegir _Reset to suggested constraints_.
 * Si mueves el `UILabel` a otra posición, verás que las líneas azules de guía aparecen ahora de color naranja. Esto es porque todavía tenemos las _constraints_ anteriores y son inconsistentes con la nueva posición. Para actualizar la vista pincha de nuevo en el triángulo y selecciona _Update constraint constants_.
