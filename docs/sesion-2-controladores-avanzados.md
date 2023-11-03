@@ -43,7 +43,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 
 Primero vamos a arrastrar un `UIPageViewController` al _storyboard_ (fuera de la primera vista). Haremos lo mismo con otro `UIViewController` genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del _storyboard_ que viene por defecto también vamos a usarlo para superponer sobre él el controlador paginado como veremos más adelante.
 
-Tenemos que asignar un identificador del _storyboard_ para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre `PageViewController` al controlador _Page View Controller_, y `PageContentViewController` al  _View Controller_.
+Tenemos que asignar un identificador del _storyboard_ para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre `PageViewController` al controlador _Page View Controller_.
 
 ![Asignación de storyboard ID](gitbook/assets/pageview-controller-5.png "Asignación de storyboard ID")
 
@@ -61,7 +61,7 @@ Tendremos un `UILabel` arriba y una imagen detrás que ocupa toda la pantalla ex
 
 Ahora tenemos la vista de contenido, pero nos hará falta un controlador para cambiarla dinámicamente. Crea un nuevo fichero con _File > New File > Cocoa Touch Class_, llámalo `PageContentViewController` y hazlo subclase de `UIViewController`, dejando desmarcado _Also create Xib_.
 
-Volvemos al _storyboard_, nos situamos en el _PageContentViewController_ y asignamos el controlador a la vista:
+Volvemos al _storyboard_, nos situamos en el _PageContentViewController_ y asignamos el controlador a la vista, indicando también la identidad `PageContentViewController` en el `Storyboard ID` para poder referenciarlo desde código:
 
 ![Asignación del controlador a la vista](gitbook/assets/pageview-vca.png "Asignación del controlador a la vista")
 
@@ -130,23 +130,23 @@ Añade las siguientes líneas a  `ViewController.swift`:
 ```swift
 func viewControllerAtIndex(index : Int) -> PageContentViewController? {
       if self.pageTitles.count == 0 || index >= self.pageTitles.count {
-              return nil;
+              return nil
       }
 
       // Crear un nuevo controlador de contenido y pasar los datos
       let pageContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageContentViewController") as! PageContentViewController
 
-      pageContentViewController.imageFilename = self.pageImages[index];
-      pageContentViewController.titleText = self.pageTitles[index];
-      pageContentViewController.pageIndex = index;
+      pageContentViewController.imageFilename = self.pageImages[index]
+      pageContentViewController.titleText = self.pageTitles[index]
+      pageContentViewController.pageIndex = index
 
-      return pageContentViewController;
+      return pageContentViewController
   }
 
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
       let pvc = viewController as! PageContentViewController
-      var index = pvc.pageIndex;
+      var index = pvc.pageIndex
 
       if index == 0 || index == Foundation.NSNotFound {
           return nil
@@ -159,7 +159,7 @@ func viewControllerAtIndex(index : Int) -> PageContentViewController? {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 
       let pvc = viewController as! PageContentViewController
-      var index = pvc.pageIndex;
+      var index = pvc.pageIndex
 
       if index == Foundation.NSNotFound {
           return nil
@@ -205,7 +205,7 @@ override func viewDidLoad() {
     // Creamos el controlador paginado
     self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewController") as! UIPageViewController?
     self.pageViewController?.dataSource = self
-    self.pageViewController?.delegate = self;
+    self.pageViewController?.delegate = self
 
     // Creamos el primer controlador de contenido
     let startingViewController = self.viewControllerAtIndex(index: 0)
