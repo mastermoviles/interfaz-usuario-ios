@@ -272,7 +272,7 @@ Creamos un nuevo controlador con _New > File > Cocoa Touch_. Lo llamaremos `Coll
 
 #### Creación de las celdas
 
-En la vista de `UICollectionViewController` veremos un rectángulo en la parte superior izquierda, que se corresponde con una celda. Vamos a crear una clase propia para las celdas, de forma que podamos configurarlas para darles el aspecto que queramos. El procedimiento es similar al que hicimos para las celdas personalizadas.
+En la vista de `UICollectionViewController` veremos un cuadrado en la parte superior izquierda, que se corresponde con una celda. Vamos a crear una clase propia para las celdas, de forma que podamos configurarlas para darles el aspecto que queramos. El procedimiento es similar al que hicimos en el ejercicio de celdas personalizadas.
 
 Creamos una nueva clase llamada `CollectionViewCell`, subclase de `UICollectionViewCell`, y desmarcando _Also create XIB_.
 
@@ -290,7 +290,7 @@ Seleccionamos el objeto _Collection View_ en el _storyboard_, y en el _Size insp
 
 Como puede verse, hay más atributos que podríamos cambiar, como el tamaño de la cabecera y pie, el espaciado entre celdas, o los _insets_, que se pueden usar para crear bordes alrededor de las celdas.
 
-También tenemos que cambiar el tamaño de la celda, seleccionando en el storyBoard nuestro _idCelda_:
+También tenemos que cambiar el tamaño de la celda, seleccionando en el _storyboard_ nuestro _idCelda_:
 
 ![Atributos de la celda](gitbook/assets/collectionview_cell_size.png "Atributos de la celda")
 

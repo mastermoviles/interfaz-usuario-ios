@@ -44,7 +44,7 @@ Si nombramos los ficheros de las vistas con el sufijo `~ipad` o `~iphone` (por e
 A pesar de las recomendaciones de Apple, usar _xib_ para las vistas tiene ciertas ventajas, como la reutilización de código y la posibilidad de editar proyectos de forma compartida, que con el _storyboard_ se complica. Ya hemos visto en apartados anteriores cómo usar _xibs_, y a continuación veremos cómo hacer una aplicación universal con _storyboards_.
 --->
 
-Comenzamos abriendo _XCode_ y creando un nuevo proyecto de tipo `iOS > App` al que llamaremos `ejercicio_peliculas` Abrimos la vista principal del _storyboard_. 
+Comenzamos abriendo _XCode_ y creando un nuevo proyecto de tipo `iOS > App` al que llamaremos `ejercicio_prueba` Abrimos la vista principal del _storyboard_. 
 
 * Arrastra un `UILabel` a la vista principal del _storyboard_ y suéltala por el centro de la vista.
 * Podemos ver cómo quedaría en distintos dispositivos sin llegar a ejecutar el simulador. En el _storyboard_ pincha en la parte inferior, donde aparece el modelo (por ejemplo, iPhone14) y elige otro modelo, por ejemplo un iPad.
@@ -648,9 +648,9 @@ Ya tenemos una tabla y una vista detalle, pero nos faltan los ficheros de códig
 
 Creamos otro controlador para la vista detalle, al que llamaremos `DetailViewController`, subclase de `UIViewController`, y al igual que el anterior lo asignamos en el _storyboard_.
 
-Podemos ejecutar la aplicación. En un iPad veremos que en modo _Portrait_ sólo se muetra la vista detalle. Pinchando en el icono superior se muestra también la maestra. Si rotamos se muestran ambas, aunque todavía están vacías. 
+Podemos ejecutar la aplicación. En un iPad veremos que en modo _Portrait_ sólo se muestra la vista detalle. Pinchando en el icono superior se muestra también la maestra. Si rotamos se muestran ambas, aunque todavía están vacías. 
 
-Ahora añadimos los datos a la tabla. Para esto, inicializa  el siguiente array en `TableViewController`:
+Ahora vamos a añadir datos a la tabla. Para esto, inicializa  el siguiente array en `TableViewController`:
 
 ```swift
     let contenido = ["Uno","dos","tres"]
