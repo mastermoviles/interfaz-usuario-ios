@@ -43,7 +43,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 
 Primero vamos a arrastrar un `UIPageViewController` al _storyboard_ (fuera de la primera vista). Haremos lo mismo con otro `UIViewController` genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del _storyboard_ que viene por defecto también vamos a usarlo para superponer sobre él el controlador paginado como veremos más adelante.
 
-Tenemos que asignar un identificador del _storyboard_ para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre `PageViewController` al controlador _Page View Controller_.
+Tenemos que asignar un identificador del _storyboard_ para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre `PageViewController` al controlador _UIPageViewController_, y también el nombre `PageContentViewController` al controlador genérico _UIViewController_:
 
 ![Asignación de storyboard ID](gitbook/assets/pageview-controller-5.png "Asignación de storyboard ID")
 
@@ -53,7 +53,7 @@ En `PageViewController` verifica que el valor de transición es `Scroll` en luga
 
 #### Implementación de la vista de contenido (PageContentViewController)
 
-Vamos a diseñar la vista de contenido (`PageContentViewController`), que debería quedar como la siguiente:
+Vamos a diseñar la vista de contenido (`PageContentViewController`). Esta vista debería quedar como la siguiente:
 
 ![Diseño de la vista de contenido](gitbook/assets/pageview-content.png "Diseño de la vista de contenido")
 
@@ -61,7 +61,7 @@ Tendremos un `UILabel` arriba y una imagen detrás que ocupa toda la pantalla ex
 
 Ahora tenemos la vista de contenido, pero nos hará falta un controlador para cambiarla dinámicamente. Crea un nuevo fichero con _File > New File > Cocoa Touch Class_, llámalo `PageContentViewController` y hazlo subclase de `UIViewController`, dejando desmarcado _Also create Xib_.
 
-Volvemos al _storyboard_, nos situamos en el _PageContentViewController_ y asignamos el controlador a la vista, indicando también la identidad `PageContentViewController` en el `Storyboard ID` para poder referenciarlo desde código:
+Volvemos al _storyboard_, nos situamos en el _PageContentViewController_ y asignamos el controlador a la vista:
 
 ![Asignación del controlador a la vista](gitbook/assets/pageview-vca.png "Asignación del controlador a la vista")
 
