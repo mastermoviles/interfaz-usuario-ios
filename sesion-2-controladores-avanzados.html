@@ -403,16 +403,16 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 
 <h4 id="creacion-de-las-vistas">Creación de las vistas</h4>
 <p>Primero vamos a arrastrar un <code>UIPageViewController</code> al <em>storyboard</em> (fuera de la primera vista). Haremos lo mismo con otro <code>UIViewController</code> genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del <em>storyboard</em> que viene por defecto también vamos a usarlo para superponer sobre él el controlador paginado como veremos más adelante.</p>
-<p>Tenemos que asignar un identificador del <em>storyboard</em> para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre <code>PageViewController</code> al controlador <em>Page View Controller</em>.</p>
+<p>Tenemos que asignar un identificador del <em>storyboard</em> para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre <code>PageViewController</code> al controlador <em>UIPageViewController</em>, y también el nombre <code>PageContentViewController</code> al controlador genérico <em>UIViewController</em>:</p>
 <p><img alt="Asignación de storyboard ID" src="gitbook/assets/pageview-controller-5.png" title="Asignación de storyboard ID" /></p>
 <p>En <code>PageViewController</code> verifica que el valor de transición es <code>Scroll</code> en lugar de <code>Page Curl</code>, ya que el segundo se suele utilizar para libros pero no quedaría bien en nuestra aplicación.</p>
 <p><img alt="Cambio de atributo" src="gitbook/assets/pageview-controller-5-2.png" title="Cambio de atributo" /></p>
 <h4 id="implementacion-de-la-vista-de-contenido-pagecontentviewcontroller">Implementación de la vista de contenido (PageContentViewController)</h4>
-<p>Vamos a diseñar la vista de contenido (<code>PageContentViewController</code>), que debería quedar como la siguiente:</p>
+<p>Vamos a diseñar la vista de contenido (<code>PageContentViewController</code>). Esta vista debería quedar como la siguiente:</p>
 <p><img alt="Diseño de la vista de contenido" src="gitbook/assets/pageview-content.png" title="Diseño de la vista de contenido" /></p>
 <p>Tendremos un <code>UILabel</code> arriba y una imagen detrás que ocupa toda la pantalla excepto la barra de estado superior.</p>
 <p>Ahora tenemos la vista de contenido, pero nos hará falta un controlador para cambiarla dinámicamente. Crea un nuevo fichero con <em>File &gt; New File &gt; Cocoa Touch Class</em>, llámalo <code>PageContentViewController</code> y hazlo subclase de <code>UIViewController</code>, dejando desmarcado <em>Also create Xib</em>.</p>
-<p>Volvemos al <em>storyboard</em>, nos situamos en el <em>PageContentViewController</em> y asignamos el controlador a la vista, indicando también la identidad <code>PageContentViewController</code> en el <code>Storyboard ID</code> para poder referenciarlo desde código:</p>
+<p>Volvemos al <em>storyboard</em>, nos situamos en el <em>PageContentViewController</em> y asignamos el controlador a la vista:</p>
 <p><img alt="Asignación del controlador a la vista" src="gitbook/assets/pageview-vca.png" title="Asignación del controlador a la vista" /></p>
 <p>Enlazamos los <em>outlets</em> de la imagen y la etiqueta al controlador. Llámalos del siguiente modo:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">titulo</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
