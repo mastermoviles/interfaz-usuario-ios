@@ -566,7 +566,7 @@ Si ejecutamos de nuevo la aplicación veremos que el botón ya funciona.</p>
 <p>Creamos un nuevo controlador con <em>New &gt; File &gt; Cocoa Touch</em>. Lo llamaremos <code>CollectionViewController</code>, subclase de <code>UICollectionViewController</code>, dejando desmarcado <em>Also create Xib</em>. En el <em>storyboard</em> seleccionamos nuestra vista e indicamos cuál va a ser el controlador:</p>
 <p><img alt="Collection View Controller asignación" src="gitbook/assets/collection-assign.png" title="Asignación del controlador a la vista" /></p>
 <h4 id="creacion-de-las-celdas">Creación de las celdas</h4>
-<p>En la vista de <code>UICollectionViewController</code> veremos un rectángulo en la parte superior izquierda, que se corresponde con una celda. Vamos a crear una clase propia para las celdas, de forma que podamos configurarlas para darles el aspecto que queramos. El procedimiento es similar al que hicimos para las celdas personalizadas.</p>
+<p>En la vista de <code>UICollectionViewController</code> veremos un cuadrado en la parte superior izquierda, que se corresponde con una celda. Vamos a crear una clase propia para las celdas, de forma que podamos configurarlas para darles el aspecto que queramos. El procedimiento es similar al que hicimos en el ejercicio de celdas personalizadas.</p>
 <p>Creamos una nueva clase llamada <code>CollectionViewCell</code>, subclase de <code>UICollectionViewCell</code>, y desmarcando <em>Also create XIB</em>.</p>
 <p>En el <em>storyboard</em> seleccionamos la celda que hay dentro de nuestro controlador de colecciones, y cambiamos la clase <code>UICollectionViewCell</code> por la que hemos creado, <code>CollectionViewCell</code>.</p>
 <p><img alt="Cell View Controller asignación" src="gitbook/assets/collection-cell-assign.png" title="Asignación del controlador de celda a la vista" /></p>
@@ -575,7 +575,7 @@ Si ejecutamos de nuevo la aplicación veremos que el botón ya funciona.</p>
 <p>Seleccionamos el objeto <em>Collection View</em> en el <em>storyboard</em>, y en el <em>Size inspector</em> cambiamos el tamaño de las celdas (<em>Cell Size</em>) a 100 x 100 puntos.</p>
 <p><img alt="Atributos de la colección" src="gitbook/assets/collection-attributes.png" title="Atributos de la colección" /></p>
 <p>Como puede verse, hay más atributos que podríamos cambiar, como el tamaño de la cabecera y pie, el espaciado entre celdas, o los <em>insets</em>, que se pueden usar para crear bordes alrededor de las celdas.</p>
-<p>También tenemos que cambiar el tamaño de la celda, seleccionando en el storyBoard nuestro <em>idCelda</em>:</p>
+<p>También tenemos que cambiar el tamaño de la celda, seleccionando en el <em>storyboard</em> nuestro <em>idCelda</em>:</p>
 <p><img alt="Atributos de la celda" src="gitbook/assets/collectionview_cell_size.png" title="Atributos de la celda" /></p>
 <p>En este ejercicio configuraremos las celdas para que muestren una imagen. Para ello, desde el <em>Interface Builder</em> arrastramos un <code>UIImageView</code> a la celda, de forma que ocupe todo su tamaño. Ahora creamos un <em>outlet</em> de la imagen en nuestra celda personalizada y lo llamamos <code>imageView</code>.</p>
 <p><img alt="Creación de outlet de ImageView" src="gitbook/assets/collection-linkcell.png" title="Creación de outlet de ImageView" /></p>

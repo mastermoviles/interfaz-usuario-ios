@@ -435,7 +435,7 @@ Si nombramos los ficheros de las vistas con el sufijo `~ipad` o `~iphone` (por e
 A pesar de las recomendaciones de Apple, usar _xib_ para las vistas tiene ciertas ventajas, como la reutilización de código y la posibilidad de editar proyectos de forma compartida, que con el _storyboard_ se complica. Ya hemos visto en apartados anteriores cómo usar _xibs_, y a continuación veremos cómo hacer una aplicación universal con _storyboards_.
 --->
 
-<p>Comenzamos abriendo <em>XCode</em> y creando un nuevo proyecto de tipo <code>iOS &gt; App</code> al que llamaremos <code>ejercicio_peliculas</code> Abrimos la vista principal del <em>storyboard</em>. </p>
+<p>Comenzamos abriendo <em>XCode</em> y creando un nuevo proyecto de tipo <code>iOS &gt; App</code> al que llamaremos <code>ejercicio_prueba</code> Abrimos la vista principal del <em>storyboard</em>. </p>
 <ul>
 <li>Arrastra un <code>UILabel</code> a la vista principal del <em>storyboard</em> y suéltala por el centro de la vista.</li>
 <li>Podemos ver cómo quedaría en distintos dispositivos sin llegar a ejecutar el simulador. En el <em>storyboard</em> pincha en la parte inferior, donde aparece el modelo (por ejemplo, iPhone14) y elige otro modelo, por ejemplo un iPad.
@@ -969,8 +969,8 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <p>Ya tenemos una tabla y una vista detalle, pero nos faltan los ficheros de código de los controladores. Para controlar la tabla crea un nuevo archivo con <code>File &gt; New &gt; File &gt; Cocoa touch &gt; UITableViewController</code> y llámalo <code>TableViewController</code>. Asigna el controlador a la vista:</p>
 <p><img alt="Asignación Table View Controller" src="gitbook/assets/splitview_tvc.png" title="Asignación Table View Controller" /></p>
 <p>Creamos otro controlador para la vista detalle, al que llamaremos <code>DetailViewController</code>, subclase de <code>UIViewController</code>, y al igual que el anterior lo asignamos en el <em>storyboard</em>.</p>
-<p>Podemos ejecutar la aplicación. En un iPad veremos que en modo <em>Portrait</em> sólo se muetra la vista detalle. Pinchando en el icono superior se muestra también la maestra. Si rotamos se muestran ambas, aunque todavía están vacías. </p>
-<p>Ahora añadimos los datos a la tabla. Para esto, inicializa  el siguiente array en <code>TableViewController</code>:</p>
+<p>Podemos ejecutar la aplicación. En un iPad veremos que en modo <em>Portrait</em> sólo se muestra la vista detalle. Pinchando en el icono superior se muestra también la maestra. Si rotamos se muestran ambas, aunque todavía están vacías. </p>
+<p>Ahora vamos a añadir datos a la tabla. Para esto, inicializa  el siguiente array en <code>TableViewController</code>:</p>
 <div class="highlight"><pre><span></span><code>    <span class="kd">let</span> <span class="nv">contenido</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span><span class="s">&quot;dos&quot;</span><span class="p">,</span><span class="s">&quot;tres&quot;</span><span class="p">]</span>
 </code></pre></div>
 <p>Borra el método <code>numberOfSections</code> y modifica los siguientes métodos:</p>
