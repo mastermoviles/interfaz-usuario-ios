@@ -403,7 +403,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 
 <h4 id="creacion-de-las-vistas">Creación de las vistas</h4>
 <p>Primero vamos a arrastrar un <code>UIPageViewController</code> al <em>storyboard</em> (fuera de la primera vista). Haremos lo mismo con otro <code>UIViewController</code> genérico, que es el que contendrá la información de las 4 pantallas. Usaremos la misma vista para las 4 pantallas porque en realidad su estructura es la misma. El controlador inicial del <em>storyboard</em> que viene por defecto también vamos a usarlo para superponer sobre él el controlador paginado como veremos más adelante.</p>
-<p>Tenemos que asignar un identificador del <em>storyboard</em> para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre <code>PageViewController</code> al controlador <em>Page View Controller</em>, y <code>PageContentViewController</code> al  <em>View Controller</em>.</p>
+<p>Tenemos que asignar un identificador del <em>storyboard</em> para las dos vistas que hemos creado, de modo que podamos referenciarlas posteriormente desde nuestro código. Asigna el nombre <code>PageViewController</code> al controlador <em>Page View Controller</em>.</p>
 <p><img alt="Asignación de storyboard ID" src="gitbook/assets/pageview-controller-5.png" title="Asignación de storyboard ID" /></p>
 <p>En <code>PageViewController</code> verifica que el valor de transición es <code>Scroll</code> en lugar de <code>Page Curl</code>, ya que el segundo se suele utilizar para libros pero no quedaría bien en nuestra aplicación.</p>
 <p><img alt="Cambio de atributo" src="gitbook/assets/pageview-controller-5-2.png" title="Cambio de atributo" /></p>
@@ -412,7 +412,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 <p><img alt="Diseño de la vista de contenido" src="gitbook/assets/pageview-content.png" title="Diseño de la vista de contenido" /></p>
 <p>Tendremos un <code>UILabel</code> arriba y una imagen detrás que ocupa toda la pantalla excepto la barra de estado superior.</p>
 <p>Ahora tenemos la vista de contenido, pero nos hará falta un controlador para cambiarla dinámicamente. Crea un nuevo fichero con <em>File &gt; New File &gt; Cocoa Touch Class</em>, llámalo <code>PageContentViewController</code> y hazlo subclase de <code>UIViewController</code>, dejando desmarcado <em>Also create Xib</em>.</p>
-<p>Volvemos al <em>storyboard</em>, nos situamos en el <em>PageContentViewController</em> y asignamos el controlador a la vista:</p>
+<p>Volvemos al <em>storyboard</em>, nos situamos en el <em>PageContentViewController</em> y asignamos el controlador a la vista, indicando también la identidad <code>PageContentViewController</code> en el <code>Storyboard ID</code> para poder referenciarlo desde código:</p>
 <p><img alt="Asignación del controlador a la vista" src="gitbook/assets/pageview-vca.png" title="Asignación del controlador a la vista" /></p>
 <p>Enlazamos los <em>outlets</em> de la imagen y la etiqueta al controlador. Llámalos del siguiente modo:</p>
 <div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">titulo</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
@@ -454,23 +454,23 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
 <p>Añade las siguientes líneas a  <code>ViewController.swift</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">viewControllerAtIndex</span><span class="p">(</span><span class="n">index</span> <span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">PageContentViewController</span><span class="p">?</span> <span class="p">{</span>
       <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">.</span><span class="bp">count</span> <span class="p">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&gt;=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">.</span><span class="bp">count</span> <span class="p">{</span>
-              <span class="k">return</span> <span class="kc">nil</span><span class="p">;</span>
+              <span class="k">return</span> <span class="kc">nil</span>
       <span class="p">}</span>
 
       <span class="c1">// Crear un nuevo controlador de contenido y pasar los datos</span>
       <span class="kd">let</span> <span class="nv">pageContentViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">storyboard</span><span class="p">?.</span><span class="n">instantiateViewController</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;PageContentViewController&quot;</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="n">PageContentViewController</span>
 
-      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">imageFilename</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageImages</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
-      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">titleText</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
-      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">pageIndex</span> <span class="p">=</span> <span class="n">index</span><span class="p">;</span>
+      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">imageFilename</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageImages</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">titleText</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">pageTitles</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+      <span class="n">pageContentViewController</span><span class="p">.</span><span class="n">pageIndex</span> <span class="p">=</span> <span class="n">index</span>
 
-      <span class="k">return</span> <span class="n">pageContentViewController</span><span class="p">;</span>
+      <span class="k">return</span> <span class="n">pageContentViewController</span>
   <span class="p">}</span>
 
   <span class="kd">func</span> <span class="nf">pageViewController</span><span class="p">(</span><span class="kc">_</span> <span class="n">pageViewController</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">,</span> <span class="n">viewControllerBefore</span> <span class="n">viewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UIViewController</span><span class="p">?</span> <span class="p">{</span>
 
       <span class="kd">let</span> <span class="nv">pvc</span> <span class="p">=</span> <span class="n">viewController</span> <span class="k">as</span><span class="p">!</span> <span class="n">PageContentViewController</span>
-      <span class="kd">var</span> <span class="nv">index</span> <span class="p">=</span> <span class="n">pvc</span><span class="p">.</span><span class="n">pageIndex</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nv">index</span> <span class="p">=</span> <span class="n">pvc</span><span class="p">.</span><span class="n">pageIndex</span>
 
       <span class="k">if</span> <span class="n">index</span> <span class="p">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">index</span> <span class="p">==</span> <span class="n">Foundation</span><span class="p">.</span><span class="n">NSNotFound</span> <span class="p">{</span>
           <span class="k">return</span> <span class="kc">nil</span>
@@ -483,7 +483,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
   <span class="kd">func</span> <span class="nf">pageViewController</span><span class="p">(</span><span class="kc">_</span> <span class="n">pageViewController</span><span class="p">:</span> <span class="bp">UIPageViewController</span><span class="p">,</span> <span class="n">viewControllerAfter</span> <span class="n">viewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UIViewController</span><span class="p">?</span> <span class="p">{</span>
 
       <span class="kd">let</span> <span class="nv">pvc</span> <span class="p">=</span> <span class="n">viewController</span> <span class="k">as</span><span class="p">!</span> <span class="n">PageContentViewController</span>
-      <span class="kd">var</span> <span class="nv">index</span> <span class="p">=</span> <span class="n">pvc</span><span class="p">.</span><span class="n">pageIndex</span><span class="p">;</span>
+      <span class="kd">var</span> <span class="nv">index</span> <span class="p">=</span> <span class="n">pvc</span><span class="p">.</span><span class="n">pageIndex</span>
 
       <span class="k">if</span> <span class="n">index</span> <span class="p">==</span> <span class="n">Foundation</span><span class="p">.</span><span class="n">NSNotFound</span> <span class="p">{</span>
           <span class="k">return</span> <span class="kc">nil</span>
@@ -520,7 +520,7 @@ Por simplificar vamos a hacerlo sólo para iphone, selecciona esta opción cuand
     <span class="c1">// Creamos el controlador paginado</span>
     <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">storyboard</span><span class="p">?.</span><span class="n">instantiateViewController</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;PageViewController&quot;</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="bp">UIPageViewController</span><span class="p">?</span>
     <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">dataSource</span> <span class="p">=</span> <span class="kc">self</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span><span class="p">;</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">pageViewController</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
 
     <span class="c1">// Creamos el primer controlador de contenido</span>
     <span class="kd">let</span> <span class="nv">startingViewController</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">viewControllerAtIndex</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
@@ -858,7 +858,7 @@ En esta sesión no tenemos tiempo de ver cómo se implementa esta opción, ya qu
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
       <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
