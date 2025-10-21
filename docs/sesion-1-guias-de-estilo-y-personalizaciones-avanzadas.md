@@ -42,7 +42,7 @@ En general, lo principal que deben tener las aplicaciones es:
 
 Antes de comenzar a diseñar una app también es muy importante conocer quiénes son los usuarios a los que nos dirigimos, es decir, el público objetivo, y en función de esto definir la interfaz gráfica, los controles, terminología, etc. No es lo mismo diseñar una app para niños que una de contabilidad, por ejemplo.
 
-Siempre es recomendable hacer un diseño previo usando Mockups, _storyboards_ u otras herramientas antes de que la app sea funcional. Existen varios programas de Mockups, como <a href="https://mockup.io/">mockup.io</a> o <a href="https://balsamiq.com">Balsamiq</a>.
+Siempre es recomendable hacer un diseño previo usando Mockups, _storyboards_ u otras herramientas antes de que la app sea funcional. Existen varios programas de Mockups, como <a href="[https://createwithplay.com">Play</a> o <a href="https://balsamiq.com">Balsamiq</a>.
 
 <!---
 
