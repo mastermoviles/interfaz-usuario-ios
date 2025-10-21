@@ -14,8 +14,9 @@
       
         <link rel="next" href="sesion-4-multitouch.html">
       
+      
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
@@ -23,14 +24,17 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
+
     
+    
+      
     
     
       
@@ -42,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,7 +63,6 @@
     
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Teal" data-md-color-accent="Teal">
   
-    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -86,11 +89,12 @@
     <a href="." title="iOS avanzado (IUDM)" class="md-header__button md-logo" aria-label="iOS avanzado (IUDM)" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -113,28 +117,35 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Buscar">
         
         <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Inicializando búsqueda
@@ -145,6 +156,7 @@
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -171,12 +183,13 @@
                     
 
 
+
 <nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="." title="iOS avanzado (IUDM)" class="md-nav__button md-logo" aria-label="iOS avanzado (IUDM)" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
     iOS avanzado (IUDM)
@@ -186,14 +199,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="README.md" class="md-nav__link">
-        Presentación
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -201,14 +221,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="sesion-1-guias-de-estilo-y-personalizaciones-avanzadas.html" class="md-nav__link">
-        1- Guías de estilo y personalizaciones avanzadas
+        
+  
+  
+  <span class="md-ellipsis">
+    1- Guías de estilo y personalizaciones avanzadas
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -216,14 +243,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="sesion-2-controladores-avanzados.html" class="md-nav__link">
-        2- Controladores avanzados
+        
+  
+  
+  <span class="md-ellipsis">
+    2- Controladores avanzados
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -231,11 +265,10 @@
     
       
       
-      
-
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
@@ -247,12 +280,28 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          3- Diseño de aplicaciones universales
+          
+  
+  
+  <span class="md-ellipsis">
+    3- Diseño de aplicaciones universales
+    
+  </span>
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="sesion-3-apps-universales.html" class="md-nav__link md-nav__link--active">
-        3- Diseño de aplicaciones universales
+        
+  
+  
+  <span class="md-ellipsis">
+    3- Diseño de aplicaciones universales
+    
+  </span>
+  
+
       </a>
       
         
@@ -272,35 +321,45 @@
       
         <li class="md-nav__item">
   <a href="#diseno-de-apps-universales-en-xcode" class="md-nav__link">
-    Diseño de apps universales en XCode
+    <span class="md-ellipsis">
+      Diseño de apps universales en XCode
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#vistas-dependientes-del-dispositivo" class="md-nav__link">
-    Vistas dependientes del dispositivo
+    <span class="md-ellipsis">
+      Vistas dependientes del dispositivo
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#split-view" class="md-nav__link">
-    Split View
+    <span class="md-ellipsis">
+      Split View
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ejercicio-app-universal-con-uisplitviewcontroller" class="md-nav__link">
-    Ejercicio: App universal con UISplitViewController
+    <span class="md-ellipsis">
+      Ejercicio: App universal con UISplitViewController
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ejercicio-peliculas" class="md-nav__link">
-    Ejercicio Películas
+    <span class="md-ellipsis">
+      Ejercicio Películas
+    </span>
   </a>
   
 </li>
@@ -315,14 +374,21 @@
     
       
       
-      
-
+  
   
   
   
     <li class="md-nav__item">
       <a href="sesion-4-multitouch.html" class="md-nav__link">
-        4- Detección de gestos
+        
+  
+  
+  <span class="md-ellipsis">
+    4- Detección de gestos
+    
+  </span>
+  
+
       </a>
     </li>
   
@@ -358,35 +424,45 @@
       
         <li class="md-nav__item">
   <a href="#diseno-de-apps-universales-en-xcode" class="md-nav__link">
-    Diseño de apps universales en XCode
+    <span class="md-ellipsis">
+      Diseño de apps universales en XCode
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#vistas-dependientes-del-dispositivo" class="md-nav__link">
-    Vistas dependientes del dispositivo
+    <span class="md-ellipsis">
+      Vistas dependientes del dispositivo
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#split-view" class="md-nav__link">
-    Split View
+    <span class="md-ellipsis">
+      Split View
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ejercicio-app-universal-con-uisplitviewcontroller" class="md-nav__link">
-    Ejercicio: App universal con UISplitViewController
+    <span class="md-ellipsis">
+      Ejercicio: App universal con UISplitViewController
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#ejercicio-peliculas" class="md-nav__link">
-    Ejercicio Películas
+    <span class="md-ellipsis">
+      Ejercicio Películas
+    </span>
   </a>
   
 </li>
@@ -404,6 +480,9 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
+
+
 
 
 <h1 id="3-aplicaciones-universales">3- Aplicaciones universales</h1>
@@ -535,51 +614,51 @@ En la pestaña de _Attributes Inspector_ de la celda escribimos un identificador
 
 Ahora vamos a configurar el controlador que se verá en el _popover_, es decir, la tabla a mostrar cuando se pulse el botón. Para ello editamos `TableViewController.swift` con el siguiente código:
 
-<div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">TableViewControllerDelegate</span> <span class="p">{</span>
-    <span class="kd">func</span> <span class="nf">opcionSeleccionada</span><span class="p">(</span><span class="n">nombreOpcion</span> <span class="p">:</span> <span class="nb">String</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">protocol</span><span class="w"> </span><span class="nc">TableViewControllerDelegate</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">func</span><span class="w"> </span><span class="nf">opcionSeleccionada</span><span class="p">(</span><span class="n">nombreOpcion</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 
 Y añadimos dos variables en esta misma clase:
 
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">opciones</span> <span class="p">:</span> <span class="p">[</span><span class="nb">String</span><span class="p">]?</span>
-<span class="kd">var</span> <span class="nv">delegate</span><span class="p">:</span><span class="n">TableViewControllerDelegate</span><span class="p">?</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nv">opciones</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">]?</span>
+<span class="kd">var</span><span class="w"> </span><span class="nv">delegate</span><span class="p">:</span><span class="n">TableViewControllerDelegate</span><span class="p">?</span>
 </code></pre></div>
 
 Ahora modificamos el método `viewDidLoad`:
 
-<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">viewDidLoad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
 
-    <span class="kc">self</span><span class="p">.</span><span class="n">clearsSelectionOnViewWillAppear</span> <span class="p">=</span> <span class="kc">false</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">opciones</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Opción 1&quot;</span><span class="p">,</span> <span class="s">&quot;Opción 2&quot;</span><span class="p">,</span> <span class="s">&quot;Opción 3&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">clearsSelectionOnViewWillAppear</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">opciones</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Opción 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Opción 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Opción 3&quot;</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 Y los métodos delegados de la tabla:
 
-<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">numberOfSections</span><span class="p">(</span><span class="k">in</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 
-<span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="n">section</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">opciones</span><span class="p">!.</span><span class="bp">count</span>
+<span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">,</span><span class="w"> </span><span class="n">numberOfRowsInSection</span><span class="w"> </span><span class="n">section</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">opciones</span><span class="p">!.</span><span class="bp">count</span>
 <span class="p">}</span>
 
-<span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">delegate</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nv">opcion</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">opciones</span><span class="p">?[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+<span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">,</span><span class="w"> </span><span class="n">didSelectRowAt</span><span class="w"> </span><span class="n">indexPath</span><span class="p">:</span><span class="w"> </span><span class="n">IndexPath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">delegate</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nv">opcion</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">opciones</span><span class="p">?[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
 
-        <span class="c1">// Llamamos al método opcionSeleccionada del delegado cuando se selecciona una opción de la tabla.</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">delegate</span><span class="p">?.</span><span class="n">opcionSeleccionada</span><span class="p">(</span><span class="n">nombreOpcion</span><span class="p">:</span> <span class="n">opcion</span><span class="p">!)</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="c1">// Llamamos al método opcionSeleccionada del delegado cuando se selecciona una opción de la tabla.</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">delegate</span><span class="p">?.</span><span class="n">opcionSeleccionada</span><span class="p">(</span><span class="n">nombreOpcion</span><span class="p">:</span><span class="w"> </span><span class="n">opcion</span><span class="p">!)</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UITableViewCell</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;TableViewCell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+<span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">,</span><span class="w"> </span><span class="n">cellForRowAt</span><span class="w"> </span><span class="n">indexPath</span><span class="p">:</span><span class="w"> </span><span class="n">IndexPath</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="bp">UITableViewCell</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">cell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TableViewCell&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="p">:</span><span class="w"> </span><span class="n">indexPath</span><span class="p">)</span>
 
-    <span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">?.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">opciones</span><span class="p">?[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+<span class="w">    </span><span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">?.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">opciones</span><span class="p">?[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
 
-    <span class="k">return</span> <span class="n">cell</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">cell</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -589,31 +668,31 @@ Como puedes ver, se trata de un controlador de tabla que muestra tres opciones p
 
 Una vez hemos programado la clase encargada de gestionar la selección de la opción, sólo nos queda mostrar esta tabla en un _popover_. Para ello abrimos `ViewController.swift` y hacemos que adopte los protocolos `UIPopoverPresentationController` (por ser un popover) y `TableViewControllerDelegate` (para poder hacer algo cuando se seleccione una opción de la tabla):
 
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="bp">UIPopoverPresentationControllerDelegate</span><span class="p">,</span> <span class="n">TableViewControllerDelegate</span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">ViewController</span><span class="p">:</span><span class="w"> </span><span class="bp">UIViewController</span><span class="p">,</span><span class="w"> </span><span class="bp">UIPopoverPresentationControllerDelegate</span><span class="p">,</span><span class="w"> </span><span class="n">TableViewControllerDelegate</span>
 </code></pre></div>
 
 Ahora tenemos que programar el método que se invocará cuando se pulse sobre el botón en `ViewController.swift`:
 
-<div class="highlight"><pre><span></span><code><span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">accionOpciones</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">Any</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">storyboard</span> <span class="p">=</span> <span class="bp">UIStoryboard</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;Main&quot;</span><span class="p">,</span> <span class="n">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nv">controller</span> <span class="p">=</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">instantiateViewController</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;tablaStoryboard&quot;</span><span class="p">)</span> <span class="k">as</span><span class="p">!</span> <span class="n">TableViewController</span>
+<div class="highlight"><pre><span></span><code><span class="kr">@IBAction</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">accionOpciones</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">sender</span><span class="p">:</span><span class="w"> </span><span class="nb">Any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">storyboard</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="bp">UIStoryboard</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Main&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bundle</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">controller</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">storyboard</span><span class="p">.</span><span class="n">instantiateViewController</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;tablaStoryboard&quot;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="p">!</span><span class="w"> </span><span class="n">TableViewController</span>
 
-    <span class="n">controller</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+<span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="n">delegate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span>
 
-    <span class="c1">// Presentamos el controlador</span>
-    <span class="c1">// - en iPad, será un Popover</span>
-    <span class="c1">// - en iPhone, será un action sheet</span>
-    <span class="n">controller</span><span class="p">.</span><span class="n">modalPresentationStyle</span> <span class="p">=</span> <span class="n">UIModalPresentationStyle</span><span class="p">.</span><span class="n">popover</span>
+<span class="w">    </span><span class="c1">// Presentamos el controlador</span>
+<span class="w">    </span><span class="c1">// - en iPad, será un Popover</span>
+<span class="w">    </span><span class="c1">// - en iPhone, será un action sheet</span>
+<span class="w">    </span><span class="n">controller</span><span class="p">.</span><span class="n">modalPresentationStyle</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">UIModalPresentationStyle</span><span class="p">.</span><span class="n">popover</span>
 
-    <span class="kc">self</span><span class="p">.</span><span class="n">present</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">present</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span><span class="w"> </span><span class="n">animated</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">completion</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
 
-    <span class="c1">// Configuramos el popover (sí, después de presentarlo, es tan ilógico como parece)</span>
-    <span class="kd">let</span> <span class="nv">popController</span> <span class="p">=</span> <span class="n">controller</span><span class="p">.</span><span class="n">popoverPresentationController</span>
+<span class="w">    </span><span class="c1">// Configuramos el popover (sí, después de presentarlo, es tan ilógico como parece)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">popController</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">controller</span><span class="p">.</span><span class="n">popoverPresentationController</span>
 
-    <span class="c1">// Todo popover debe tener un botón de referencia o una posición en la pantalla desde la que sale (con barButtonItem o con sourceView):</span>
-    <span class="n">popController</span><span class="p">?.</span><span class="n">barButtonItem</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">navigationItem</span><span class="p">.</span><span class="n">rightBarButtonItem</span>
-    <span class="n">popController</span><span class="p">?.</span><span class="n">permittedArrowDirections</span> <span class="p">=</span> <span class="n">UIPopoverArrowDirection</span><span class="p">.</span><span class="n">any</span>
-    <span class="n">popController</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+<span class="w">    </span><span class="c1">// Todo popover debe tener un botón de referencia o una posición en la pantalla desde la que sale (con barButtonItem o con sourceView):</span>
+<span class="w">    </span><span class="n">popController</span><span class="p">?.</span><span class="n">barButtonItem</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">navigationItem</span><span class="p">.</span><span class="n">rightBarButtonItem</span>
+<span class="w">    </span><span class="n">popController</span><span class="p">?.</span><span class="n">permittedArrowDirections</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">UIPopoverArrowDirection</span><span class="p">.</span><span class="n">any</span>
+<span class="w">    </span><span class="n">popController</span><span class="p">?.</span><span class="n">delegate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -623,18 +702,18 @@ Tenemos que indicar desde qué botón parte el popover. En nuestro caso es el bo
 
 Ahora sólo nos queda implementar el método `opcionSeleccionada` en `ViewController.swift`:
 
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">opcionSeleccionada</span><span class="p">(</span><span class="n">nombreOpcion</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Comprobamos que se recibe aquí la opción seleccionada. Aquí ya podríamos hacer lo que queramos con el valor recibido.</span>
-    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Seleccionado </span><span class="si">\(</span><span class="n">nombreOpcion</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nf">opcionSeleccionada</span><span class="p">(</span><span class="n">nombreOpcion</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Comprobamos que se recibe aquí la opción seleccionada. Aquí ya podríamos hacer lo que queramos con el valor recibido.</span>
+<span class="w">    </span><span class="bp">print</span><span class="p">(</span><span class="s">&quot;Seleccionado </span><span class="si">\(</span><span class="n">nombreOpcion</span><span class="si">)</span><span class="s">&quot;</span><span class="p">)</span>
 
-    <span class="c1">// Ocultamos el popover</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">dismiss</span><span class="p">(</span><span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="n">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="w">    </span><span class="c1">// Ocultamos el popover</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">dismiss</span><span class="p">(</span><span class="n">animated</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">completion</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 
 Compila y ejecuta el programa en un iPad. Cuando pulsamos fuera de la tabla, el popover desaparece, y si pulsamos en una opción podremos ver (por `print`) la opción pulsada. También verás que el popover es un poco grande para el contenido que muestra. Podemos cambiar su tamaño añadiendo la siguiente línea en `accionOpciones`, justo después de asignar `controller?.delegate = self`:
 
-<div class="highlight"><pre><span></span><code><span class="n">controller</span><span class="p">.</span><span class="n">preferredContentSize</span> <span class="p">=</span> <span class="n">CGSize</span><span class="p">(</span><span class="n">width</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">135</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">controller</span><span class="p">.</span><span class="n">preferredContentSize</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">CGSize</span><span class="p">(</span><span class="n">width</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">)</span>
 </code></pre></div>
 
 Vuelve a ejecutar el programa y verás como el tamaño del popover es más adecuado. Prueba también a ejecutar la aplicación en un _iphone 5S_. Verás que el comportamiento de la tabla es como el de un _action sheet_ a pantalla completa.
@@ -669,15 +748,15 @@ Comenzamos con la vista maestra, creando un nuevo fichero con _File > New > File
 
 Ahora abrimos el fichero `MasterViewController.swift` y modificamos algunos métodos de la clase: en  `numberOfSections` devolveremos `1`, y en el número de filas (_rows_) devolveremos `5`. De esta forma tendremos una tabla con cinco filas vacías para hacer una prueba rápida, más adelante introduciremos datos útiles. También necesitamos implementar el método `CellForRowAt`:
 
-<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UITableViewCell</span> <span class="p">{</span>
-    <span class="c1">// Al no hacerlo desde el storyboard, tenemos que añadir esta línea:</span>
-    <span class="n">tableView</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="bp">UITableViewCell</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span> <span class="n">forCellReuseIdentifier</span><span class="p">:</span> <span class="s">&quot;TableViewCell&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">,</span><span class="w"> </span><span class="n">cellForRowAt</span><span class="w"> </span><span class="n">indexPath</span><span class="p">:</span><span class="w"> </span><span class="n">IndexPath</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="bp">UITableViewCell</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Al no hacerlo desde el storyboard, tenemos que añadir esta línea:</span>
+<span class="w">    </span><span class="n">tableView</span><span class="p">.</span><span class="n">register</span><span class="p">(</span><span class="bp">UITableViewCell</span><span class="p">.</span><span class="kc">self</span><span class="p">,</span><span class="w"> </span><span class="n">forCellReuseIdentifier</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TableViewCell&quot;</span><span class="p">)</span>
 
-    <span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;TableViewCell&quot;</span><span class="p">)</span><span class="o">!</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">cell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;TableViewCell&quot;</span><span class="p">)</span><span class="o">!</span>
 
-    <span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">?.</span><span class="n">text</span> <span class="p">=</span> <span class="s">&quot;Fila </span><span class="si">\(</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="si">)</span><span class="s">&quot;</span>
+<span class="w">    </span><span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">?.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Fila </span><span class="si">\(</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="si">)</span><span class="s">&quot;</span>
 
-    <span class="k">return</span> <span class="n">cell</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">cell</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -691,16 +770,16 @@ Para probarla vamos a poner algo dentro de esta vista de detalle. Abrimos `Detai
 
 Una vez que tenemos creadas la vista _Master_ y la vista _Detail_ vamos a crear un objeto de tipo `UISplitViewController` para asignarle ambas vistas. Esto lo haremos reemplazando el siguiente método en `AppDelegate.swift`.
 
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="kc">_</span> <span class="n">application</span><span class="p">:</span> <span class="bp">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span>  <span class="n">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="n">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="nb">Any</span><span class="p">]?)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">master</span> <span class="p">=</span> <span class="n">MasterViewController</span><span class="p">(</span><span class="n">nibName</span><span class="p">:</span> <span class="s">&quot;MasterViewController&quot;</span><span class="p">,</span> <span class="n">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nv">detail</span> <span class="p">=</span> <span class="n">DetailViewController</span><span class="p">(</span><span class="n">nibName</span><span class="p">:</span> <span class="s">&quot;DetailViewController&quot;</span><span class="p">,</span> <span class="n">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nf">application</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">application</span><span class="p">:</span><span class="w"> </span><span class="bp">UIApplication</span><span class="p">,</span><span class="w"> </span><span class="n">didFinishLaunchingWithOptions</span><span class="w">  </span><span class="n">launchOptions</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">UIApplicationLaunchOptionsKey</span><span class="p">:</span><span class="w"> </span><span class="nb">Any</span><span class="p">]?)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Bool</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">master</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">MasterViewController</span><span class="p">(</span><span class="n">nibName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MasterViewController&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bundle</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">detail</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">DetailViewController</span><span class="p">(</span><span class="n">nibName</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;DetailViewController&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">bundle</span><span class="p">:</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
 
-    <span class="kd">let</span> <span class="nv">splitViewController</span> <span class="p">=</span> <span class="bp">UISplitViewController</span><span class="p">()</span>
-    <span class="n">splitViewController</span><span class="p">.</span><span class="n">viewControllers</span> <span class="p">=</span> <span class="p">[</span><span class="n">master</span><span class="p">,</span> <span class="n">detail</span><span class="p">]</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">splitViewController</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="bp">UISplitViewController</span><span class="p">()</span>
+<span class="w">    </span><span class="n">splitViewController</span><span class="p">.</span><span class="n">viewControllers</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">master</span><span class="p">,</span><span class="w"> </span><span class="n">detail</span><span class="p">]</span>
 
-    <span class="kc">self</span><span class="p">.</span><span class="n">window</span><span class="p">?.</span><span class="n">rootViewController</span> <span class="p">=</span> <span class="n">splitViewController</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">window</span><span class="p">?.</span><span class="n">rootViewController</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">splitViewController</span>
 
-    <span class="k">return</span> <span class="kc">true</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -722,20 +801,20 @@ El siguiente paso es programar nuestro modelo de datos. Esto se podría hacer ut
 
 Vamos a programar la clase que representará cada tablet que queremos mostrar. Para ello hacemos click en _File > New > File > Swift File_ y guardamos el fichero con el nombre `Tablet`. Ahora abrimos el archivo creado y escribimos el siguiente código:
 
-<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">UIKit</span>
+<div class="highlight"><pre><span></span><code><span class="kd">import</span><span class="w"> </span><span class="nc">UIKit</span>
 
-<span class="kd">class</span> <span class="nc">Tablet</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nv">nombre</span><span class="p">,</span> <span class="n">procesador</span><span class="p">,</span> <span class="n">grafica</span><span class="p">,</span> <span class="n">memoria</span><span class="p">,</span> <span class="n">pantalla</span><span class="p">,</span> <span class="n">resolucion</span><span class="p">,</span> <span class="n">imagen</span> <span class="p">:</span> <span class="nb">String</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">Tablet</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">procesador</span><span class="p">,</span><span class="w"> </span><span class="n">grafica</span><span class="p">,</span><span class="w"> </span><span class="n">memoria</span><span class="p">,</span><span class="w"> </span><span class="n">pantalla</span><span class="p">,</span><span class="w"> </span><span class="n">resolucion</span><span class="p">,</span><span class="w"> </span><span class="n">imagen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">String</span>
 
-    <span class="kd">init</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">procesador</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">grafica</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">memoria</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">pantalla</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">resolucion</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">imagen</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">nombre</span> <span class="p">=</span> <span class="n">nombre</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">procesador</span> <span class="p">=</span> <span class="n">procesador</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">grafica</span> <span class="p">=</span> <span class="n">grafica</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">memoria</span> <span class="p">=</span> <span class="n">memoria</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">pantalla</span> <span class="p">=</span> <span class="n">pantalla</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">resolucion</span> <span class="p">=</span> <span class="n">resolucion</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">imagen</span> <span class="p">=</span> <span class="n">imagen</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">init</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">procesador</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">grafica</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">memoria</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">pantalla</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">resolucion</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">imagen</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">nombre</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">nombre</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">procesador</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">procesador</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">grafica</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">grafica</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">memoria</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">memoria</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">pantalla</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pantalla</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">resolucion</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">resolucion</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">imagen</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">imagen</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -746,54 +825,54 @@ Ya tenemos el modelo de datos definido. Para continuar vamos a implementar la vi
 La parte izquierda del _Split View_ es una tabla donde aparecerán los nombres de los distintos modelos de tablets. Para implementar esto añadiremos una nueva variable a la clase `MasterViewController`, que será un _array_ de objetos `Tablet`. Abrimos `MasterViewController.swift` y escribimos lo siguiente:
 
 
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">tablets</span> <span class="p">=</span> <span class="p">[</span><span class="n">Tablet</span><span class="p">]()</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nv">tablets</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">Tablet</span><span class="p">]()</span>
 </code></pre></div>
 
 Ahora añadimos las siguientes líneas:
 
 <div class="highlight"><pre><span></span><code><span class="c1">// En numberOfRows, cambia el 5 por lo siguiente:</span>
-<span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablets</span><span class="p">.</span><span class="bp">count</span>
+<span class="k">return</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablets</span><span class="p">.</span><span class="bp">count</span>
 
 <span class="c1">// En el constructor de la tabla, antes de return cell</span>
-<span class="kd">let</span> <span class="nv">tablet</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablets</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
-<span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">?.</span><span class="n">text</span> <span class="p">=</span> <span class="n">tablet</span><span class="p">.</span><span class="n">nombre</span>
+<span class="kd">let</span><span class="w"> </span><span class="nv">tablet</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablets</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+<span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">?.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">tablet</span><span class="p">.</span><span class="n">nombre</span>
 </code></pre></div>
 
 Con esto ya tenemos la vista maestra casi terminada. Sólo nos falta crear los objetos de tipo _Tablet_. Para ello abrimos `MasterViewController.swift` y añadimos el siguiente método privado:
 
-<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">crearListaTablets</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">ipad2</span> <span class="p">=</span> <span class="n">Tablet</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="s">&quot;iPad2&quot;</span><span class="p">,</span>
-                <span class="n">procesador</span><span class="p">:</span> <span class="s">&quot;Apple A5 de doble núcleo a 1 GHz&quot;</span><span class="p">,</span>
-                <span class="n">grafica</span><span class="p">:</span> <span class="s">&quot;PowerVR SGX543MP2&quot;</span><span class="p">,</span>
-                <span class="n">memoria</span><span class="p">:</span> <span class="s">&quot;512 MB&quot;</span><span class="p">,</span>
-                <span class="n">pantalla</span><span class="p">:</span> <span class="s">&quot;9,7 pulgadas&quot;</span><span class="p">,</span>
-                <span class="n">resolucion</span><span class="p">:</span> <span class="s">&quot;1024 × 768 píxeles (132 ppp)&quot;</span><span class="p">,</span>
-                <span class="n">imagen</span><span class="p">:</span> <span class="s">&quot;ipad2.jpg&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">crearListaTablets</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">ipad2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Tablet</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;iPad2&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">procesador</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Apple A5 de doble núcleo a 1 GHz&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">grafica</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;PowerVR SGX543MP2&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">memoria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;512 MB&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">pantalla</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;9,7 pulgadas&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">resolucion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1024 × 768 píxeles (132 ppp)&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">imagen</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ipad2.jpg&quot;</span><span class="p">)</span>
 
-    <span class="kd">let</span> <span class="nv">motorola</span> <span class="p">=</span> <span class="n">Tablet</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="s">&quot;Motorola Xoom&quot;</span><span class="p">,</span>
-                <span class="n">procesador</span><span class="p">:</span> <span class="s">&quot;NVidia Tegra 2 de doble núcleo a 1 GHz&quot;</span><span class="p">,</span>
-                <span class="n">grafica</span><span class="p">:</span> <span class="s">&quot;GeForce GPU 333&quot;</span><span class="p">,</span>
-                <span class="n">memoria</span><span class="p">:</span> <span class="s">&quot;1 GB&quot;</span><span class="p">,</span> <span class="n">pantalla</span><span class="p">:</span> <span class="s">&quot;10,1 pulgadas&quot;</span><span class="p">,</span>
-                <span class="n">resolucion</span><span class="p">:</span> <span class="s">&quot;1280 × 800 píxeles (150 ppp)&quot;</span><span class="p">,</span>
-                <span class="n">imagen</span><span class="p">:</span> <span class="s">&quot;motorola.jpg&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">motorola</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Tablet</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Motorola Xoom&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">procesador</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;NVidia Tegra 2 de doble núcleo a 1 GHz&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">grafica</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;GeForce GPU 333&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">memoria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1 GB&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pantalla</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;10,1 pulgadas&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">resolucion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1280 × 800 píxeles (150 ppp)&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">imagen</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;motorola.jpg&quot;</span><span class="p">)</span>
 
-    <span class="kd">let</span> <span class="nv">hp</span> <span class="p">=</span> <span class="n">Tablet</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="s">&quot;HP TouchPad&quot;</span><span class="p">,</span>
-                <span class="n">procesador</span><span class="p">:</span> <span class="s">&quot;Qualcomm Snapdragon de doble núcleo a 1,2 GHz&quot;</span><span class="p">,</span>
-                <span class="n">grafica</span><span class="p">:</span> <span class="s">&quot;Adreno 220&quot;</span><span class="p">,</span>
-                <span class="n">memoria</span><span class="p">:</span> <span class="s">&quot;1 GB&quot;</span><span class="p">,</span>
-                <span class="n">pantalla</span><span class="p">:</span> <span class="s">&quot;9,7 pulgadas&quot;</span><span class="p">,</span>
-                <span class="n">resolucion</span><span class="p">:</span> <span class="s">&quot;1024 × 768 píxeles (132 ppp)&quot;</span><span class="p">,</span>
-                <span class="n">imagen</span><span class="p">:</span> <span class="s">&quot;hp.jpg&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">hp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Tablet</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;HP TouchPad&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">procesador</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Qualcomm Snapdragon de doble núcleo a 1,2 GHz&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">grafica</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Adreno 220&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">memoria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1 GB&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">pantalla</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;9,7 pulgadas&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">resolucion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1024 × 768 píxeles (132 ppp)&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">imagen</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hp.jpg&quot;</span><span class="p">)</span>
 
-    <span class="kd">let</span> <span class="nv">blackBerry</span> <span class="p">=</span> <span class="n">Tablet</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="s">&quot;BlackBerry PlayBook&quot;</span><span class="p">,</span>
-                <span class="n">procesador</span><span class="p">:</span> <span class="s">&quot;Procesador de doble núcleo a 1 GHz&quot;</span><span class="p">,</span>
-                <span class="n">grafica</span><span class="p">:</span> <span class="s">&quot;Desconocido&quot;</span><span class="p">,</span>
-                <span class="n">memoria</span><span class="p">:</span> <span class="s">&quot;1 GB&quot;</span><span class="p">,</span>
-                <span class="n">pantalla</span><span class="p">:</span> <span class="s">&quot;7 pulgadas&quot;</span><span class="p">,</span>
-                <span class="n">resolucion</span><span class="p">:</span> <span class="s">&quot;1024 × 600 píxeles&quot;</span><span class="p">,</span>
-                <span class="n">imagen</span><span class="p">:</span> <span class="s">&quot;blackberry.jpg&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">blackBerry</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Tablet</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;BlackBerry PlayBook&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">procesador</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Procesador de doble núcleo a 1 GHz&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">grafica</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Desconocido&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">memoria</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1 GB&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">pantalla</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;7 pulgadas&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">resolucion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1024 × 600 píxeles&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">imagen</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;blackberry.jpg&quot;</span><span class="p">)</span>
 
-    <span class="kc">self</span><span class="p">.</span><span class="n">tablets</span> <span class="p">=</span> <span class="p">[</span><span class="n">ipad2</span><span class="p">,</span> <span class="n">motorola</span><span class="p">,</span> <span class="n">hp</span><span class="p">,</span> <span class="n">blackBerry</span><span class="p">]</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">tablets</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">ipad2</span><span class="p">,</span><span class="w"> </span><span class="n">motorola</span><span class="p">,</span><span class="w"> </span><span class="n">hp</span><span class="p">,</span><span class="w"> </span><span class="n">blackBerry</span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -835,7 +914,7 @@ Abrimos el fichero `DetailViewController.swift` y conectamos todos estos _outlet
 
 En `DetailViewController.swift`, añadimos una variable de la clase `Tablet`, que contendrá los datos de la tableta cuyo detalle queremos ver:
 
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">tablet</span> <span class="p">:</span> <span class="n">Tablet</span><span class="p">?</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nv">tablet</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Tablet</span><span class="p">?</span>
 </code></pre></div>
 
 ### Enlazando las dos vistas
@@ -848,61 +927,61 @@ En el fichero `MasterViewController.swift`:
 
 * Añadimos el protocolo `TabletSelectionDelegate`:
 
-<div class="highlight"><pre><span></span><code><span class="kd">protocol</span> <span class="nc">TabletSelectionDelegate</span> <span class="p">{</span>
-    <span class="kd">func</span> <span class="nf">tabletSelectionChanged</span><span class="p">(</span><span class="n">tablet</span> <span class="p">:</span> <span class="n">Tablet</span><span class="p">?)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">protocol</span><span class="w"> </span><span class="nc">TabletSelectionDelegate</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">func</span><span class="w"> </span><span class="nf">tabletSelectionChanged</span><span class="p">(</span><span class="n">tablet</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Tablet</span><span class="p">?)</span>
 <span class="p">}</span>
 </code></pre></div>
 
 * Añadimos el objeto delegado:
 
-<div class="highlight"><pre><span></span><code>  <span class="kd">var</span> <span class="nv">delegate</span><span class="p">:</span><span class="n">TabletSelectionDelegate</span><span class="p">?</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">delegate</span><span class="p">:</span><span class="n">TabletSelectionDelegate</span><span class="p">?</span>
 </code></pre></div>
 
 * Finalmente añadimos el siguiente método que invoca a `tabletSelectionChanged` cuando se pulsa sobre una celda:
 
-<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">tablet</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablets</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">delegate</span><span class="p">?.</span><span class="n">tabletSelectionChanged</span><span class="p">(</span><span class="n">tablet</span><span class="p">:</span> <span class="n">tablet</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">,</span><span class="w"> </span><span class="n">didSelectRowAt</span><span class="w"> </span><span class="n">indexPath</span><span class="p">:</span><span class="w"> </span><span class="n">IndexPath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">tablet</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablets</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">delegate</span><span class="p">?.</span><span class="n">tabletSelectionChanged</span><span class="p">(</span><span class="n">tablet</span><span class="p">:</span><span class="w"> </span><span class="n">tablet</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 
 Ya queda menos. Vamos a modificar la clase detalle `DetailViewController.swift` para adoptar el protocolo anterior y también el del _split view_:
 
 
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">DetailViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="n">TabletSelectionDelegate</span><span class="p">,</span> <span class="bp">UISplitViewControllerDelegate</span>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nc">DetailViewController</span><span class="p">:</span><span class="w"> </span><span class="bp">UIViewController</span><span class="p">,</span><span class="w"> </span><span class="n">TabletSelectionDelegate</span><span class="p">,</span><span class="w"> </span><span class="bp">UISplitViewControllerDelegate</span>
 </code></pre></div>
 
 En `DetailViewController.swift` editamos el método `viewDidLoad` para asignar el texto de las etiquetas y la imagen, y también añadiremos la implementación del método del protocolo:
 
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">tabletToView</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">labelNombre</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">nombre</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">labelProcesador</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">grafica</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">labelGrafica</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">memoria</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">labelMemoria</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">pantalla</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">labelPantalla</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">procesador</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">labelResolucion</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">resolucion</span>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nf">tabletToView</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">labelNombre</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">nombre</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">labelProcesador</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">grafica</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">labelGrafica</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">memoria</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">labelMemoria</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">pantalla</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">labelPantalla</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">procesador</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">labelResolucion</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">resolucion</span>
 
-    <span class="kc">self</span><span class="p">.</span><span class="n">imagen</span><span class="p">.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:(</span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">imagen</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">imagen</span><span class="p">.</span><span class="n">image</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:(</span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="p">?.</span><span class="n">imagen</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+<span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">viewDidLoad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
 
-    <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">tablet</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">tabletToView</span><span class="p">()</span>
-    <span class="p">}</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">splitViewController</span><span class="p">?.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">tabletToView</span><span class="p">()</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">splitViewController</span><span class="p">?.</span><span class="n">delegate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">tabletSelectionChanged</span><span class="p">(</span><span class="n">tablet</span><span class="p">:</span> <span class="n">Tablet</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">tablet</span> <span class="p">=</span> <span class="n">tablet</span><span class="p">;</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">tabletToView</span><span class="p">()</span>
+<span class="kd">func</span><span class="w"> </span><span class="nf">tabletSelectionChanged</span><span class="p">(</span><span class="n">tablet</span><span class="p">:</span><span class="w"> </span><span class="n">Tablet</span><span class="p">?)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">tablet</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">tablet</span><span class="p">;</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">tabletToView</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></div>
 
 Finalmente, al final del método `didFinishLaunchingWithOptions` de la clase `AppDelegate.swift` asignamos el delegado que acabamos de crear:
 
-<div class="highlight"><pre><span></span><code>  <span class="n">master</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="n">detail</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">master</span><span class="p">.</span><span class="n">delegate</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">detail</span>
 </code></pre></div>
 
 Si está todo bien, al compilar y ejecutar el proyecto el _Split View_ debe funcionar:
@@ -921,32 +1000,32 @@ Abrimos `DetailViewController.xib`, arrastramos un componente `UIToolbar` en la 
 
 Ahora hacemos añadimos estas dos variables al fichero `DetailViewController.swift`:
 
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">popover</span> <span class="p">:</span> <span class="bp">UIPopoverController</span><span class="p">?</span>
-<span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">toolbar</span> <span class="p">:</span> <span class="bp">UIToolbar</span><span class="p">!</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nv">popover</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="bp">UIPopoverController</span><span class="p">?</span>
+<span class="kr">@IBOutlet</span><span class="w"> </span><span class="kr">weak</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">toolbar</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="bp">UIToolbar</span><span class="p">!</span>
 </code></pre></div>
 
 Enlaza la variable `UIToolBar` con su vista correspondiente. También debemos añadir los siguientes métodos a `DetailViewController.swift`:
 
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">splitViewController</span><span class="p">(</span><span class="kc">_</span> <span class="n">svc</span><span class="p">:</span> <span class="bp">UISplitViewController</span><span class="p">,</span> <span class="n">willHide</span> <span class="n">aViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="n">with</span> <span class="n">barButtonItem</span><span class="p">:</span> <span class="bp">UIBarButtonItem</span><span class="p">,</span> <span class="k">for</span> <span class="n">pc</span><span class="p">:</span> <span class="bp">UIPopoverController</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">barButtonItem</span><span class="p">.</span><span class="n">title</span> <span class="p">=</span> <span class="s">&quot;Tablets&quot;</span>
-    <span class="kd">var</span> <span class="nv">items</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">toolbar</span><span class="p">.</span><span class="n">items</span>
-    <span class="n">items</span><span class="p">?.</span><span class="bp">insert</span><span class="p">(</span><span class="n">barButtonItem</span><span class="p">,</span> <span class="n">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">toolbar</span><span class="p">.</span><span class="n">setItems</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">popover</span> <span class="p">=</span> <span class="n">pc</span>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nf">splitViewController</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">svc</span><span class="p">:</span><span class="w"> </span><span class="bp">UISplitViewController</span><span class="p">,</span><span class="w"> </span><span class="n">willHide</span><span class="w"> </span><span class="n">aViewController</span><span class="p">:</span><span class="w"> </span><span class="bp">UIViewController</span><span class="p">,</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">barButtonItem</span><span class="p">:</span><span class="w"> </span><span class="bp">UIBarButtonItem</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">pc</span><span class="p">:</span><span class="w"> </span><span class="bp">UIPopoverController</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">barButtonItem</span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Tablets&quot;</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">toolbar</span><span class="p">.</span><span class="n">items</span>
+<span class="w">    </span><span class="n">items</span><span class="p">?.</span><span class="bp">insert</span><span class="p">(</span><span class="n">barButtonItem</span><span class="p">,</span><span class="w"> </span><span class="n">at</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">toolbar</span><span class="p">.</span><span class="n">setItems</span><span class="p">(</span><span class="n">items</span><span class="p">,</span><span class="w"> </span><span class="n">animated</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">popover</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pc</span>
 <span class="p">}</span>
 
-<span class="kd">func</span> <span class="nf">splitViewController</span><span class="p">(</span><span class="kc">_</span> <span class="n">svc</span><span class="p">:</span> <span class="bp">UISplitViewController</span><span class="p">,</span> <span class="n">willShow</span> <span class="n">aViewController</span><span class="p">:</span> <span class="bp">UIViewController</span><span class="p">,</span> <span class="n">invalidating</span> <span class="n">barButtonItem</span><span class="p">:</span> <span class="bp">UIBarButtonItem</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nv">items</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">toolbar</span><span class="p">.</span><span class="n">items</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">items</span><span class="p">?.</span><span class="bp">count</span><span class="p">)</span><span class="o">!</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
-        <span class="n">items</span><span class="p">?.</span><span class="n">remove</span><span class="p">(</span><span class="n">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="kc">self</span><span class="p">.</span><span class="n">toolbar</span> <span class="p">.</span><span class="n">setItems</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="kd">func</span><span class="w"> </span><span class="nf">splitViewController</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">svc</span><span class="p">:</span><span class="w"> </span><span class="bp">UISplitViewController</span><span class="p">,</span><span class="w"> </span><span class="n">willShow</span><span class="w"> </span><span class="n">aViewController</span><span class="p">:</span><span class="w"> </span><span class="bp">UIViewController</span><span class="p">,</span><span class="w"> </span><span class="n">invalidating</span><span class="w"> </span><span class="n">barButtonItem</span><span class="p">:</span><span class="w"> </span><span class="bp">UIBarButtonItem</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">toolbar</span><span class="p">.</span><span class="n">items</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">items</span><span class="p">?.</span><span class="bp">count</span><span class="p">)</span><span class="o">!</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">items</span><span class="p">?.</span><span class="n">remove</span><span class="p">(</span><span class="n">at</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">toolbar</span><span class="w"> </span><span class="p">.</span><span class="n">setItems</span><span class="p">(</span><span class="n">items</span><span class="p">,</span><span class="w"> </span><span class="n">animated</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 
 Al final de `tabletSelectionChanged` añadimos la siguiente línea:
 
-<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">popover</span><span class="p">?.</span><span class="n">dismiss</span><span class="p">(</span><span class="n">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">popover</span><span class="p">?.</span><span class="n">dismiss</span><span class="p">(</span><span class="n">animated</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
 </code></pre></div>
 
 No te preocupes por el _Warning (deprecated)_ que aparece al compilar, más adelante veremos por qué se produce. Si ejecutamos ahora la aplicación, al girar el dispositivo y situarlo en posición vertical aparecerá en la barra superior un botón. Si lo pulsamos nos debe salir el listado de tablets.
@@ -971,41 +1050,41 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <p>Creamos otro controlador para la vista detalle, al que llamaremos <code>DetailViewController</code>, subclase de <code>UIViewController</code>, y al igual que el anterior lo asignamos en el <em>storyboard</em>.</p>
 <p>Podemos ejecutar la aplicación. En un iPad veremos que en modo <em>Portrait</em> sólo se muestra la vista detalle. Pinchando en el icono superior se muestra también la maestra. Si rotamos se muestran ambas, aunque todavía están vacías. </p>
 <p>Ahora vamos a añadir datos a la tabla. Para esto, inicializa  el siguiente array en <code>TableViewController</code>:</p>
-<div class="highlight"><pre><span></span><code>    <span class="kd">let</span> <span class="nv">contenido</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span><span class="s">&quot;dos&quot;</span><span class="p">,</span><span class="s">&quot;tres&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">contenido</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;Uno&quot;</span><span class="p">,</span><span class="s">&quot;dos&quot;</span><span class="p">,</span><span class="s">&quot;tres&quot;</span><span class="p">]</span>
 </code></pre></div>
 <p>Borra el método <code>numberOfSections</code> y modifica los siguientes métodos:</p>
-<div class="highlight"><pre><span></span><code>    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">numberOfRowsInSection</span> <span class="n">section</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">contenido</span><span class="p">.</span><span class="bp">count</span>
-    <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">,</span><span class="w"> </span><span class="n">numberOfRowsInSection</span><span class="w"> </span><span class="n">section</span><span class="p">:</span><span class="w"> </span><span class="nb">Int</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Int</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">contenido</span><span class="p">.</span><span class="bp">count</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">cellForRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="bp">UITableViewCell</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nv">cell</span> <span class="p">=</span> <span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span> <span class="s">&quot;Cell&quot;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="n">indexPath</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">,</span><span class="w"> </span><span class="n">cellForRowAt</span><span class="w"> </span><span class="n">indexPath</span><span class="p">:</span><span class="w"> </span><span class="n">IndexPath</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="bp">UITableViewCell</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nv">cell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">tableView</span><span class="p">.</span><span class="n">dequeueReusableCell</span><span class="p">(</span><span class="n">withIdentifier</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Cell&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">for</span><span class="p">:</span><span class="w"> </span><span class="n">indexPath</span><span class="p">)</span>
 
-        <span class="c1">// Configure the cell...</span>
-        <span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">!.</span><span class="n">text</span> <span class="p">=</span> <span class="n">contenido</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+<span class="w">        </span><span class="c1">// Configure the cell...</span>
+<span class="w">        </span><span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">!.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">contenido</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
 
-        <span class="k">return</span> <span class="n">cell</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cell</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>Recuerda que, al igual que en el ejercicio de la barra de búsqueda, debemos registrar el identificador de la celda en nuestro <code>TableViewCell</code>:</p>
 <p><img alt="Identificador TableViewCell" src="gitbook/assets/splitview_tvcell.png" title="Identificador TableViewCell" /></p>
 <p>De momento la vista detalle no tiene nada. Vamos a añadirle una etiqueta en el centro, ajustándola horizontalmente y verticalmente:</p>
 <p><img alt="Vista detalle" src="gitbook/assets/splitView_dvc.png" title="Vista detalle" /></p>
 <p>Conectamos la etiqueta con <code>IBOutlet</code> a nuestro controlador <code>DetailViewController</code>. Lo llamamos <code>etiqueta</code>:</p>
-<div class="highlight"><pre><span></span><code>    <span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">etiqueta</span><span class="p">:</span> <span class="bp">UILabel</span><span class="p">!</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kr">@IBOutlet</span><span class="w"> </span><span class="kr">weak</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">etiqueta</span><span class="p">:</span><span class="w"> </span><span class="bp">UILabel</span><span class="p">!</span>
 </code></pre></div>
 <p>Si ejecutamos la app veremos que se muestran ya elementos en la tabla y la vista detalle, aunque la idea es que esta  cambie cuando se seleccione una celda de la vista maestra. </p>
 <p>Para esto tenemos que comunicar el controlador maestro con el detalle. Una forma sencilla de implementar esto es en el método <code>didSelectRowAt</code>:</p>
-<div class="highlight"><pre><span></span><code>    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span> <span class="n">tableView</span><span class="p">:</span> <span class="bp">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="n">indexPath</span><span class="p">:</span> <span class="n">IndexPath</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">tableView</span><span class="p">(</span><span class="kc">_</span><span class="w"> </span><span class="n">tableView</span><span class="p">:</span><span class="w"> </span><span class="bp">UITableView</span><span class="p">,</span><span class="w"> </span><span class="n">didSelectRowAt</span><span class="w"> </span><span class="n">indexPath</span><span class="p">:</span><span class="w"> </span><span class="n">IndexPath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        <span class="k">if</span> <span class="kd">let</span> <span class="nv">indexPath</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">indexPathForSelectedRow</span> <span class="p">{</span>
-            <span class="kd">let</span> <span class="nv">object</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">contenido</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">indexPath</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">tableView</span><span class="p">.</span><span class="n">indexPathForSelectedRow</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">object</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">contenido</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">]</span>
 
-            <span class="c1">// Conexión con el controlador detalle</span>
-            <span class="kd">let</span> <span class="nv">detailViewController</span> <span class="p">=</span> <span class="n">splitViewController</span><span class="p">!.</span><span class="n">viewController</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">secondary</span><span class="p">)</span> <span class="k">as</span><span class="p">?</span> <span class="n">DetailViewController</span>
-            <span class="n">detailViewController</span><span class="p">?.</span><span class="n">etiqueta</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">object</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">            </span><span class="c1">// Conexión con el controlador detalle</span>
+<span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="nv">detailViewController</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">splitViewController</span><span class="p">!.</span><span class="n">viewController</span><span class="p">(</span><span class="k">for</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">secondary</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="p">?</span><span class="w"> </span><span class="n">DetailViewController</span>
+<span class="w">            </span><span class="n">detailViewController</span><span class="p">?.</span><span class="n">etiqueta</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">object</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>Como puedes ver, hemos accedido al controlador <code>splitViewController</code>, y dentro de este al secundario (la vista detalle) que es de la clase <code>DetailViewController</code>. Ahora podemos acceder al <code>Outlet</code> que habíamos enlazado y ejecutar la app:</p>
 <p><img alt="Primera versión SplitViewController iPad" src="gitbook/assets/splitview_firstversion_ipad.png" title="Primera versión splitview iPad" /></p>
@@ -1014,8 +1093,8 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <p>Sólo se muestra la vista maestra, y si pulsamos sobre una celda no se pasa a la vista detalle. El problema es que, aunque hemos cambiado la segunda vista internamente, esta no se ve.</p>
 <p>Para que aparezca añadimos lo siguiente tras la conexión con el controlador detalle (en <code>didSelectRowAt</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Si el controlador detalle no está presentado lo mostramos</span>
-<span class="k">if</span> <span class="o">!</span><span class="n">detailViewController</span><span class="p">!.</span><span class="n">isBeingPresented</span> <span class="p">{</span>
-    <span class="n">splitViewController</span><span class="p">!.</span><span class="n">showDetailViewController</span><span class="p">(</span><span class="n">detailViewController</span><span class="p">!,</span> <span class="n">sender</span><span class="p">:</span> <span class="kc">self</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="n">detailViewController</span><span class="p">!.</span><span class="n">isBeingPresented</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">splitViewController</span><span class="p">!.</span><span class="n">showDetailViewController</span><span class="p">(</span><span class="n">detailViewController</span><span class="p">!,</span><span class="w"> </span><span class="n">sender</span><span class="p">:</span><span class="w"> </span><span class="kc">self</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Ejecuta ahora la app en iPhone e iPad, debería funcionar correctamente con ambos y en cualquier orientación y tamaño.</p>
@@ -1023,38 +1102,38 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <p>Vamos a programar un ejemplo de aplicación completa usando  <em>SplitViewController</em> con algunas vistas comunes y otras diferenciadas en función del tamaño. Cuando tengamos la versión final del programa, en la vista maestra aparecerá un listado de títulos de películas y la vista detalle mostrará los detalles de la película seleccionada, con el título, un texto descriptivo, el año y una imagen.</p>
 <h3 id="anadir-el-modelo-de-datos">Añadir el modelo de datos</h3>
 <p>Partimos el proyecto anterior <code>ejercicio_peliculas</code> modificándolo para  guardar películas, por lo que vamos a implementar un modelo de datos. Para esto creamos una nueva clase <code>Pelicula</code> mediante <em>File &gt; New &gt; File &gt; Swift file</em>. Añadimos estos contenidos:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">import</span> <span class="nc">UIKit</span>
+<div class="highlight"><pre><span></span><code><span class="kd">import</span><span class="w"> </span><span class="nc">UIKit</span>
 
-<span class="kd">class</span> <span class="nc">Pelicula</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nv">titulo</span> <span class="p">:</span> <span class="nb">String</span>
-    <span class="kd">var</span> <span class="nv">caratula</span> <span class="p">:</span> <span class="nb">String</span>
-    <span class="kd">var</span> <span class="nv">fecha</span> <span class="p">:</span> <span class="nb">String</span>
-    <span class="kd">var</span> <span class="nv">descripcion</span> <span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">Pelicula</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">titulo</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">String</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">caratula</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">String</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">fecha</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">String</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nv">descripcion</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">?</span>
 
-    <span class="kd">init</span><span class="p">(</span><span class="n">titulo</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">caratula</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">fecha</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">descripcion</span><span class="p">:</span> <span class="nb">String</span><span class="p">?)</span> <span class="p">{</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">titulo</span> <span class="p">=</span> <span class="n">titulo</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">fecha</span> <span class="p">=</span> <span class="n">fecha</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">caratula</span> <span class="p">=</span> <span class="n">caratula</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">descripcion</span> <span class="p">=</span> <span class="n">descripcion</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">init</span><span class="p">(</span><span class="n">titulo</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">caratula</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">fecha</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">descripcion</span><span class="p">:</span><span class="w"> </span><span class="nb">String</span><span class="p">?)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">titulo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">titulo</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">fecha</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">fecha</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">caratula</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">caratula</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">descripcion</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">descripcion</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>En <code>MasterViewController</code> sustituimos el array <code>contenido</code> que teníamos en el ejercicio de prueba por un array de Películas:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">peliculas</span> <span class="p">=</span> <span class="p">[</span><span class="n">Pelicula</span><span class="p">]()</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nv">peliculas</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">Pelicula</span><span class="p">]()</span>
 </code></pre></div>
 <p>Reemplazamos en este fichero todas las apariciones de <code>contenido</code> por <code>peliculas</code>, y de <code>object</code> por <code>pelicula</code>. </p>
 <p>Vamos a añadir a la tabla una película de ejemplo. Para ello creamos el método <code>crearListaPeliculas</code> en la clase <code>MasterViewController</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">crearPeliculas</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nv">sentidoDeLaVida</span> <span class="p">=</span> <span class="n">Pelicula</span><span class="p">(</span><span class="n">titulo</span><span class="p">:</span> <span class="s">&quot;El sentido de la vida&quot;</span><span class="p">,</span> <span class="n">caratula</span><span class="p">:</span> <span class="s">&quot;sentido.jpg&quot;</span><span class="p">,</span> <span class="n">fecha</span><span class="p">:</span> <span class="s">&quot;1983&quot;</span><span class="p">,</span> <span class="n">descripcion</span><span class="p">:</span> <span class="s">&quot;Conjunto de episodios que muestran de forma disparatada los momentos más importantes del ciclo de la vida. Desde el nacimiento a la muerte, pasando por asuntos como la filosofía, la historia o la medicina, todo tratado con el inconfundible humor de los populares cómicos ingleses. El prólogo es un cortometraje independiente rodado por Terry Gilliam: Seguros permanentes Crimson.&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">func</span><span class="w"> </span><span class="nf">crearPeliculas</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nv">sentidoDeLaVida</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Pelicula</span><span class="p">(</span><span class="n">titulo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;El sentido de la vida&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">caratula</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sentido.jpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fecha</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1983&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">descripcion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Conjunto de episodios que muestran de forma disparatada los momentos más importantes del ciclo de la vida. Desde el nacimiento a la muerte, pasando por asuntos como la filosofía, la historia o la medicina, todo tratado con el inconfundible humor de los populares cómicos ingleses. El prólogo es un cortometraje independiente rodado por Terry Gilliam: Seguros permanentes Crimson.&quot;</span><span class="p">)</span>
 
-    <span class="kc">self</span><span class="p">.</span><span class="n">peliculas</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentidoDeLaVida</span><span class="p">)</span>
+<span class="w">    </span><span class="kc">self</span><span class="p">.</span><span class="n">peliculas</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentidoDeLaVida</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Añadimos una llamada a este método al final de <code>viewDidLoad</code> para inicializar las películas.</p>
 <!--- También necesitarás añadir <a href="gitbook/assets/sentido.jpg">esta imagen</a> a los `Assets`. -->
 
 <p>Cambiamos también las siguientes lineas en el método <code>cellForRowAt</code> para mostrar en las celdas el título de la película:</p>
-<div class="highlight"><pre><span></span><code><span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">!.</span><span class="n">text</span> <span class="p">=</span> <span class="n">peliculas</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">].</span><span class="n">titulo</span>
+<div class="highlight"><pre><span></span><code><span class="n">cell</span><span class="p">.</span><span class="n">textLabel</span><span class="p">!.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">peliculas</span><span class="p">[</span><span class="n">indexPath</span><span class="p">.</span><span class="n">row</span><span class="p">].</span><span class="n">titulo</span>
 </code></pre></div>
 <p>A continuación modifica <code>didSelectRowAt</code> para usar los datos de las películas, de forma que la etiqueta de la vista detalle contenga siempre el título.</p>
 <p>Ejecutamos el programa en un iPad, debería mostrar una película (sólo el título, ya que no hemos añadido la imagen ni otros datos) y funcionar correctamente.</p>
@@ -1062,7 +1141,7 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <p>Vamos a diseñar la vista detalle de manera independiente en función del tamaño del dispositivo, pero antes vamos a hacer un pequeño cambio. En el código que hemos visto anteriormente, cuando se selecciona una celda de la vista maestra se modifica directamente el contenido de la etiqueta de la vista detalle. Sin embargo, no es una buena política de diseño controlar una vista (en este caso, detalle) mediante el controlador de otra (maestra). </p>
 <p>Para mejorar el diseño del código, en <code>DetailViewController</code> crea un método llamado <code>didChangePelicula</code> que reciba como parámetro una película y actualice la vista en función de los datos que tenga esta variable. De esta forma, desde  <code>TableViewController</code> podremos reemplazar la línea que asigna directamente la etiqueta por la llamada al método para que se haga dentro del controlador detalle:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//  detailViewController?.etiqueta.text = pelicula</span>
-<span class="n">detailViewController</span><span class="p">?.</span><span class="n">didChangePelicula</span><span class="p">(</span><span class="n">with</span><span class="p">:</span> <span class="n">pelicula</span><span class="p">)</span>
+<span class="n">detailViewController</span><span class="p">?.</span><span class="n">didChangePelicula</span><span class="p">(</span><span class="n">with</span><span class="p">:</span><span class="w"> </span><span class="n">pelicula</span><span class="p">)</span>
 </code></pre></div>
 <p>Selecciona la vista detalle en el <em>storyboard</em> y haz que sea como la que se muetra a continuación. Borra el <code>UILabel</code> que teníamos en el ejercicio de prueba (<code>etiqueta</code>) tanto de la vista como de las conexiones.</p>
 <blockquote>
@@ -1076,7 +1155,7 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <p><img alt="TextView properties" src="gitbook/assets/movies_textview.png" title="Propiedades textview" /></p>
 <p>Conecta todos los elementos de la vista (<code>titulo</code>, <code>fecha</code>, <code>imagen</code> y <code>descripcion</code>) al controlador <code>DetailViewController</code> con <code>IBOutlets</code>. </p>
 <p>Por último, descarga <a href="gitbook/assets/sentido.jpg">esta imagen</a> y arrástrala a los <em>Assets</em>. Modifica el método <code>didChangePelicula</code> para actualizar todos los <em>outlets</em>. En el caso de la imagen sería:</p>
-<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">imagen</span><span class="p">.</span><span class="n">image</span> <span class="p">=</span> <span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="n">pelicula</span><span class="p">.</span><span class="n">caratula</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kc">self</span><span class="p">.</span><span class="n">imagen</span><span class="p">.</span><span class="n">image</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="bp">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span><span class="w"> </span><span class="n">pelicula</span><span class="p">.</span><span class="n">caratula</span><span class="p">)</span>
 </code></pre></div>
 <p>Ejecuta el programa simulando distintos iPhone y iPad para ver los resultados. </p>
 <p><img alt="Primera versión" src="gitbook/assets/movies_second.png" title="Primera versión" /></p>
@@ -1088,16 +1167,16 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 <p><img alt="Stack views" src="gitbook/assets/movies_stack.png" title="Stack views" /></p>
 <p>Verás que las vistas se unen porque hemos creado un grupo con dos elementos. Como ves, un <em>stack</em> se usa para agrupar vistas y nos permite realizar ciertas acciones con ellas. Vamos a reajustar las <em>constraints</em> con este nuevo <em>Stack</em>, seleccionando <em>Reset to suggested constraints</em> para toda la vista detalle.  </p>
 <p>Si ejecutamos el programa, el aspecto será más o menos como el que teníamos antes. Vamos a arreglar los problemas del giro, ya que cuando ponemos un iPhone en <em>landscape</em> la películano se visualiza bien. Para esto necesitamos conectar nuestro <em>Stack View</em> a <code>DetailViewController</code>. Llámalo <code>stackView</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">stackView</span><span class="p">:</span> <span class="bp">UIStackView</span><span class="p">!</span>
+<div class="highlight"><pre><span></span><code><span class="kr">@IBOutlet</span><span class="w"> </span><span class="kr">weak</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nv">stackView</span><span class="p">:</span><span class="w"> </span><span class="bp">UIStackView</span><span class="p">!</span>
 </code></pre></div>
 <p>Ahora vamos a añadir el siguiente método en <code>DetailViewController</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewWillLayoutSubviews</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="n">view</span><span class="p">.</span><span class="n">bounds</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span> <span class="o">&gt;=</span> <span class="n">view</span><span class="p">.</span><span class="n">bounds</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span> <span class="p">{</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">stackView</span><span class="p">.</span><span class="n">axis</span> <span class="p">=</span> <span class="p">.</span><span class="n">horizontal</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="kc">self</span><span class="p">.</span><span class="n">stackView</span><span class="p">.</span><span class="n">axis</span> <span class="p">=</span> <span class="p">.</span><span class="n">vertical</span>
-    <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kr">override</span><span class="w"> </span><span class="kd">func</span><span class="w"> </span><span class="nf">viewWillLayoutSubviews</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">view</span><span class="p">.</span><span class="n">bounds</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">view</span><span class="p">.</span><span class="n">bounds</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">stackView</span><span class="p">.</span><span class="n">axis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">.</span><span class="n">horizontal</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kc">self</span><span class="p">.</span><span class="n">stackView</span><span class="p">.</span><span class="n">axis</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">.</span><span class="n">vertical</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Este método se invoca cuando iOS detecta que hay que reajustar las vistas (por ejemplo cuando se realiza un giro). En el código indicamos que cuando tengamos más espacio horizontal que vertical nuestras vistas del <em>stack</em> deben reposicionarse. Además, lo harán con una animación. Prueba a ejecutar de nuevo el programa en un iPhone, debe verse así en <em>portrait</em>:</p>
@@ -1126,20 +1205,20 @@ Cuando el dispositivo está en _landscape_ el botón se oculta. Como puedes ver,
 
 Conectamos el `UILabel` al controlador y llamamos a la variable `fecha`. Añadimos lo siguiente a `configureView`:
 
-<div class="highlight"><pre><span></span><code>  <span class="k">if</span> <span class="kd">let</span> <span class="nv">fecha</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">fecha</span> <span class="p">{</span>
-          <span class="n">fecha</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">detail</span><span class="p">.</span><span class="n">fecha</span>
-  <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">fecha</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">fecha</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="n">fecha</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">detail</span><span class="p">.</span><span class="n">fecha</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
 -->
 <!--
 Vamos a poner un código condicional para la fecha, ya que sólo se mostrará en iPad. En el método `configureView` añadimos la siguiente línea:
 
-<div class="highlight"><pre><span></span><code>            <span class="k">if</span> <span class="kc">self</span><span class="p">.</span><span class="n">traitCollection</span><span class="p">.</span><span class="n">userInterfaceIdiom</span> <span class="p">==</span> <span class="n">UIUserInterfaceIdiom</span><span class="p">.</span><span class="n">pad</span>
-            <span class="p">{</span>
-                <span class="k">if</span> <span class="kd">let</span> <span class="nv">fecha</span> <span class="p">=</span> <span class="kc">self</span><span class="p">.</span><span class="n">fecha</span> <span class="p">{</span>
-                    <span class="n">fecha</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">detail</span><span class="p">.</span><span class="n">fecha</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">traitCollection</span><span class="p">.</span><span class="n">userInterfaceIdiom</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="n">UIUserInterfaceIdiom</span><span class="p">.</span><span class="n">pad</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">fecha</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">self</span><span class="p">.</span><span class="n">fecha</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">fecha</span><span class="p">.</span><span class="n">text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">detail</span><span class="p">.</span><span class="n">fecha</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
 </code></pre></div>
 -->
 
@@ -1168,6 +1247,16 @@ Vamos a poner un código condicional para la fecha, ya que sólo se mostrará en
 
 
 
+
+
+
+
+  
+  
+
+
+
+
   
 
 
@@ -1177,6 +1266,7 @@ Vamos a poner un código condicional para la fecha, ya que sólo se mostrará en
             </div>
           
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
       </main>
@@ -1204,10 +1294,13 @@ Vamos a poner un código condicional para la fecha, ya que sólo se mostrará en
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
     
     
-      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
